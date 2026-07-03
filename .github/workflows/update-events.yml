@@ -8,7 +8,6 @@ on:
 jobs:
   update-events:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
@@ -23,7 +22,7 @@ jobs:
 
       - name: Veranstaltungen abrufen
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/generate-events.js
 
       - name: events.json committen und pushen
