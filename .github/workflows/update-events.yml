@@ -2,7 +2,8 @@ name: Magdeburg Events täglich aktualisieren
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    # Jeden Montag um 07:00 Uhr deutsche Zeit
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 jobs:
