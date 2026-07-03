@@ -11,7 +11,7 @@ const sources     = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
 const sourceList  = sources.map(s => `- ${s.url} (${s.name})`).join("\n");
 console.log(`📋 ${sources.length} Quellen geladen`);
 
-const PROMPT = `Du bist ein Veranstaltungs-Assistent fuer Magdeburg (Sachsen-Anhalt, Deutschland). Suche im Web nach aktuellen Veranstaltungen in Magdeburg in den naechsten 60 Tagen. Durchsuche diese Quellen: ${sourceList} Suche auch nach: Flohmärkte Magdeburg, Maerkte Magdeburg, Festivals Magdeburg. DUPLIKATE: Gleiches Event nur EINMAL, alle Quellen kommasepariert im Feld sources. Gib NUR ein JSON-Array zurueck, KEIN Markdown, KEINE Backticks. Format: [{"id":1,"name":"Name","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","sources":"Quelle1","sourceUrl":"https://... oder null","description":"Beschreibung","category":"Musik|Theater|Sport|Kultur|Familie|Flohmarkt|Sonstiges","location":"Ort"}] Mindestens 25 echte Veranstaltungen.`;
+const PROMPT = `Suche jetzt im Web nach aktuellen Veranstaltungen in Magdeburg Sachsen-Anhalt Deutschland in den naechsten 60 Tagen. Benutze die Google-Suche um echte aktuelle Events zu finden. Suche nach: "Veranstaltungen Magdeburg 2026", "Konzerte Magdeburg Juli August 2026", "Flohmärkte Magdeburg 2026", "Theater Magdeburg Spielplan", "Events Magdeburg". Schreibe die gefundenen Veranstaltungen als JSON-Array. Jedes Element hat diese Felder: id (Zahl), name (Text), dateFrom (YYYY-MM-DD), dateTo (YYYY-MM-DD), sources (Quellenname), sourceUrl (URL oder null), description (2-3 Saetze), category (Musik oder Theater oder Sport oder Kultur oder Familie oder Flohmarkt oder Sonstiges), location (Ort in Magdeburg). Gib NUR das JSON-Array zurueck, kein anderer Text, keine Backticks, kein Markdown. Mindestens 20 Veranstaltungen.`;
 
 function sanitizeJSON(text) {
   const start = text.indexOf('[');
@@ -91,13 +91,14 @@ async function main() {
   if (response.error) throw new Error(`Gemini Fehler: ${response.error.message}`);
   const fullText = (response.candidates?.[0]?.content?.parts || []).map(p => p.text || "").join("\n");
   console.log("📝 Antwort erhalten, bereinige JSON...");
+  console.log("Rohtext (erste 300 Zeichen):", fullText.slice(0,300));
   const cleaned = sanitizeJSON(fullText);
   let events;
   try {
     events = JSON.parse(cleaned);
   } catch(e) {
     console.error("❌ JSON Parse Fehler:", e.message);
-    console.error("Bereinigter Text (erste 300 Zeichen):", cleaned.slice(0,300));
+    console.error("Bereinigter Text:", cleaned.slice(0,300));
     process.exit(1);
   }
   console.log(`✅ ${events.length} Events erhalten`);
