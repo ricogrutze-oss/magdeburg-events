@@ -1,0 +1,102 @@
+[
+  {
+    "url": "dates-md.de",
+    "name": "DATEs Stadtmagazin",
+    "beschreibung": "Größtes Magdeburger Stadtmagazin, alle Kategorien"
+  },
+  {
+    "url": "magdeburg.de/Bürger-Stadt/System/Veranstaltungskalender",
+    "name": "Landeshauptstadt Magdeburg",
+    "beschreibung": "Offizieller Veranstaltungskalender der Stadt"
+  },
+  {
+    "url": "eventfinder.de/magdeburg/veranstaltungen",
+    "name": "Eventfinder Magdeburg",
+    "beschreibung": "780+ Events aller Art"
+  },
+  {
+    "url": "meinestadt.de/magdeburg/alle/alle",
+    "name": "MeineStadt Magdeburg",
+    "beschreibung": "Konzerte, Shows, Großevents"
+  },
+  {
+    "url": "visit-magdeburg.de/veranstaltungen",
+    "name": "Visit Magdeburg",
+    "beschreibung": "Tourismusbüro, Festivals und Highlights"
+  },
+  {
+    "url": "mvp.de/magdeburg/veranstaltungen",
+    "name": "MVP Magdeburg",
+    "beschreibung": "Breite Abdeckung aller Kategorien"
+  },
+  {
+    "url": "regioactive.de/events/20538/magdeburg/veranstaltungen-party-konzerte",
+    "name": "Regioactive Magdeburg",
+    "beschreibung": "Konzerte, Clubs, Kleinkunst"
+  },
+  {
+    "url": "rausgegangen.de/magdeburg",
+    "name": "Rausgegangen Magdeburg",
+    "beschreibung": "Sehr aktuell, alle Event-Typen"
+  },
+  {
+    "url": "veranstaltungen.magdeburg-tourist.de/magdeburg",
+    "name": "Magdeburg Tourist",
+    "beschreibung": "Tourismus-Veranstaltungskalender, 195 Events"
+  },
+  {
+    "url": "kulturbox.de/buehnen/magdeburg",
+    "name": "Kulturbox Magdeburg",
+    "beschreibung": "Alle Locations und deren Programme"
+  },
+  {
+    "url": "magdeburgticket.de",
+    "name": "Magdeburg Ticket",
+    "beschreibung": "Ticketverkauf, alle großen Venues"
+  },
+  {
+    "url": "theater-magdeburg.de/spielplan/spielplan",
+    "name": "Theater Magdeburg",
+    "beschreibung": "Oper, Schauspiel, Ballett, DomplatzOpenAir"
+  },
+  {
+    "url": "moritzhof-magdeburg.de",
+    "name": "Kulturzentrum Moritzhof",
+    "beschreibung": "Kino, Konzerte, Lesungen, Kleinkunst"
+  },
+  {
+    "url": "stadthalle-magdeburg.de",
+    "name": "Stadthalle Magdeburg",
+    "beschreibung": "Große Shows und Veranstaltungen"
+  },
+  {
+    "url": "elbauenpark.de/de/events",
+    "name": "Elbauenpark & Seebühne",
+    "beschreibung": "Open-Air Events, Seebühne, Familienevents"
+  },
+  {
+    "url": "mvgm.de/de/events",
+    "name": "MVGM (GETEC Arena, Messe, AMO)",
+    "beschreibung": "GETEC Arena, Messe Magdeburg, AMO Kulturhaus"
+  },
+  {
+    "url": "eventim.de/cityd/magdeburg-21",
+    "name": "Eventim Magdeburg",
+    "beschreibung": "Große Konzerte und Ticketverkauf"
+  },
+  {
+    "url": "bandsintown.com/c/magdeburg-germany",
+    "name": "Bandsintown Magdeburg",
+    "beschreibung": "Musik-Events und Konzerte"
+  },
+  {
+    "url": "kulturpur.de/buehnen/theater-magdeburg",
+    "name": "Kulturpur Theater Magdeburg",
+    "beschreibung": "Aggregierter Spielplan Theater Magdeburg"
+  },
+  {
+    "url": "volksstimme.de/magdeburg",
+    "name": "Volksstimme Magdeburg",
+    "beschreibung": "Lokalzeitung, regionale Events und Ankündigungen"
+  }
+]
