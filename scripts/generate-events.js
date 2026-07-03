@@ -11,7 +11,7 @@ const sources     = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
 const sourceList  = sources.map(s => `- ${s.url} (${s.name})`).join("\n");
 console.log(`📋 ${sources.length} Quellen geladen`);
 
-const PROMPT = `Suche jetzt im Web nach aktuellen Veranstaltungen in Magdeburg Sachsen-Anhalt Deutschland in den naechsten 60 Tagen. Benutze die Google-Suche um echte aktuelle Events zu finden. Suche nach: "Veranstaltungen Magdeburg 2026", "Konzerte Magdeburg Juli August 2026", "Flohmärkte Magdeburg 2026", "Theater Magdeburg Spielplan", "Events Magdeburg". Schreibe die gefundenen Veranstaltungen als JSON-Array. Jedes Element hat diese Felder: id (Zahl), name (Text), dateFrom (YYYY-MM-DD), dateTo (YYYY-MM-DD), sources (Quellenname), sourceUrl (URL oder null), description (2-3 Saetze), category (Musik oder Theater oder Sport oder Kultur oder Familie oder Flohmarkt oder Sonstiges), location (Ort in Magdeburg). Gib NUR das JSON-Array zurueck, kein anderer Text, keine Backticks, kein Markdown. Mindestens 20 Veranstaltungen.`;
+const PROMPT = `Suche jetzt im Web nach aktuellen Veranstaltungen in Magdeburg Sachsen-Anhalt Deutschland in den naechsten 60 Tagen. Suche nach: Veranstaltungen Magdeburg 2026, Konzerte Magdeburg Juli August 2026, Flohmärkte Magdeburg, Theater Magdeburg Spielplan, Events Magdeburg. Schreibe die gefundenen Veranstaltungen als JSON-Array. Jedes Element hat diese Felder: id (Zahl), name (Text), dateFrom (YYYY-MM-DD), dateTo (YYYY-MM-DD), sources (Quellenname als einfacher Text), sourceUrl (null), description (2 kurze Saetze ohne Sonderzeichen), category (Musik oder Theater oder Sport oder Kultur oder Familie oder Flohmarkt oder Sonstiges), location (Ort in Magdeburg). WICHTIG: sourceUrl immer null setzen. Gib NUR das JSON-Array zurueck, kein anderer Text, keine Backticks, kein Markdown. Mindestens 20 Veranstaltungen.`;
 
 function sanitizeJSON(text) {
   const start = text.indexOf('[');
@@ -50,11 +50,11 @@ function dedup(events) {
       if (base.dateFrom === other.dateFrom && similarity(base.name, other.name) > 0.6) {
         (other.sources||"").split(",").forEach(s => srcs.add(s.trim()));
         if ((other.description||"").length > (base.description||"").length) base.description = other.description;
-        if (!base.sourceUrl && other.sourceUrl) base.sourceUrl = other.sourceUrl;
         merged.add(j);
       }
     }
     base.sources = [...srcs].filter(Boolean).join(", ");
+    base.sourceUrl = null;
     result.push(base);
   }
   return result;
@@ -91,7 +91,6 @@ async function main() {
   if (response.error) throw new Error(`Gemini Fehler: ${response.error.message}`);
   const fullText = (response.candidates?.[0]?.content?.parts || []).map(p => p.text || "").join("\n");
   console.log("📝 Antwort erhalten, bereinige JSON...");
-  console.log("Rohtext (erste 300 Zeichen):", fullText.slice(0,300));
   const cleaned = sanitizeJSON(fullText);
   let events;
   try {
@@ -103,7 +102,7 @@ async function main() {
   }
   console.log(`✅ ${events.length} Events erhalten`);
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
-  events = events.map((e,i) => ({ ...e, id:i+1, sources:e.sources||e.source||"", category:validCats.includes(e.category)?e.category:"Sonstiges" }));
+  events = events.map((e,i) => ({ ...e, id:i+1, sources:e.sources||e.source||"", sourceUrl:null, category:validCats.includes(e.category)?e.category:"Sonstiges" }));
   const deduped = dedup(events);
   deduped.forEach((e,i) => e.id = i+1);
   console.log(`✅ ${deduped.length} Events nach Deduplizierung`);
