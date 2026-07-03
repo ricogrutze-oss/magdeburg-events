@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-03T22:40:12.928Z",
-  "count": 0,
+  "generated": "2026-07-03T22:44:01.323Z",
+  "count": 31,
   "sources": [
     "DATEs Stadtmagazin",
     "Landeshauptstadt Magdeburg",
@@ -23,5 +23,347 @@
     "Kulturpur Theater Magdeburg",
     "Volksstimme Magdeburg"
   ],
-  "events": []
+  "events": [
+    {
+      "id": 1,
+      "name": "Rodgers & Hammerstein's Oklahoma! - DomplatzOpenAir",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-07-12",
+      "sources": "KULTURpur.de, visitmagdeburg.de",
+      "description": "Das DomplatzOpenAir präsentiert das Musical 'Rodgers & Hammerstein's Oklahoma!' des Theater Magdeburg.",
+      "category": "Theater",
+      "location": "Domplatz, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 2,
+      "name": "Magdeburger Sonntags-Flohmarkt 2026",
+      "dateFrom": "2026-07-05",
+      "dateTo": "2026-07-05",
+      "sources": "Familienhaus Magdeburg",
+      "description": "Der größte Flohmarkt unter freiem Himmel mit Angeboten von privaten Händler*innen.",
+      "category": "Flohmarkt",
+      "location": "Wissenschaftshafen Sarajevo-Ufer, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 3,
+      "name": "Dies & Das & Flohmarkt",
+      "dateFrom": "2026-07-05",
+      "dateTo": "2026-07-05",
+      "sources": "Moritzhof Magdeburg",
+      "description": "Eine Sonderausgabe des Flohmarktes auf dem Moritzhof, passend zur Sommerzeit.",
+      "category": "Flohmarkt",
+      "location": "Hof, Moritzhof Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 4,
+      "name": "Führung durch das Bundesarchiv – Stasi-Unterlagen-Archiv Magdeburg",
+      "dateFrom": "2026-07-06",
+      "dateTo": "2026-07-06",
+      "sources": "radio SAW",
+      "description": "Eine kostenfreie Führung durch das Archiv und Bürgerberatung.",
+      "category": "Sonstiges",
+      "location": "Bundesarchiv – Stasi-Unterlagen-Archiv Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 5,
+      "name": "Junge Musik: Pfeifen, Flaschen und Gebläse - Orgelführung für Kinder",
+      "dateFrom": "2026-07-08",
+      "dateTo": "2026-07-08",
+      "sources": "Landeshauptstadt Magdeburg",
+      "description": "Eine Orgelführung speziell für Kinder im Gesellschaftshaus Magdeburg.",
+      "category": "Musik",
+      "location": "Gesellschaftshaus Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 6,
+      "name": "16. Jazz Nacht - Open Air",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "sources": "mvp.de",
+      "description": "Die 16. Jazz Nacht als Open Air Veranstaltung.",
+      "category": "Musik",
+      "location": "Festung Mark, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 7,
+      "name": "The Music of Hans Zimmer & Others",
+      "dateFrom": "2026-07-17",
+      "dateTo": "2026-07-17",
+      "sources": "oeticket.com",
+      "description": "Ein Konzert mit der Musik von Hans Zimmer und anderen Komponisten.",
+      "category": "Musik",
+      "location": "Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 8,
+      "name": "Der Herr der Ringe & Der Hobbit - Das Konzert",
+      "dateFrom": "2026-07-18",
+      "dateTo": "2026-07-18",
+      "sources": "oeticket.com",
+      "description": "Ein Konzert mit der Musik aus 'Der Herr der Ringe' und 'Der Hobbit'.",
+      "category": "Musik",
+      "location": "Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 9,
+      "name": "Flohtanz- Markt",
+      "dateFrom": "2026-07-18",
+      "dateTo": "2026-07-18",
+      "sources": "Familienhaus Magdeburg",
+      "description": "Ein Flohmarkt im Familienhaus im Park.",
+      "category": "Flohmarkt",
+      "location": "Familienhaus im Park Hohepfortestr., Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 10,
+      "name": "The Magical Music of Harry Potter",
+      "dateFrom": "2026-07-19",
+      "dateTo": "2026-07-19",
+      "sources": "oeticket.com",
+      "description": "Ein Konzert mit der magischen Musik aus den Harry Potter Filmen.",
+      "category": "Musik",
+      "location": "Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 11,
+      "name": "Kaffeekränzchen mit Eddie Weimann",
+      "dateFrom": "2026-07-19",
+      "dateTo": "2026-07-19",
+      "sources": "mvp.de",
+      "description": "Ein Konzert mit Liedermacher Eddie Weimann.",
+      "category": "Musik",
+      "location": "machwerk - KOMPAKT Medienzentrum, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 12,
+      "name": "Pink Floyd's The Dark Side of the Moon - Kultalbum live",
+      "dateFrom": "2026-07-30",
+      "dateTo": "2026-07-30",
+      "sources": "Eventfinder",
+      "description": "Das legendäre Pink Floyd-Album live auf der Bühne mit Musikern der Originaltourneen.",
+      "category": "Musik",
+      "location": "Seebühne Elbauenpark, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 13,
+      "name": "CIRCUS KRONE: FARBENSPIEL – Gold Edition",
+      "dateFrom": "2026-07-31",
+      "dateTo": "2026-08-09",
+      "sources": "Eventim, radio SAW",
+      "description": "Der Circus Krone präsentiert seine 'Farbenspiel – Gold Edition' Show.",
+      "category": "Sonstiges",
+      "location": "Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 14,
+      "name": "Riverside@Night 2026",
+      "dateFrom": "2026-08-01",
+      "dateTo": "2026-08-01",
+      "sources": "visitmagdeburg.de",
+      "description": "Magdeburg feiert die längste Musiknacht des Jahres an verschiedenen Orten entlang der Elbe.",
+      "category": "Musik",
+      "location": "Diverse Locations entlang der Elbe, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 15,
+      "name": "Magdeburger Sonntags-Flohmarkt 2026",
+      "dateFrom": "2026-08-02",
+      "dateTo": "2026-08-02",
+      "sources": "Familienhaus Magdeburg",
+      "description": "Der größte Flohmarkt unter freiem Himmel mit Angeboten von privaten Händler*innen.",
+      "category": "Flohmarkt",
+      "location": "Neben-Campus der Universität 'Otto von Guericke' Zschokkestraße, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 16,
+      "name": "Theater Poetenpack",
+      "dateFrom": "2026-08-05",
+      "dateTo": "2026-08-23",
+      "sources": "visitmagdeburg.de",
+      "description": "Theateraufführungen des Theater Poetenpack.",
+      "category": "Theater",
+      "location": "Möllenvogtei, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 17,
+      "name": "Florian Künstler - Alles nur geliehen - Singer-Songwriter Tour 2026/2027",
+      "dateFrom": "2026-08-07",
+      "dateTo": "2026-08-07",
+      "sources": "Eventfinder",
+      "description": "Florian Künstler präsentiert sein drittes Album 'Alles nur geliehen' auf seiner Open-Air-Tour.",
+      "category": "Musik",
+      "location": "MDCC Parkbühne im Elbauenpark, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 18,
+      "name": "Michaelsteiner Klosterkonzert I Johann Sebastian Bach: „Vita Christi“",
+      "dateFrom": "2026-08-08",
+      "dateTo": "2026-08-08",
+      "sources": "mvp.de",
+      "description": "Ein Klassik-Konzert mit Werken von Johann Sebastian Bach.",
+      "category": "Musik",
+      "location": "Dom St. Mauritius und Katharina zu Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 19,
+      "name": "Mr. Police | Magdeburg | machwerk",
+      "dateFrom": "2026-08-08",
+      "dateTo": "2026-08-08",
+      "sources": "mvp.de",
+      "description": "Ein Konzert im machwerk - KOMPAKT Medienzentrum.",
+      "category": "Musik",
+      "location": "machwerk - KOMPAKT Medienzentrum, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 20,
+      "name": "Maggie Reilly - Sommer Open Airs",
+      "dateFrom": "2026-08-14",
+      "dateTo": "2026-08-14",
+      "sources": "mvp.de",
+      "description": "Ein Sommer Open Air Konzert mit Maggie Reilly.",
+      "category": "Musik",
+      "location": "Festung Mark, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 21,
+      "name": "Mono Inc. - Open Airs 2026 - Special Guests: Sotiria & Alienare",
+      "dateFrom": "2026-08-15",
+      "dateTo": "2026-08-15",
+      "sources": "mvp.de, Eventfinder",
+      "description": "Dark Rock Sommererlebnis mit Mono Inc. und Special Guests.",
+      "category": "Musik",
+      "location": "Festung Mark, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 22,
+      "name": "Ausstellung „Die Stasi in Sachsen Anhalt“",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-08-21",
+      "sources": "radio SAW",
+      "description": "Eine Ausstellung des Bundesarchivs, die Einblicke in das Handeln und Wirken des Staatssicherheitsdienstes in der Region gibt.",
+      "category": "Sonstiges",
+      "location": "Stasi Unterlagen-Archiv Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 23,
+      "name": "Nino de Angelo - Un Momento - Italienische Nächte Open Air",
+      "dateFrom": "2026-08-28",
+      "dateTo": "2026-08-28",
+      "sources": "Eventim, Eventfinder",
+      "description": "Ein Open Air Konzert mit Nino de Angelo.",
+      "category": "Musik",
+      "location": "MDCC Parkbühne im Elbauenpark, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 24,
+      "name": "27. OMMMA – Ost-Mobil-Meeting-Magdeburg präsentiert von Röstfein",
+      "dateFrom": "2026-08-29",
+      "dateTo": "2026-08-29",
+      "sources": "visitmagdeburg.de",
+      "description": "Das Ost-Mobil-Meeting-Magdeburg präsentiert von Röstfein.",
+      "category": "Sonstiges",
+      "location": "Elbauenpark Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 25,
+      "name": "Weiße Flotte: Fahrt in den Abend mit Gaumenfreuden",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-08-31",
+      "sources": "visitmagdeburg.de",
+      "description": "Eine Schifffahrt auf der Elbe mit kulinarischen Genüssen.",
+      "category": "Sonstiges",
+      "location": "Weiße Flotte, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 26,
+      "name": "Weiße Flotte: Fahrt ins Wochenende mit Loungemusik und Cocktails",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-08-31",
+      "sources": "visitmagdeburg.de",
+      "description": "Eine entspannte Schifffahrt am Wochenende mit Loungemusik und Cocktails.",
+      "category": "Sonstiges",
+      "location": "Weiße Flotte, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 27,
+      "name": "Theater in der Grünen Zitadelle: Was machen Sie eigentlich tagsüber?",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-07-31",
+      "sources": "Theater in der Grünen Zitadelle",
+      "description": "Eine Aufführung im Theater in der Grünen Zitadelle.",
+      "category": "Theater",
+      "location": "Theater in der Grünen Zitadelle, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 28,
+      "name": "Theater in der Grünen Zitadelle: Du sammeln - ich jagen!",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-07-31",
+      "sources": "Theater in der Grünen Zitadelle",
+      "description": "Eine Aufführung im Theater in der Grünen Zitadelle.",
+      "category": "Theater",
+      "location": "Theater in der Grünen Zitadelle, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 29,
+      "name": "Theater in der Grünen Zitadelle: TONI KRAHL - Zugabe!",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-07-31",
+      "sources": "Theater in der Grünen Zitadelle",
+      "description": "Eine Aufführung im Theater in der Grünen Zitadelle.",
+      "category": "Theater",
+      "location": "Theater in der Grünen Zitadelle, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 30,
+      "name": "Theater in der Grünen Zitadelle: DER G-PUNKT IST KEIN EINSCHALTKNOPF!",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-07-31",
+      "sources": "Theater in der Grünen Zitadelle",
+      "description": "Eine Aufführung im Theater in der Grünen Zitadelle.",
+      "category": "Theater",
+      "location": "Theater in der Grünen Zitadelle, Magdeburg",
+      "sourceUrl": null
+    },
+    {
+      "id": 31,
+      "name": "Puppentheater Magdeburg: Hofspektakel: Decamerone",
+      "dateFrom": "2026-07-03",
+      "dateTo": "2026-08-31",
+      "sources": "KOMPAKT MEDIA",
+      "description": "Sommerliche Theatermagie unter freiem Himmel nach Boccaccio.",
+      "category": "Theater",
+      "location": "Puppentheater Magdeburg",
+      "sourceUrl": null
+    }
+  ]
 }
