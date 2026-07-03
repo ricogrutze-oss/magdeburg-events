@@ -1,6 +1,4 @@
 // generate-events.js — Magdeburg Events
-// Nutzt Google Gemini API mit Web-Suche
-
 const https = require("https");
 const fs    = require("fs");
 const path  = require("path");
@@ -13,27 +11,23 @@ const sources     = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
 const sourceList  = sources.map(s => `- ${s.url} (${s.name})`).join("\n");
 console.log(`📋 ${sources.length} Quellen geladen`);
 
-const PROMPT = `Du bist ein Veranstaltungs-Assistent für Magdeburg (Sachsen-Anhalt, Deutschland).
-Suche im Web nach aktuellen Veranstaltungen und Events in Magdeburg in den naechsten 60 Tagen.
-
-Durchsuche diese Quellen:
-${sourceList}
-
-Suche auch nach: Flohmärkte Magdeburg, Märkte Magdeburg, Festivals Magdeburg, Open-Air Events Magdeburg.
-
-DUPLIKATE: Gleiches Event auf mehreren Seiten nur EINMAL aufnehmen, alle Quellen kommasepariert im Feld sources.
-
-WICHTIG: Gib NUR ein reines JSON-Array zurück. KEIN Markdown, KEINE Backticks, KEINE Erklärungen.
-
-Format:
-[{"id":1,"name":"Name","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","sources":"Quelle1, Quelle2","sourceUrl":"https://... oder null","description":"Beschreibung","category":"Musik|Theater|Sport|Kultur|Familie|Flohmarkt|Sonstiges","location":"Ort"}]
-
-Mindestens 25 echte Veranstaltungen. Nur das JSON-Array.`;
+const PROMPT = `Du bist ein Veranstaltungs-Assistent fuer Magdeburg (Sachsen-Anhalt, Deutschland). Suche im Web nach aktuellen Veranstaltungen in Magdeburg in den naechsten 60 Tagen. Durchsuche diese Quellen: ${sourceList} Suche auch nach: Flohmärkte Magdeburg, Maerkte Magdeburg, Festivals Magdeburg. DUPLIKATE: Gleiches Event nur EINMAL, alle Quellen kommasepariert im Feld sources. Gib NUR ein JSON-Array zurueck, KEIN Markdown, KEINE Backticks. Format: [{"id":1,"name":"Name","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","sources":"Quelle1","sourceUrl":"https://... oder null","description":"Beschreibung","category":"Musik|Theater|Sport|Kultur|Familie|Flohmarkt|Sonstiges","location":"Ort"}] Mindestens 25 echte Veranstaltungen.`;
 
 function sanitizeJSON(text) {
-  return text
+  const start = text.indexOf('[');
+  const end = text.lastIndexOf(']');
+  if (start === -1 || end === -1) return "[]";
+  let json = text.slice(start, end + 1);
+  json = json
     .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, " ")
-    .replace(/\r/g, " ");
+    .replace(/\r\n/g, " ")
+    .replace(/\r/g, " ")
+    .replace(/\n/g, " ")
+    .replace(/\t/g, " ")
+    .replace(/\\n/g, " ")
+    .replace(/\\t/g, " ")
+    .replace(/\\r/g, " ");
+  return json;
 }
 
 function similarity(a, b) {
@@ -91,15 +85,21 @@ function callGemini() {
 }
 
 async function main() {
-  console.log("🔍 Starte Veranstaltungssuche für Magdeburg (Gemini)...");
+  console.log("🔍 Starte Veranstaltungssuche Magdeburg (Gemini)...");
   console.log("📅", new Date().toISOString());
   const response = await callGemini();
   if (response.error) throw new Error(`Gemini Fehler: ${response.error.message}`);
   const fullText = (response.candidates?.[0]?.content?.parts || []).map(p => p.text || "").join("\n");
+  console.log("📝 Antwort erhalten, bereinige JSON...");
   const cleaned = sanitizeJSON(fullText);
-  const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) { console.error("❌ Kein JSON gefunden:", fullText.slice(0,400)); process.exit(1); }
-  let events = JSON.parse(jsonMatch[0]);
+  let events;
+  try {
+    events = JSON.parse(cleaned);
+  } catch(e) {
+    console.error("❌ JSON Parse Fehler:", e.message);
+    console.error("Bereinigter Text (erste 300 Zeichen):", cleaned.slice(0,300));
+    process.exit(1);
+  }
   console.log(`✅ ${events.length} Events erhalten`);
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
   events = events.map((e,i) => ({ ...e, id:i+1, sources:e.sources||e.source||"", category:validCats.includes(e.category)?e.category:"Sonstiges" }));
