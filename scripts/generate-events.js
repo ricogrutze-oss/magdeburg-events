@@ -11,22 +11,22 @@ const sources     = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
 const sourceList  = sources.map(s => `- ${s.url} (${s.name})`).join("\n");
 console.log(`📋 ${sources.length} Quellen geladen`);
 
-const PROMPT = `Suche jetzt im Web nach aktuellen Veranstaltungen in Magdeburg Sachsen-Anhalt Deutschland in den naechsten 60 Tagen. Suche nach: Veranstaltungen Magdeburg 2026, Konzerte Magdeburg Juli August 2026, Flohmärkte Magdeburg, Theater Magdeburg Spielplan, Events Magdeburg. Schreibe die gefundenen Veranstaltungen als JSON-Array. Jedes Element hat diese Felder: id (Zahl), name (Text), dateFrom (YYYY-MM-DD), dateTo (YYYY-MM-DD), sources (Quellenname als einfacher Text), sourceUrl (null), description (2 kurze Saetze ohne Sonderzeichen), category (Musik oder Theater oder Sport oder Kultur oder Familie oder Flohmarkt oder Sonstiges), location (Ort in Magdeburg). WICHTIG: sourceUrl immer null setzen. Gib NUR das JSON-Array zurueck, kein anderer Text, keine Backticks, kein Markdown. Mindestens 20 Veranstaltungen.`;
+const PROMPT = `Suche im Web nach aktuellen Veranstaltungen in Magdeburg Sachsen-Anhalt Deutschland in den naechsten 60 Tagen. Suche nach: Veranstaltungen Magdeburg 2026, Konzerte Magdeburg Juli August 2026, Flohmärkte Magdeburg, Theater Magdeburg Spielplan. Gib NUR ein JSON-Array zurueck ohne Markdown ohne Backticks. Format pro Element: {"id":1,"name":"Eventname","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","sources":"Quellenname","description":"Kurze Beschreibung","category":"Musik","location":"Ort Magdeburg"} Mindestens 20 Veranstaltungen.`;
 
-function sanitizeJSON(text) {
+function sanitizeAndFix(text) {
   const start = text.indexOf('[');
   const end = text.lastIndexOf(']');
   if (start === -1 || end === -1) return "[]";
   let json = text.slice(start, end + 1);
+  // Alle Steuerzeichen und Zeilenumbrüche entfernen
   json = json
     .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, " ")
-    .replace(/\r\n/g, " ")
-    .replace(/\r/g, " ")
-    .replace(/\n/g, " ")
-    .replace(/\t/g, " ")
-    .replace(/\\n/g, " ")
-    .replace(/\\t/g, " ")
-    .replace(/\\r/g, " ");
+    .replace(/\r\n/g, " ").replace(/\r/g, " ").replace(/\n/g, " ")
+    .replace(/\t/g, " ").replace(/\\n/g, " ").replace(/\\t/g, " ");
+  // URLs aus JSON-Strings entfernen (häufigste Fehlerquelle)
+  json = json.replace(/"sourceUrl"\s*:\s*"[^"]*"/g, '"sourceUrl": null');
+  // Mehrfache Leerzeichen reduzieren
+  json = json.replace(/\s+/g, " ");
   return json;
 }
 
@@ -54,7 +54,6 @@ function dedup(events) {
       }
     }
     base.sources = [...srcs].filter(Boolean).join(", ");
-    base.sourceUrl = null;
     result.push(base);
   }
   return result;
@@ -91,18 +90,24 @@ async function main() {
   if (response.error) throw new Error(`Gemini Fehler: ${response.error.message}`);
   const fullText = (response.candidates?.[0]?.content?.parts || []).map(p => p.text || "").join("\n");
   console.log("📝 Antwort erhalten, bereinige JSON...");
-  const cleaned = sanitizeJSON(fullText);
+  const cleaned = sanitizeAndFix(fullText);
   let events;
   try {
     events = JSON.parse(cleaned);
   } catch(e) {
     console.error("❌ JSON Parse Fehler:", e.message);
-    console.error("Bereinigter Text:", cleaned.slice(0,300));
+    console.error("Bereinigter Text:", cleaned.slice(0,400));
     process.exit(1);
   }
   console.log(`✅ ${events.length} Events erhalten`);
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
-  events = events.map((e,i) => ({ ...e, id:i+1, sources:e.sources||e.source||"", sourceUrl:null, category:validCats.includes(e.category)?e.category:"Sonstiges" }));
+  events = events.map((e,i) => ({
+    ...e,
+    id: i+1,
+    sources: e.sources||e.source||"",
+    sourceUrl: null,
+    category: validCats.includes(e.category) ? e.category : "Sonstiges"
+  }));
   const deduped = dedup(events);
   deduped.forEach((e,i) => e.id = i+1);
   console.log(`✅ ${deduped.length} Events nach Deduplizierung`);
