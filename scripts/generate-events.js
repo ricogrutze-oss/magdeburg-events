@@ -13,39 +13,31 @@ console.log(`📋 ${sources.length} Quellen geladen`);
 
 const today = new Date().toISOString().split("T")[0];
 
-const PROMPT = `Du bist ein Veranstaltungs-Assistent für Magdeburg (Sachsen-Anhalt, Deutschland).
-Heute ist der ${today}. Suche mit dem Web-Search-Tool nach aktuellen Veranstaltungen in Magdeburg in den nächsten 60 Tagen.
+const SYSTEM = `Du bist ein Daten-Extraktions-Assistent. Du antwortest AUSSCHLIESSLICH mit einem JSON-Array. Kein Text davor, kein Text danach, keine Erklärungen, keine Markdown-Formatierung. Nur das reine JSON-Array.`;
 
-Durchsuche ALLE folgenden Quellen:
-${sourceList}
+const PROMPT = `Suche mit dem Web-Search-Tool nach aktuellen Veranstaltungen in Magdeburg (Sachsen-Anhalt) in den nächsten 60 Tagen ab ${today}.
 
-Suche auch gezielt nach:
-- Flohmärkte Magdeburg ${today.slice(0,7)}
-- Konzerte Magdeburg ${today.slice(0,7)}
-- Festivals Magdeburg ${today.slice(0,7)}
-- Theater Magdeburg Spielplan
-- Open-Air Events Magdeburg
+Durchsuche: ${sourceList}
 
-DUPLIKATE: Gleiches Event auf mehreren Seiten nur EINMAL, alle Quellen kommasepariert in "sources".
+Antworte NUR mit einem JSON-Array. Kein Text davor oder danach.
 
-Gib NUR ein reines JSON-Array zurück. KEIN Markdown, KEINE Backticks, KEINE Erklärungen.
+Format:
+[{"id":1,"name":"Name","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","timeStart":"HH:MM oder null","timeEnd":"HH:MM oder null","sources":"Quellenname","sourceUrl":"URL oder null","description":"Beschreibung","category":"Musik|Theater|Sport|Kultur|Familie|Flohmarkt|Sonstiges","location":"Ort"}]
 
-Jedes Objekt:
-{
-  "id": <Zahl>,
-  "name": "<Veranstaltungsname>",
-  "dateFrom": "<YYYY-MM-DD>",
-  "dateTo": "<YYYY-MM-DD>",
-  "timeStart": "<HH:MM oder null wenn unbekannt>",
-  "timeEnd": "<HH:MM oder null wenn unbekannt>",
-  "sources": "<Quellenname 1, Quellenname 2>",
-  "sourceUrl": "<direkte URL zur Veranstaltungsseite oder null>",
-  "description": "<2-4 Sätze Beschreibung aus der Quelle>",
-  "category": "<Musik|Theater|Sport|Kultur|Familie|Flohmarkt|Sonstiges>",
-  "location": "<Veranstaltungsort in Magdeburg>"
+Mindestens 25 echte Veranstaltungen. NUR das JSON-Array.`;
+
+function fixJson(text) {
+  const start = text.indexOf('[');
+  const end = text.lastIndexOf(']');
+  if (start === -1 || end === -1) return null;
+  let json = text.slice(start, end + 1);
+  json = json
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, " ")
+    .replace(/\r\n/g, " ").replace(/\r/g, " ").replace(/\n/g, " ")
+    .replace(/\t/g, " ").replace(/\\n/g, " ").replace(/\\t/g, " ")
+    .replace(/\s+/g, " ");
+  return json;
 }
-
-Mindestens 25 echte Veranstaltungen mit korrekten Daten. Nur das JSON-Array zurückgeben.`;
 
 function similarity(a, b) {
   const w = s => new Set(s.toLowerCase().replace(/[^a-zäöü0-9 ]/g,"").split(/\s+/).filter(w=>w.length>2));
@@ -65,7 +57,6 @@ function dedup(events) {
       if (merged.has(j)) continue;
       const other = events[j];
       if (base.dateFrom === other.dateFrom && similarity(base.name, other.name) > 0.6) {
-        console.log(`  🔀 Duplikat: "${base.name}" + "${other.name}"`);
         (other.sources||"").split(",").forEach(s => srcs.add(s.trim()));
         if ((other.description||"").length > (base.description||"").length) base.description = other.description;
         if (!base.sourceUrl && other.sourceUrl) base.sourceUrl = other.sourceUrl;
@@ -84,10 +75,10 @@ function callClaude() {
     const body = JSON.stringify({
       model: "claude-sonnet-4-6",
       max_tokens: 8000,
+      system: SYSTEM,
       tools: [{ type: "web_search_20250305", name: "web_search" }],
       messages: [{ role: "user", content: PROMPT }],
     });
-
     const options = {
       hostname: "api.anthropic.com",
       path: "/v1/messages",
@@ -99,14 +90,10 @@ function callClaude() {
         "Content-Length": Buffer.byteLength(body),
       },
     };
-
     const req = https.request(options, (res) => {
       let data = "";
       res.on("data", chunk => data += chunk);
-      res.on("end", () => {
-        try { resolve(JSON.parse(data)); }
-        catch(e) { reject(new Error("Parse error: " + data.slice(0,200))); }
-      });
+      res.on("end", () => { try { resolve(JSON.parse(data)); } catch(e) { reject(new Error(data.slice(0,200))); } });
     });
     req.on("error", reject);
     req.write(body);
@@ -122,43 +109,36 @@ async function main() {
   if (response.error) throw new Error(response.error.message);
 
   const fullText = (response.content || []).map(b => b.type === "text" ? b.text : "").join("\n");
-  const jsonMatch = fullText.match(/\[[\s\S]*\]/);
-if (!jsonMatch) { console.error("❌ Kein JSON gefunden:", fullText.slice(0,400)); process.exit(1); }
+  console.log("📝 Rohtext (erste 200 Zeichen):", fullText.slice(0,200));
 
-let jsonStr = jsonMatch[0]
-  .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, " ")
-  .replace(/\r\n/g, " ").replace(/\r/g, " ").replace(/\n/g, " ")
-  .replace(/\t/g, " ").replace(/\s+/g, " ");
+  const fixed = fixJson(fullText);
+  if (!fixed) { console.error("❌ Kein JSON gefunden"); process.exit(1); }
 
-let events = JSON.parse(jsonStr);
+  let events;
+  try {
+    events = JSON.parse(fixed);
+  } catch(e) {
+    console.error("❌ JSON Fehler:", e.message);
+    console.error("JSON:", fixed.slice(0,400));
+    process.exit(1);
+  }
+
   console.log(`✅ ${events.length} Events erhalten`);
-
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
   events = events.map((e,i) => ({
-    ...e,
-    id: i+1,
-    sources: e.sources || e.source || "",
-    timeStart: e.timeStart || null,
-    timeEnd: e.timeEnd || null,
+    ...e, id:i+1,
+    sources: e.sources||e.source||"",
+    timeStart: e.timeStart||null,
+    timeEnd: e.timeEnd||null,
     category: validCats.includes(e.category) ? e.category : "Sonstiges",
   }));
 
-  console.log("🔀 Duplikat-Erkennung...");
   const deduped = dedup(events);
-  const removed = events.length - deduped.length;
   deduped.forEach((e,i) => e.id = i+1);
-  console.log(`✅ ${removed} Duplikate entfernt → ${deduped.length} Events`);
+  console.log(`✅ ${deduped.length} Events nach Deduplizierung`);
 
-  const output = {
-    generated: new Date().toISOString(),
-    count: deduped.length,
-    duplicatesRemoved: removed,
-    sources: sources.map(s => s.name),
-    events: deduped,
-  };
-
+  const output = { generated: new Date().toISOString(), count: deduped.length, sources: sources.map(s=>s.name), events: deduped };
   fs.writeFileSync(path.join(__dirname, "..", "events.json"), JSON.stringify(output, null, 2), "utf8");
-  console.log(`✅ events.json geschrieben: ${deduped.length} Events`);
   console.log("🎉 Fertig!");
 }
 
