@@ -326,11 +326,11 @@ function filteredEvents() {
   });
 }
 function eventsForDay(date) {
-  const d = new Date(date); d.setHours(0,0,0,0);
+  const dStr = isoDate(date);
   return filteredEvents().filter(e => {
-    const f = new Date(e.dateFrom); f.setHours(0,0,0,0);
-    const t = new Date(e.dateTo);   t.setHours(0,0,0,0);
-    return d >= f && d <= t;
+    const fStr = isoDate(e.dateFrom);
+    const tStr = isoDate(e.dateTo);
+    return dStr >= fStr && dStr <= tStr;
   });
 }
 
