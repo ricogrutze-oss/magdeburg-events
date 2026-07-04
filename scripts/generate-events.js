@@ -123,9 +123,14 @@ async function main() {
 
   const fullText = (response.content || []).map(b => b.type === "text" ? b.text : "").join("\n");
   const jsonMatch = fullText.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) { console.error("❌ Kein JSON gefunden:", fullText.slice(0,400)); process.exit(1); }
+if (!jsonMatch) { console.error("❌ Kein JSON gefunden:", fullText.slice(0,400)); process.exit(1); }
 
-  let events = JSON.parse(jsonMatch[0]);
+let jsonStr = jsonMatch[0]
+  .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, " ")
+  .replace(/\r\n/g, " ").replace(/\r/g, " ").replace(/\n/g, " ")
+  .replace(/\t/g, " ").replace(/\s+/g, " ");
+
+let events = JSON.parse(jsonStr);
   console.log(`✅ ${events.length} Events erhalten`);
 
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
