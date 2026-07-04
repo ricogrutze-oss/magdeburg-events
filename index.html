@@ -53,9 +53,12 @@
     .cal-day { border-radius: 7px; padding: 3px 2px; min-height: 50px; display: flex; flex-direction: column; align-items: center; }
     .cal-day.has-events { cursor: pointer; }
     .cal-day.has-events:hover { background: #eef2ff; }
-    .cal-day.is-today { background: #e8f0fe; outline: 2px solid #0f3460; }
+    .cal-day.is-today { background: #ffd700 !important; outline: 2px solid #e6a000; font-weight: 800; }
+    .cal-day.is-today .day-num { color: #1a1a2e; }
     .cal-day.is-selected { background: #0f3460 !important; color: #fff; }
+    .cal-day.is-selected .day-num { color: #fff; }
     .cal-day.is-weekend { background: #fafafe; }
+    .cal-day.is-past { opacity: 0.35; }
     .day-num { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
     .day-dots { display: flex; gap: 2px; flex-wrap: wrap; justify-content: center; }
     .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
@@ -308,7 +311,14 @@ async function loadEvents() {
 function isoDate(d) { return d.toISOString().split("T")[0]; }
 function fmtDate(d) { return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}); }
 function combinedEvents() { return [...allEvents,...manualEvents]; }
-function filteredEvents() { return combinedEvents().filter(e => filterCat==="Alle" || e.category===filterCat); }
+function filteredEvents() {
+  return combinedEvents().filter(e => {
+    if (filterCat!=="Alle" && e.category!==filterCat) return false;
+    // Vergangene Events ausblenden (dateTo muss >= heute sein)
+    const t = new Date(e.dateTo); t.setHours(0,0,0,0);
+    return t >= today;
+  });
+}
 function eventsForDay(date) {
   const d = new Date(date); d.setHours(0,0,0,0);
   return filteredEvents().filter(e => {
@@ -361,11 +371,13 @@ function calendarHTML() {
     const isToday=isoDate(today)===iso;
     const isSel=selectedDay&&isoDate(selectedDay)===iso;
     const isWeekend=date.getDay()===0||date.getDay()===6;
+    const isPast=date<today&&!isToday;
     let cls="cal-day";
-    if(dayEvs.length) cls+=" has-events";
+    if(dayEvs.length&&!isPast) cls+=" has-events";
     if(isToday) cls+=" is-today";
     if(isSel) cls+=" is-selected";
-    if(isWeekend) cls+=" is-weekend";
+    if(isWeekend&&!isToday) cls+=" is-weekend";
+    if(isPast) cls+=" is-past";
     const dots=dayEvs.slice(0,4).map(e=>`<span class="dot" style="background:${CATEGORY_COLORS[e.category]||'#666'}" title="${e.name}"></span>`).join("")+(dayEvs.length>4?`<span class="dot-more">+${dayEvs.length-4}</span>`:"");
     cells+=`<div class="${cls}" data-date="${iso}"><div class="day-num">${d}</div><div class="day-dots">${dots}</div></div>`;
   }
@@ -431,7 +443,9 @@ function bindEvents() {
   document.querySelectorAll(".cal-day.has-events").forEach(el=>{
     el.addEventListener("click",()=>{
       const iso=el.dataset.date;
-      const d=new Date(iso+"T00:00:00");
+      const parts=iso.split("-");
+      const d=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+      d.setHours(0,0,0,0);
       selectedDay=(selectedDay&&isoDate(selectedDay)===iso)?null:d;
       render();
     });
