@@ -208,7 +208,8 @@ let filterCat="Alle", view="kalender";
 let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
 let selectedDay=null, expandedId=null, deferredPrompt=null;
 
-const today = new Date(); today.setHours(0,0,0,0);
+const now = new Date();
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault(); deferredPrompt = e;
@@ -308,7 +309,12 @@ async function loadEvents() {
   }
 }
 
-function isoDate(d) { return d.toISOString().split("T")[0]; }
+function isoDate(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
 function fmtDate(d) { return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}); }
 function combinedEvents() { return [...allEvents,...manualEvents]; }
 function filteredEvents() {
