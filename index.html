@@ -440,13 +440,18 @@ function listHTML() {
 
 function eventCardHTML(e) {
   const col=CATEGORY_COLORS[e.category]||"#666";
-  const multi=isoDate(e.dateFrom)!==isoDate(e.dateTo);
-  const dateStr=fmtDate(e.dateFrom)+(multi?" – "+fmtDate(e.dateTo):"");
+  const isMulti=isoDate(e.dateFrom)!==isoDate(e.dateTo);
+  const dateStr=fmtDate(e.dateFrom)+(isMulti?" – "+fmtDate(e.dateTo):"");
   const timeStr=e.timeStart?`<span class="event-time">🕐 ${e.timeStart}${e.timeEnd?' – '+e.timeEnd:''} Uhr</span>`:"";
+  const sourceStr=(e.sources||e.source||"");
   const deleteBtn=e.manual?`<button style="background:none;border:1px solid #fcc;color:#c00;border-radius:5px;padding:2px 7px;font-size:11px;cursor:pointer;margin-left:4px" data-delete="${e.id}" onclick="event.stopPropagation()">🗑</button>`:"";
   return `<div class="event-card" style="border-left-color:${col}" data-id="${e.id}">
     <div class="event-top">
-      <div class="event-meta"><span class="cat-tag" style="background:${col}">${e.category}</span>${deleteBtn}</div>
+      <div class="event-meta">
+        <span class="cat-tag" style="background:${col}">${e.category}</span>
+        ${sourceStr?`<span style="font-size:11px;color:#888;">📌 ${sourceStr}</span>`:""}
+        ${deleteBtn}
+      </div>
       <button class="cal-export-btn" data-export="${e.id}" onclick="event.stopPropagation()">📅 Kalender</button>
     </div>
     <div class="event-name">${e.name}</div>
