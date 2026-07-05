@@ -4,102 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Magdeburg Events</title>
-  <meta name="description" content="Veranstaltungskalender für Magdeburg – automatisch aktualisiert" />
   <meta name="theme-color" content="#1a1a2e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="MD Events" />
   <link rel="manifest" href="manifest.json" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f2f8; color: #1a1a2e; min-height: 100vh; }
-    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; padding: 20px; }
-    .header-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .logo { font-size: 24px; font-weight: 700; }
-    .subtitle { font-size: 13px; color: #a0b4cc; margin-top: 3px; }
-    #last-update { font-size: 12px; color: #7a9bbf; margin-top: 2px; }
-    .header-btns { display: flex; gap: 8px; flex-wrap: wrap; }
-    .btn-primary { padding: 9px 18px; border-radius: 8px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 14px; }
-    .btn-secondary { padding: 9px 14px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #fff; font-weight: 600; cursor: pointer; font-size: 14px; }
-    .body { max-width: 980px; margin: 0 auto; padding: 20px 16px; }
-    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; padding: 16px 20px; }
+    .header-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .logo { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; color: #a0b4cc; margin-top: 2px; }
+    #last-update { font-size: 11px; color: #7a9bbf; margin-top: 2px; }
+    .header-btns { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .btn-primary { padding: 8px 14px; border-radius: 8px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    .btn-secondary { padding: 8px 12px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    .user-pill { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 10px; }
+    .user-avatar { width: 24px; height: 24px; border-radius: 50%; }
+    .user-name { font-size: 12px; color: #fff; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .logout-btn { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 16px; padding: 0 2px; }
+
+    .body { max-width: 980px; margin: 0 auto; padding: 16px; }
+
+    /* LOGIN SCREEN */
+    .login-screen { text-align: center; padding: 60px 20px; }
+    .login-screen h2 { font-size: 24px; margin-bottom: 10px; }
+    .login-screen p { color: #666; margin-bottom: 30px; font-size: 15px; }
+    .google-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 10px; border: 2px solid #dde; background: #fff; cursor: pointer; font-size: 15px; font-weight: 600; color: #1a1a2e; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .google-btn img { width: 20px; height: 20px; }
+
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
     .view-toggle { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid #c8d0e0; }
-    .view-toggle button { padding: 8px 16px; border: none; background: #fff; cursor: pointer; font-weight: 500; font-size: 13px; }
+    .view-toggle button { padding: 7px 14px; border: none; background: #fff; cursor: pointer; font-weight: 500; font-size: 13px; }
     .view-toggle button.active { background: #0f3460; color: #fff; }
-    .cat-filter { display: flex; gap: 5px; flex-wrap: wrap; }
-    .cat-btn { padding: 5px 11px; border-radius: 20px; border: 1.5px solid; cursor: pointer; font-size: 12px; font-weight: 600; background: transparent; }
+    .cat-filter { display: flex; gap: 4px; flex-wrap: wrap; }
+    .cat-btn { padding: 4px 10px; border-radius: 20px; border: 1.5px solid; cursor: pointer; font-size: 11px; font-weight: 600; background: transparent; }
     .cat-btn.active { color: #fff !important; }
-    .stats-bar { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
-    .stat-chip { background: #fff; border: 1px solid #dde; border-radius: 20px; padding: 3px 12px; font-size: 12px; color: #555; }
-    .sources-btn { background: none; border: none; color: #0f3460; font-size: 12px; cursor: pointer; text-decoration: underline; padding: 0; }
+    .stats-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+    .stat-chip { background: #fff; border: 1px solid #dde; border-radius: 20px; padding: 2px 10px; font-size: 11px; color: #555; }
+    .sources-btn { background: none; border: none; color: #0f3460; font-size: 11px; cursor: pointer; text-decoration: underline; padding: 0; }
+
     .loading-box { text-align: center; padding: 60px 20px; }
-    .spinner { width: 44px; height: 44px; border: 4px solid #dde; border-top-color: #0f3460; border-radius: 50%; margin: 0 auto 16px; animation: spin 1s linear infinite; }
+    .spinner { width: 40px; height: 40px; border: 4px solid #dde; border-top-color: #0f3460; border-radius: 50%; margin: 0 auto 14px; animation: spin 1s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .error-box { background: #fff0f0; border-radius: 10px; color: #c00; padding: 24px; text-align: center; }
+    .error-box { background: #fff0f0; border-radius: 10px; color: #c00; padding: 20px; text-align: center; }
     .empty-box { text-align: center; padding: 40px; color: #aaa; }
-    .calendar-section { display: flex; gap: 16px; flex-wrap: wrap; }
-    .cal-card { background: #fff; border-radius: 14px; padding: 18px; flex: 1 1 320px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
-    .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-    .cal-title { font-weight: 700; font-size: 17px; }
-    .nav-btn { background: none; border: 1px solid #dde; border-radius: 6px; width: 30px; height: 30px; cursor: pointer; font-size: 16px; color: #555; }
+
+    /* CALENDAR */
+    .calendar-section { display: flex; gap: 14px; flex-wrap: wrap; }
+    .cal-card { background: #fff; border-radius: 14px; padding: 16px; flex: 1 1 300px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .cal-title { font-weight: 700; font-size: 16px; }
+    .nav-btn { background: none; border: 1px solid #dde; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 15px; color: #555; }
     .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
-    .dow-label { text-align: center; font-size: 11px; font-weight: 600; color: #888; padding: 3px 0; }
-    .cal-day { border-radius: 7px; padding: 3px 2px; min-height: 50px; display: flex; flex-direction: column; align-items: center; }
+    .dow-label { text-align: center; font-size: 10px; font-weight: 600; color: #888; padding: 2px 0; }
+    .cal-day { border-radius: 6px; padding: 2px 1px; min-height: 46px; display: flex; flex-direction: column; align-items: center; transition: background 0.1s; }
     .cal-day.has-events { cursor: pointer; }
     .cal-day.has-events:hover { background: #eef2ff; }
-    .cal-day.is-today { background: #ffd700 !important; outline: 2px solid #e6a000; font-weight: 800; }
-    .cal-day.is-today .day-num { color: #1a1a2e; }
-    .cal-day.is-selected { background: #0f3460 !important; color: #fff; }
+    .cal-day.is-today { background: #ffd700 !important; outline: 2px solid #e6a000; }
+    .cal-day.is-today .day-num { color: #1a1a2e; font-weight: 800; }
+    .cal-day.is-selected { background: #0f3460 !important; }
     .cal-day.is-selected .day-num { color: #fff; }
     .cal-day.is-weekend { background: #fafafe; }
-    .cal-day.is-past { opacity: 0.35; }
-    .day-num { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+    .cal-day.is-past { opacity: 0.3; pointer-events: none; }
+    .day-num { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
     .day-dots { display: flex; gap: 2px; flex-wrap: wrap; justify-content: center; }
-    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
-    .dot-more { font-size: 9px; color: #888; font-weight: 700; }
-    .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; padding-top: 10px; border-top: 1px solid #eee; }
-    .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
-    .day-panel { background: #fff; border-radius: 14px; padding: 14px; flex: 1 1 300px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); max-height: 560px; overflow-y: auto; }
-    .day-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #eee; font-size: 14px; font-weight: 700; }
-    .day-count { background: #e8f0fe; color: #0f3460; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; }
-    .cal-hint { color: #aaa; font-size: 13px; padding: 20px 0; }
-    .list-section { display: flex; flex-direction: column; gap: 22px; }
-    .list-date-header { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
-    .list-date-label { font-weight: 700; font-size: 14px; }
-    .list-date-count { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 1px 8px; font-size: 11px; font-weight: 700; }
-    .event-card { background: #fff; border-radius: 10px; padding: 11px 13px; margin-bottom: 7px; border-left: 4px solid #ccc; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-    .event-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; }
-    .event-meta { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; }
-    .cat-tag { font-size: 10px; font-weight: 700; color: #fff; border-radius: 4px; padding: 2px 6px; text-transform: uppercase; }
-    .event-name { font-weight: 700; font-size: 14px; color: #1a1a2e; margin-bottom: 5px; line-height: 1.3; }
-    .event-date-row { font-size: 12px; color: #555; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-    .event-time { background: #e8f0fe; color: #0f3460; border-radius: 4px; padding: 1px 6px; font-weight: 600; font-size: 11px; }
+    .dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+    .dot-more { font-size: 8px; color: #888; font-weight: 700; }
+    .legend { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; padding-top: 8px; border-top: 1px solid #eee; }
+    .legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #555; }
+
+    .day-panel { background: #fff; border-radius: 14px; padding: 12px; flex: 1 1 280px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); max-height: 520px; overflow-y: auto; }
+    .day-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 7px; border-bottom: 1px solid #eee; font-size: 13px; font-weight: 700; }
+    .day-count { background: #e8f0fe; color: #0f3460; border-radius: 12px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+    .cal-hint { color: #aaa; font-size: 12px; padding: 16px 0; }
+    .divider { display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; }
+    .divider-line { flex: 1; height: 1px; background: #e0e4ee; }
+    .divider-text { font-size: 10px; color: #aaa; white-space: nowrap; }
+
+    .list-section { display: flex; flex-direction: column; gap: 20px; }
+    .list-date-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .list-date-label { font-weight: 700; font-size: 13px; }
+    .list-date-count { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 1px 7px; font-size: 10px; font-weight: 700; }
+
+    /* EVENT CARD */
+    .event-card { background: #fff; border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; border-left: 4px solid #ccc; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+    .event-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; gap: 6px; }
+    .event-meta { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; flex: 1; }
+    .cat-tag { font-size: 9px; font-weight: 700; color: #fff; border-radius: 4px; padding: 2px 5px; text-transform: uppercase; flex-shrink: 0; }
+    .source-tag { font-size: 10px; color: #888; }
+    .event-actions { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
+    .bookmark-btn { background: none; border: none; cursor: pointer; font-size: 16px; padding: 0; line-height: 1; }
+    .bookmark-btn.bookmarked { color: #e94560; }
+    .bookmark-btn:not(.bookmarked) { color: #ccc; }
+    .cal-export-btn { background: none; border: 1px solid #dde; border-radius: 5px; padding: 2px 6px; font-size: 10px; color: #0f3460; cursor: pointer; white-space: nowrap; }
+    .event-name { font-weight: 700; font-size: 13px; color: #1a1a2e; margin-bottom: 3px; line-height: 1.3; }
+    .event-date-row { font-size: 11px; color: #555; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .event-time { background: #e8f0fe; color: #0f3460; border-radius: 4px; padding: 1px 5px; font-weight: 600; font-size: 10px; }
     .event-location { color: #777; }
-    .cal-export-btn { background: none; border: 1px solid #dde; border-radius: 5px; padding: 3px 8px; font-size: 11px; color: #0f3460; cursor: pointer; white-space: nowrap; }
-    .cal-export-btn:hover { background: #e8f0fe; }
+
+    /* MODAL */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
-    .modal { background: #fff; border-radius: 14px; padding: 24px; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; }
-    .modal h2 { font-size: 18px; margin-bottom: 16px; }
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 4px; }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 8px 10px; border: 1.5px solid #dde; border-radius: 7px; font-size: 14px; font-family: inherit; }
-    .form-group textarea { height: 80px; resize: vertical; }
-    .form-row { display: flex; gap: 10px; }
+    .modal { background: #fff; border-radius: 14px; padding: 22px; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; }
+    .modal h2 { font-size: 17px; margin-bottom: 14px; }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 3px; }
+    .form-group input, .form-group select { width: 100%; padding: 8px 10px; border: 1.5px solid #dde; border-radius: 7px; font-size: 14px; font-family: inherit; }
+    .form-row { display: flex; gap: 8px; }
     .form-row .form-group { flex: 1; }
-    .modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
-    .btn-cancel { padding: 8px 16px; border-radius: 7px; border: 1px solid #dde; background: #fff; cursor: pointer; font-size: 14px; }
-    .btn-save { padding: 8px 18px; border-radius: 7px; border: none; background: #0f3460; color: #fff; font-weight: 600; cursor: pointer; font-size: 14px; }
+    .modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+    .btn-cancel { padding: 7px 14px; border-radius: 7px; border: 1px solid #dde; background: #fff; cursor: pointer; font-size: 13px; }
+    .btn-save { padding: 7px 16px; border-radius: 7px; border: none; background: #0f3460; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
     .sources-list { list-style: none; }
-    .sources-list li { padding: 7px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+    .sources-list li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 12px; }
     .sources-list li:last-child { border-bottom: none; }
     .qr-container { text-align: center; padding: 10px 0; }
-    .qr-container img { max-width: 200px; border-radius: 8px; }
-    .qr-url { font-size: 12px; color: #888; margin-top: 8px; word-break: break-all; }
-    .qr-hint { font-size: 13px; color: #444; margin-top: 10px; line-height: 1.5; }
-    #install-banner { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; background: #0f3460; color: #fff; border-radius: 12px; padding: 12px 16px; z-index: 50; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-    #install-banner span { flex: 1; font-size: 14px; }
-    #install-btn { padding: 8px 14px; border-radius: 7px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
-    #install-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 18px; padding: 0 4px; }
+    .qr-container img { max-width: 180px; border-radius: 8px; }
+    .qr-url { font-size: 11px; color: #888; margin-top: 8px; word-break: break-all; }
+    .qr-hint { font-size: 12px; color: #444; margin-top: 8px; line-height: 1.5; }
+
+    #install-banner { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; background: #0f3460; color: #fff; border-radius: 12px; padding: 10px 14px; z-index: 50; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    #install-banner span { flex: 1; font-size: 13px; }
+    #install-btn { padding: 6px 12px; border-radius: 7px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 12px; }
+    #install-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 18px; padding: 0 2px; }
+
+    /* GEMERKT BADGE */
+    .bookmarks-empty { text-align: center; padding: 40px 20px; color: #aaa; }
+    .bookmarks-empty .icon { font-size: 48px; margin-bottom: 10px; }
   </style>
 </head>
 <body>
@@ -111,16 +143,27 @@
       <div class="subtitle">Automatisch aus 20+ Quellen — alle 14 Tage aktualisiert</div>
       <div id="last-update"></div>
     </div>
-    <div class="header-btns">
-      <button class="btn-secondary" onclick="showQR()">📱 QR</button>
-      <button class="btn-secondary" onclick="showSources()">📋 Quellen</button>
-      <button class="btn-primary" onclick="showAddModal()">+ Hinzufügen</button>
+    <div class="header-btns" id="header-btns">
+      <button class="btn-secondary" onclick="showQR()">📱</button>
+      <button class="btn-secondary" onclick="showSources()">📋</button>
+      <button class="btn-primary" onclick="showAddModal()">+ Neu</button>
+      <div id="user-area"></div>
     </div>
   </div>
 </header>
 
 <div class="body">
-  <div id="loading" class="loading-box"><div class="spinner"></div><div style="font-size:18px;font-weight:600">Lade Veranstaltungen…</div></div>
+  <div id="loading" class="loading-box"><div class="spinner"></div><div style="font-size:16px;font-weight:600">Lade…</div></div>
+  <div id="login-screen" class="login-screen" style="display:none">
+    <div style="font-size:48px;margin-bottom:16px">🏰</div>
+    <h2>Magdeburg Events</h2>
+    <p>Melde dich an um Events zu merken<br>und mit Freunden zu teilen</p>
+    <button class="google-btn" onclick="loginWithGoogle()">
+      <img src="https://www.google.com/favicon.ico" alt="Google" />
+      Mit Google anmelden
+    </button>
+    <p style="margin-top:20px;font-size:12px;color:#aaa">Oder <a href="#" onclick="skipLogin()" style="color:#0f3460">ohne Anmeldung fortfahren</a></p>
+  </div>
   <div id="error" class="error-box" style="display:none"></div>
   <div id="app" style="display:none"></div>
 </div>
@@ -131,13 +174,14 @@
   <button id="install-close" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
 </div>
 
+<!-- ADD MODAL -->
 <div id="add-modal" class="modal-overlay" style="display:none">
   <div class="modal">
     <h2>➕ Veranstaltung hinzufügen</h2>
     <div class="form-group"><label>Name *</label><input id="m-name" type="text" placeholder="Eventname" /></div>
     <div class="form-row">
-      <div class="form-group"><label>Datum von *</label><input id="m-from" type="date" /></div>
-      <div class="form-group"><label>Datum bis</label><input id="m-to" type="date" /></div>
+      <div class="form-group"><label>Von *</label><input id="m-from" type="date" /></div>
+      <div class="form-group"><label>Bis</label><input id="m-to" type="date" /></div>
     </div>
     <div class="form-row">
       <div class="form-group"><label>Uhrzeit von</label><input id="m-time-start" type="time" /></div>
@@ -154,26 +198,122 @@
   </div>
 </div>
 
+<!-- SOURCES MODAL -->
 <div id="sources-modal" class="modal-overlay" style="display:none">
   <div class="modal">
     <h2>📋 Durchsuchte Quellen</h2>
-    <p style="font-size:13px;color:#666;margin-bottom:14px">Neue Quellen in <code>sources.json</code> im GitHub-Repo hinzufügen.</p>
+    <p style="font-size:12px;color:#666;margin-bottom:12px">Neue Quellen in <code>sources.json</code> im GitHub-Repo hinzufügen.</p>
     <ul class="sources-list" id="sources-list"></ul>
     <div class="modal-btns"><button class="btn-save" onclick="closeModal('sources-modal')">Schließen</button></div>
   </div>
 </div>
 
+<!-- QR MODAL -->
 <div id="qr-modal" class="modal-overlay" style="display:none">
   <div class="modal">
-    <h2>📱 App teilen & installieren</h2>
+    <h2>📱 App teilen</h2>
     <div class="qr-container">
       <img id="qr-img" src="" alt="QR Code" />
       <div class="qr-url" id="qr-url"></div>
-      <div class="qr-hint">QR-Code scannen → App öffnet sich → Im Browser-Menü „Zum Homescreen hinzufügen" wählen</div>
+      <div class="qr-hint">QR-Code scannen → App öffnet sich → „Zum Homescreen hinzufügen"</div>
     </div>
     <div class="modal-btns"><button class="btn-save" onclick="closeModal('qr-modal')">Schließen</button></div>
   </div>
 </div>
+
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBOCUk-kt8_fU-tSBX8HHrO8KCr57T8pWA",
+  authDomain: "magdeburg-events-75a3a.firebaseapp.com",
+  databaseURL: "https://magdeburg-events-75a3a-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "magdeburg-events-75a3a",
+  storageBucket: "magdeburg-events-75a3a.firebasestorage.app",
+  messagingSenderId: "441697888738",
+  appId: "1:441697888738:web:55312e6753e59bf51071bb",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+const provider = new GoogleAuthProvider();
+
+// Globale Variablen
+window._fb = { auth, db, ref, set, get, onValue, signOut, provider, signInWithPopup };
+window._currentUser = null;
+window._bookmarks = {};
+
+// Auth State
+onAuthStateChanged(auth, async (user) => {
+  window._currentUser = user;
+  if (user) {
+    // User eingeloggt — Bookmarks laden
+    const userArea = document.getElementById('user-area');
+    userArea.innerHTML = `<div class="user-pill">
+      ${user.photoURL ? `<img src="${user.photoURL}" class="user-avatar" />` : ''}
+      <span class="user-name">${user.displayName || user.email}</span>
+      <button class="logout-btn" onclick="window._logout()" title="Abmelden">✕</button>
+    </div>`;
+
+    // Bookmarks aus Firebase laden
+    const bmRef = ref(db, `bookmarks/${user.uid}`);
+    onValue(bmRef, (snap) => {
+      window._bookmarks = snap.val() || {};
+      if (window._render) window._render();
+    });
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    if (window._loadEvents) window._loadEvents();
+  } else {
+    // Nicht eingeloggt
+    document.getElementById('user-area').innerHTML = `<button class="btn-secondary" onclick="window._login()">🔑 Anmelden</button>`;
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'block';
+  }
+});
+
+window._login = async () => {
+  try { await signInWithPopup(auth, provider); } catch(e) { console.error(e); }
+};
+window._logout = async () => {
+  await signOut(auth);
+  window._bookmarks = {};
+  window._currentUser = null;
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'block';
+};
+window.loginWithGoogle = window._login;
+window.skipLogin = () => {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  if (window._loadEvents) window._loadEvents();
+};
+
+window._toggleBookmark = async (eventId, eventData) => {
+  if (!window._currentUser) { alert('Bitte zuerst anmelden um Events zu merken!'); return; }
+  const uid = window._currentUser.uid;
+  const bmRef = ref(db, `bookmarks/${uid}/${eventId}`);
+  if (window._bookmarks[eventId]) {
+    await set(bmRef, null);
+  } else {
+    await set(bmRef, {
+      name: eventData.name,
+      dateFrom: eventData.dateFrom,
+      dateTo: eventData.dateTo,
+      timeStart: eventData.timeStart || null,
+      category: eventData.category,
+      location: eventData.location || '',
+      savedAt: new Date().toISOString(),
+    });
+  }
+};
+</script>
 
 <script>
 const CATEGORY_COLORS = {
@@ -188,30 +328,19 @@ let filterCat="Alle", view="kalender";
 let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
 let selectedDay=null, deferredPrompt=null;
 
-// Heute als lokales Datum — kein UTC-Problem
 const _n = new Date();
 const today = new Date(_n.getFullYear(), _n.getMonth(), _n.getDate());
-const todayStr = isoLocal(today);
 
-// Datum zu YYYY-MM-DD ohne UTC-Versatz
 function isoLocal(d) {
   return d.getFullYear() + "-" +
     String(d.getMonth()+1).padStart(2,"0") + "-" +
     String(d.getDate()).padStart(2,"0");
 }
-
-// Haupt-isoDate Funktion — immer lokal
 function isoDate(d) { return isoLocal(d); }
+function fmtDate(d) { return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}); }
+function strToDate(s) { const p=s.split("-"); return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2])); }
 
-function fmtDate(d) {
-  return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"});
-}
-
-// String zu lokalem Date-Objekt (ohne UTC-Versatz)
-function strToDate(s) {
-  const p = s.split("-");
-  return new Date(parseInt(p[0]), parseInt(p[1])-1, parseInt(p[2]));
-}
+const todayStr = isoLocal(today);
 
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault(); deferredPrompt = e;
@@ -220,50 +349,39 @@ window.addEventListener('beforeinstallprompt', e => {
 function installPWA() {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(() => {
-    deferredPrompt = null;
-    document.getElementById('install-banner').style.display = 'none';
-  });
-}
-function showQR() {
-  const url = window.location.href.split('?')[0];
-  document.getElementById('qr-img').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
-  document.getElementById('qr-url').textContent = url;
-  document.getElementById('qr-modal').style.display = 'flex';
+  deferredPrompt.userChoice.then(() => { deferredPrompt=null; document.getElementById('install-banner').style.display='none'; });
 }
 
 function exportICS(event) {
   const fmt = d => d.replace(/-/g,'');
-  const dateFrom = fmt(event.dateFrom);
-  let dtStart, dtEnd;
+  const df = fmt(event.dateFrom);
+  let dtS, dtE;
   if (event.timeStart) {
-    const t = event.timeStart.replace(':','') + '00';
-    dtStart = dateFrom + 'T' + t;
-    const h = event.timeEnd ? event.timeEnd.replace(':','')+'00' : String(parseInt(event.timeStart.slice(0,2))+2).padStart(2,'0')+event.timeStart.slice(3).replace(':','')+'00';
-    dtEnd = dateFrom + 'T' + h;
+    const t=event.timeStart.replace(':','')+'00';
+    dtS=df+'T'+t;
+    const h=event.timeEnd?event.timeEnd.replace(':','')+'00':String(parseInt(event.timeStart.slice(0,2))+2).padStart(2,'0')+event.timeStart.slice(3).replace(':','')+'00';
+    dtE=df+'T'+h;
   } else {
-    const nd = strToDate(event.dateTo || event.dateFrom);
-    nd.setDate(nd.getDate()+1);
-    dtStart = dateFrom;
-    dtEnd = fmt(isoLocal(nd));
+    const nd=strToDate(event.dateTo||event.dateFrom); nd.setDate(nd.getDate()+1);
+    dtS=df; dtE=fmt(isoLocal(nd));
   }
-  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Magdeburg Events//DE','BEGIN:VEVENT',
-    `UID:${event.id}-${dateFrom}@magdeburg-events`,`SUMMARY:${event.name}`,
-    event.timeStart ? `DTSTART:${dtStart}` : `DTSTART;VALUE=DATE:${dtStart}`,
-    event.timeStart ? `DTEND:${dtEnd}` : `DTEND;VALUE=DATE:${dtEnd}`,
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Magdeburg Events//DE','BEGIN:VEVENT',
+    `UID:${event.id}-${df}@magdeburg-events`,`SUMMARY:${event.name}`,
+    event.timeStart?`DTSTART:${dtS}`:`DTSTART;VALUE=DATE:${dtS}`,
+    event.timeStart?`DTEND:${dtE}`:`DTEND;VALUE=DATE:${dtE}`,
     `LOCATION:${event.location||'Magdeburg'}`,`CATEGORIES:${event.category}`,
     'END:VEVENT','END:VCALENDAR'].join('\r\n');
-  const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href=url; a.download=`${event.name.replace(/[^a-zA-Z0-9]/g,'-').slice(0,40)}.ics`; a.click();
+  const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url;
+  a.download=`${event.name.replace(/[^a-zA-Z0-9]/g,'-').slice(0,40)}.ics`; a.click();
   URL.revokeObjectURL(url);
 }
 
 async function loadEvents() {
   try {
     const res = await fetch("events.json?t=" + Date.now());
-    if (!res.ok) throw new Error("events.json nicht gefunden (HTTP " + res.status + ")");
+    if (!res.ok) throw new Error("events.json nicht gefunden");
     const data = await res.json();
     allEvents = (data.events || []).map(e => ({
       ...e,
@@ -279,28 +397,26 @@ async function loadEvents() {
     try {
       const saved = localStorage.getItem("magdeburg_manual_v2");
       if (saved) manualEvents = JSON.parse(saved).map(e => ({
-        ...e, dateFrom: strToDate(e.dateFrom), dateTo: strToDate(e.dateTo||e.dateFrom), manual:true
+        ...e, dateFrom:strToDate(e.dateFrom), dateTo:strToDate(e.dateTo||e.dateFrom), manual:true
       }));
     } catch(e) {}
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("app").style.display = "block";
     render();
   } catch(err) {
-    document.getElementById("loading").style.display = "none";
-    const el = document.getElementById("error");
-    el.style.display = "block";
-    el.innerHTML = `<p>⚠️ ${err.message}</p>`;
+    document.getElementById("error").style.display = "block";
+    document.getElementById("error").innerHTML = `<p>⚠️ ${err.message}</p>`;
   }
 }
+window._loadEvents = loadEvents;
 
 function combinedEvents() { return [...allEvents,...manualEvents]; }
-
 function filteredEvents() {
-  return combinedEvents().filter(e => {
-    if (filterCat!=="Alle" && e.category!==filterCat) return false;
-    // Vergangene Events: nur ausblenden wenn dateTo VOR heute
-    return isoDate(e.dateTo) >= todayStr;
-  });
+  let evs = combinedEvents().filter(e => isoDate(e.dateTo) >= todayStr);
+  if (filterCat === "Gemerkt") {
+    const bm = window._bookmarks || {};
+    return evs.filter(e => bm[e.id]);
+  }
+  if (filterCat !== "Alle") evs = evs.filter(e => e.category === filterCat);
+  return evs;
 }
 
 function eventsForDay(dateStr) {
@@ -313,60 +429,64 @@ function eventsForDay(dateStr) {
 }
 
 function render() {
-  document.getElementById("app").innerHTML = toolbarHTML() + statsHTML() +
-    (view==="kalender" ? calendarHTML() : listHTML());
+  const app = document.getElementById("app");
+  if (!app || app.style.display === 'none') return;
+  app.innerHTML = toolbarHTML() + statsHTML() +
+    (view==="kalender" ? calendarHTML() : view==="gemerkt" ? bookmarksHTML() : listHTML());
   bindEvents();
 }
+window._render = render;
 
 function toolbarHTML() {
-  const cats = ["Alle",...Object.keys(CATEGORY_COLORS)];
+  const cats = ["Alle",...Object.keys(CATEGORY_COLORS),"Gemerkt"];
   return `<div class="toolbar">
     <div class="view-toggle">
       <button onclick="setView('kalender')" class="${view==='kalender'?'active':''}">📅 Kalender</button>
       <button onclick="setView('liste')" class="${view==='liste'?'active':''}">☰ Liste</button>
+      <button onclick="setView('gemerkt')" class="${view==='gemerkt'?'active':''}">⭐ Gemerkt</button>
     </div>
     <div class="cat-filter">
       ${cats.map(c=>{
-        const col=c==="Alle"?"#1a1a2e":CATEGORY_COLORS[c];
+        const col=c==="Alle"?"#1a1a2e":c==="Gemerkt"?"#e94560":(CATEGORY_COLORS[c]||"#666");
         const act=filterCat===c;
-        return `<button class="cat-btn${act?' active':''}" style="border-color:${col};${act?'background:'+col+';color:#fff;':''}" onclick="setCat('${c}')">${c}</button>`;
+        return `<button class="cat-btn${act?' active':''}" style="border-color:${col};${act?'background:'+col+';color:#fff;':''}" onclick="setCat('${c}')">${c==="Gemerkt"?'⭐ ':''} ${c}</button>`;
       }).join("")}
     </div>
   </div>`;
 }
 
 function statsHTML() {
+  const bmCount = Object.keys(window._bookmarks||{}).length;
   return `<div class="stats-bar">
     <span class="stat-chip">${filteredEvents().length} Veranstaltungen</span>
+    ${bmCount > 0 ? `<span class="stat-chip">⭐ ${bmCount} gemerkt</span>` : ''}
     <button class="sources-btn" onclick="showSources()">📋 ${sourcesData.length||20} Quellen</button>
   </div>`;
 }
 
 function calendarHTML() {
-  const dim = new Date(calYear,calMonth+1,0).getDate();
-  const firstDow = new Date(calYear,calMonth,1).getDay();
-  const offset = firstDow===0?6:firstDow-1;
+  const dim=new Date(calYear,calMonth+1,0).getDate();
+  const firstDow=new Date(calYear,calMonth,1).getDay();
+  const offset=firstDow===0?6:firstDow-1;
   let cells="";
   for(let i=0;i<offset;i++) cells+="<div></div>";
   for(let d=1;d<=dim;d++) {
-    const date = new Date(calYear,calMonth,d);
-    const iso = isoLocal(date);
-    const { all: dayEvs } = eventsForDay(iso);
-    const isToday = iso===todayStr;
-    const isSel = selectedDay && selectedDay===iso;
-    const isWeekend = date.getDay()===0||date.getDay()===6;
-    const isPast = iso<todayStr;
+    const date=new Date(calYear,calMonth,d);
+    const iso=isoLocal(date);
+    const {all:dayEvs}=eventsForDay(iso);
+    const isToday=iso===todayStr, isSel=selectedDay===iso;
+    const isWeekend=date.getDay()===0||date.getDay()===6, isPast=iso<todayStr;
     let cls="cal-day";
     if(dayEvs.length&&!isPast) cls+=" has-events";
     if(isToday) cls+=" is-today";
     if(isSel) cls+=" is-selected";
     if(isWeekend&&!isToday) cls+=" is-weekend";
     if(isPast) cls+=" is-past";
-    const dots=dayEvs.slice(0,4).map(e=>`<span class="dot" style="background:${CATEGORY_COLORS[e.category]||'#666'}" title="${e.name}"></span>`).join("")+(dayEvs.length>4?`<span class="dot-more">+${dayEvs.length-4}</span>`:"");
+    const dots=dayEvs.slice(0,4).map(e=>`<span class="dot" style="background:${CATEGORY_COLORS[e.category]||'#666'}"></span>`).join("")+(dayEvs.length>4?`<span class="dot-more">+${dayEvs.length-4}</span>`:"");
     cells+=`<div class="${cls}" data-date="${iso}"><div class="day-num">${d}</div><div class="day-dots">${dots}</div></div>`;
   }
   const legend=Object.entries(CATEGORY_COLORS).map(([c,col])=>`<div class="legend-item"><span class="dot" style="background:${col}"></span>${c}</div>`).join("");
-  const panel=selectedDay?dayPanelHTML():`<div class="cal-hint">← Auf einen Tag mit Punkten klicken</div>`;
+  const panel=selectedDay?dayPanelHTML():`<div class="cal-hint">← Auf einen Tag klicken</div>`;
   return `<div class="calendar-section">
     <div class="cal-card">
       <div class="cal-nav">
@@ -381,61 +501,64 @@ function calendarHTML() {
 }
 
 function dayPanelHTML() {
-  const {single, multi} = eventsForDay(selectedDay);
-  const d = strToDate(selectedDay);
-  const total = single.length + multi.length;
-  let html = `<div class="day-panel">
-    <div class="day-panel-header"><span>${fmtDate(d)}</span><span class="day-count">${total} Event${total!==1?'s':''}</span></div>`;
-  if (single.length) {
-    html += single.map(e => eventCardHTML(e)).join("");
+  const {single,multi}=eventsForDay(selectedDay);
+  const d=strToDate(selectedDay);
+  const total=single.length+multi.length;
+  let html=`<div class="day-panel"><div class="day-panel-header"><span>${fmtDate(d)}</span><span class="day-count">${total}</span></div>`;
+  html+=single.map(e=>eventCardHTML(e)).join("");
+  if(multi.length){
+    html+=`<div class="divider"><div class="divider-line"></div><span class="divider-text">Laufende Veranstaltungen</span><div class="divider-line"></div></div>`;
+    html+=multi.map(e=>eventCardHTML(e)).join("");
   }
-  if (multi.length) {
-    html += `<div style="margin:10px 0 8px;display:flex;align-items:center;gap:8px">
-      <div style="flex:1;height:1px;background:#e0e4ee"></div>
-      <span style="font-size:11px;color:#aaa;white-space:nowrap">Laufende Veranstaltungen</span>
-      <div style="flex:1;height:1px;background:#e0e4ee"></div>
-    </div>`;
-    html += multi.map(e => eventCardHTML(e)).join("");
-  }
-  html += `</div>`;
-  return html;
+  return html+`</div>`;
 }
 
 function listHTML() {
-  const evs = filteredEvents();
-  // Alle relevanten Datumstrings sammeln
-  const dateSet = new Set();
-  evs.forEach(e => {
-    const cur = strToDate(isoDate(e.dateFrom));
-    const end = strToDate(isoDate(e.dateTo));
-    const start = cur < today ? today : cur;
-    const s = new Date(start);
-    while(isoLocal(s) <= isoDate(end)) {
-      dateSet.add(isoLocal(s));
-      s.setDate(s.getDate()+1);
-    }
+  const evs=filteredEvents();
+  const dateSet=new Set();
+  evs.forEach(e=>{
+    const cur=strToDate(isoDate(e.dateFrom));
+    const end=strToDate(isoDate(e.dateTo));
+    const start=cur<today?today:cur;
+    const s=new Date(start);
+    while(isoLocal(s)<=isoDate(end)){dateSet.add(isoLocal(s));s.setDate(s.getDate()+1);}
   });
-  const dates = [...dateSet].sort();
+  const dates=[...dateSet].sort();
   if(!dates.length) return `<div class="empty-box">Keine Veranstaltungen gefunden.</div>`;
-  return `<div class="list-section">${dates.map(iso => {
-    const {single, multi} = eventsForDay(iso);
-    if(!single.length && !multi.length) return "";
-    const d = strToDate(iso);
-    const label = d.toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long"});
-    const total = single.length + multi.length;
-    let html = `<div><div class="list-date-header"><span class="list-date-label">${label}</span><span class="list-date-count">${total}</span></div>`;
-    html += single.map(e => eventCardHTML(e)).join("");
-    if(multi.length) {
-      html += `<div style="margin:8px 0 6px;display:flex;align-items:center;gap:8px">
-        <div style="flex:1;height:1px;background:#e0e4ee"></div>
-        <span style="font-size:11px;color:#aaa;white-space:nowrap">Laufende Veranstaltungen</span>
-        <div style="flex:1;height:1px;background:#e0e4ee"></div>
-      </div>`;
-      html += multi.map(e => eventCardHTML(e)).join("");
+  return `<div class="list-section">${dates.map(iso=>{
+    const {single,multi}=eventsForDay(iso);
+    if(!single.length&&!multi.length) return "";
+    const d=strToDate(iso);
+    const label=d.toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long"});
+    const total=single.length+multi.length;
+    let html=`<div><div class="list-date-header"><span class="list-date-label">${label}</span><span class="list-date-count">${total}</span></div>`;
+    html+=single.map(e=>eventCardHTML(e)).join("");
+    if(multi.length){
+      html+=`<div class="divider"><div class="divider-line"></div><span class="divider-text">Laufende Veranstaltungen</span><div class="divider-line"></div></div>`;
+      html+=multi.map(e=>eventCardHTML(e)).join("");
     }
-    html += `</div>`;
-    return html;
+    return html+`</div>`;
   }).join("")}</div>`;
+}
+
+function bookmarksHTML() {
+  const bm = window._bookmarks || {};
+  const bmIds = Object.keys(bm);
+  if (!bmIds.length) return `<div class="bookmarks-empty"><div class="icon">⭐</div><p>Noch keine Events gemerkt</p><p style="font-size:12px;margin-top:6px">Tippe auf ☆ bei einem Event um es zu merken</p></div>`;
+
+  // Gemerkten Events aus allEvents holen + Firebase-Daten
+  const bmEvents = bmIds.map(id => {
+    const e = combinedEvents().find(e => String(e.id) === String(id));
+    if (e) return e;
+    // Aus Firebase-Daten nehmen falls Event nicht mehr in aktueller Liste
+    const fbData = bm[id];
+    return { id, ...fbData, dateFrom: strToDate(fbData.dateFrom), dateTo: strToDate(fbData.dateTo||fbData.dateFrom), fromFirebase: true };
+  }).filter(Boolean).sort((a,b) => isoDate(a.dateFrom).localeCompare(isoDate(b.dateFrom)));
+
+  return `<div class="list-section">
+    <div style="font-size:13px;color:#666;margin-bottom:4px">⭐ ${bmEvents.length} gemerkte Veranstaltungen</div>
+    ${bmEvents.map(e=>eventCardHTML(e)).join("")}
+  </div>`;
 }
 
 function eventCardHTML(e) {
@@ -443,16 +566,22 @@ function eventCardHTML(e) {
   const isMulti=isoDate(e.dateFrom)!==isoDate(e.dateTo);
   const dateStr=fmtDate(e.dateFrom)+(isMulti?" – "+fmtDate(e.dateTo):"");
   const timeStr=e.timeStart?`<span class="event-time">🕐 ${e.timeStart}${e.timeEnd?' – '+e.timeEnd:''} Uhr</span>`:"";
-  const sourceStr=(e.sources||e.source||"");
-  const deleteBtn=e.manual?`<button style="background:none;border:1px solid #fcc;color:#c00;border-radius:5px;padding:2px 7px;font-size:11px;cursor:pointer;margin-left:4px" data-delete="${e.id}" onclick="event.stopPropagation()">🗑</button>`:"";
+  const sourceStr=e.sources||e.source||"";
+  const isBookmarked = !!(window._bookmarks||{})[e.id];
+  const deleteBtn=e.manual?`<button style="background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:0" data-delete="${e.id}" onclick="event.stopPropagation()">🗑</button>`:"";
   return `<div class="event-card" style="border-left-color:${col}" data-id="${e.id}">
     <div class="event-top">
       <div class="event-meta">
         <span class="cat-tag" style="background:${col}">${e.category}</span>
-        ${sourceStr?`<span style="font-size:11px;color:#888;">📌 ${sourceStr}</span>`:""}
+        ${sourceStr?`<span class="source-tag">📌 ${sourceStr}</span>`:""}
         ${deleteBtn}
       </div>
-      <button class="cal-export-btn" data-export="${e.id}" onclick="event.stopPropagation()">📅 Kalender</button>
+      <div class="event-actions">
+        <button class="bookmark-btn ${isBookmarked?'bookmarked':''}" data-bookmark="${e.id}" onclick="event.stopPropagation()" title="${isBookmarked?'Gemerkt — klicken zum Entfernen':'Merken'}">
+          ${isBookmarked?'⭐':'☆'}
+        </button>
+        <button class="cal-export-btn" data-export="${e.id}" onclick="event.stopPropagation()">📅</button>
+      </div>
     </div>
     <div class="event-name">${e.name}</div>
     <div class="event-date-row">📅 ${dateStr} ${timeStr} ${e.location?`<span class="event-location">· 📍 ${e.location}</span>`:""}
@@ -468,12 +597,20 @@ function bindEvents() {
       render();
     });
   });
+  document.querySelectorAll("[data-bookmark]").forEach(btn=>{
+    btn.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const id=parseInt(btn.dataset.bookmark);
+      const e=combinedEvents().find(e=>e.id===id);
+      if(e) window._toggleBookmark(id, {...e, dateFrom:isoDate(e.dateFrom), dateTo:isoDate(e.dateTo)});
+    });
+  });
   document.querySelectorAll("[data-export]").forEach(btn=>{
     btn.addEventListener("click",ev=>{
       ev.stopPropagation();
       const id=parseInt(btn.dataset.export);
       const e=combinedEvents().find(e=>e.id===id);
-      if(e) exportICS({...e, dateFrom:isoDate(e.dateFrom), dateTo:isoDate(e.dateTo)});
+      if(e) exportICS({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)});
     });
   });
   document.querySelectorAll("[data-delete]").forEach(btn=>{
@@ -482,7 +619,7 @@ function bindEvents() {
       const id=parseInt(btn.dataset.delete);
       if(confirm("Löschen?")) {
         manualEvents=manualEvents.filter(e=>e.id!==id);
-        try { localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)})))); } catch(e){}
+        try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
         render();
       }
     });
@@ -490,7 +627,11 @@ function bindEvents() {
 }
 
 function setView(v){view=v;selectedDay=null;render();}
-function setCat(c){filterCat=c;render();}
+function setCat(c){
+  filterCat=c;
+  if(c==="Gemerkt") view="gemerkt";
+  render();
+}
 function prevMonth(){if(calMonth===0){calMonth=11;calYear--;}else calMonth--;render();}
 function nextMonth(){if(calMonth===11){calMonth=0;calYear++;}else calMonth++;render();}
 function closeModal(id){document.getElementById(id).style.display='none';}
@@ -517,7 +658,7 @@ function saveManualEvent(){
     manual:true,
   };
   manualEvents.push(ev);
-  try { localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)})))); } catch(e){}
+  try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
   closeModal('add-modal');
   render();
 }
@@ -528,12 +669,18 @@ function showSources(){
   document.getElementById("sources-modal").style.display="flex";
 }
 
+function showQR(){
+  const url=window.location.href.split('?')[0];
+  document.getElementById('qr-img').src=`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(url)}`;
+  document.getElementById('qr-url').textContent=url;
+  document.getElementById('qr-modal').style.display='flex';
+}
+
 document.querySelectorAll(".modal-overlay").forEach(el=>{
   el.addEventListener("click",e=>{if(e.target===el)el.style.display="none";});
 });
 
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
-loadEvents();
 </script>
 </body>
 </html>
