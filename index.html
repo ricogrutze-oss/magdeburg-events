@@ -304,12 +304,12 @@ function filteredEvents() {
 }
 
 function eventsForDay(dateStr) {
-  const all = filteredEvents().filter(e => {
-    return dateStr >= isoDate(e.dateFrom) && dateStr <= isoDate(e.dateTo);
-  });
+  const all = filteredEvents().filter(e =>
+    dateStr >= isoDate(e.dateFrom) && dateStr <= isoDate(e.dateTo)
+  );
   const single = all.filter(e => isoDate(e.dateFrom) === isoDate(e.dateTo));
   const multi  = all.filter(e => isoDate(e.dateFrom) !== isoDate(e.dateTo));
-  return [...single, ...multi];
+  return { single, multi, all: [...single, ...multi] };
 }
 
 function render() {
@@ -351,7 +351,7 @@ function calendarHTML() {
   for(let d=1;d<=dim;d++) {
     const date = new Date(calYear,calMonth,d);
     const iso = isoLocal(date);
-    const dayEvs = filteredEvents().filter(e => iso >= isoDate(e.dateFrom) && iso <= isoDate(e.dateTo));
+    const { all: dayEvs } = eventsForDay(iso);
     const isToday = iso===todayStr;
     const isSel = selectedDay && selectedDay===iso;
     const isWeekend = date.getDay()===0||date.getDay()===6;
@@ -381,36 +381,60 @@ function calendarHTML() {
 }
 
 function dayPanelHTML() {
-  const dayEvs=eventsForDay(selectedDay);
-  const d=strToDate(selectedDay);
-  return `<div class="day-panel">
-    <div class="day-panel-header"><span>${fmtDate(d)}</span><span class="day-count">${dayEvs.length} Event${dayEvs.length!==1?'s':''}</span></div>
-    ${dayEvs.map(e=>eventCardHTML(e)).join("")}
-  </div>`;
+  const {single, multi} = eventsForDay(selectedDay);
+  const d = strToDate(selectedDay);
+  const total = single.length + multi.length;
+  let html = `<div class="day-panel">
+    <div class="day-panel-header"><span>${fmtDate(d)}</span><span class="day-count">${total} Event${total!==1?'s':''}</span></div>`;
+  if (single.length) {
+    html += single.map(e => eventCardHTML(e)).join("");
+  }
+  if (multi.length) {
+    html += `<div style="margin:10px 0 8px;display:flex;align-items:center;gap:8px">
+      <div style="flex:1;height:1px;background:#e0e4ee"></div>
+      <span style="font-size:11px;color:#aaa;white-space:nowrap">Laufende Veranstaltungen</span>
+      <div style="flex:1;height:1px;background:#e0e4ee"></div>
+    </div>`;
+    html += multi.map(e => eventCardHTML(e)).join("");
+  }
+  html += `</div>`;
+  return html;
 }
 
 function listHTML() {
-  const evs=filteredEvents();
-  const dates=[...new Set(evs.flatMap(e=>{
-    const r=[];
-    const cur=strToDate(isoDate(e.dateFrom));
-    const end=strToDate(isoDate(e.dateTo));
-    // Nur ab heute
-    const start=cur<today?today:cur;
-    const s=new Date(start);
-    while(isoLocal(s)<=isoDate(end)){
-      r.push(isoLocal(s));
+  const evs = filteredEvents();
+  // Alle relevanten Datumstrings sammeln
+  const dateSet = new Set();
+  evs.forEach(e => {
+    const cur = strToDate(isoDate(e.dateFrom));
+    const end = strToDate(isoDate(e.dateTo));
+    const start = cur < today ? today : cur;
+    const s = new Date(start);
+    while(isoLocal(s) <= isoDate(end)) {
+      dateSet.add(isoLocal(s));
       s.setDate(s.getDate()+1);
     }
-    return r;
-  }))].sort();
+  });
+  const dates = [...dateSet].sort();
   if(!dates.length) return `<div class="empty-box">Keine Veranstaltungen gefunden.</div>`;
-  return `<div class="list-section">${dates.map(iso=>{
-    const dayEvs=eventsForDay(iso);
-    if(!dayEvs.length) return "";
-    const d=strToDate(iso);
-    const label=d.toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long"});
-    return `<div><div class="list-date-header"><span class="list-date-label">${label}</span><span class="list-date-count">${dayEvs.length}</span></div>${dayEvs.map(e=>eventCardHTML(e)).join("")}</div>`;
+  return `<div class="list-section">${dates.map(iso => {
+    const {single, multi} = eventsForDay(iso);
+    if(!single.length && !multi.length) return "";
+    const d = strToDate(iso);
+    const label = d.toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long"});
+    const total = single.length + multi.length;
+    let html = `<div><div class="list-date-header"><span class="list-date-label">${label}</span><span class="list-date-count">${total}</span></div>`;
+    html += single.map(e => eventCardHTML(e)).join("");
+    if(multi.length) {
+      html += `<div style="margin:8px 0 6px;display:flex;align-items:center;gap:8px">
+        <div style="flex:1;height:1px;background:#e0e4ee"></div>
+        <span style="font-size:11px;color:#aaa;white-space:nowrap">Laufende Veranstaltungen</span>
+        <div style="flex:1;height:1px;background:#e0e4ee"></div>
+      </div>`;
+      html += multi.map(e => eventCardHTML(e)).join("");
+    }
+    html += `</div>`;
+    return html;
   }).join("")}</div>`;
 }
 
