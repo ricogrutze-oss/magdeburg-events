@@ -304,10 +304,12 @@ function filteredEvents() {
 }
 
 function eventsForDay(dateStr) {
-  // Vergleich nur als String — kein UTC-Problem möglich
-  return filteredEvents().filter(e => {
+  const all = filteredEvents().filter(e => {
     return dateStr >= isoDate(e.dateFrom) && dateStr <= isoDate(e.dateTo);
   });
+  const single = all.filter(e => isoDate(e.dateFrom) === isoDate(e.dateTo));
+  const multi  = all.filter(e => isoDate(e.dateFrom) !== isoDate(e.dateTo));
+  return [...single, ...multi];
 }
 
 function render() {
@@ -349,7 +351,7 @@ function calendarHTML() {
   for(let d=1;d<=dim;d++) {
     const date = new Date(calYear,calMonth,d);
     const iso = isoLocal(date);
-    const dayEvs = eventsForDay(iso);
+    const dayEvs = filteredEvents().filter(e => iso >= isoDate(e.dateFrom) && iso <= isoDate(e.dateTo));
     const isToday = iso===todayStr;
     const isSel = selectedDay && selectedDay===iso;
     const isWeekend = date.getDay()===0||date.getDay()===6;
