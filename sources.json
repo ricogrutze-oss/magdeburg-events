@@ -98,5 +98,10 @@
     "url": "volksstimme.de/magdeburg",
     "name": "Volksstimme Magdeburg",
     "beschreibung": "Lokalzeitung, regionale Events und Ankündigungen"
+  },
+  {
+  "url": "factory-magdeburg.de/programm",
+  "name": "Factory Magdeburg",
+  "beschreibung": "Konzerte und Events in der Factory Magdeburg"
   }
 ]
