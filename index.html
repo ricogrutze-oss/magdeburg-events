@@ -298,6 +298,7 @@ window.skipLogin = () => {
 window._toggleBookmark = async (eventId, eventData) => {
   if (!window._currentUser) { alert('Bitte zuerst anmelden um Events zu merken!'); return; }
   const uid = window._currentUser.uid;
+  const user = window._currentUser;
   const bmRef = ref(db, `bookmarks/${uid}/${eventId}`);
   if (window._bookmarks[eventId]) {
     await set(bmRef, null);
@@ -310,8 +311,55 @@ window._toggleBookmark = async (eventId, eventData) => {
       category: eventData.category,
       location: eventData.location || '',
       savedAt: new Date().toISOString(),
+      userName: user.displayName || user.email,
+      userPhoto: user.photoURL || null,
     });
   }
+};
+
+// Alle Bookmarks aller User laden (öffentlich sichtbar)
+const allBmRef = ref(db, 'bookmarks');
+onValue(allBmRef, (snap) => {
+  allBookmarks = snap.val() || {};
+  // Für jeden Event zählen wer ihn gemerkt hat
+  window._allBookmarks = allBookmarks;
+  if (window._render) window._render();
+});
+
+// Manuelle Events aus Firebase laden (von allen Usern)
+const manualRef = ref(db, 'manualEvents');
+onValue(manualRef, (snap) => {
+  const data = snap.val() || {};
+  window._firebaseManualEvents = Object.values(data).map(e => ({
+    ...e,
+    dateFrom: strToDateSafe(e.dateFrom),
+    dateTo: strToDateSafe(e.dateTo || e.dateFrom),
+    manual: true,
+    fromFirebase: true,
+  })).filter(e => e.dateFrom && !isNaN(e.dateFrom));
+  if (window._render) window._render();
+});
+
+// Manuelles Event in Firebase speichern
+window._saveManualToFirebase = async (ev) => {
+  if (!window._currentUser) return;
+  const user = window._currentUser;
+  const { ref: fbRef, set: fbSet } = window._fb;
+  const db = window._fb.db;
+  const evRef = fbRef(db, `manualEvents/${ev.fbId}`);
+  await fbSet(evRef, {
+    ...ev,
+    createdBy: user.displayName || user.email,
+    createdByPhoto: user.photoURL || null,
+    createdAt: new Date().toISOString(),
+  });
+};
+
+// Manuelles Event aus Firebase löschen
+window._deleteManualFromFirebase = async (fbId) => {
+  const { ref: fbRef, set: fbSet } = window._fb;
+  const db = window._fb.db;
+  await fbSet(fbRef(db, `manualEvents/${fbId}`), null);
 };
 </script>
 
@@ -327,6 +375,8 @@ let allEvents=[], manualEvents=[], sourcesData=[];
 let filterCat="Alle", view="kalender";
 let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
 let selectedDay=null, deferredPrompt=null;
+// Alle Bookmarks aller User: { eventId: { uid: {name, photoURL} } }
+let allBookmarks = {};
 
 const _n = new Date();
 const today = new Date(_n.getFullYear(), _n.getMonth(), _n.getDate());
@@ -339,6 +389,7 @@ function isoLocal(d) {
 function isoDate(d) { return isoLocal(d); }
 function fmtDate(d) { return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}); }
 function strToDate(s) { const p=s.split("-"); return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2])); }
+function strToDateSafe(s) { try { return strToDate(s); } catch(e) { return null; } }
 
 const todayStr = isoLocal(today);
 
@@ -408,7 +459,12 @@ async function loadEvents() {
 }
 window._loadEvents = loadEvents;
 
-function combinedEvents() { return [...allEvents,...manualEvents]; }
+function combinedEvents() {
+  const fbManual = (window._firebaseManualEvents || []);
+  // Lokale manuelle Events die noch nicht in Firebase sind
+  const localOnly = manualEvents.filter(e => !e.fbId || !fbManual.find(f => f.fbId === e.fbId));
+  return [...allEvents, ...fbManual, ...localOnly];
+}
 function filteredEvents() {
   let evs = combinedEvents().filter(e => isoDate(e.dateTo) >= todayStr);
   if (filterCat === "Gemerkt") {
@@ -561,6 +617,20 @@ function bookmarksHTML() {
   </div>`;
 }
 
+function getBookmarkersForEvent(eventId) {
+  const all = window._allBookmarks || {};
+  const bookers = [];
+  Object.values(all).forEach(userBms => {
+    if (userBms && userBms[eventId]) {
+      bookers.push({
+        name: userBms[eventId].userName || '?',
+        photo: userBms[eventId].userPhoto || null,
+      });
+    }
+  });
+  return bookers;
+}
+
 function eventCardHTML(e) {
   const col=CATEGORY_COLORS[e.category]||"#666";
   const isMulti=isoDate(e.dateFrom)!==isoDate(e.dateTo);
@@ -568,16 +638,38 @@ function eventCardHTML(e) {
   const timeStr=e.timeStart?`<span class="event-time">🕐 ${e.timeStart}${e.timeEnd?' – '+e.timeEnd:''} Uhr</span>`:"";
   const sourceStr=e.sources||e.source||"";
   const isBookmarked = !!(window._bookmarks||{})[e.id];
-  const deleteBtn=e.manual?`<button style="background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:0" data-delete="${e.id}" onclick="event.stopPropagation()">🗑</button>`:"";
+
+  // Wer hat es gemerkt?
+  const bookers = getBookmarkersForEvent(e.id);
+  const bookersHtml = bookers.length > 0
+    ? `<div style="display:flex;align-items:center;gap:4px;margin-top:5px;flex-wrap:wrap;">
+        ${bookers.map(b => b.photo
+          ? `<img src="${b.photo}" title="${b.name}" style="width:18px;height:18px;border-radius:50%;border:1px solid #fff" />`
+          : `<span style="font-size:10px;background:#e8f0fe;border-radius:10px;padding:1px 6px;color:#0f3460">${b.name.split(' ')[0]}</span>`
+        ).join('')}
+        <span style="font-size:10px;color:#aaa">merken das</span>
+      </div>`
+    : '';
+
+  // Wer hat es eingetragen?
+  const creatorHtml = e.createdBy
+    ? `<span style="font-size:10px;color:#888;">✏️ ${e.createdBy}</span>`
+    : "";
+
+  const deleteBtn = e.manual
+    ? `<button style="background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:0" data-delete="${e.id}" data-fbid="${e.fbId||''}" onclick="event.stopPropagation()">🗑</button>`
+    : "";
+
   return `<div class="event-card" style="border-left-color:${col}" data-id="${e.id}">
     <div class="event-top">
       <div class="event-meta">
         <span class="cat-tag" style="background:${col}">${e.category}</span>
         ${sourceStr?`<span class="source-tag">📌 ${sourceStr}</span>`:""}
+        ${creatorHtml}
         ${deleteBtn}
       </div>
       <div class="event-actions">
-        <button class="bookmark-btn ${isBookmarked?'bookmarked':''}" data-bookmark="${e.id}" onclick="event.stopPropagation()" title="${isBookmarked?'Gemerkt — klicken zum Entfernen':'Merken'}">
+        <button class="bookmark-btn ${isBookmarked?'bookmarked':''}" data-bookmark="${e.id}" onclick="event.stopPropagation()" title="${isBookmarked?'Gemerkt':'Merken'}">
           ${isBookmarked?'⭐':'☆'}
         </button>
         <button class="cal-export-btn" data-export="${e.id}" onclick="event.stopPropagation()">📅</button>
@@ -586,6 +678,7 @@ function eventCardHTML(e) {
     <div class="event-name">${e.name}</div>
     <div class="event-date-row">📅 ${dateStr} ${timeStr} ${e.location?`<span class="event-location">· 📍 ${e.location}</span>`:""}
     </div>
+    ${bookersHtml}
   </div>`;
 }
 
@@ -617,8 +710,10 @@ function bindEvents() {
     btn.addEventListener("click",ev=>{
       ev.stopPropagation();
       const id=parseInt(btn.dataset.delete);
+      const fbId=btn.dataset.fbid;
       if(confirm("Löschen?")) {
         manualEvents=manualEvents.filter(e=>e.id!==id);
+        if(fbId && window._currentUser) window._deleteManualFromFirebase(fbId);
         try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
         render();
       }
@@ -643,22 +738,32 @@ function showAddModal(){
 }
 
 let nextManualId=100000;
-function saveManualEvent(){
+async function saveManualEvent(){
   const name=document.getElementById("m-name").value.trim();
   const from=document.getElementById("m-from").value;
   if(!name||!from){alert("Name und Datum sind Pflichtfelder.");return;}
+  const fbId = `manual_${Date.now()}_${Math.random().toString(36).slice(2,7)}`;
   const ev={
-    id:nextManualId++, name,
-    dateFrom:strToDate(from),
-    dateTo:strToDate(document.getElementById("m-to").value||from),
-    timeStart:document.getElementById("m-time-start").value||null,
-    timeEnd:document.getElementById("m-time-end").value||null,
-    category:document.getElementById("m-cat").value,
-    location:document.getElementById("m-location").value.trim(),
-    manual:true,
+    id: nextManualId++,
+    fbId,
+    name,
+    dateFrom: from,
+    dateTo: document.getElementById("m-to").value||from,
+    timeStart: document.getElementById("m-time-start").value||null,
+    timeEnd: document.getElementById("m-time-end").value||null,
+    category: document.getElementById("m-cat").value,
+    location: document.getElementById("m-location").value.trim(),
+    manual: true,
   };
-  manualEvents.push(ev);
-  try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
+  // In Firebase speichern (für alle sichtbar)
+  if (window._currentUser) {
+    await window._saveManualToFirebase(ev);
+  } else {
+    // Ohne Login: nur lokal
+    const localEv = {...ev, dateFrom: strToDate(ev.dateFrom), dateTo: strToDate(ev.dateTo)};
+    manualEvents.push(localEv);
+    try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
+  }
   closeModal('add-modal');
   render();
 }
