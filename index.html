@@ -1,1504 +1,791 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auftragsmappe</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#143f3b">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Auftragsmappe">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<style>
-  :root{
-    --bg: #eef1f0;
-    --panel: #ffffff;
-    --ink: #16221f;
-    --ink-soft: #55635f;
-    --line: #d7ddda;
-    --line-soft: #e6eae8;
-    --teal: #1f5c56;
-    --teal-deep: #143f3b;
-    --amber: #b5790a;
-    --amber-bg: #fbeed4;
-    --blue: #2b5a8c;
-    --blue-bg: #dde7f2;
-    --purple: #6a4c8c;
-    --purple-bg: #e8e0f2;
-    --red: #a3392f;
-    --red-bg: #f5e0dd;
-    --green: #2c7a4b;
-    --green-bg: #dcefe1;
-    --gray-bg: #e7e9e8;
-    --font-display: 'IBM Plex Sans', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--font-body);
-    font-size:14px;
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection{ background:var(--teal); color:#fff; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magdeburg Events</title>
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="MD Events" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f2f8; color: #1a1a2e; min-height: 100vh; }
 
-  /* Header */
-  header.app-head{
-    background:var(--teal-deep);
-    color:#eef4f2;
-    padding:22px 28px 18px;
-    border-bottom:4px solid var(--teal);
-  }
-  .eyebrow{
-    font-family:var(--font-mono);
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:#8fbdb2;
-    margin-bottom:4px;
-  }
-  .app-title{
-    font-family:var(--font-display);
-    font-size:24px;
-    font-weight:700;
-    letter-spacing:-.01em;
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-  }
-  .app-title .stamp{
-    font-family:var(--font-mono);
-    font-size:12px;
-    font-weight:500;
-    color:#9fcabf;
-    border:1px solid #3a6f68;
-    border-radius:3px;
-    padding:2px 7px;
-  }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; padding: 16px 20px; }
+    .header-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .logo { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; color: #a0b4cc; margin-top: 2px; }
+    #last-update { font-size: 11px; color: #7a9bbf; margin-top: 2px; }
+    .header-btns { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .btn-primary { padding: 8px 14px; border-radius: 8px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    .btn-secondary { padding: 8px 12px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    .user-pill { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 10px; }
+    .user-avatar { width: 24px; height: 24px; border-radius: 50%; }
+    .user-name { font-size: 12px; color: #fff; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .logout-btn { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 16px; padding: 0 2px; }
 
-  /* Toolbar */
-  .toolbar{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    flex-wrap:wrap;
-    padding:14px 28px;
-    background:var(--panel);
-    border-bottom:1px solid var(--line);
-    position:sticky;
-    top:0;
-    z-index:20;
-  }
-  .btn{
-    font-family:var(--font-body);
-    font-size:13px;
-    font-weight:600;
-    padding:9px 16px;
-    border-radius:6px;
-    border:1px solid var(--line);
-    background:#fff;
-    color:var(--ink);
-    cursor:pointer;
-    transition:.12s ease;
-    white-space:nowrap;
-  }
-  .btn:hover{ border-color:var(--teal); color:var(--teal-deep); }
-  .btn.primary{ background:var(--teal); border-color:var(--teal); color:#fff; }
-  .btn.primary:hover{ background:var(--teal-deep); }
-  .btn.ghost{ background:transparent; border-color:transparent; color:var(--ink-soft); }
-  .btn.ghost:hover{ color:var(--teal-deep); }
-  .btn.danger{ color:var(--red); border-color:var(--red-bg); }
-  .btn.danger:hover{ background:var(--red-bg); border-color:var(--red); }
-  .btn:disabled{ opacity:.45; cursor:not-allowed; }
-  .btn.small{ padding:5px 10px; font-size:12px; }
-  input[type=file]{ display:none; }
-  .spacer{ flex:1; }
-  .count-pill{
-    font-family:var(--font-mono);
-    font-size:12px;
-    background:var(--gray-bg);
-    padding:3px 9px;
-    border-radius:20px;
-    color:var(--ink-soft);
-  }
+    .body { max-width: 980px; margin: 0 auto; padding: 16px; }
 
-  /* Tabs */
-  .tabs{
-    display:flex;
-    gap:2px;
-    padding:0 28px;
-    background:var(--panel);
-    border-bottom:1px solid var(--line);
-  }
-  .tab{
-    padding:12px 18px 11px;
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:13.5px;
-    color:var(--ink-soft);
-    cursor:pointer;
-    border-bottom:3px solid transparent;
-    display:flex;
-    align-items:center;
-    gap:7px;
-  }
-  .tab .n{
-    font-family:var(--font-mono);
-    font-size:11px;
-    background:var(--gray-bg);
-    padding:1px 7px;
-    border-radius:10px;
-  }
-  .tab.active{ color:var(--teal-deep); border-bottom-color:var(--teal); }
-  .tab.active .n{ background:var(--teal); color:#fff; }
-  .tab:hover:not(.active){ color:var(--ink); }
+    /* LOGIN SCREEN */
+    .login-screen { text-align: center; padding: 60px 20px; }
+    .login-screen h2 { font-size: 24px; margin-bottom: 10px; }
+    .login-screen p { color: #666; margin-bottom: 30px; font-size: 15px; }
+    .google-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 10px; border: 2px solid #dde; background: #fff; cursor: pointer; font-size: 15px; font-weight: 600; color: #1a1a2e; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .google-btn img { width: 20px; height: 20px; }
 
-  main{ padding:20px 28px 60px; max-width:1400px; margin:0 auto; }
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+    .view-toggle { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid #c8d0e0; }
+    .view-toggle button { padding: 7px 14px; border: none; background: #fff; cursor: pointer; font-weight: 500; font-size: 13px; }
+    .view-toggle button.active { background: #0f3460; color: #fff; }
+    .cat-filter { display: flex; gap: 4px; flex-wrap: wrap; }
+    .cat-btn { padding: 4px 10px; border-radius: 20px; border: 1.5px solid; cursor: pointer; font-size: 11px; font-weight: 600; background: transparent; }
+    .cat-btn.active { color: #fff !important; }
+    .stats-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+    .stat-chip { background: #fff; border: 1px solid #dde; border-radius: 20px; padding: 2px 10px; font-size: 11px; color: #555; }
+    .sources-btn { background: none; border: none; color: #0f3460; font-size: 11px; cursor: pointer; text-decoration: underline; padding: 0; }
 
-  .empty-state{
-    padding:70px 20px;
-    text-align:center;
-    color:var(--ink-soft);
-  }
-  .empty-state .big{
-    font-family:var(--font-display);
-    font-size:17px;
-    color:var(--ink);
-    margin-bottom:6px;
-    font-weight:600;
-  }
+    .loading-box { text-align: center; padding: 60px 20px; }
+    .spinner { width: 40px; height: 40px; border: 4px solid #dde; border-top-color: #0f3460; border-radius: 50%; margin: 0 auto 14px; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .error-box { background: #fff0f0; border-radius: 10px; color: #c00; padding: 20px; text-align: center; }
+    .empty-box { text-align: center; padding: 40px; color: #aaa; }
 
-  /* Table */
-  .grid-wrap{ background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
-  table{ width:100%; border-collapse:collapse; }
-  thead th{
-    text-align:left;
-    font-family:var(--font-mono);
-    font-size:10.5px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    padding:11px 12px;
-    background:#f6f8f7;
-    border-bottom:1px solid var(--line);
-    white-space:nowrap;
-  }
-  tbody td{
-    padding:10px 12px;
-    border-bottom:1px solid var(--line-soft);
-    vertical-align:middle;
-  }
-  tbody tr:last-child td{ border-bottom:none; }
-  tbody tr:hover{ background:#fafcfb; }
-  .code{ font-family:var(--font-mono); font-size:12.5px; color:var(--teal-deep); font-weight:600; }
-  .muted{ color:var(--ink-soft); }
-  .cell-input{
-    width:100%;
-    border:1px solid transparent;
-    background:transparent;
-    font-family:var(--font-body);
-    font-size:13px;
-    padding:5px 7px;
-    border-radius:5px;
-    color:var(--ink);
-  }
-  .cell-input:hover{ border-color:var(--line); }
-  .cell-input:focus{ outline:none; border-color:var(--teal); background:#fff; }
-  textarea.cell-input{ resize:vertical; min-height:34px; font-family:var(--font-body); }
+    /* CALENDAR */
+    .calendar-section { display: flex; gap: 14px; flex-wrap: wrap; }
+    .cal-card { background: #fff; border-radius: 14px; padding: 16px; flex: 1 1 300px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .cal-title { font-weight: 700; font-size: 16px; }
+    .nav-btn { background: none; border: 1px solid #dde; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 15px; color: #555; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+    .dow-label { text-align: center; font-size: 10px; font-weight: 600; color: #888; padding: 2px 0; }
+    .cal-day { border-radius: 6px; padding: 2px 1px; min-height: 46px; display: flex; flex-direction: column; align-items: center; transition: background 0.1s; }
+    .cal-day.has-events { cursor: pointer; }
+    .cal-day.has-events:hover { background: #eef2ff; }
+    .cal-day.is-today { background: #ffd700 !important; outline: 2px solid #e6a000; }
+    .cal-day.is-today .day-num { color: #1a1a2e; font-weight: 800; }
+    .cal-day.is-selected { background: #0f3460 !important; }
+    .cal-day.is-selected .day-num { color: #fff; }
+    .cal-day.is-weekend { background: #fafafe; }
+    .cal-day.is-past { opacity: 0.3; pointer-events: none; }
+    .day-num { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
+    .day-dots { display: flex; gap: 2px; flex-wrap: wrap; justify-content: center; }
+    .dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+    .dot-more { font-size: 8px; color: #888; font-weight: 700; }
+    .legend { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; padding-top: 8px; border-top: 1px solid #eee; }
+    .legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #555; }
 
-  select.status-select{
-    font-family:var(--font-body);
-    font-size:12.5px;
-    font-weight:600;
-    border:none;
-    border-radius:20px;
-    padding:6px 26px 6px 12px;
-    cursor:pointer;
-    appearance:none;
-    -webkit-appearance:none;
-    background-repeat:no-repeat;
-    background-position:right 9px center;
-    background-size:9px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%23555'/></svg>");
-  }
-  .st-offen{ background:var(--gray-bg); color:#3d4744; }
-  .st-in_bearbeitung{ background:var(--amber-bg); color:var(--amber); }
-  .st-termin_vereinbart{ background:var(--blue-bg); color:var(--blue); }
-  .st-kunde_rueckmeldung{ background:var(--purple-bg); color:var(--purple); }
-  .st-anlage_nicht_fertig{ background:var(--red-bg); color:var(--red); }
-  .st-erledigt{ background:var(--green-bg); color:var(--green); }
+    .day-panel { background: #fff; border-radius: 14px; padding: 12px; flex: 1 1 280px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); max-height: 520px; overflow-y: auto; }
+    .day-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 7px; border-bottom: 1px solid #eee; font-size: 13px; font-weight: 700; }
+    .day-count { background: #e8f0fe; color: #0f3460; border-radius: 12px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+    .cal-hint { color: #aaa; font-size: 12px; padding: 16px 0; }
+    .divider { display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; }
+    .divider-line { flex: 1; height: 1px; background: #e0e4ee; }
+    .divider-text { font-size: 10px; color: #aaa; white-space: nowrap; }
 
-  .termin-chip{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--blue);
-    background:var(--blue-bg);
-    padding:4px 9px;
-    border-radius:5px;
-    white-space:nowrap;
-  }
-  .row-actions{ display:flex; gap:6px; }
-  .icon-btn{
-    border:1px solid var(--line);
-    background:#fff;
-    border-radius:6px;
-    padding:6px 9px;
-    font-size:12px;
-    cursor:pointer;
-    color:var(--ink-soft);
-  }
-  .icon-btn:hover{ border-color:var(--teal); color:var(--teal-deep); }
+    .list-section { display: flex; flex-direction: column; gap: 20px; }
+    .list-date-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .list-date-label { font-weight: 700; font-size: 13px; }
+    .list-date-count { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 1px 7px; font-size: 10px; font-weight: 700; }
 
-  /* Modal */
-  .modal-backdrop{
-    position:fixed; inset:0; background:rgba(15,26,24,.55);
-    display:flex; align-items:center; justify-content:center;
-    z-index:100; padding:20px;
-  }
-  .modal{
-    background:#fff; border-radius:12px; width:100%; max-width:520px;
-    max-height:88vh; overflow-y:auto;
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
-  }
-  .modal-head{
-    padding:18px 22px 14px; border-bottom:1px solid var(--line);
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .modal-head h3{ margin:0; font-family:var(--font-display); font-size:16px; }
-  .modal-body{ padding:20px 22px; }
-  .modal-foot{ padding:14px 22px 20px; display:flex; gap:10px; justify-content:flex-end; border-top:1px solid var(--line-soft); }
-  .field{ margin-bottom:14px; }
-  .field label{ display:block; font-size:12px; font-weight:600; color:var(--ink-soft); margin-bottom:5px; }
-  .field input, .field select, .field textarea{
-    width:100%; padding:9px 11px; border:1px solid var(--line); border-radius:6px;
-    font-family:var(--font-body); font-size:13.5px; color:var(--ink);
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--teal); }
-  .field-row{ display:flex; gap:12px; }
-  .field-row .field{ flex:1; }
-  .hint{ font-size:12px; color:var(--ink-soft); margin-top:4px; line-height:1.5; }
-  .close-x{ background:none; border:none; font-size:18px; cursor:pointer; color:var(--ink-soft); }
+    /* EVENT CARD */
+    .event-card { background: #fff; border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; border-left: 4px solid #ccc; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+    .event-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; gap: 6px; }
+    .event-meta { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; flex: 1; }
+    .cat-tag { font-size: 9px; font-weight: 700; color: #fff; border-radius: 4px; padding: 2px 5px; text-transform: uppercase; flex-shrink: 0; }
+    .source-tag { font-size: 10px; color: #888; }
+    .event-actions { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
+    .bookmark-btn { background: none; border: none; cursor: pointer; font-size: 16px; padding: 0; line-height: 1; }
+    .bookmark-btn.bookmarked { color: #e94560; }
+    .bookmark-btn:not(.bookmarked) { color: #ccc; }
+    .cal-export-btn { background: none; border: 1px solid #dde; border-radius: 5px; padding: 2px 6px; font-size: 10px; color: #0f3460; cursor: pointer; white-space: nowrap; }
+    .event-name { font-weight: 700; font-size: 13px; color: #1a1a2e; margin-bottom: 3px; line-height: 1.3; }
+    .event-date-row { font-size: 11px; color: #555; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .event-time { background: #e8f0fe; color: #0f3460; border-radius: 4px; padding: 1px 5px; font-weight: 600; font-size: 10px; }
+    .event-location { color: #777; }
 
-  .mapping-row{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
-  .mapping-row label{ width:150px; font-size:13px; font-weight:600; flex-shrink:0; }
-  .mapping-row select{ flex:1; padding:8px 10px; border:1px solid var(--line); border-radius:6px; font-size:13px; }
-  .req-star{ color:var(--red); }
+    /* MODAL */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .modal { background: #fff; border-radius: 14px; padding: 22px; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; }
+    .modal h2 { font-size: 17px; margin-bottom: 14px; }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 3px; }
+    .form-group input, .form-group select { width: 100%; padding: 8px 10px; border: 1.5px solid #dde; border-radius: 7px; font-size: 14px; font-family: inherit; }
+    .form-row { display: flex; gap: 8px; }
+    .form-row .form-group { flex: 1; }
+    .modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+    .btn-cancel { padding: 7px 14px; border-radius: 7px; border: 1px solid #dde; background: #fff; cursor: pointer; font-size: 13px; }
+    .btn-save { padding: 7px 16px; border-radius: 7px; border: none; background: #0f3460; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    .sources-list { list-style: none; }
+    .sources-list li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 12px; }
+    .sources-list li:last-child { border-bottom: none; }
+    .qr-container { text-align: center; padding: 10px 0; }
+    .qr-container img { max-width: 180px; border-radius: 8px; }
+    .qr-url { font-size: 11px; color: #888; margin-top: 8px; word-break: break-all; }
+    .qr-hint { font-size: 12px; color: #444; margin-top: 8px; line-height: 1.5; }
 
-  .history-list{ list-style:none; padding:0; margin:0; }
-  .history-list li{
-    padding:8px 0; border-bottom:1px solid var(--line-soft); font-size:12.5px;
-  }
-  .history-list li:last-child{ border-bottom:none; }
-  .history-list .ts{ font-family:var(--font-mono); color:var(--ink-soft); font-size:11px; }
+    #install-banner { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; background: #0f3460; color: #fff; border-radius: 12px; padding: 10px 14px; z-index: 50; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    #install-banner span { flex: 1; font-size: 13px; }
+    #install-btn { padding: 6px 12px; border-radius: 7px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 12px; }
+    #install-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 18px; padding: 0 2px; }
 
-  .toast{
-    position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
-    background:var(--teal-deep); color:#fff; padding:11px 20px; border-radius:8px;
-    font-size:13px; font-weight:500; z-index:200; box-shadow:0 8px 24px rgba(0,0,0,.25);
-    display:none;
-  }
-
-  .view-toggle{ display:flex; gap:6px; margin-bottom:14px; }
-  .view-toggle .btn.active{ background:var(--teal); border-color:var(--teal); color:#fff; }
-  .settings-section{
-    background:var(--panel); border:1px solid var(--line); border-radius:10px;
-    padding:18px 20px; margin-bottom:16px;
-  }
-  .settings-section h4{
-    margin:0 0 12px; font-family:var(--font-display); font-size:14px; color:var(--teal-deep);
-  }
-  .settings-row{ display:flex; gap:10px; flex-wrap:wrap; }
-  .map-empty{ height:200px; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); background:var(--panel); border:1px solid var(--line); border-radius:10px; }
-  .leaflet-popup-content{ font-family:var(--font-body); font-size:12.5px; min-width:180px; }
-  .leaflet-popup-content .pop-code{ font-family:var(--font-mono); font-weight:700; color:var(--teal-deep); }
-  .leaflet-popup-content .pop-status{ display:inline-block; margin-top:4px; padding:2px 8px; border-radius:10px; font-weight:600; font-size:11px; }
-  .col-picker label{ display:flex; align-items:center; gap:8px; padding:7px 0; font-size:13.5px; font-weight:500; border-bottom:1px solid var(--line-soft); }
-  .col-picker label:last-child{ border-bottom:none; }
-  .col-picker input{ width:16px; height:16px; }
-
-  @media (max-width:800px){
-    header.app-head, .toolbar, .tabs, main{ padding-left:14px; padding-right:14px; }
-    .mapping-row{ flex-wrap:wrap; }
-    .mapping-row label{ width:100%; }
-    table, thead, tbody, th, td, tr{ display:block; }
-    thead{ display:none; }
-    tbody tr{ border-bottom:6px solid var(--bg); padding:10px 0; }
-    tbody td{ border-bottom:none; padding:6px 12px; display:flex; justify-content:space-between; gap:10px; align-items:center; }
-    tbody td::before{ content: attr(data-label); font-family:var(--font-mono); font-size:10px; text-transform:uppercase; color:var(--ink-soft); flex-shrink:0; }
-  }
-</style>
+    /* GEMERKT BADGE */
+    .bookmarks-empty { text-align: center; padding: 40px 20px; color: #aaa; }
+    .bookmarks-empty .icon { font-size: 48px; margin-bottom: 10px; }
+  </style>
 </head>
 <body>
 
-<header class="app-head">
-  <div class="eyebrow">Kundenvorgänge · Adressbuch · Termine</div>
-  <div class="app-title">Auftragsmappe <span class="stamp" id="orgEmailStamp">Absender nicht gesetzt</span></div>
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">🏰 Magdeburg Events</div>
+      <div class="subtitle">Automatisch aus 20+ Quellen — alle 14 Tage aktualisiert</div>
+      <div id="last-update"></div>
+    </div>
+    <div class="header-btns" id="header-btns">
+      <button class="btn-secondary" onclick="showQR()">📱</button>
+      <button class="btn-secondary" onclick="showSources()">📋</button>
+      <button class="btn-primary" onclick="showAddModal()">+ Neu</button>
+      <div id="user-area"></div>
+    </div>
+  </div>
 </header>
 
-<div class="tabs">
-  <div class="tab active" data-tab="offen" onclick="switchTab('offen')">Offene Aufträge <span class="n" id="tabCountOffen">0</span></div>
-  <div class="tab" data-tab="erledigt" onclick="switchTab('erledigt')">Erledigte Aufträge <span class="n" id="tabCountErledigt">0</span></div>
-  <div class="tab" data-tab="adressbuch" onclick="switchTab('adressbuch')">Adressbuch <span class="n" id="tabCountAdr">0</span></div>
-  <div class="tab" data-tab="einstellungen" onclick="switchTab('einstellungen')">⚙️ Einstellungen</div>
+<div class="body">
+  <div id="loading" class="loading-box"><div class="spinner"></div><div style="font-size:16px;font-weight:600">Lade…</div></div>
+  <div id="login-screen" class="login-screen" style="display:none">
+    <div style="font-size:48px;margin-bottom:16px">🏰</div>
+    <h2>Magdeburg Events</h2>
+    <p>Melde dich an um Events zu merken<br>und mit Freunden zu teilen</p>
+    <button class="google-btn" onclick="loginWithGoogle()">
+      <img src="https://www.google.com/favicon.ico" alt="Google" />
+      Mit Google anmelden
+    </button>
+    <p style="margin-top:20px;font-size:12px;color:#aaa">Oder <a href="#" onclick="skipLogin()" style="color:#0f3460">ohne Anmeldung fortfahren</a></p>
+  </div>
+  <div id="error" class="error-box" style="display:none"></div>
+  <div id="app" style="display:none"></div>
 </div>
 
-<main>
-  <div id="view-offen"></div>
-  <div id="view-erledigt" style="display:none"></div>
-  <div id="view-adressbuch" style="display:none"></div>
-  <div id="view-einstellungen" style="display:none"></div>
-</main>
+<div id="install-banner">
+  <span>📲 Als App installieren</span>
+  <button id="install-btn" onclick="installPWA()">Installieren</button>
+  <button id="install-close" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
+</div>
 
-<input type="file" id="csvInput" accept=".csv,.tsv,.txt,.xlsx,.xls,.ods" style="display:none">
-<input type="file" id="backupInput" accept=".json" style="display:none">
+<!-- ADD MODAL -->
+<div id="add-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>➕ Veranstaltung hinzufügen</h2>
+    <div class="form-group"><label>Name *</label><input id="m-name" type="text" placeholder="Eventname" /></div>
+    <div class="form-row">
+      <div class="form-group"><label>Von *</label><input id="m-from" type="date" /></div>
+      <div class="form-group"><label>Bis</label><input id="m-to" type="date" /></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Uhrzeit von</label><input id="m-time-start" type="time" /></div>
+      <div class="form-group"><label>Uhrzeit bis</label><input id="m-time-end" type="time" /></div>
+    </div>
+    <div class="form-group"><label>Kategorie</label>
+      <select id="m-cat"><option>Musik</option><option>Theater</option><option>Sport</option><option>Kultur</option><option>Familie</option><option selected>Flohmarkt</option><option>Sonstiges</option></select>
+    </div>
+    <div class="form-group"><label>Ort</label><input id="m-location" type="text" placeholder="z.B. Hasselbachplatz" /></div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal('add-modal')">Abbrechen</button>
+      <button class="btn-save" onclick="saveManualEvent()">Speichern</button>
+    </div>
+  </div>
+</div>
 
-<div class="toast" id="toast"></div>
+<!-- SOURCES MODAL -->
+<div id="sources-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>📋 Durchsuchte Quellen</h2>
+    <p style="font-size:12px;color:#666;margin-bottom:12px">Neue Quellen in <code>sources.json</code> im GitHub-Repo hinzufügen.</p>
+    <ul class="sources-list" id="sources-list"></ul>
+    <div class="modal-btns"><button class="btn-save" onclick="closeModal('sources-modal')">Schließen</button></div>
+  </div>
+</div>
+
+<!-- QR MODAL -->
+<div id="qr-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>📱 App teilen</h2>
+    <div class="qr-container">
+      <img id="qr-img" src="" alt="QR Code" />
+      <div class="qr-url" id="qr-url"></div>
+      <div class="qr-hint">QR-Code scannen → App öffnet sich → „Zum Homescreen hinzufügen"</div>
+    </div>
+    <div class="modal-btns"><button class="btn-save" onclick="closeModal('qr-modal')">Schließen</button></div>
+  </div>
+</div>
+
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBOCUk-kt8_fU-tSBX8HHrO8KCr57T8pWA",
+  authDomain: "magdeburg-events-75a3a.firebaseapp.com",
+  databaseURL: "https://magdeburg-events-75a3a-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "magdeburg-events-75a3a",
+  storageBucket: "magdeburg-events-75a3a.firebasestorage.app",
+  messagingSenderId: "441697888738",
+  appId: "1:441697888738:web:55312e6753e59bf51071bb",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+const provider = new GoogleAuthProvider();
+
+// Globale Variablen
+window._fb = { auth, db, ref, set, get, onValue, signOut, provider, signInWithPopup };
+window._currentUser = null;
+window._bookmarks = {};
+
+// Auth State
+onAuthStateChanged(auth, async (user) => {
+  window._currentUser = user;
+  if (user) {
+    // User eingeloggt — Bookmarks laden
+    const userArea = document.getElementById('user-area');
+    userArea.innerHTML = `<div class="user-pill">
+      ${user.photoURL ? `<img src="${user.photoURL}" class="user-avatar" />` : ''}
+      <span class="user-name">${user.displayName || user.email}</span>
+      <button class="logout-btn" onclick="window._logout()" title="Abmelden">✕</button>
+    </div>`;
+
+    // Bookmarks aus Firebase laden
+    const bmRef = ref(db, `bookmarks/${user.uid}`);
+    onValue(bmRef, (snap) => {
+      window._bookmarks = snap.val() || {};
+      if (window._render) window._render();
+    });
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    if (window._loadEvents) window._loadEvents();
+  } else {
+    // Nicht eingeloggt
+    document.getElementById('user-area').innerHTML = `<button class="btn-secondary" onclick="window._login()">🔑 Anmelden</button>`;
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'block';
+  }
+});
+
+window._login = async () => {
+  try { await signInWithPopup(auth, provider); } catch(e) { console.error(e); }
+};
+window._logout = async () => {
+  await signOut(auth);
+  window._bookmarks = {};
+  window._currentUser = null;
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'block';
+};
+window.loginWithGoogle = window._login;
+window.skipLogin = () => {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  if (window._loadEvents) window._loadEvents();
+};
+
+window._toggleBookmark = async (eventId, eventData) => {
+  if (!window._currentUser) { alert('Bitte zuerst anmelden um Events zu merken!'); return; }
+  const uid = window._currentUser.uid;
+  const user = window._currentUser;
+  const bmRef = ref(db, `bookmarks/${uid}/${eventId}`);
+  if (window._bookmarks[eventId]) {
+    await set(bmRef, null);
+  } else {
+    await set(bmRef, {
+      name: eventData.name,
+      dateFrom: eventData.dateFrom,
+      dateTo: eventData.dateTo,
+      timeStart: eventData.timeStart || null,
+      category: eventData.category,
+      location: eventData.location || '',
+      savedAt: new Date().toISOString(),
+      userName: user.displayName || user.email,
+      userPhoto: user.photoURL || null,
+    });
+  }
+};
+
+// Alle Bookmarks aller User laden (öffentlich sichtbar)
+const allBmRef = ref(db, 'bookmarks');
+onValue(allBmRef, (snap) => {
+  allBookmarks = snap.val() || {};
+  // Für jeden Event zählen wer ihn gemerkt hat
+  window._allBookmarks = allBookmarks;
+  if (window._render) window._render();
+});
+
+// Manuelle Events aus Firebase laden (von allen Usern)
+const manualRef = ref(db, 'manualEvents');
+onValue(manualRef, (snap) => {
+  const data = snap.val() || {};
+  window._firebaseManualEvents = Object.values(data).map(e => ({
+    ...e,
+    dateFrom: strToDateSafe(e.dateFrom),
+    dateTo: strToDateSafe(e.dateTo || e.dateFrom),
+    manual: true,
+    fromFirebase: true,
+  })).filter(e => e.dateFrom && !isNaN(e.dateFrom));
+  if (window._render) window._render();
+});
+
+// Manuelles Event in Firebase speichern
+window._saveManualToFirebase = async (ev) => {
+  if (!window._currentUser) return;
+  const user = window._currentUser;
+  const { ref: fbRef, set: fbSet } = window._fb;
+  const db = window._fb.db;
+  const evRef = fbRef(db, `manualEvents/${ev.fbId}`);
+  await fbSet(evRef, {
+    ...ev,
+    createdBy: user.displayName || user.email,
+    createdByPhoto: user.photoURL || null,
+    createdAt: new Date().toISOString(),
+  });
+};
+
+// Manuelles Event aus Firebase löschen
+window._deleteManualFromFirebase = async (fbId) => {
+  const { ref: fbRef, set: fbSet } = window._fb;
+  const db = window._fb.db;
+  await fbSet(fbRef(db, `manualEvents/${fbId}`), null);
+};
+</script>
 
 <script>
-/* ---------------------------------------------------------------
-   State
---------------------------------------------------------------- */
-const STATUS = {
-  offen:              { label: 'Offen', cls: 'st-offen' },
-  in_bearbeitung:     { label: 'In Bearbeitung', cls: 'st-in_bearbeitung' },
-  termin_vereinbart:  { label: 'Termin vereinbart', cls: 'st-termin_vereinbart' },
-  kunde_rueckmeldung: { label: 'Kunde meldet sich zurück', cls: 'st-kunde_rueckmeldung' },
-  anlage_nicht_fertig:{ label: 'Anlage noch nicht fertig', cls: 'st-anlage_nicht_fertig' },
-  erledigt:           { label: 'Erledigt', cls: 'st-erledigt' },
+const CATEGORY_COLORS = {
+  Musik:"#7C3AED", Theater:"#B45309", Sport:"#065F46",
+  Kultur:"#1D4ED8", Familie:"#BE185D", Flohmarkt:"#D97706", Sonstiges:"#374151"
 };
+const MONTH_NAMES = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+const DOW_LABELS  = ["Mo","Di","Mi","Do","Fr","Sa","So"];
 
-let auftraege = [];   // array of Auftrag objects
-let adressbuch = [];  // array of Adressbuch entries
-let settings = { organizerEmail: '', lastImport: null };
-let columnMapping = null; // { kundencode, vorgang, telefonnummer, adresse, zaehlerplatzId, koordinaten }
-let currentTab = 'offen';
-let pendingCsvRows = null; // rows waiting on mapping confirmation
-let pendingCsvHeaders = null;
-let terminModalAuftragId = null;
-let historyModalTarget = null;
-let viewMode = { offen: 'liste', erledigt: 'liste' };
-let mapInstances = {};
-const DEFAULT_VISIBLE_COLUMNS = {
-  vorgang: true, status: true, telefonnummer: true, adresse: true,
-  kommentar: true, termin: true, koordinaten: true
-};
-const COLUMN_DEFS = [
-  { key:'vorgang', label:'Vorgang' },
-  { key:'status', label:'Status' },
-  { key:'telefonnummer', label:'Telefon' },
-  { key:'adresse', label:'Adresse' },
-  { key:'kommentar', label:'Kommentar' },
-  { key:'termin', label:'Termin' },
-  { key:'koordinaten', label:'Koordinaten' },
-];
+let allEvents=[], manualEvents=[], sourcesData=[];
+let filterCat="Alle", view="kalender";
+let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
+let selectedDay=null, deferredPrompt=null;
+// Alle Bookmarks aller User: { eventId: { uid: {name, photoURL} } }
+let allBookmarks = {};
 
-function uid(){ return 'a_' + Math.random().toString(36).slice(2,10) + Date.now().toString(36); }
-function nowIso(){ return new Date().toISOString(); }
-function fmtTs(iso){
-  const d = new Date(iso);
-  return d.toLocaleDateString('de-DE') + ' ' + d.toLocaleTimeString('de-DE', {hour:'2-digit',minute:'2-digit'});
-}
-function norm(s){ return (s||'').toString().trim().toLowerCase(); }
-function parseCoords(str){
-  if(!str) return null;
-  const parts = str.toString().split(/[,;\s]+/).map(p=>p.trim()).filter(Boolean);
-  if(parts.length < 2) return null;
-  const lat = parseFloat(parts[0].replace(',','.'));
-  const lon = parseFloat(parts[1].replace(',','.'));
-  if(isNaN(lat) || isNaN(lon)) return null;
-  if(lat < -90 || lat > 90 || lon < -180 || lon > 180) return null;
-  return { lat, lon };
-}
-function fmtCoords(c){ return c ? `${c.lat.toFixed(5)}, ${c.lon.toFixed(5)}` : ''; }
+const _n = new Date();
+const today = new Date(_n.getFullYear(), _n.getMonth(), _n.getDate());
 
-function showToast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.style.display = 'block';
-  clearTimeout(t._h);
-  t._h = setTimeout(()=>{ t.style.display='none'; }, 3200);
+function isoLocal(d) {
+  return d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0") + "-" +
+    String(d.getDate()).padStart(2,"0");
 }
+function isoDate(d) { return isoLocal(d); }
+function fmtDate(d) { return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}); }
+function strToDate(s) { const p=s.split("-"); return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2])); }
+function strToDateSafe(s) { try { return strToDate(s); } catch(e) { return null; } }
 
-/* ---------------------------------------------------------------
-   Storage — works both as a Claude artifact (window.storage) and as
-   a standalone hosted app (localStorage + optional linked folder)
---------------------------------------------------------------- */
-const hasClaudeStorage = (typeof window.storage !== 'undefined');
-const FS_SUPPORTED = ('showDirectoryPicker' in window);
-let folderHandle = null;
-let folderNeedsPermission = false;
-let folderSyncTimer = null;
+const todayStr = isoLocal(today);
 
-async function kvGet(key){
-  if(hasClaudeStorage){
-    try{ const r = await window.storage.get(key); return r ? r.value : null; }
-    catch(e){ return null; }
-  }
-  try{ return localStorage.getItem('am_' + key); }catch(e){ return null; }
-}
-async function kvSet(key, val){
-  if(hasClaudeStorage){
-    try{ await window.storage.set(key, val); return; }
-    catch(e){ showToast('Speichern fehlgeschlagen: ' + key); return; }
-  }
-  try{ localStorage.setItem('am_' + key, val); }catch(e){ showToast('Speichern fehlgeschlagen: ' + key); }
-}
-
-async function loadAll(){
-  try{ const v = await kvGet('auftraege'); auftraege = v ? JSON.parse(v) : []; }catch(e){ auftraege = []; }
-  try{ const v = await kvGet('adressbuch'); adressbuch = v ? JSON.parse(v) : []; }catch(e){ adressbuch = []; }
-  try{ const v = await kvGet('settings'); settings = v ? JSON.parse(v) : { organizerEmail:'', lastImport:null }; }
-  catch(e){ settings = { organizerEmail:'', lastImport:null }; }
-  if(!settings.visibleColumns){ settings.visibleColumns = Object.assign({}, DEFAULT_VISIBLE_COLUMNS); }
-  try{ const v = await kvGet('column-mapping'); columnMapping = v ? JSON.parse(v) : null; }catch(e){ columnMapping = null; }
-}
-async function persist(key, val){
-  await kvSet(key, JSON.stringify(val));
-}
-const saveAuftraege  = () => { persist('auftraege', auftraege); scheduleFolderSync(); };
-const saveAdressbuch = () => { persist('adressbuch', adressbuch); scheduleFolderSync(); };
-const saveSettings   = () => { persist('settings', settings); scheduleFolderSync(); };
-const saveMapping    = () => { persist('column-mapping', columnMapping); scheduleFolderSync(); };
-
-/* --- Linked folder (Desktop Chrome/Edge only) ---------------------
-   Stores a FileSystemDirectoryHandle in IndexedDB so the permission
-   can be silently reused across page reloads (where the browser allows). */
-function idbHandleDb(){
-  return new Promise((resolve,reject) => {
-    const req = indexedDB.open('auftragsmappe-fs', 1);
-    req.onupgradeneeded = () => req.result.createObjectStore('handles');
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
-  });
-}
-async function idbGetHandle(){
-  try{
-    const db = await idbHandleDb();
-    return await new Promise((resolve) => {
-      const tx = db.transaction('handles','readonly');
-      const r = tx.objectStore('handles').get('dir');
-      r.onsuccess = () => resolve(r.result || null);
-      r.onerror = () => resolve(null);
-    });
-  }catch(e){ return null; }
-}
-async function idbSetHandle(handle){
-  try{
-    const db = await idbHandleDb();
-    await new Promise((resolve) => {
-      const tx = db.transaction('handles','readwrite');
-      tx.objectStore('handles').put(handle, 'dir');
-      tx.oncomplete = () => resolve();
-      tx.onerror = () => resolve();
-    });
-  }catch(e){}
-}
-
-async function chooseFolder(){
-  if(!FS_SUPPORTED){
-    showToast('Ordner-Verknüpfung wird nur in Chrome/Edge auf dem Desktop unterstützt');
-    return;
-  }
-  try{
-    const handle = await window.showDirectoryPicker();
-    folderHandle = handle;
-    folderNeedsPermission = false;
-    await idbSetHandle(handle);
-    await loadFromFolder(true);
-    await saveToFolder();
-    render();
-    showToast('Ordner verknüpft — Daten werden ab jetzt automatisch dorthin gespeichert');
-  }catch(e){ /* user cancelled the picker */ }
-}
-async function reconnectFolder(){
-  if(!folderHandle) return;
-  try{
-    const perm = await folderHandle.requestPermission({ mode:'readwrite' });
-    if(perm === 'granted'){
-      folderNeedsPermission = false;
-      await loadFromFolder(true);
-      render();
-      showToast('Ordner wieder verbunden');
-    } else {
-      showToast('Zugriff wurde nicht erlaubt');
-    }
-  }catch(e){ showToast('Verbindung zum Ordner fehlgeschlagen'); }
-}
-async function tryRestoreFolder(){
-  if(!FS_SUPPORTED) return;
-  const handle = await idbGetHandle();
-  if(!handle) return;
-  folderHandle = handle;
-  try{
-    const perm = await handle.queryPermission({ mode:'readwrite' });
-    if(perm === 'granted'){
-      folderNeedsPermission = false;
-      await loadFromFolder(true);
-    } else {
-      folderNeedsPermission = true; // needs a click (user gesture) to reconnect
-    }
-  }catch(e){ folderNeedsPermission = true; }
-}
-async function loadFromFolder(silent){
-  if(!folderHandle) return;
-  try{
-    const fileHandle = await folderHandle.getFileHandle('auftragsmappe-daten.json', { create:true });
-    const file = await fileHandle.getFile();
-    const text = await file.text();
-    if(!text || !text.trim()) return;
-    const data = JSON.parse(text);
-    if(data.kind === 'auftragsmappe-sicherung'){
-      mergeBackup(data, silent);
-    }
-  }catch(e){ console.error('loadFromFolder', e); }
-}
-async function saveToFolder(){
-  if(!folderHandle) return;
-  try{
-    const payload = { kind:'auftragsmappe-sicherung', version:1, exportedAt: nowIso(), auftraege, adressbuch, settings, columnMapping };
-    const fileHandle = await folderHandle.getFileHandle('auftragsmappe-daten.json', { create:true });
-    const writable = await fileHandle.createWritable();
-    await writable.write(JSON.stringify(payload, null, 2));
-    await writable.close();
-    settings.folderLastSync = nowIso();
-  }catch(e){ console.error('saveToFolder', e); }
-}
-function scheduleFolderSync(){
-  if(!folderHandle || folderNeedsPermission) return;
-  clearTimeout(folderSyncTimer);
-  folderSyncTimer = setTimeout(saveToFolder, 1200);
-}
-
-/* ---------------------------------------------------------------
-   Address book helpers
---------------------------------------------------------------- */
-function findAdrEntry(zaehlerplatzId, kundencode){
-  if(zaehlerplatzId){
-    const hit = adressbuch.find(a => a.zaehlerplatzId && norm(a.zaehlerplatzId) === norm(zaehlerplatzId));
-    if(hit) return hit;
-  }
-  return adressbuch.find(a => !a.zaehlerplatzId && a.kundencode && norm(a.kundencode) === norm(kundencode));
-}
-function upsertAdrFromImport(row){
-  let entry = findAdrEntry(row.zaehlerplatzId, row.kundencode);
-  if(!entry){
-    entry = {
-      id: uid(),
-      kundencode: row.kundencode || '',
-      zaehlerplatzId: row.zaehlerplatzId || '',
-      adresse: row.adresse || '',
-      telefonnummer: row.telefonnummer || '',
-      koordinaten: row.koordinaten || null,
-      history: [{ ts: nowIso(), field:'angelegt', old:'', new:'aus Datei-Import' }]
-    };
-    adressbuch.push(entry);
-  } else {
-    // Fill only empty fields, never overwrite manual edits
-    if(!entry.adresse && row.adresse) entry.adresse = row.adresse;
-    if(!entry.telefonnummer && row.telefonnummer) entry.telefonnummer = row.telefonnummer;
-    if(!entry.koordinaten && row.koordinaten) entry.koordinaten = row.koordinaten;
-  }
-  return entry;
-}
-function updateAuftragCoords(id, value){
-  const a = auftraege.find(x => x.id === id);
-  if(!a) return;
-  const oldStr = fmtCoords(a.koordinaten);
-  if(!value.trim()){
-    if(!a.koordinaten) return;
-    a.history.push({ ts: nowIso(), field:'koordinaten', old: oldStr, new: '' });
-    a.koordinaten = null;
-    saveAuftraege();
-    if(a.adrEntryId) updateAdrCoords(a.adrEntryId, null);
-    render();
-    return;
-  }
-  const parsed = parseCoords(value);
-  if(!parsed){
-    showToast('Ungültiges Koordinatenformat, z.B. 52.130, 11.630');
-    render();
-    return;
-  }
-  a.history.push({ ts: nowIso(), field:'koordinaten', old: oldStr, new: fmtCoords(parsed) });
-  a.koordinaten = parsed;
-  saveAuftraege();
-  if(a.adrEntryId) updateAdrCoords(a.adrEntryId, parsed);
-  showToast('Gespeichert');
-}
-function updateAdrCoords(entryId, coords){
-  const entry = adressbuch.find(a => a.id === entryId);
-  if(!entry) return;
-  const oldStr = fmtCoords(entry.koordinaten);
-  const newStr = fmtCoords(coords);
-  if(oldStr === newStr) return;
-  entry.history.push({ ts: nowIso(), field:'koordinaten', old: oldStr, new: newStr });
-  entry.koordinaten = coords;
-  saveAdressbuch();
-}
-function updateAdrField(entryId, field, newVal){
-  const entry = adressbuch.find(a => a.id === entryId);
-  if(!entry) return;
-  const oldVal = entry[field] || '';
-  if(oldVal === newVal) return;
-  entry.history.push({ ts: nowIso(), field, old: oldVal, new: newVal });
-  entry[field] = newVal;
-  saveAdressbuch();
-}
-
-/* ---------------------------------------------------------------
-   File Import (CSV/TSV via PapaParse, Excel/ODS via SheetJS)
---------------------------------------------------------------- */
-document.getElementById('csvInput').addEventListener('change', function(e){
-  const file = e.target.files[0];
-  if(!file) return;
-  const ext = (file.name.split('.').pop() || '').toLowerCase();
-
-  function proceed(rows, headers, sheetInfo){
-    if(!rows || rows.length === 0){
-      showToast('Keine Zeilen in der Datei gefunden');
-      return;
-    }
-    pendingCsvRows = rows;
-    pendingCsvHeaders = headers;
-    if(sheetInfo) showToast(sheetInfo);
-    if(!columnMapping || !mappingMatchesHeaders(pendingCsvHeaders)){
-      openMappingModal(false);
-    } else {
-      runImport();
-    }
-  }
-
-  if(ext === 'csv' || ext === 'tsv' || ext === 'txt'){
-    Papa.parse(file, {
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results){
-        proceed(results.data, results.meta.fields || []);
-      },
-      error: function(err){ showToast('Datei konnte nicht gelesen werden'); }
-    });
-  } else if(ext === 'xlsx' || ext === 'xls' || ext === 'ods') {
-    const reader = new FileReader();
-    reader.onload = function(evt){
-      try{
-        const data = new Uint8Array(evt.target.result);
-        const wb = XLSX.read(data, { type: 'array' });
-        const sheetName = wb.SheetNames[0];
-        const sheet = wb.Sheets[sheetName];
-        const rows = XLSX.utils.sheet_to_json(sheet, { defval: '', raw: false });
-        const headers = rows.length ? Object.keys(rows[0]) : (XLSX.utils.sheet_to_json(sheet, { header:1 })[0] || []);
-        const info = wb.SheetNames.length > 1
-          ? `Tabellenblatt "${sheetName}" verwendet (von ${wb.SheetNames.length} Blättern)`
-          : null;
-        proceed(rows, headers, info);
-      }catch(err){
-        showToast('Excel-Datei konnte nicht gelesen werden');
-      }
-    };
-    reader.onerror = function(){ showToast('Datei konnte nicht gelesen werden'); };
-    reader.readAsArrayBuffer(file);
-  } else {
-    showToast('Nicht unterstütztes Dateiformat: .' + ext);
-  }
-  e.target.value = '';
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferredPrompt = e;
+  document.getElementById('install-banner').style.display = 'flex';
 });
-
-function mappingMatchesHeaders(headers){
-  if(!columnMapping) return false;
-  const req = ['kundencode','vorgang'];
-  return req.every(k => headers.includes(columnMapping[k]));
+function installPWA() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(() => { deferredPrompt=null; document.getElementById('install-banner').style.display='none'; });
 }
 
-function openMappingModal(manual){
-  const headers = pendingCsvHeaders || (columnMapping ? Object.values(columnMapping).filter(Boolean) : []);
-  const fields = [
-    { key:'kundencode', label:'Kundencode', required:true },
-    { key:'vorgang', label:'Vorgang', required:true },
-    { key:'telefonnummer', label:'Telefonnummer', required:false },
-    { key:'adresse', label:'Adresse', required:false },
-    { key:'zaehlerplatzId', label:'Zählerplatz-ID', required:false },
-    { key:'koordinaten', label:'Koordinaten (Breite, Länge)', required:false },
-  ];
-  const opts = (['']).concat(headers).map(h => h).filter((v,i,a)=>a.indexOf(v)===i);
-  let rowsHtml = fields.map(f => {
-    const current = columnMapping ? columnMapping[f.key] : '';
-    const optionsHtml = opts.map(o => `<option value="${escapeHtml(o)}" ${o===current?'selected':''}>${o===''?'– nicht vorhanden –':escapeHtml(o)}</option>`).join('');
-    return `<div class="mapping-row">
-      <label>${f.label}${f.required?' <span class="req-star">*</span>':''}</label>
-      <select id="map_${f.key}">${optionsHtml}</select>
-    </div>`;
-  }).join('');
-
-  if(headers.length === 0){
-    rowsHtml = `<p class="hint">Noch keine Spalten bekannt. Bitte zuerst eine Datei importieren.</p>`;
-  }
-
-  showModal(`
-    <div class="modal-head"><h3>Spaltenzuordnung${manual?' bearbeiten':''}</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <p class="hint" style="margin-top:0">Ordne die Spalten deiner Datei den benötigten Feldern zu. Diese Zuordnung wird gespeichert und beim nächsten Import automatisch wiederverwendet.</p>
-      ${rowsHtml}
-    </div>
-    <div class="modal-foot">
-      <button class="btn ghost" onclick="closeModal()">Abbrechen</button>
-      <button class="btn primary" ${headers.length===0?'disabled':''} onclick="confirmMapping(${manual})">Übernehmen${pendingCsvRows && !manual ? ' & importieren' : ''}</button>
-    </div>
-  `);
-}
-
-function confirmMapping(manual){
-  const fields = ['kundencode','vorgang','telefonnummer','adresse','zaehlerplatzId','koordinaten'];
-  const mapping = {};
-  for(const f of fields){
-    const el = document.getElementById('map_'+f);
-    mapping[f] = el ? el.value : '';
-  }
-  if(!mapping.kundencode || !mapping.vorgang){
-    showToast('Kundencode und Vorgang müssen zugeordnet werden');
-    return;
-  }
-  columnMapping = mapping;
-  saveMapping();
-  closeModal();
-  if(!manual && pendingCsvRows){
-    runImport();
+function exportICS(event) {
+  const fmt = d => d.replace(/-/g,'');
+  const df = fmt(event.dateFrom);
+  let dtS, dtE;
+  if (event.timeStart) {
+    const t=event.timeStart.replace(':','')+'00';
+    dtS=df+'T'+t;
+    const h=event.timeEnd?event.timeEnd.replace(':','')+'00':String(parseInt(event.timeStart.slice(0,2))+2).padStart(2,'0')+event.timeStart.slice(3).replace(':','')+'00';
+    dtE=df+'T'+h;
   } else {
-    showToast('Spaltenzuordnung gespeichert');
+    const nd=strToDate(event.dateTo||event.dateFrom); nd.setDate(nd.getDate()+1);
+    dtS=df; dtE=fmt(isoLocal(nd));
   }
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Magdeburg Events//DE','BEGIN:VEVENT',
+    `UID:${event.id}-${df}@magdeburg-events`,`SUMMARY:${event.name}`,
+    event.timeStart?`DTSTART:${dtS}`:`DTSTART;VALUE=DATE:${dtS}`,
+    event.timeStart?`DTEND:${dtE}`:`DTEND;VALUE=DATE:${dtE}`,
+    `LOCATION:${event.location||'Magdeburg'}`,`CATEGORIES:${event.category}`,
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url;
+  a.download=`${event.name.replace(/[^a-zA-Z0-9]/g,'-').slice(0,40)}.ics`; a.click();
+  URL.revokeObjectURL(url);
 }
 
-function runImport(){
-  if(!pendingCsvRows || !columnMapping){ return; }
-  const m = columnMapping;
-  let added = 0, skippedDup = 0, skippedEmpty = 0;
+async function loadEvents() {
+  try {
+    const res = await fetch("events.json?t=" + Date.now());
+    if (!res.ok) throw new Error("events.json nicht gefunden");
+    const data = await res.json();
+    allEvents = (data.events || []).map(e => ({
+      ...e,
+      dateFrom: strToDate(e.dateFrom),
+      dateTo:   strToDate(e.dateTo || e.dateFrom),
+      manual: false,
+    })).filter(e => !isNaN(e.dateFrom));
+    sourcesData = data.sources || [];
+    const genDate = data.generated ? new Date(data.generated) : null;
+    if (genDate) document.getElementById("last-update").textContent =
+      "Stand: " + genDate.toLocaleDateString("de-DE") + " " +
+      genDate.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"}) + " Uhr";
+    try {
+      const saved = localStorage.getItem("magdeburg_manual_v2");
+      if (saved) manualEvents = JSON.parse(saved).map(e => ({
+        ...e, dateFrom:strToDate(e.dateFrom), dateTo:strToDate(e.dateTo||e.dateFrom), manual:true
+      }));
+    } catch(e) {}
+    render();
+  } catch(err) {
+    document.getElementById("error").style.display = "block";
+    document.getElementById("error").innerHTML = `<p>⚠️ ${err.message}</p>`;
+  }
+}
+window._loadEvents = loadEvents;
 
-  // build lookup of existing OPEN (not erledigt) auftraege keys
-  const existingKeys = new Set(
-    auftraege.filter(a => a.status !== 'erledigt')
-             .map(a => norm(a.kundencode) + '|' + norm(a.vorgang))
+function combinedEvents() {
+  const fbManual = (window._firebaseManualEvents || []);
+  // Lokale manuelle Events die noch nicht in Firebase sind
+  const localOnly = manualEvents.filter(e => !e.fbId || !fbManual.find(f => f.fbId === e.fbId));
+  return [...allEvents, ...fbManual, ...localOnly];
+}
+function filteredEvents() {
+  let evs = combinedEvents().filter(e => isoDate(e.dateTo) >= todayStr);
+  if (filterCat === "Gemerkt") {
+    const bm = window._bookmarks || {};
+    return evs.filter(e => bm[e.id]);
+  }
+  if (filterCat !== "Alle") evs = evs.filter(e => e.category === filterCat);
+  return evs;
+}
+
+function eventsForDay(dateStr) {
+  const all = filteredEvents().filter(e =>
+    dateStr >= isoDate(e.dateFrom) && dateStr <= isoDate(e.dateTo)
   );
+  const single = all.filter(e => isoDate(e.dateFrom) === isoDate(e.dateTo));
+  const multi  = all.filter(e => isoDate(e.dateFrom) !== isoDate(e.dateTo));
+  return { single, multi, all: [...single, ...multi] };
+}
 
-  for(const raw of pendingCsvRows){
-    const kundencode = (m.kundencode ? raw[m.kundencode] : '') || '';
-    const vorgang = (m.vorgang ? raw[m.vorgang] : '') || '';
-    if(!kundencode.trim() || !vorgang.trim()){ skippedEmpty++; continue; }
-    const key = norm(kundencode) + '|' + norm(vorgang);
-    if(existingKeys.has(key)){ skippedDup++; continue; }
+function render() {
+  const app = document.getElementById("app");
+  if (!app || app.style.display === 'none') return;
+  app.innerHTML = toolbarHTML() + statsHTML() +
+    (view==="kalender" ? calendarHTML() : view==="gemerkt" ? bookmarksHTML() : listHTML());
+  bindEvents();
+}
+window._render = render;
 
-    const telefonnummer = (m.telefonnummer ? raw[m.telefonnummer] : '') || '';
-    const adresse = (m.adresse ? raw[m.adresse] : '') || '';
-    const zaehlerplatzId = (m.zaehlerplatzId ? raw[m.zaehlerplatzId] : '') || '';
-    const koordinaten = m.koordinaten ? parseCoords(raw[m.koordinaten]) : null;
+function toolbarHTML() {
+  const cats = ["Alle",...Object.keys(CATEGORY_COLORS),"Gemerkt"];
+  return `<div class="toolbar">
+    <div class="view-toggle">
+      <button onclick="setView('kalender')" class="${view==='kalender'?'active':''}">📅 Kalender</button>
+      <button onclick="setView('liste')" class="${view==='liste'?'active':''}">☰ Liste</button>
+      <button onclick="setView('gemerkt')" class="${view==='gemerkt'?'active':''}">⭐ Gemerkt</button>
+    </div>
+    <div class="cat-filter">
+      ${cats.map(c=>{
+        const col=c==="Alle"?"#1a1a2e":c==="Gemerkt"?"#e94560":(CATEGORY_COLORS[c]||"#666");
+        const act=filterCat===c;
+        return `<button class="cat-btn${act?' active':''}" style="border-color:${col};${act?'background:'+col+';color:#fff;':''}" onclick="setCat('${c}')">${c==="Gemerkt"?'⭐ ':''} ${c}</button>`;
+      }).join("")}
+    </div>
+  </div>`;
+}
 
-    const adrEntry = upsertAdrFromImport({ kundencode, vorgang, telefonnummer, adresse, zaehlerplatzId, koordinaten });
+function statsHTML() {
+  const bmCount = Object.keys(window._bookmarks||{}).length;
+  return `<div class="stats-bar">
+    <span class="stat-chip">${filteredEvents().length} Veranstaltungen</span>
+    ${bmCount > 0 ? `<span class="stat-chip">⭐ ${bmCount} gemerkt</span>` : ''}
+    <button class="sources-btn" onclick="showSources()">📋 ${sourcesData.length||20} Quellen</button>
+  </div>`;
+}
 
-    auftraege.push({
-      id: uid(),
-      kundencode: kundencode.trim(),
-      vorgang: vorgang.trim(),
-      telefonnummer: telefonnummer || adrEntry.telefonnummer || '',
-      adresse: adresse || adrEntry.adresse || '',
-      zaehlerplatzId: zaehlerplatzId || adrEntry.zaehlerplatzId || '',
-      koordinaten: koordinaten || adrEntry.koordinaten || null,
-      adrEntryId: adrEntry.id,
-      status: 'offen',
-      kommentar: '',
-      termin: null,
-      importedAt: nowIso(),
-      history: [{ ts: nowIso(), field:'angelegt', old:'', new:'aus Datei-Import' }]
-    });
-    existingKeys.add(key);
-    added++;
+function calendarHTML() {
+  const dim=new Date(calYear,calMonth+1,0).getDate();
+  const firstDow=new Date(calYear,calMonth,1).getDay();
+  const offset=firstDow===0?6:firstDow-1;
+  let cells="";
+  for(let i=0;i<offset;i++) cells+="<div></div>";
+  for(let d=1;d<=dim;d++) {
+    const date=new Date(calYear,calMonth,d);
+    const iso=isoLocal(date);
+    const {all:dayEvs}=eventsForDay(iso);
+    const isToday=iso===todayStr, isSel=selectedDay===iso;
+    const isWeekend=date.getDay()===0||date.getDay()===6, isPast=iso<todayStr;
+    let cls="cal-day";
+    if(dayEvs.length&&!isPast) cls+=" has-events";
+    if(isToday) cls+=" is-today";
+    if(isSel) cls+=" is-selected";
+    if(isWeekend&&!isToday) cls+=" is-weekend";
+    if(isPast) cls+=" is-past";
+    const dots=dayEvs.slice(0,4).map(e=>`<span class="dot" style="background:${CATEGORY_COLORS[e.category]||'#666'}"></span>`).join("")+(dayEvs.length>4?`<span class="dot-more">+${dayEvs.length-4}</span>`:"");
+    cells+=`<div class="${cls}" data-date="${iso}"><div class="day-num">${d}</div><div class="day-dots">${dots}</div></div>`;
   }
-
-  saveAuftraege();
-  saveAdressbuch();
-  settings.lastImport = { ts: nowIso(), added, skippedDup, skippedEmpty };
-  saveSettings();
-  pendingCsvRows = null;
-  render();
-  showToast(`Import fertig: ${added} neu, ${skippedDup} Duplikate übersprungen`);
+  const legend=Object.entries(CATEGORY_COLORS).map(([c,col])=>`<div class="legend-item"><span class="dot" style="background:${col}"></span>${c}</div>`).join("");
+  const panel=selectedDay?dayPanelHTML():`<div class="cal-hint">← Auf einen Tag klicken</div>`;
+  return `<div class="calendar-section">
+    <div class="cal-card">
+      <div class="cal-nav">
+        <button class="nav-btn" onclick="prevMonth()">‹</button>
+        <div class="cal-title">${MONTH_NAMES[calMonth]} ${calYear}</div>
+        <button class="nav-btn" onclick="nextMonth()">›</button>
+      </div>
+      <div class="cal-grid">${DOW_LABELS.map(d=>`<div class="dow-label">${d}</div>`).join("")}${cells}</div>
+      <div class="legend">${legend}</div>
+    </div>${panel}
+  </div>`;
 }
 
-/* ---------------------------------------------------------------
-   Backup export / import (for syncing via SharePoint/OneDrive)
---------------------------------------------------------------- */
-function exportBackup(){
-  const payload = {
-    kind: 'auftragsmappe-sicherung',
-    version: 1,
-    exportedAt: nowIso(),
-    auftraege,
-    adressbuch,
-    settings,
-    columnMapping,
-  };
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'auftragsmappe-sicherung.json';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
-
-  settings.lastExport = nowIso();
-  saveSettings();
-  render();
-  showToast('Sicherung heruntergeladen – im SharePoint-/OneDrive-Ordner ablegen');
+function dayPanelHTML() {
+  const {single,multi}=eventsForDay(selectedDay);
+  const d=strToDate(selectedDay);
+  const total=single.length+multi.length;
+  let html=`<div class="day-panel"><div class="day-panel-header"><span>${fmtDate(d)}</span><span class="day-count">${total}</span></div>`;
+  html+=single.map(e=>eventCardHTML(e)).join("");
+  if(multi.length){
+    html+=`<div class="divider"><div class="divider-line"></div><span class="divider-text">Laufende Veranstaltungen</span><div class="divider-line"></div></div>`;
+    html+=multi.map(e=>eventCardHTML(e)).join("");
+  }
+  return html+`</div>`;
 }
 
-document.getElementById('backupInput').addEventListener('change', function(e){
-  const file = e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(evt){
-    let data;
-    try{ data = JSON.parse(evt.target.result); }
-    catch(err){ showToast('Datei ist kein gültiges Sicherungs-JSON'); return; }
-    if(data.kind !== 'auftragsmappe-sicherung'){
-      showToast('Das ist keine Auftragsmappen-Sicherungsdatei');
-      return;
+function listHTML() {
+  const evs=filteredEvents();
+  const dateSet=new Set();
+  evs.forEach(e=>{
+    const cur=strToDate(isoDate(e.dateFrom));
+    const end=strToDate(isoDate(e.dateTo));
+    const start=cur<today?today:cur;
+    const s=new Date(start);
+    while(isoLocal(s)<=isoDate(end)){dateSet.add(isoLocal(s));s.setDate(s.getDate()+1);}
+  });
+  const dates=[...dateSet].sort();
+  if(!dates.length) return `<div class="empty-box">Keine Veranstaltungen gefunden.</div>`;
+  return `<div class="list-section">${dates.map(iso=>{
+    const {single,multi}=eventsForDay(iso);
+    if(!single.length&&!multi.length) return "";
+    const d=strToDate(iso);
+    const label=d.toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long"});
+    const total=single.length+multi.length;
+    let html=`<div><div class="list-date-header"><span class="list-date-label">${label}</span><span class="list-date-count">${total}</span></div>`;
+    html+=single.map(e=>eventCardHTML(e)).join("");
+    if(multi.length){
+      html+=`<div class="divider"><div class="divider-line"></div><span class="divider-text">Laufende Veranstaltungen</span><div class="divider-line"></div></div>`;
+      html+=multi.map(e=>eventCardHTML(e)).join("");
     }
-    mergeBackup(data);
+    return html+`</div>`;
+  }).join("")}</div>`;
+}
+
+function bookmarksHTML() {
+  const bm = window._bookmarks || {};
+  const bmIds = Object.keys(bm);
+  if (!bmIds.length) return `<div class="bookmarks-empty"><div class="icon">⭐</div><p>Noch keine Events gemerkt</p><p style="font-size:12px;margin-top:6px">Tippe auf ☆ bei einem Event um es zu merken</p></div>`;
+
+  // Gemerkten Events aus allEvents holen + Firebase-Daten
+  const bmEvents = bmIds.map(id => {
+    const e = combinedEvents().find(e => String(e.id) === String(id));
+    if (e) return e;
+    // Aus Firebase-Daten nehmen falls Event nicht mehr in aktueller Liste
+    const fbData = bm[id];
+    return { id, ...fbData, dateFrom: strToDate(fbData.dateFrom), dateTo: strToDate(fbData.dateTo||fbData.dateFrom), fromFirebase: true };
+  }).filter(Boolean).sort((a,b) => isoDate(a.dateFrom).localeCompare(isoDate(b.dateFrom)));
+
+  return `<div class="list-section">
+    <div style="font-size:13px;color:#666;margin-bottom:4px">⭐ ${bmEvents.length} gemerkte Veranstaltungen</div>
+    ${bmEvents.map(e=>eventCardHTML(e)).join("")}
+  </div>`;
+}
+
+function getBookmarkersForEvent(eventId) {
+  const all = window._allBookmarks || {};
+  const bookers = [];
+  Object.values(all).forEach(userBms => {
+    if (userBms && userBms[eventId]) {
+      bookers.push({
+        name: userBms[eventId].userName || '?',
+        photo: userBms[eventId].userPhoto || null,
+      });
+    }
+  });
+  return bookers;
+}
+
+function eventCardHTML(e) {
+  const col=CATEGORY_COLORS[e.category]||"#666";
+  const isMulti=isoDate(e.dateFrom)!==isoDate(e.dateTo);
+  const dateStr=fmtDate(e.dateFrom)+(isMulti?" – "+fmtDate(e.dateTo):"");
+  const timeStr=e.timeStart?`<span class="event-time">🕐 ${e.timeStart}${e.timeEnd?' – '+e.timeEnd:''} Uhr</span>`:"";
+  const sourceStr=e.sources||e.source||"";
+  const isBookmarked = !!(window._bookmarks||{})[e.id];
+
+  // Wer hat es gemerkt?
+  const bookers = getBookmarkersForEvent(e.id);
+  const bookersHtml = bookers.length > 0
+    ? `<div style="display:flex;align-items:center;gap:4px;margin-top:5px;flex-wrap:wrap;">
+        ${bookers.map(b => b.photo
+          ? `<img src="${b.photo}" title="${b.name}" style="width:18px;height:18px;border-radius:50%;border:1px solid #fff" />`
+          : `<span style="font-size:10px;background:#e8f0fe;border-radius:10px;padding:1px 6px;color:#0f3460">${b.name.split(' ')[0]}</span>`
+        ).join('')}
+        <span style="font-size:10px;color:#aaa">merken das</span>
+      </div>`
+    : '';
+
+  // Wer hat es eingetragen?
+  const creatorHtml = e.createdBy
+    ? `<span style="font-size:10px;color:#888;">✏️ ${e.createdBy}</span>`
+    : "";
+
+  const deleteBtn = e.manual
+    ? `<button style="background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:0" data-delete="${e.id}" data-fbid="${e.fbId||''}" onclick="event.stopPropagation()">🗑</button>`
+    : "";
+
+  return `<div class="event-card" style="border-left-color:${col}" data-id="${e.id}">
+    <div class="event-top">
+      <div class="event-meta">
+        <span class="cat-tag" style="background:${col}">${e.category}</span>
+        ${sourceStr?`<span class="source-tag">📌 ${sourceStr}</span>`:""}
+        ${creatorHtml}
+        ${deleteBtn}
+      </div>
+      <div class="event-actions">
+        <button class="bookmark-btn ${isBookmarked?'bookmarked':''}" data-bookmark="${e.id}" onclick="event.stopPropagation()" title="${isBookmarked?'Gemerkt':'Merken'}">
+          ${isBookmarked?'⭐':'☆'}
+        </button>
+        <button class="cal-export-btn" data-export="${e.id}" onclick="event.stopPropagation()">📅</button>
+      </div>
+    </div>
+    <div class="event-name">${e.name}</div>
+    <div class="event-date-row">📅 ${dateStr} ${timeStr} ${e.location?`<span class="event-location">· 📍 ${e.location}</span>`:""}
+    </div>
+    ${bookersHtml}
+  </div>`;
+}
+
+function bindEvents() {
+  document.querySelectorAll(".cal-day.has-events").forEach(el=>{
+    el.addEventListener("click",()=>{
+      const iso=el.dataset.date;
+      selectedDay=(selectedDay===iso)?null:iso;
+      render();
+    });
+  });
+  document.querySelectorAll("[data-bookmark]").forEach(btn=>{
+    btn.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const id=parseInt(btn.dataset.bookmark);
+      const e=combinedEvents().find(e=>e.id===id);
+      if(e) window._toggleBookmark(id, {...e, dateFrom:isoDate(e.dateFrom), dateTo:isoDate(e.dateTo)});
+    });
+  });
+  document.querySelectorAll("[data-export]").forEach(btn=>{
+    btn.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const id=parseInt(btn.dataset.export);
+      const e=combinedEvents().find(e=>e.id===id);
+      if(e) exportICS({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)});
+    });
+  });
+  document.querySelectorAll("[data-delete]").forEach(btn=>{
+    btn.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const id=parseInt(btn.dataset.delete);
+      const fbId=btn.dataset.fbid;
+      if(confirm("Löschen?")) {
+        manualEvents=manualEvents.filter(e=>e.id!==id);
+        if(fbId && window._currentUser) window._deleteManualFromFirebase(fbId);
+        try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
+        render();
+      }
+    });
+  });
+}
+
+function setView(v){view=v;selectedDay=null;render();}
+function setCat(c){
+  filterCat=c;
+  if(c==="Gemerkt") view="gemerkt";
+  render();
+}
+function prevMonth(){if(calMonth===0){calMonth=11;calYear--;}else calMonth--;render();}
+function nextMonth(){if(calMonth===11){calMonth=0;calYear++;}else calMonth++;render();}
+function closeModal(id){document.getElementById(id).style.display='none';}
+
+function showAddModal(){
+  document.getElementById("m-from").value=todayStr;
+  document.getElementById("m-to").value=todayStr;
+  document.getElementById("add-modal").style.display="flex";
+}
+
+let nextManualId=100000;
+async function saveManualEvent(){
+  const name=document.getElementById("m-name").value.trim();
+  const from=document.getElementById("m-from").value;
+  if(!name||!from){alert("Name und Datum sind Pflichtfelder.");return;}
+  const fbId = `manual_${Date.now()}_${Math.random().toString(36).slice(2,7)}`;
+  const ev={
+    id: nextManualId++,
+    fbId,
+    name,
+    dateFrom: from,
+    dateTo: document.getElementById("m-to").value||from,
+    timeStart: document.getElementById("m-time-start").value||null,
+    timeEnd: document.getElementById("m-time-end").value||null,
+    category: document.getElementById("m-cat").value,
+    location: document.getElementById("m-location").value.trim(),
+    manual: true,
   };
-  reader.readAsText(file);
-  e.target.value = '';
+  // In Firebase speichern (für alle sichtbar)
+  if (window._currentUser) {
+    await window._saveManualToFirebase(ev);
+  } else {
+    // Ohne Login: nur lokal
+    const localEv = {...ev, dateFrom: strToDate(ev.dateFrom), dateTo: strToDate(ev.dateTo)};
+    manualEvents.push(localEv);
+    try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
+  }
+  closeModal('add-modal');
+  render();
+}
+
+function showSources(){
+  const list=document.getElementById("sources-list");
+  list.innerHTML=sourcesData.length?sourcesData.map(s=>`<li><strong>${s}</strong></li>`).join(""):"<li>20 Quellen (siehe sources.json)</li>";
+  document.getElementById("sources-modal").style.display="flex";
+}
+
+function showQR(){
+  const url=window.location.href.split('?')[0];
+  document.getElementById('qr-img').src=`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(url)}`;
+  document.getElementById('qr-url').textContent=url;
+  document.getElementById('qr-modal').style.display='flex';
+}
+
+document.querySelectorAll(".modal-overlay").forEach(el=>{
+  el.addEventListener("click",e=>{if(e.target===el)el.style.display="none";});
 });
 
-// Returns a dedupe+sorted union of two history arrays
-function mergeHistories(h1, h2){
-  const all = (h1||[]).concat(h2||[]);
-  const seen = new Set();
-  const out = [];
-  for(const h of all){
-    const key = h.ts + '|' + h.field + '|' + h.new;
-    if(seen.has(key)) continue;
-    seen.add(key);
-    out.push(h);
-  }
-  out.sort((a,b) => new Date(a.ts) - new Date(b.ts));
-  return out;
-}
-function lastTs(history){
-  if(!history || history.length === 0) return 0;
-  return Math.max(...history.map(h => new Date(h.ts).getTime()));
-}
-// Merge two records of the same entity: field values come from whichever
-// side was edited more recently, history is the union of both, nothing lost.
-function mergeRecord(local, incoming, fieldKeys){
-  const mergedHistory = mergeHistories(local.history, incoming.history);
-  const localNewer = lastTs(local.history) >= lastTs(incoming.history);
-  const base = localNewer ? local : incoming;
-  const merged = Object.assign({}, base);
-  merged.history = mergedHistory;
-  return merged;
-}
-function mergeCollection(localArr, incomingArr){
-  const map = new Map();
-  for(const item of localArr) map.set(item.id, item);
-  for(const item of incomingArr){
-    if(!map.has(item.id)){
-      map.set(item.id, item);
-    } else {
-      map.set(item.id, mergeRecord(map.get(item.id), item));
-    }
-  }
-  return Array.from(map.values());
-}
-
-function mergeBackup(data, silent){
-  const beforeA = auftraege.length, beforeB = adressbuch.length;
-  auftraege = mergeCollection(auftraege, data.auftraege || []);
-  adressbuch = mergeCollection(adressbuch, data.adressbuch || []);
-
-  // keep local settings unless locally unset
-  if(!settings.organizerEmail && data.settings && data.settings.organizerEmail){
-    settings.organizerEmail = data.settings.organizerEmail;
-  }
-  if(!columnMapping && data.columnMapping){
-    columnMapping = data.columnMapping;
-  }
-  settings.lastMergeImport = { ts: nowIso(), sourceExportedAt: data.exportedAt };
-
-  saveAuftraege();
-  saveAdressbuch();
-  saveSettings();
-  if(columnMapping) saveMapping();
-  if(!silent){
-    render();
-    showToast(`Sicherung zusammengeführt (${auftraege.length - beforeA >= 0 ? '+'+(auftraege.length-beforeA) : (auftraege.length-beforeA)} Aufträge, ${adressbuch.length - beforeB >= 0 ? '+'+(adressbuch.length-beforeB) : (adressbuch.length-beforeB)} Adressen neu)`);
-  }
-}
-
-function openColumnPicker(){
-  const rows = COLUMN_DEFS.map(c => `
-    <label>
-      <input type="checkbox" id="colvis_${c.key}" ${settings.visibleColumns[c.key] !== false ? 'checked' : ''}>
-      ${c.label}
-    </label>
-  `).join('');
-  showModal(`
-    <div class="modal-head"><h3>Sichtbare Spalten</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <p class="hint" style="margin-top:0">Kundencode ist immer sichtbar. Wähle, welche weiteren Felder in den Tabellen angezeigt werden sollen.</p>
-      <div class="col-picker">${rows}</div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn ghost" onclick="closeModal()">Abbrechen</button>
-      <button class="btn primary" onclick="saveColumnPicker()">Übernehmen</button>
-    </div>
-  `);
-}
-function saveColumnPicker(){
-  COLUMN_DEFS.forEach(c => {
-    const el = document.getElementById('colvis_'+c.key);
-    settings.visibleColumns[c.key] = el ? el.checked : true;
-  });
-  saveSettings();
-  closeModal();
-  render();
-  showToast('Spaltenansicht gespeichert');
-}
-
-/* ---------------------------------------------------------------
-   Settings modal (organizer email)
---------------------------------------------------------------- */
-function openSettingsModal(){
-  showModal(`
-    <div class="modal-head"><h3>Absenderadresse für Termineinladungen</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <div class="field">
-        <label>Deine E-Mail-Adresse (Organisator)</label>
-        <input type="email" id="orgEmailInput" value="${escapeHtml(settings.organizerEmail||'')}" placeholder="vorname.nachname@firma.de">
-      </div>
-      <p class="hint">Diese Adresse wird als Organisator in jede generierte Termineinladung (.ics) eingetragen. Beim Öffnen der Datei erkennt Outlook dich damit automatisch als Absender.</p>
-    </div>
-    <div class="modal-foot">
-      <button class="btn ghost" onclick="closeModal()">Abbrechen</button>
-      <button class="btn primary" onclick="saveOrgEmail()">Speichern</button>
-    </div>
-  `);
-}
-function saveOrgEmail(){
-  const val = document.getElementById('orgEmailInput').value.trim();
-  settings.organizerEmail = val;
-  saveSettings();
-  updateOrgStamp();
-  closeModal();
-  showToast('Absenderadresse gespeichert');
-}
-function updateOrgStamp(){
-  const el = document.getElementById('orgEmailStamp');
-  el.textContent = settings.organizerEmail ? settings.organizerEmail : 'Absender nicht gesetzt';
-}
-
-/* ---------------------------------------------------------------
-   Modal helpers
---------------------------------------------------------------- */
-function showModal(innerHtml){
-  closeModal();
-  const backdrop = document.createElement('div');
-  backdrop.className = 'modal-backdrop';
-  backdrop.id = 'activeModalBackdrop';
-  backdrop.onclick = (e) => { if(e.target === backdrop) closeModal(); };
-  backdrop.innerHTML = `<div class="modal">${innerHtml}</div>`;
-  document.body.appendChild(backdrop);
-}
-function closeModal(){
-  const el = document.getElementById('activeModalBackdrop');
-  if(el) el.remove();
-}
-function escapeHtml(s){
-  return (s||'').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-/* ---------------------------------------------------------------
-   Tabs / Rendering
---------------------------------------------------------------- */
-function switchTab(tab){
-  currentTab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
-  document.getElementById('view-offen').style.display = tab === 'offen' ? '' : 'none';
-  document.getElementById('view-erledigt').style.display = tab === 'erledigt' ? '' : 'none';
-  document.getElementById('view-adressbuch').style.display = tab === 'adressbuch' ? '' : 'none';
-  document.getElementById('view-einstellungen').style.display = tab === 'einstellungen' ? '' : 'none';
-}
-
-function render(){
-  const offen = auftraege.filter(a => a.status !== 'erledigt');
-  const erledigt = auftraege.filter(a => a.status === 'erledigt');
-  document.getElementById('tabCountOffen').textContent = offen.length;
-  document.getElementById('tabCountErledigt').textContent = erledigt.length;
-  document.getElementById('tabCountAdr').textContent = adressbuch.length;
-
-  renderTabView('offen', offen);
-  renderTabView('erledigt', erledigt);
-  document.getElementById('view-adressbuch').innerHTML = renderAdressbuch();
-  document.getElementById('view-einstellungen').innerHTML = renderEinstellungen();
-  updateOrgStamp();
-}
-
-function renderEinstellungen(){
-  const lp = settings.lastImport;
-  const lastImportText = lp
-    ? `Letzter Import: ${fmtTs(lp.ts)} · +${lp.added} neu · ${lp.skippedDup} Duplikate übersprungen`
-    : 'Noch kein Import';
-
-  const syncBits = [];
-  if(settings.lastExport) syncBits.push('Sicherung exportiert: ' + fmtTs(settings.lastExport));
-  if(settings.lastMergeImport) syncBits.push('Zuletzt zusammengeführt: ' + fmtTs(settings.lastMergeImport.ts));
-  const syncText = syncBits.length
-    ? syncBits.join(' · ')
-    : 'Noch keine Sicherung ausgetauscht — exportiere und lege die Datei in deinem SharePoint-/OneDrive-Ordner ab';
-
-  return `
-    <div class="settings-section">
-      <h4>Daten importieren</h4>
-      <div class="settings-row">
-        <button class="btn primary" onclick="document.getElementById('csvInput').click()">Datei importieren (CSV/Excel)</button>
-        <button class="btn" onclick="openMappingModal(true)">Spaltenzuordnung</button>
-      </div>
-      <p class="hint">${escapeHtml(lastImportText)}</p>
-    </div>
-
-    <div class="settings-section">
-      <h4>Anzeige</h4>
-      <div class="settings-row">
-        <button class="btn" onclick="openColumnPicker()">👁 Sichtbare Spalten</button>
-      </div>
-    </div>
-
-    <div class="settings-section">
-      <h4>Termineinladungen</h4>
-      <div class="settings-row">
-        <button class="btn" onclick="openSettingsModal()">Absenderadresse</button>
-      </div>
-      <p class="hint">${settings.organizerEmail ? 'Aktuell: ' + escapeHtml(settings.organizerEmail) : 'Noch keine Absenderadresse hinterlegt.'}</p>
-    </div>
-
-    <div class="settings-section">
-      <h4>Eigener Datenordner (PC, Chrome/Edge)</h4>
-      <div class="settings-row">
-        ${folderHandle && !folderNeedsPermission
-          ? `<button class="btn" onclick="chooseFolder()">📁 Anderen Ordner wählen</button>`
-          : folderNeedsPermission
-            ? `<button class="btn primary" onclick="reconnectFolder()">🔄 Ordner wieder verbinden</button>`
-            : `<button class="btn primary" onclick="chooseFolder()" ${FS_SUPPORTED ? '' : 'disabled'}>📁 Ordner verknüpfen</button>`
-        }
-      </div>
-      <p class="hint">
-        ${!FS_SUPPORTED
-          ? 'Auf diesem Gerät/Browser nicht verfügbar (nur Desktop Chrome/Edge). Bitte weiterhin Sicherung exportieren/importieren nutzen.'
-          : folderHandle && !folderNeedsPermission
-            ? 'Verknüpft — Änderungen werden automatisch in eine Datei in diesem Ordner geschrieben. Wähle dafür deinen OneDrive-/SharePoint-synchronisierten Ordner, dann landen die Daten zentral.' + (settings.folderLastSync ? ' Zuletzt gespeichert: ' + fmtTs(settings.folderLastSync) : '')
-            : folderNeedsPermission
-              ? 'Ordner war schon einmal verknüpft, der Browser braucht aber nach einem Neustart einmal deine Bestätigung.'
-              : 'Wähle einen lokalen Ordner (idealerweise deinen OneDrive-/SharePoint-synchronisierten Ordner). Die App liest und schreibt danach automatisch eine Datei darin — kein manueller Export mehr nötig auf diesem Gerät.'
-        }
-      </p>
-    </div>
-
-    <div class="settings-section">
-      <h4>Geräteübergreifende Sicherung (manuell, z.B. Handy)</h4>
-      <div class="settings-row">
-        <button class="btn" onclick="exportBackup()">📤 Sicherung exportieren</button>
-        <button class="btn" onclick="document.getElementById('backupInput').click()">📥 Sicherung importieren</button>
-      </div>
-      <p class="hint">${escapeHtml(syncText)}</p>
-    </div>
-  `;
-}
-
-function renderTabView(tabKey, list){
-  const container = document.getElementById('view-' + tabKey);
-  const toggleHtml = `
-    <div class="view-toggle">
-      <button class="btn small ${viewMode[tabKey]==='liste'?'active':''}" onclick="setViewMode('${tabKey}','liste')">📋 Liste</button>
-      <button class="btn small ${viewMode[tabKey]==='karte'?'active':''}" onclick="setViewMode('${tabKey}','karte')">🗺️ Karte</button>
-    </div>`;
-
-  if(viewMode[tabKey] === 'karte'){
-    container.innerHTML = toggleHtml + `<div id="map-${tabKey}" style="height:540px;border-radius:10px;overflow:hidden;border:1px solid var(--line)"></div>`;
-    initMapForTab(tabKey, list);
-  } else {
-    if(mapInstances[tabKey]){ mapInstances[tabKey].remove(); delete mapInstances[tabKey]; }
-    container.innerHTML = toggleHtml + renderAuftragTable(list, tabKey === 'erledigt');
-  }
-}
-
-function setViewMode(tabKey, mode){
-  viewMode[tabKey] = mode;
-  render();
-}
-
-function initMapForTab(tabKey, list){
-  const withCoords = list.filter(a => a.koordinaten);
-  const el = document.getElementById('map-' + tabKey);
-  if(!el) return;
-  if(mapInstances[tabKey]){ mapInstances[tabKey].remove(); delete mapInstances[tabKey]; }
-
-  if(withCoords.length === 0){
-    el.outerHTML = `<div class="map-empty">Keine Koordinaten in ${tabKey === 'erledigt' ? 'den erledigten' : 'den offenen'} Aufträgen vorhanden.</div>`;
-    return;
-  }
-
-  const map = L.map('map-' + tabKey);
-  mapInstances[tabKey] = map;
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap',
-    maxZoom: 19
-  }).addTo(map);
-
-  const statusColor = {
-    offen:'#55635f', in_bearbeitung:'#b5790a', termin_vereinbart:'#2b5a8c',
-    kunde_rueckmeldung:'#6a4c8c', anlage_nicht_fertig:'#a3392f', erledigt:'#2c7a4b'
-  };
-
-  const bounds = [];
-  withCoords.forEach(a => {
-    const color = statusColor[a.status] || '#55635f';
-    const icon = L.divIcon({
-      className: '',
-      html: `<div style="width:16px;height:16px;border-radius:50%;background:${color};border:2px solid #fff;box-shadow:0 0 0 1px ${color}"></div>`,
-      iconSize: [16,16], iconAnchor: [8,8]
-    });
-    const marker = L.marker([a.koordinaten.lat, a.koordinaten.lon], { icon }).addTo(map);
-    marker.bindPopup(`
-      <div class="pop-code">${escapeHtml(a.kundencode)}</div>
-      <div>${escapeHtml(a.vorgang)}</div>
-      <div class="pop-status" style="background:${color}22;color:${color}">${STATUS[a.status].label}</div>
-      ${a.adresse ? `<div style="margin-top:6px">${escapeHtml(a.adresse)}</div>` : ''}
-      ${a.telefonnummer ? `<div class="muted">${escapeHtml(a.telefonnummer)}</div>` : ''}
-    `);
-    bounds.push([a.koordinaten.lat, a.koordinaten.lon]);
-  });
-  if(bounds.length === 1){ map.setView(bounds[0], 15); }
-  else{ map.fitBounds(bounds, { padding: [30,30] }); }
-}
-
-function renderAuftragTable(list, isErledigtTab){
-  if(list.length === 0){
-    return `<div class="empty-state">
-      <div class="big">${isErledigtTab ? 'Noch keine erledigten Vorgänge' : 'Keine offenen Vorgänge'}</div>
-      <div>${isErledigtTab ? 'Erledigte Aufträge erscheinen hier automatisch.' : 'Importiere eine CSV- oder Excel-Datei, um Vorgänge anzulegen.'}</div>
-    </div>`;
-  }
-  const vc = settings.visibleColumns || DEFAULT_VISIBLE_COLUMNS;
-  const show = k => vc[k] !== false;
-
-  const rows = list.slice().sort((a,b) => (a.kundencode||'').localeCompare(b.kundencode||'')).map(a => `
-    <tr>
-      <td data-label="Kundencode"><span class="code">${escapeHtml(a.kundencode)}</span></td>
-      ${show('vorgang') ? `<td data-label="Vorgang">${escapeHtml(a.vorgang)}</td>` : ''}
-      ${show('status') ? `<td data-label="Status">
-        <select class="status-select ${STATUS[a.status].cls}" onchange="setStatus('${a.id}', this.value)">
-          ${Object.entries(STATUS).map(([k,v]) => `<option value="${k}" ${k===a.status?'selected':''}>${v.label}</option>`).join('')}
-        </select>
-      </td>` : ''}
-      ${show('telefonnummer') ? `<td data-label="Telefon">
-        <input class="cell-input" type="text" value="${escapeHtml(a.telefonnummer)}"
-          onchange="updateAuftragField('${a.id}','telefonnummer', this.value)" placeholder="–">
-      </td>` : ''}
-      ${show('adresse') ? `<td data-label="Adresse">
-        <input class="cell-input" type="text" value="${escapeHtml(a.adresse)}"
-          onchange="updateAuftragField('${a.id}','adresse', this.value)" placeholder="–">
-      </td>` : ''}
-      ${show('kommentar') ? `<td data-label="Kommentar">
-        <textarea class="cell-input" rows="1" onchange="updateAuftragField('${a.id}','kommentar', this.value)" placeholder="Notiz…">${escapeHtml(a.kommentar)}</textarea>
-      </td>` : ''}
-      ${show('termin') ? `<td data-label="Termin">
-        ${a.termin
-          ? `<span class="termin-chip">${a.termin.date} · ${a.termin.time}</span>`
-          : `<span class="muted">–</span>`}
-      </td>` : ''}
-      ${show('koordinaten') ? `<td data-label="Koordinaten">
-        <input class="cell-input" type="text" value="${escapeHtml(fmtCoords(a.koordinaten))}"
-          onchange="updateAuftragCoords('${a.id}', this.value)" placeholder="52.130, 11.630" style="font-family:var(--font-mono);font-size:12px">
-      </td>` : ''}
-      <td data-label="Aktionen">
-        <div class="row-actions">
-          <button class="icon-btn" onclick="openTerminModal('${a.id}')" title="Termin festlegen">📅</button>
-          <button class="icon-btn" onclick="openAuftragHistory('${a.id}')" title="Verlauf">🕒</button>
-        </div>
-      </td>
-    </tr>
-  `).join('');
-
-  const headCells = [
-    '<th>Kundencode</th>',
-    show('vorgang') ? '<th>Vorgang</th>' : '',
-    show('status') ? '<th>Status</th>' : '',
-    show('telefonnummer') ? '<th>Telefon</th>' : '',
-    show('adresse') ? '<th>Adresse</th>' : '',
-    show('kommentar') ? '<th>Kommentar</th>' : '',
-    show('termin') ? '<th>Termin</th>' : '',
-    show('koordinaten') ? '<th>Koordinaten</th>' : '',
-    '<th></th>'
-  ].join('');
-
-  return `<div class="grid-wrap"><table>
-    <thead><tr>${headCells}</tr></thead>
-    <tbody>${rows}</tbody>
-  </table></div>`;
-}
-
-function renderAdressbuch(){
-  if(adressbuch.length === 0){
-    return `<div class="empty-state">
-      <div class="big">Adressbuch ist leer</div>
-      <div>Einträge entstehen automatisch beim Import und bleiben dauerhaft erhalten.</div>
-    </div>`;
-  }
-  const rows = adressbuch.slice().sort((a,b)=>(a.adresse||'').localeCompare(b.adresse||'')).map(e => `
-    <tr>
-      <td data-label="Adresse">
-        <input class="cell-input" type="text" value="${escapeHtml(e.adresse)}" onchange="updateAdrField('${e.id}','adresse', this.value)">
-      </td>
-      <td data-label="Zählerplatz-ID"><span class="code">${escapeHtml(e.zaehlerplatzId || '–')}</span></td>
-      <td data-label="Telefon">
-        <input class="cell-input" type="text" value="${escapeHtml(e.telefonnummer)}" onchange="updateAdrField('${e.id}','telefonnummer', this.value)">
-      </td>
-      <td data-label="Koordinaten">
-        <input class="cell-input" type="text" value="${escapeHtml(fmtCoords(e.koordinaten))}" placeholder="52.130, 11.630"
-          onchange="updateAdrCoordsField('${e.id}', this.value)" style="font-family:var(--font-mono);font-size:12px">
-      </td>
-      <td data-label="Kundencode"><span class="muted">${escapeHtml(e.kundencode || '–')}</span></td>
-      <td data-label="Verlauf">
-        <button class="icon-btn" onclick="openAdrHistory('${e.id}')">🕒 ${e.history.length}</button>
-      </td>
-    </tr>
-  `).join('');
-  return `<div class="grid-wrap"><table>
-    <thead><tr><th>Adresse</th><th>Zählerplatz-ID</th><th>Telefon</th><th>Koordinaten</th><th>Kundencode</th><th>Verlauf</th></tr></thead>
-    <tbody>${rows}</tbody>
-  </table></div>`;
-}
-function updateAdrCoordsField(entryId, value){
-  if(!value.trim()){ updateAdrCoords(entryId, null); render(); return; }
-  const parsed = parseCoords(value);
-  if(!parsed){ showToast('Ungültiges Koordinatenformat, z.B. 52.130, 11.630'); render(); return; }
-  updateAdrCoords(entryId, parsed);
-  showToast('Gespeichert');
-}
-
-/* ---------------------------------------------------------------
-   Field updates
---------------------------------------------------------------- */
-function updateAuftragField(id, field, value){
-  const a = auftraege.find(x => x.id === id);
-  if(!a) return;
-  const oldVal = a[field] || '';
-  if(oldVal === value) return;
-  a.history.push({ ts: nowIso(), field, old: oldVal, new: value });
-  a[field] = value;
-  saveAuftraege();
-
-  // propagate phone/address edits into address book
-  if((field === 'telefonnummer' || field === 'adresse') && a.adrEntryId){
-    updateAdrField(a.adrEntryId, field, value);
-  }
-  showToast('Gespeichert');
-}
-
-function setStatus(id, newStatus){
-  const a = auftraege.find(x => x.id === id);
-  if(!a) return;
-  const old = a.status;
-  if(old === newStatus) return;
-  a.history.push({ ts: nowIso(), field:'status', old: STATUS[old].label, new: STATUS[newStatus].label });
-  a.status = newStatus;
-  saveAuftraege();
-  render();
-  showToast(newStatus === 'erledigt' ? 'Als erledigt markiert' : 'Status aktualisiert');
-}
-
-/* ---------------------------------------------------------------
-   History modals
---------------------------------------------------------------- */
-function historyHtml(history){
-  if(!history || history.length === 0) return '<p class="hint">Kein Verlauf vorhanden.</p>';
-  const items = history.slice().reverse().map(h => `
-    <li><span class="ts">${fmtTs(h.ts)}</span> — <strong>${escapeHtml(h.field)}</strong>:
-      ${h.old ? `„${escapeHtml(h.old)}“ → ` : ''}„${escapeHtml(h.new)}“
-    </li>
-  `).join('');
-  return `<ul class="history-list">${items}</ul>`;
-}
-function openAuftragHistory(id){
-  const a = auftraege.find(x => x.id === id);
-  if(!a) return;
-  showModal(`
-    <div class="modal-head"><h3>Verlauf · ${escapeHtml(a.kundencode)}</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">${historyHtml(a.history)}</div>
-    <div class="modal-foot"><button class="btn ghost" onclick="closeModal()">Schließen</button></div>
-  `);
-}
-function openAdrHistory(id){
-  const e = adressbuch.find(x => x.id === id);
-  if(!e) return;
-  showModal(`
-    <div class="modal-head"><h3>Verlauf · ${escapeHtml(e.adresse || e.zaehlerplatzId || 'Adressbuch')}</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">${historyHtml(e.history)}</div>
-    <div class="modal-foot"><button class="btn ghost" onclick="closeModal()">Schließen</button></div>
-  `);
-}
-
-/* ---------------------------------------------------------------
-   Termin modal + ICS generation
---------------------------------------------------------------- */
-function openTerminModal(id){
-  const a = auftraege.find(x => x.id === id);
-  if(!a) return;
-  terminModalAuftragId = id;
-  const today = new Date().toISOString().slice(0,10);
-  showModal(`
-    <div class="modal-head"><h3>Termin festlegen · ${escapeHtml(a.kundencode)}</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <div class="field-row">
-        <div class="field"><label>Datum</label><input type="date" id="terminDate" value="${a.termin ? a.termin.dateIso : today}"></div>
-        <div class="field"><label>Uhrzeit</label><input type="time" id="terminTime" value="${a.termin ? a.termin.time : '09:00'}"></div>
-        <div class="field" style="max-width:120px"><label>Dauer (Min.)</label><input type="number" id="terminDuration" value="${a.termin ? a.termin.duration : 60}" min="15" step="15"></div>
-      </div>
-      <div class="field">
-        <label>Betreff</label>
-        <input type="text" id="terminSubject" value="Termin: ${escapeHtml(a.kundencode)} – ${escapeHtml(a.vorgang)}">
-      </div>
-      <div class="field">
-        <label>Ort</label>
-        <input type="text" id="terminLocation" value="${escapeHtml(a.adresse)}">
-      </div>
-      <div class="field">
-        <label>Teilnehmer-E-Mail (optional)</label>
-        <input type="email" id="terminAttendee" placeholder="kunde@beispiel.de">
-        <p class="hint">Ohne E-Mail wird eine normale Kalenderdatei erzeugt, die du beim Öffnen direkt in deinen Kalender übernimmst. Mit E-Mail wird eine echte Termineinladung erzeugt, die du nach dem Öffnen in Outlook nur noch senden musst.</p>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn ghost" onclick="closeModal()">Abbrechen</button>
-      <button class="btn primary" onclick="generateIcs()">Termindatei erzeugen</button>
-    </div>
-  `);
-}
-
-function pad(n){ return n.toString().padStart(2,'0'); }
-
-function generateIcs(){
-  const a = auftraege.find(x => x.id === terminModalAuftragId);
-  if(!a) return;
-  const dateIso = document.getElementById('terminDate').value;
-  const time = document.getElementById('terminTime').value;
-  const duration = parseInt(document.getElementById('terminDuration').value, 10) || 60;
-  const subject = document.getElementById('terminSubject').value || 'Termin';
-  const location = document.getElementById('terminLocation').value || '';
-  const attendee = document.getElementById('terminAttendee').value.trim();
-
-  if(!dateIso || !time){ showToast('Bitte Datum und Uhrzeit angeben'); return; }
-  if(!settings.organizerEmail){
-    showToast('Bitte zuerst deine Absenderadresse hinterlegen');
-    openSettingsModal();
-    return;
-  }
-
-  const [y,mo,d] = dateIso.split('-').map(n=>parseInt(n,10));
-  const [hh,mm] = time.split(':').map(n=>parseInt(n,10));
-  const start = new Date(y, mo-1, d, hh, mm, 0);
-  const end = new Date(start.getTime() + duration*60000);
-
-  const dtStart = `${start.getFullYear()}${pad(start.getMonth()+1)}${pad(start.getDate())}T${pad(start.getHours())}${pad(start.getMinutes())}00`;
-  const dtEnd = `${end.getFullYear()}${pad(end.getMonth()+1)}${pad(end.getDate())}T${pad(end.getHours())}${pad(end.getMinutes())}00`;
-  const dtStamp = new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
-  const eventUid = (a.termin && a.termin.uid) ? a.termin.uid : (uid() + '@auftragsmappe');
-  const seq = (a.termin && typeof a.termin.sequence === 'number') ? a.termin.sequence + 1 : 0;
-
-  const descLines = [];
-  if(a.vorgang) descLines.push('Vorgang: ' + a.vorgang);
-  if(a.telefonnummer) descLines.push('Telefon: ' + a.telefonnummer);
-  if(a.kommentar) descLines.push('Notiz: ' + a.kommentar);
-  const description = descLines.join(String.fromCharCode(10));
-
-  const method = attendee ? 'REQUEST' : 'PUBLISH';
-  let icsLines = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Auftragsmappe//DE',
-    'CALSCALE:GREGORIAN',
-    'METHOD:' + method,
-    'BEGIN:VEVENT',
-    'UID:' + eventUid,
-    'DTSTAMP:' + dtStamp,
-    'DTSTART:' + dtStart,
-    'DTEND:' + dtEnd,
-    'SUMMARY:' + icsEscape(subject),
-    'LOCATION:' + icsEscape(location),
-    'DESCRIPTION:' + icsEscape(description),
-    'ORGANIZER;CN=' + icsEscape(settings.organizerEmail) + ':mailto:' + settings.organizerEmail,
-  ];
-  if(attendee){
-    icsLines.push('ATTENDEE;CN=' + icsEscape(a.kundencode) + ';RSVP=TRUE:mailto:' + attendee);
-  }
-  icsLines.push('STATUS:CONFIRMED');
-  icsLines.push('SEQUENCE:' + seq);
-  icsLines.push('END:VEVENT');
-  icsLines.push('END:VCALENDAR');
-
-  const icsContent = icsLines.join('\r\n');
-  const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `Termin_${(a.kundencode||'auftrag').replace(/[^a-z0-9]/gi,'_')}.ics`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
-
-  const oldTermin = a.termin ? `${a.termin.date} ${a.termin.time}` : '';
-  a.termin = { dateIso, date: `${pad(d)}.${pad(mo)}.${y}`, time, duration, uid: eventUid, sequence: seq };
-  a.history.push({ ts: nowIso(), field:'termin', old: oldTermin, new: `${a.termin.date} ${a.termin.time}` });
-  if(a.status === 'offen'){
-    a.history.push({ ts: nowIso(), field:'status', old: STATUS.offen.label, new: STATUS.termin_vereinbart.label });
-    a.status = 'termin_vereinbart';
-  }
-  saveAuftraege();
-  closeModal();
-  render();
-  showToast(attendee
-    ? 'Termindatei heruntergeladen – öffnen und in Outlook senden'
-    : 'Termindatei heruntergeladen – öffnen, um sie in den Kalender zu übernehmen');
-}
-
-function icsEscape(s){
-  return (s||'').toString().replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
-}
-
-/* ---------------------------------------------------------------
-   Init
---------------------------------------------------------------- */
-(async function init(){
-  await loadAll();
-  await tryRestoreFolder();
-  render();
-})();
-
-if('serviceWorker' in navigator && location.protocol !== 'file:'){
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  });
-}
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>
 </html>
