@@ -271,10 +271,12 @@ onAuthStateChanged(auth, async (user) => {
     document.getElementById('app').style.display = 'block';
     if (window._loadEvents) window._loadEvents();
   } else {
-    // Nicht eingeloggt
+    // Nicht eingeloggt — App trotzdem zeigen, nur Anmelden-Button
     document.getElementById('user-area').innerHTML = `<button class="btn-secondary" onclick="window._login()">🔑 Anmelden</button>`;
     document.getElementById('loading').style.display = 'none';
-    document.getElementById('login-screen').style.display = 'block';
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    if (window._loadEvents) window._loadEvents();
   }
 });
 
@@ -285,8 +287,8 @@ window._logout = async () => {
   await signOut(auth);
   window._bookmarks = {};
   window._currentUser = null;
-  document.getElementById('app').style.display = 'none';
-  document.getElementById('login-screen').style.display = 'block';
+  document.getElementById('user-area').innerHTML = `<button class="btn-secondary" onclick="window._login()">🔑 Anmelden</button>`;
+  if (window._render) window._render();
 };
 window.loginWithGoogle = window._login;
 window.skipLogin = () => {
