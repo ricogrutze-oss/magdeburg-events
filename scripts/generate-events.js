@@ -1,5 +1,5 @@
-// generate-events.js — Magdeburg Events v6
-// 5 Aufrufe pro Kategorie — nur konkrete Einzeltermine, keine Dauerveranstaltungen
+// generate-events.js — Magdeburg Events v7
+// Pro Quelle ein eigener API-Aufruf — maximale Qualität, nichts wird übersprungen
 const https = require("https");
 const fs    = require("fs");
 const path  = require("path");
@@ -9,69 +9,76 @@ if (!API_KEY) { console.error("❌ ANTHROPIC_API_KEY nicht gesetzt!"); process.e
 
 const sourcesPath = path.join(__dirname, "..", "sources.json");
 const sources     = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
-console.log(`📋 ${sources.length} Quellen geladen`);
+console.log(`📋 ${sources.length} Quellen geladen — jede wird einzeln abgefragt`);
 
 const today = new Date().toISOString().split("T")[0];
 const until = new Date(); until.setDate(until.getDate() + 60);
 const untilStr = until.toISOString().split("T")[0];
 
-// Flohmarkt-Quellen extra hervorheben
-const flohmarktSources = sources
-  .filter(s => s.name.toLowerCase().includes('flohmarkt') || s.name.toLowerCase().includes('kleinanzeigen'))
-  .map(s => `- ${s.url} (${s.name})`).join("\n");
+// Kategorie automatisch aus Quellenname/URL erkennen
+function guessCategory(source) {
+  const t = (source.name + " " + source.url + " " + (source.beschreibung||"")).toLowerCase();
+  if (/flohmarkt|trödelmarkt|trodel|markt|kleinanzeigen/.test(t)) return "Flohmarkt";
+  if (/theater|oper|ballett|schauspiel|moritzhof|kulturzentrum|museum|ausstellung/.test(t)) return "Theater";
+  if (/konzert|musik|band|factory|stadthalle|eventim|bandsintown/.test(t)) return "Musik";
+  if (/familie|kinder|jugend|spielplatz/.test(t)) return "Familie";
+  if (/sport|fußball|laufen|fitness/.test(t)) return "Sport";
+  if (/festival|stadtfest|volksfest|elbauenpark|seebühne/.test(t)) return "Kultur";
+  return null; // Alle Kategorien suchen
+}
 
-const allSourceList = sources.map(s => `- ${s.url} (${s.name})`).join("\n");
+// Umkreis für Flohmarkt-Quellen
+function needsUmkreis(source) {
+  const t = (source.name + " " + source.url).toLowerCase();
+  return /flohmarkt|trödelmarkt|kleinanzeigen/.test(t);
+}
 
-const CATEGORIES = [
-  { name: "Familie & Kinder",     cat: "Familie",   keywords: "Familie Kinder Jugend Kinderfest Familientag Spielplatz" },
-  {
-    name: "Flohmärkte & Märkte",
-    cat: "Flohmarkt",
-    keywords: "Flohmarkt Trödelmarkt Markt Straßenfest Bauernmarkt",
-    extraSources: flohmarktSources,
-    umkreis: true
-  },
-  { name: "Musik & Konzerte",     cat: "Musik",     keywords: "Konzert Musik Band Live Open-Air Musikfestival" },
-  { name: "Theater & Kultur",     cat: "Theater",   keywords: "Theater Oper Ballett Schauspiel Ausstellung Museum Lesung" },
-  { name: "Festivals & Sport",    cat: "Kultur",    keywords: "Festival Stadtfest Volksfest Sport Fußball Laufen" },
-];
+function buildPrompt(source, existingEvents) {
+  const cat = guessCategory(source);
+  const umkreis = needsUmkreis(source);
 
-function buildPrompt(category, existingEvents) {
-  const sources = category.extraSources
-    ? `Durchsuche BESONDERS diese spezialisierten Quellen:\n${category.extraSources}\n\nUnd auch:\n${allSourceList}`
-    : `Durchsuche:\n${allSourceList}`;
-
-  const gebiet = category.umkreis
+  const gebiet = umkreis
     ? `Magdeburg UND Umkreis 30km (Schönebeck, Staßfurt, Bernburg, Haldensleben, Wolmirstedt, Zerbst, Burg, Barleben, Gommern, Oschersleben, Egeln, Calbe)`
     : `Magdeburg Sachsen-Anhalt`;
 
-  // Bekannte Events dieser Kategorie aus der alten Liste
+  const catFilter = cat
+    ? `Suche NUR nach Kategorie: ${cat}`
+    : `Suche nach allen Veranstaltungstypen (Musik, Theater, Sport, Kultur, Familie, Flohmärkte)`;
+
+  // Bekannte Events NUR von dieser Quelle überspringen — spart Token
   const known = existingEvents
-    .filter(e => e.category === category.cat)
-    .map(e => `- ${e.name} (${e.dateFrom})`)
-    .slice(0, 30) // Max 30 damit der Prompt nicht zu lang wird
-    .join("\n");
+    .filter(e => {
+      const src = (e.sources||"").toLowerCase();
+      return src.includes(source.name.toLowerCase()) ||
+             src.includes(source.url.toLowerCase().split('/')[0]);
+    })
+    .map(e => `${e.name} ${e.dateFrom}`)
+    .slice(0, 15)
+    .join(" | ");
 
   const knownSection = known
-    ? `\nDIESE EVENTS KENNST DU BEREITS — nicht nochmal zurückgeben:\n${known}\n`
+    ? `\nBEREITS BEKANNTE EVENTS — nicht nochmal zurückgeben:\n${known}\n`
     : "";
 
-  return `Suche im Web nach "${category.keywords}" Veranstaltungen in ${gebiet} vom ${today} bis ${untilStr}.
+  return `Rufe die folgende Webseite auf und extrahiere alle Veranstaltungen:
 
-${sources}
+QUELLE: ${source.url}
+BESCHREIBUNG: ${source.beschreibung || source.name}
+
+Suche nach Veranstaltungen in ${gebiet} vom ${today} bis ${untilStr}.
+${catFilter}
 ${knownSection}
-WICHTIGE REGELN:
+REGELN:
 - Nur KONKRETE EINZELTERMINE mit genauen Daten
-- KEINE Dauerveranstaltungen wie "jeden Mittwoch" oder "täglich"
-- Wenn ein Wochenmarkt jeden Mittwoch stattfindet: jeden einzelnen Mittwoch als SEPARATEN Termin eintragen (z.B. 09.07., 16.07., 23.07., 30.07.)
-- Wenn ein Event "vom 1. bis 31." läuft aber nur bestimmte Tage: nur die konkreten Tage eintragen
-- dateFrom und dateTo dürfen maximal 3 Tage auseinanderliegen (außer bei Festivals die wirklich mehrere Tage durchgehend laufen)
-- Im Feld "location" immer den genauen Ort angeben (z.B. "Schönebeck" oder "Zerbst", nicht nur "Magdeburg")
-- Gib NUR neue Events zurück die noch NICHT in der obigen Liste stehen
+- KEINE Dauerveranstaltungen (jeden Mittwoch, täglich usw.)
+- Wiederkehrende Events: jeden Termin einzeln eintragen
+- dateFrom und dateTo max 3 Tage auseinander (außer echte mehrtägige Festivals)
+- Genauen Ort im Feld location angeben
 
-Antworte NUR mit einem JSON-Array. Direkt mit [ beginnen.
-Format: [{"id":1,"name":"Eventname","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","timeStart":"HH:MM oder null","category":"${category.cat}","location":"Genauer Ort"}]
-Finde so viele neue Einzeltermine wie möglich.`;
+Antworte NUR mit JSON-Array direkt beginnend mit [:
+[{"id":1,"name":"Eventname","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","timeStart":"HH:MM oder null","category":"Musik|Theater|Sport|Kultur|Familie|Flohmarkt|Sonstiges","location":"Genauer Ort","sources":"${source.name}"}]
+
+Finde alle Einzeltermine auf dieser Seite.`;
 }
 
 function fixJson(text) {
@@ -107,6 +114,10 @@ function dedup(events) {
       const other = events[j];
       if (base.dateFrom === other.dateFrom && similarity(base.name, other.name) > 0.6) {
         if (!base.timeStart && other.timeStart) base.timeStart = other.timeStart;
+        // Quellen zusammenführen
+        const srcA = (base.sources||"").split(",").map(s=>s.trim());
+        const srcB = (other.sources||"").split(",").map(s=>s.trim());
+        base.sources = [...new Set([...srcA,...srcB])].filter(Boolean).join(", ");
         merged.add(j);
       }
     }
@@ -119,8 +130,8 @@ function callClaude(prompt) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 8000,
-      system: "Du bist ein Datenassistent. Antworte AUSSCHLIESSLICH mit einem JSON-Array. Beginne direkt mit [ und ende mit ]. Kein Text davor oder danach.",
+      max_tokens: 4000,
+      system: "Du bist ein Datenassistent. Antworte AUSSCHLIESSLICH mit einem JSON-Array. Beginne direkt mit [. Kein Text davor oder danach.",
       tools: [{ type: "web_search_20250305", name: "web_search" }],
       messages: [{ role: "user", content: prompt }],
     });
@@ -149,23 +160,23 @@ function callClaude(prompt) {
   });
 }
 
-async function fetchCategory(category, existingEvents) {
-  console.log(`\n🔍 Suche: ${category.name}...`);
-  const knownCount = existingEvents.filter(e => e.category === category.cat).length;
-  if (knownCount > 0) console.log(`  📂 ${knownCount} bekannte Events werden übersprungen`);
+async function fetchSource(source, existingEvents) {
+  console.log(`\n🔍 ${source.name} (${source.url})...`);
   try {
-    const response = await callClaude(buildPrompt(category, existingEvents));
-    if (response.error) { console.log(`  ⚠️ API Fehler: ${response.error.message}`); return []; }
+    const response = await callClaude(buildPrompt(source, existingEvents));
+    if (response.error) {
+      console.log(`  ⚠️ API Fehler: ${response.error.message}`);
+      return [];
+    }
     const fullText = (response.content || []).map(b => b.type === "text" ? b.text : "").join("\n");
     if (!fullText.trim()) { console.log(`  ⚠️ Leere Antwort`); return []; }
     const fixed = fixJson(fullText);
     if (!fixed) { console.log(`  ⚠️ Kein JSON`); return []; }
     let events;
     try { events = JSON.parse(fixed); } catch(e) { console.log(`  ⚠️ JSON ungültig`); return []; }
-    if (!Array.isArray(events)) { console.log(`  ⚠️ Kein Array`); return []; }
+    if (!Array.isArray(events)) return [];
 
-    // Dauerveranstaltungen filtern: dateFrom und dateTo max 3 Tage auseinander
-    // AUSNAHME: Festivals die wirklich mehrere Tage laufen (name enthält "festival", "messe", etc.)
+    // Dauerveranstaltungen filtern
     const filtered = events.filter(e => {
       if (!e.dateFrom || !e.dateTo) return true;
       const diff = (new Date(e.dateTo) - new Date(e.dateFrom)) / (1000*60*60*24);
@@ -186,11 +197,11 @@ async function fetchCategory(category, existingEvents) {
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function main() {
-  console.log("🏰 Magdeburg Events — Starte Suche");
+  console.log("🏰 Magdeburg Events v7 — Pro-Quelle-Suche");
   console.log("📅", new Date().toISOString());
   console.log(`📆 ${today} bis ${untilStr}`);
 
-  // ── Alte Events VOR der Suche laden ──────────────────────────────────────
+  // Alte Events laden
   const outPath = path.join(__dirname, "..", "events.json");
   let existingEvents = [];
   if (fs.existsSync(outPath)) {
@@ -199,43 +210,51 @@ async function main() {
       existingEvents = (old.events || []).filter(e => e.dateTo >= today);
       console.log(`📂 ${existingEvents.length} bestehende Events geladen`);
     } catch(e) {
-      console.log("⚠️ Alte events.json konnte nicht gelesen werden");
+      console.log("⚠️ Alte events.json nicht lesbar — starte frisch");
     }
   }
 
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
   let newEvents = [];
+  let successCount = 0;
 
-  for (let i = 0; i < CATEGORIES.length; i++) {
-    const category = CATEGORIES[i];
-    const raw = await fetchCategory(category, existingEvents);
+  // Jede Quelle einzeln abfragen
+  for (let i = 0; i < sources.length; i++) {
+    const source = sources[i];
+    const raw = await fetchSource(source, existingEvents);
+
     raw.forEach(e => {
       if (!e.name || !e.dateFrom) return;
+      const cat = e.category && validCats.includes(e.category)
+        ? e.category
+        : (guessCategory(source) || "Sonstiges");
       newEvents.push({
         name:      String(e.name).slice(0, 200),
         dateFrom:  e.dateFrom,
         dateTo:    e.dateTo || e.dateFrom,
         timeStart: e.timeStart || null,
-        category:  validCats.includes(e.category) ? e.category : category.cat,
+        category:  cat,
         location:  e.location || "Magdeburg",
+        sources:   e.sources || source.name,
       });
     });
-    if (i < CATEGORIES.length - 1) {
-      console.log("  ⏳ 3 Sekunden warten...");
-      await sleep(3000);
-    }
+
+    if (raw.length > 0) successCount++;
+
+    // 2 Sekunden warten zwischen Anfragen
+    if (i < sources.length - 1) await sleep(2000);
   }
 
-  // Alte + neue zusammenführen
-  const combined = [...existingEvents, ...newEvents];
-  console.log(`\n📊 ${existingEvents.length} alte + ${newEvents.length} neue = ${combined.length} gesamt`);
+  console.log(`\n📊 ${successCount}/${sources.length} Quellen erfolgreich`);
+  console.log(`📊 ${existingEvents.length} alte + ${newEvents.length} neue = ${existingEvents.length + newEvents.length} gesamt`);
 
+  const combined = [...existingEvents, ...newEvents];
   const deduped = dedup(combined);
   deduped.forEach((e, i) => e.id = i + 1);
   deduped.sort((a, b) => a.dateFrom.localeCompare(b.dateFrom));
 
   const added = deduped.length - existingEvents.length;
-  console.log(`✅ ${deduped.length} Events gesamt (${added > 0 ? '+'+added : added} neu hinzugekommen)`);
+  console.log(`✅ ${deduped.length} Events gesamt (+${Math.max(0,added)} neu)`);
 
   const output = {
     generated: new Date().toISOString(),
