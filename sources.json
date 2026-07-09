@@ -12,7 +12,7 @@
   {
     "url": "eventfinder.de/magdeburg/veranstaltungen",
     "name": "Eventfinder Magdeburg",
-    "beschreibung": "780+ Events aller Art"
+    "beschreibung": "Große Auswahl an Events aller Art"
   },
   {
     "url": "meinestadt.de/magdeburg/alle/alle",
@@ -42,7 +42,7 @@
   {
     "url": "veranstaltungen.magdeburg-tourist.de/magdeburg",
     "name": "Magdeburg Tourist",
-    "beschreibung": "Tourismus-Veranstaltungskalender, 195 Events"
+    "beschreibung": "Tourismus-Veranstaltungskalender"
   },
   {
     "url": "kulturbox.de/buehnen/magdeburg",
@@ -90,18 +90,38 @@
     "beschreibung": "Musik-Events und Konzerte"
   },
   {
-    "url": "kulturpur.de/buehnen/theater-magdeburg",
-    "name": "Kulturpur Theater Magdeburg",
-    "beschreibung": "Aggregierter Spielplan Theater Magdeburg"
-  },
-  {
     "url": "volksstimme.de/magdeburg",
     "name": "Volksstimme Magdeburg",
-    "beschreibung": "Lokalzeitung, regionale Events und Ankündigungen"
+    "beschreibung": "Lokalzeitung, regionale Events"
   },
   {
-  "url": "factory-magdeburg.de/programm",
-  "name": "Factory Magdeburg",
-  "beschreibung": "Konzerte und Events in der Factory Magdeburg"
+    "url": "factory-magdeburg.de/programm",
+    "name": "Factory Magdeburg",
+    "beschreibung": "Konzerte und Events in der Factory"
+  },
+  {
+    "url": "flohmarkt.de/magdeburg",
+    "name": "Flohmarkt.de Magdeburg",
+    "beschreibung": "Speziell Flohmärkte in und um Magdeburg"
+  },
+  {
+    "url": "flohmarktkalender.de/magdeburg",
+    "name": "Flohmarktkalender Magdeburg",
+    "beschreibung": "Vollständiger Flohmarktkalender für Magdeburg"
+  },
+  {
+    "url": "flohmarkttermine.com/sachsen-anhalt/magdeburg",
+    "name": "Flohmarkttermine Magdeburg",
+    "beschreibung": "Flohmarkttermine speziell für Magdeburg"
+  },
+  {
+    "url": "kleinanzeigen.de/s-veranstaltungen/magdeburg/k0l7635",
+    "name": "Kleinanzeigen Veranstaltungen Magdeburg",
+    "beschreibung": "Veranstaltungen aus Kleinanzeigen Magdeburg"
+  },
+  {
+    "url": "magdeburg.de/familie-kinder-jugend",
+    "name": "Magdeburg Familie & Kinder",
+    "beschreibung": "Familienveranstaltungen der Stadt Magdeburg"
   }
 ]
