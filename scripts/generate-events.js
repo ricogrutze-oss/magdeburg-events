@@ -36,7 +36,7 @@ const CATEGORIES = [
   { name: "Festivals & Sport",    cat: "Kultur",    keywords: "Festival Stadtfest Volksfest Sport Fußball Laufen" },
 ];
 
-function buildPrompt(category) {
+function buildPrompt(category, existingEvents) {
   const sources = category.extraSources
     ? `Durchsuche BESONDERS diese spezialisierten Quellen:\n${category.extraSources}\n\nUnd auch:\n${allSourceList}`
     : `Durchsuche:\n${allSourceList}`;
@@ -45,10 +45,21 @@ function buildPrompt(category) {
     ? `Magdeburg UND Umkreis 30km (Schönebeck, Staßfurt, Bernburg, Haldensleben, Wolmirstedt, Zerbst, Burg, Barleben, Gommern, Oschersleben, Egeln, Calbe)`
     : `Magdeburg Sachsen-Anhalt`;
 
+  // Bekannte Events dieser Kategorie aus der alten Liste
+  const known = existingEvents
+    .filter(e => e.category === category.cat)
+    .map(e => `- ${e.name} (${e.dateFrom})`)
+    .slice(0, 30) // Max 30 damit der Prompt nicht zu lang wird
+    .join("\n");
+
+  const knownSection = known
+    ? `\nDIESE EVENTS KENNST DU BEREITS — nicht nochmal zurückgeben:\n${known}\n`
+    : "";
+
   return `Suche im Web nach "${category.keywords}" Veranstaltungen in ${gebiet} vom ${today} bis ${untilStr}.
 
 ${sources}
-
+${knownSection}
 WICHTIGE REGELN:
 - Nur KONKRETE EINZELTERMINE mit genauen Daten
 - KEINE Dauerveranstaltungen wie "jeden Mittwoch" oder "täglich"
@@ -56,10 +67,11 @@ WICHTIGE REGELN:
 - Wenn ein Event "vom 1. bis 31." läuft aber nur bestimmte Tage: nur die konkreten Tage eintragen
 - dateFrom und dateTo dürfen maximal 3 Tage auseinanderliegen (außer bei Festivals die wirklich mehrere Tage durchgehend laufen)
 - Im Feld "location" immer den genauen Ort angeben (z.B. "Schönebeck" oder "Zerbst", nicht nur "Magdeburg")
+- Gib NUR neue Events zurück die noch NICHT in der obigen Liste stehen
 
 Antworte NUR mit einem JSON-Array. Direkt mit [ beginnen.
 Format: [{"id":1,"name":"Eventname","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","timeStart":"HH:MM oder null","category":"${category.cat}","location":"Genauer Ort"}]
-Finde so viele echte Einzeltermine wie möglich.`;
+Finde so viele neue Einzeltermine wie möglich.`;
 }
 
 function fixJson(text) {
@@ -137,10 +149,12 @@ function callClaude(prompt) {
   });
 }
 
-async function fetchCategory(category) {
+async function fetchCategory(category, existingEvents) {
   console.log(`\n🔍 Suche: ${category.name}...`);
+  const knownCount = existingEvents.filter(e => e.category === category.cat).length;
+  if (knownCount > 0) console.log(`  📂 ${knownCount} bekannte Events werden übersprungen`);
   try {
-    const response = await callClaude(buildPrompt(category));
+    const response = await callClaude(buildPrompt(category, existingEvents));
     if (response.error) { console.log(`  ⚠️ API Fehler: ${response.error.message}`); return []; }
     const fullText = (response.content || []).map(b => b.type === "text" ? b.text : "").join("\n");
     if (!fullText.trim()) { console.log(`  ⚠️ Leere Antwort`); return []; }
@@ -176,15 +190,28 @@ async function main() {
   console.log("📅", new Date().toISOString());
   console.log(`📆 ${today} bis ${untilStr}`);
 
+  // ── Alte Events VOR der Suche laden ──────────────────────────────────────
+  const outPath = path.join(__dirname, "..", "events.json");
+  let existingEvents = [];
+  if (fs.existsSync(outPath)) {
+    try {
+      const old = JSON.parse(fs.readFileSync(outPath, "utf8"));
+      existingEvents = (old.events || []).filter(e => e.dateTo >= today);
+      console.log(`📂 ${existingEvents.length} bestehende Events geladen`);
+    } catch(e) {
+      console.log("⚠️ Alte events.json konnte nicht gelesen werden");
+    }
+  }
+
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
-  let allEvents = [];
+  let newEvents = [];
 
   for (let i = 0; i < CATEGORIES.length; i++) {
     const category = CATEGORIES[i];
-    const raw = await fetchCategory(category);
+    const raw = await fetchCategory(category, existingEvents);
     raw.forEach(e => {
       if (!e.name || !e.dateFrom) return;
-      allEvents.push({
+      newEvents.push({
         name:      String(e.name).slice(0, 200),
         dateFrom:  e.dateFrom,
         dateTo:    e.dateTo || e.dateFrom,
@@ -199,11 +226,16 @@ async function main() {
     }
   }
 
-  console.log(`\n📊 Gesamt: ${allEvents.length} Events`);
-  const deduped = dedup(allEvents);
+  // Alte + neue zusammenführen
+  const combined = [...existingEvents, ...newEvents];
+  console.log(`\n📊 ${existingEvents.length} alte + ${newEvents.length} neue = ${combined.length} gesamt`);
+
+  const deduped = dedup(combined);
   deduped.forEach((e, i) => e.id = i + 1);
   deduped.sort((a, b) => a.dateFrom.localeCompare(b.dateFrom));
-  console.log(`✅ Nach Deduplizierung: ${deduped.length} Events`);
+
+  const added = deduped.length - existingEvents.length;
+  console.log(`✅ ${deduped.length} Events gesamt (${added > 0 ? '+'+added : added} neu hinzugekommen)`);
 
   const output = {
     generated: new Date().toISOString(),
@@ -212,7 +244,6 @@ async function main() {
     events: deduped,
   };
 
-  const outPath = path.join(__dirname, "..", "events.json");
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2), "utf8");
   console.log(`🎉 Fertig! ${deduped.length} Events gespeichert.`);
 }
