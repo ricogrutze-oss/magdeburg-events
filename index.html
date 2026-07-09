@@ -11,7 +11,6 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f2f8; color: #1a1a2e; min-height: 100vh; }
-
     header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; padding: 16px 20px; }
     .header-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
     .logo { font-size: 22px; font-weight: 700; }
@@ -20,31 +19,19 @@
     .header-btns { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
     .btn-primary { padding: 8px 14px; border-radius: 8px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
     .btn-secondary { padding: 8px 12px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
-    .user-pill { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 10px; }
+    .user-pill { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 10px; cursor: pointer; }
     .user-avatar { width: 24px; height: 24px; border-radius: 50%; }
     .user-name { font-size: 12px; color: #fff; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .logout-btn { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 16px; padding: 0 2px; }
-
     .body { max-width: 980px; margin: 0 auto; padding: 16px; }
-
-    /* LOGIN SCREEN */
-    .login-screen { text-align: center; padding: 60px 20px; }
-    .login-screen h2 { font-size: 24px; margin-bottom: 10px; }
-    .login-screen p { color: #666; margin-bottom: 30px; font-size: 15px; }
-    .google-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 10px; border: 2px solid #dde; background: #fff; cursor: pointer; font-size: 15px; font-weight: 600; color: #1a1a2e; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .google-btn img { width: 20px; height: 20px; }
-
     .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
     .view-toggle { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid #c8d0e0; }
-    .view-toggle button { padding: 7px 14px; border: none; background: #fff; cursor: pointer; font-weight: 500; font-size: 13px; }
+    .view-toggle button { padding: 7px 12px; border: none; background: #fff; cursor: pointer; font-weight: 500; font-size: 12px; }
     .view-toggle button.active { background: #0f3460; color: #fff; }
     .cat-filter { display: flex; gap: 4px; flex-wrap: wrap; }
-    .cat-btn { padding: 4px 10px; border-radius: 20px; border: 1.5px solid; cursor: pointer; font-size: 11px; font-weight: 600; background: transparent; }
+    .cat-btn { padding: 4px 9px; border-radius: 20px; border: 1.5px solid; cursor: pointer; font-size: 11px; font-weight: 600; background: transparent; }
     .cat-btn.active { color: #fff !important; }
     .stats-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
     .stat-chip { background: #fff; border: 1px solid #dde; border-radius: 20px; padding: 2px 10px; font-size: 11px; color: #555; }
-    .sources-btn { background: none; border: none; color: #0f3460; font-size: 11px; cursor: pointer; text-decoration: underline; padding: 0; }
-
     .loading-box { text-align: center; padding: 60px 20px; }
     .spinner { width: 40px; height: 40px; border: 4px solid #dde; border-top-color: #0f3460; border-radius: 50%; margin: 0 auto 14px; animation: spin 1s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -59,7 +46,7 @@
     .nav-btn { background: none; border: 1px solid #dde; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 15px; color: #555; }
     .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
     .dow-label { text-align: center; font-size: 10px; font-weight: 600; color: #888; padding: 2px 0; }
-    .cal-day { border-radius: 6px; padding: 2px 1px; min-height: 46px; display: flex; flex-direction: column; align-items: center; transition: background 0.1s; }
+    .cal-day { border-radius: 6px; padding: 2px 1px; min-height: 46px; display: flex; flex-direction: column; align-items: center; }
     .cal-day.has-events { cursor: pointer; }
     .cal-day.has-events:hover { background: #eef2ff; }
     .cal-day.is-today { background: #ffd700 !important; outline: 2px solid #e6a000; }
@@ -74,7 +61,6 @@
     .dot-more { font-size: 8px; color: #888; font-weight: 700; }
     .legend { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; padding-top: 8px; border-top: 1px solid #eee; }
     .legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #555; }
-
     .day-panel { background: #fff; border-radius: 14px; padding: 12px; flex: 1 1 280px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); max-height: 520px; overflow-y: auto; }
     .day-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 7px; border-bottom: 1px solid #eee; font-size: 13px; font-weight: 700; }
     .day-count { background: #e8f0fe; color: #0f3460; border-radius: 12px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
@@ -82,7 +68,6 @@
     .divider { display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; }
     .divider-line { flex: 1; height: 1px; background: #e0e4ee; }
     .divider-text { font-size: 10px; color: #aaa; white-space: nowrap; }
-
     .list-section { display: flex; flex-direction: column; gap: 20px; }
     .list-date-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
     .list-date-label { font-weight: 700; font-size: 13px; }
@@ -98,11 +83,14 @@
     .bookmark-btn { background: none; border: none; cursor: pointer; font-size: 16px; padding: 0; line-height: 1; }
     .bookmark-btn.bookmarked { color: #e94560; }
     .bookmark-btn:not(.bookmarked) { color: #ccc; }
-    .cal-export-btn { background: none; border: 1px solid #dde; border-radius: 5px; padding: 2px 6px; font-size: 10px; color: #0f3460; cursor: pointer; white-space: nowrap; }
+    .cal-export-btn { background: none; border: 1px solid #dde; border-radius: 5px; padding: 2px 6px; font-size: 10px; color: #0f3460; cursor: pointer; }
     .event-name { font-weight: 700; font-size: 13px; color: #1a1a2e; margin-bottom: 3px; line-height: 1.3; }
     .event-date-row { font-size: 11px; color: #555; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
     .event-time { background: #e8f0fe; color: #0f3460; border-radius: 4px; padding: 1px 5px; font-weight: 600; font-size: 10px; }
     .event-location { color: #777; }
+    .bookers-row { display: flex; align-items: center; gap: 4px; margin-top: 5px; flex-wrap: wrap; }
+    .booker-chip { font-size: 10px; background: #f0f4ff; border-radius: 10px; padding: 1px 7px; color: #0f3460; }
+    .creator-tag { font-size: 10px; color: #888; font-style: italic; }
 
     /* MODAL */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -122,16 +110,37 @@
     .qr-container { text-align: center; padding: 10px 0; }
     .qr-container img { max-width: 180px; border-radius: 8px; }
     .qr-url { font-size: 11px; color: #888; margin-top: 8px; word-break: break-all; }
-    .qr-hint { font-size: 12px; color: #444; margin-top: 8px; line-height: 1.5; }
+
+    /* GRUPPEN */
+    .groups-screen { padding: 20px 0; }
+    .group-card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .group-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .group-name { font-weight: 700; font-size: 16px; }
+    .group-badge { font-size: 11px; background: #e8f0fe; color: #0f3460; border-radius: 10px; padding: 2px 8px; }
+    .group-members { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .member-chip { display: flex; align-items: center; gap: 4px; background: #f5f5f5; border-radius: 20px; padding: 3px 10px; font-size: 11px; }
+    .member-chip img { width: 18px; height: 18px; border-radius: 50%; }
+    .member-chip.pending { background: #fff8e8; color: #b45309; }
+    .group-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+    .btn-group { padding: 6px 12px; border-radius: 7px; border: 1px solid #dde; background: #fff; cursor: pointer; font-size: 12px; font-weight: 600; }
+    .btn-group-primary { background: #0f3460; color: #fff; border-color: #0f3460; }
+    .btn-group-danger { background: #fff0f0; color: #c00; border-color: #fcc; }
+
+    /* PENDING REQUESTS */
+    .pending-card { background: #fff8e8; border: 1px solid #f6c90e; border-radius: 10px; padding: 12px; margin-bottom: 8px; }
+    .pending-info { font-size: 13px; margin-bottom: 8px; }
+    .pending-btns { display: flex; gap: 6px; }
+    .btn-accept { padding: 5px 12px; border-radius: 6px; border: none; background: #065F46; color: #fff; cursor: pointer; font-size: 12px; font-weight: 600; }
+    .btn-reject { padding: 5px 12px; border-radius: 6px; border: none; background: #c00; color: #fff; cursor: pointer; font-size: 12px; font-weight: 600; }
+
+    .group-selector { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .group-pill { padding: 4px 12px; border-radius: 20px; border: 1.5px solid #dde; cursor: pointer; font-size: 11px; font-weight: 600; background: #fff; }
+    .group-pill.active { background: #0f3460; color: #fff; border-color: #0f3460; }
 
     #install-banner { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; background: #0f3460; color: #fff; border-radius: 12px; padding: 10px 14px; z-index: 50; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
     #install-banner span { flex: 1; font-size: 13px; }
     #install-btn { padding: 6px 12px; border-radius: 7px; border: none; background: #e94560; color: #fff; font-weight: 600; cursor: pointer; font-size: 12px; }
-    #install-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 18px; padding: 0 2px; }
-
-    /* GEMERKT BADGE */
-    .bookmarks-empty { text-align: center; padding: 40px 20px; color: #aaa; }
-    .bookmarks-empty .icon { font-size: 48px; margin-bottom: 10px; }
+    #install-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 18px; }
   </style>
 </head>
 <body>
@@ -140,10 +149,10 @@
   <div class="header-inner">
     <div>
       <div class="logo">🏰 Magdeburg Events</div>
-      <div class="subtitle">Automatisch aus 20+ Quellen — alle 14 Tage aktualisiert</div>
+      <div class="subtitle">Automatisch aus 27+ Quellen aktualisiert</div>
       <div id="last-update"></div>
     </div>
-    <div class="header-btns" id="header-btns">
+    <div class="header-btns">
       <button class="btn-secondary" onclick="showQR()">📱</button>
       <button class="btn-secondary" onclick="showSources()">📋</button>
       <button class="btn-primary" onclick="showAddModal()">+ Neu</button>
@@ -154,16 +163,6 @@
 
 <div class="body">
   <div id="loading" class="loading-box"><div class="spinner"></div><div style="font-size:16px;font-weight:600">Lade…</div></div>
-  <div id="login-screen" class="login-screen" style="display:none">
-    <div style="font-size:48px;margin-bottom:16px">🏰</div>
-    <h2>Magdeburg Events</h2>
-    <p>Melde dich an um Events zu merken<br>und mit Freunden zu teilen</p>
-    <button class="google-btn" onclick="loginWithGoogle()">
-      <img src="https://www.google.com/favicon.ico" alt="Google" />
-      Mit Google anmelden
-    </button>
-    <p style="margin-top:20px;font-size:12px;color:#aaa">Oder <a href="#" onclick="skipLogin()" style="color:#0f3460">ohne Anmeldung fortfahren</a></p>
-  </div>
   <div id="error" class="error-box" style="display:none"></div>
   <div id="app" style="display:none"></div>
 </div>
@@ -191,6 +190,12 @@
       <select id="m-cat"><option>Musik</option><option>Theater</option><option>Sport</option><option>Kultur</option><option>Familie</option><option selected>Flohmarkt</option><option>Sonstiges</option></select>
     </div>
     <div class="form-group"><label>Ort</label><input id="m-location" type="text" placeholder="z.B. Hasselbachplatz" /></div>
+    <div class="form-group"><label>Sichtbarkeit</label>
+      <select id="m-visibility">
+        <option value="public">🌍 Alle (öffentlich)</option>
+        <option value="group">👥 Nur meine Gruppen</option>
+      </select>
+    </div>
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal('add-modal')">Abbrechen</button>
       <button class="btn-save" onclick="saveManualEvent()">Speichern</button>
@@ -202,7 +207,6 @@
 <div id="sources-modal" class="modal-overlay" style="display:none">
   <div class="modal">
     <h2>📋 Durchsuchte Quellen</h2>
-    <p style="font-size:12px;color:#666;margin-bottom:12px">Neue Quellen in <code>sources.json</code> im GitHub-Repo hinzufügen.</p>
     <ul class="sources-list" id="sources-list"></ul>
     <div class="modal-btns"><button class="btn-save" onclick="closeModal('sources-modal')">Schließen</button></div>
   </div>
@@ -215,9 +219,51 @@
     <div class="qr-container">
       <img id="qr-img" src="" alt="QR Code" />
       <div class="qr-url" id="qr-url"></div>
-      <div class="qr-hint">QR-Code scannen → App öffnet sich → „Zum Homescreen hinzufügen"</div>
     </div>
     <div class="modal-btns"><button class="btn-save" onclick="closeModal('qr-modal')">Schließen</button></div>
+  </div>
+</div>
+
+<!-- GROUP QR MODAL -->
+<div id="group-qr-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>👥 Einladungs-QR-Code</h2>
+    <p style="font-size:13px;color:#666;margin-bottom:14px">Diesen QR-Code mit Familienmitgliedern teilen. Sie müssen sich anmelden und du musst sie bestätigen.</p>
+    <div class="qr-container">
+      <img id="group-qr-img" src="" alt="QR Code" />
+      <div class="qr-url" id="group-qr-url" style="margin-top:8px;font-size:11px;color:#888;word-break:break-all"></div>
+    </div>
+    <div style="margin-top:12px;padding:10px;background:#f0f2f8;border-radius:8px;font-size:12px;color:#555">
+      ⚠️ Dieser Link ist 7 Tage gültig
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal('group-qr-modal')">Schließen</button>
+      <button class="btn-save" onclick="copyGroupLink()">🔗 Link kopieren</button>
+    </div>
+  </div>
+</div>
+
+<!-- CREATE GROUP MODAL -->
+<div id="create-group-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>👥 Neue Gruppe erstellen</h2>
+    <div class="form-group"><label>Gruppenname *</label><input id="g-name" type="text" placeholder="z.B. Familie, Nachbarn, Freunde" /></div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal('create-group-modal')">Abbrechen</button>
+      <button class="btn-save" onclick="createGroup()">Erstellen</button>
+    </div>
+  </div>
+</div>
+
+<!-- USER MODAL -->
+<div id="user-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2 id="user-modal-name">Profil</h2>
+    <p id="user-modal-email" style="font-size:13px;color:#888;margin-bottom:16px"></p>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal('user-modal')">Schließen</button>
+      <button class="btn-save" style="background:#c00" onclick="window._logout()">Abmelden</button>
+    </div>
   </div>
 </div>
 
@@ -225,7 +271,7 @@
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, set, get, onValue, push, update, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBOCUk-kt8_fU-tSBX8HHrO8KCr57T8pWA",
@@ -242,43 +288,121 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 const provider = new GoogleAuthProvider();
 
-// Globale Variablen
-window._fb = { auth, db, ref, set, get, onValue, signOut, provider, signInWithPopup };
+window._fb = { auth, db, ref, set, get, onValue, push, update, remove, signOut, provider, signInWithPopup };
 window._currentUser = null;
 window._bookmarks = {};
+window._allBookmarks = {};
+window._myGroups = {};
+window._currentGroupId = null;
+window._groupInviteLink = null;
 
-// Auth State
+// Prüfen ob Join-Link in URL
+const urlParams = new URLSearchParams(window.location.search);
+const joinGroupId = urlParams.get('join');
+const joinToken = urlParams.get('token');
+
 onAuthStateChanged(auth, async (user) => {
   window._currentUser = user;
   if (user) {
-    // User eingeloggt — Bookmarks laden
-    const userArea = document.getElementById('user-area');
-    userArea.innerHTML = `<div class="user-pill">
-      ${user.photoURL ? `<img src="${user.photoURL}" class="user-avatar" />` : ''}
-      <span class="user-name">${user.displayName || user.email}</span>
-      <button class="logout-btn" onclick="window._logout()" title="Abmelden">✕</button>
-    </div>`;
+    // User eingeloggt
+    document.getElementById('user-area').innerHTML = `
+      <div class="user-pill" onclick="showUserModal()">
+        ${user.photoURL ? `<img src="${user.photoURL}" class="user-avatar" />` : '👤'}
+        <span class="user-name">${user.displayName?.split(' ')[0] || 'Ich'}</span>
+      </div>`;
 
-    // Bookmarks aus Firebase laden
-    const bmRef = ref(db, `bookmarks/${user.uid}`);
-    onValue(bmRef, (snap) => {
+    // Bookmarks laden
+    onValue(ref(db, `bookmarks/${user.uid}`), snap => {
       window._bookmarks = snap.val() || {};
       if (window._render) window._render();
     });
 
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    if (window._loadEvents) window._loadEvents();
+    // Alle Bookmarks laden
+    onValue(ref(db, 'bookmarks'), snap => {
+      window._allBookmarks = snap.val() || {};
+      if (window._render) window._render();
+    });
+
+    // Meine Gruppen laden
+    onValue(ref(db, `userGroups/${user.uid}`), async snap => {
+      const groupIds = Object.keys(snap.val() || {});
+      window._myGroups = {};
+      for (const gid of groupIds) {
+        const gSnap = await get(ref(db, `groups/${gid}`));
+        if (gSnap.exists()) window._myGroups[gid] = gSnap.val();
+      }
+      if (window._render) window._render();
+    });
+
+    // Manuelle Events laden
+    onValue(ref(db, 'manualEvents'), snap => {
+      const data = snap.val() || {};
+      window._firebaseManualEvents = Object.values(data).map(e => ({
+        ...e,
+        dateFrom: strToDateSafe(e.dateFrom),
+        dateTo: strToDateSafe(e.dateTo || e.dateFrom),
+        manual: true, fromFirebase: true,
+      })).filter(e => e.dateFrom && !isNaN(e.dateFrom));
+      if (window._render) window._render();
+    });
+
+    // Join-Link verarbeiten
+    if (joinGroupId && joinToken) {
+      handleJoinRequest(joinGroupId, joinToken, user);
+    }
+
   } else {
-    // Nicht eingeloggt — App trotzdem zeigen, nur Anmelden-Button
     document.getElementById('user-area').innerHTML = `<button class="btn-secondary" onclick="window._login()">🔑 Anmelden</button>`;
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    if (window._loadEvents) window._loadEvents();
+    // Manuelle Events trotzdem laden (öffentliche)
+    onValue(ref(db, 'manualEvents'), snap => {
+      const data = snap.val() || {};
+      window._firebaseManualEvents = Object.values(data)
+        .filter(e => e.visibility !== 'group')
+        .map(e => ({
+          ...e,
+          dateFrom: strToDateSafe(e.dateFrom),
+          dateTo: strToDateSafe(e.dateTo || e.dateFrom),
+          manual: true, fromFirebase: true,
+        })).filter(e => e.dateFrom && !isNaN(e.dateFrom));
+      if (window._render) window._render();
+    });
   }
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  if (window._loadEvents) window._loadEvents();
 });
+
+async function handleJoinRequest(groupId, token, user) {
+  // Token prüfen
+  const invSnap = await get(ref(db, `groups/${groupId}/inviteToken`));
+  if (!invSnap.exists() || invSnap.val() !== token) {
+    alert('Ungültiger oder abgelaufener Einladungslink.');
+    return;
+  }
+  // Beitrittsanfrage senden
+  const reqRef = ref(db, `groups/${groupId}/requests/${user.uid}`);
+  const reqSnap = await get(reqRef);
+  const memberRef = ref(db, `groups/${groupId}/members/${user.uid}`);
+  const memberSnap = await get(memberRef);
+  if (memberSnap.exists()) {
+    alert('Du bist bereits Mitglied dieser Gruppe!');
+    return;
+  }
+  if (!reqSnap.exists()) {
+    await set(reqRef, {
+      name: user.displayName || user.email,
+      photo: user.photoURL || null,
+      email: user.email,
+      requestedAt: new Date().toISOString(),
+    });
+    alert('✅ Beitrittsanfrage gesendet! Warte auf Bestätigung des Gruppenadmins.');
+  } else {
+    alert('Du hast bereits eine Anfrage gesendet. Warte auf Bestätigung.');
+  }
+  // URL bereinigen
+  window.history.replaceState({}, '', window.location.pathname);
+}
 
 window._login = async () => {
   try { await signInWithPopup(auth, provider); } catch(e) { console.error(e); }
@@ -286,17 +410,57 @@ window._login = async () => {
 window._logout = async () => {
   await signOut(auth);
   window._bookmarks = {};
+  window._myGroups = {};
   window._currentUser = null;
   document.getElementById('user-area').innerHTML = `<button class="btn-secondary" onclick="window._login()">🔑 Anmelden</button>`;
+  closeModal('user-modal');
   if (window._render) window._render();
 };
-window.loginWithGoogle = window._login;
-window.skipLogin = () => {
-  document.getElementById('login-screen').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  if (window._loadEvents) window._loadEvents();
+
+// Gruppe erstellen
+window._createGroup = async (name) => {
+  const user = window._currentUser;
+  if (!user) return;
+  const groupRef = push(ref(db, 'groups'));
+  const groupId = groupRef.key;
+  const token = Math.random().toString(36).slice(2) + Date.now().toString(36);
+  await set(groupRef, {
+    name,
+    createdBy: user.uid,
+    createdByName: user.displayName || user.email,
+    createdAt: new Date().toISOString(),
+    inviteToken: token,
+    members: { [user.uid]: { name: user.displayName || user.email, photo: user.photoURL || null, role: 'admin' } }
+  });
+  await set(ref(db, `userGroups/${user.uid}/${groupId}`), true);
+  return { groupId, token };
 };
 
+// Mitglied bestätigen
+window._acceptMember = async (groupId, uid) => {
+  const reqSnap = await get(ref(db, `groups/${groupId}/requests/${uid}`));
+  if (!reqSnap.exists()) return;
+  const req = reqSnap.val();
+  await set(ref(db, `groups/${groupId}/members/${uid}`), {
+    name: req.name, photo: req.photo || null, role: 'member'
+  });
+  await remove(ref(db, `groups/${groupId}/requests/${uid}`));
+  await set(ref(db, `userGroups/${uid}/${groupId}`), true);
+  // Gruppen neu laden
+  const gSnap = await get(ref(db, `groups/${groupId}`));
+  if (gSnap.exists()) window._myGroups[groupId] = gSnap.val();
+  if (window._render) window._render();
+};
+
+// Mitglied ablehnen
+window._rejectMember = async (groupId, uid) => {
+  await remove(ref(db, `groups/${groupId}/requests/${uid}`));
+  const gSnap = await get(ref(db, `groups/${groupId}`));
+  if (gSnap.exists()) window._myGroups[groupId] = gSnap.val();
+  if (window._render) window._render();
+};
+
+// Bookmark togglen
 window._toggleBookmark = async (eventId, eventData) => {
   if (!window._currentUser) { alert('Bitte zuerst anmelden um Events zu merken!'); return; }
   const uid = window._currentUser.uid;
@@ -306,12 +470,9 @@ window._toggleBookmark = async (eventId, eventData) => {
     await set(bmRef, null);
   } else {
     await set(bmRef, {
-      name: eventData.name,
-      dateFrom: eventData.dateFrom,
-      dateTo: eventData.dateTo,
-      timeStart: eventData.timeStart || null,
-      category: eventData.category,
-      location: eventData.location || '',
+      name: eventData.name, dateFrom: eventData.dateFrom,
+      dateTo: eventData.dateTo, timeStart: eventData.timeStart || null,
+      category: eventData.category, location: eventData.location || '',
       savedAt: new Date().toISOString(),
       userName: user.displayName || user.email,
       userPhoto: user.photoURL || null,
@@ -319,49 +480,22 @@ window._toggleBookmark = async (eventId, eventData) => {
   }
 };
 
-// Alle Bookmarks aller User laden (öffentlich sichtbar)
-const allBmRef = ref(db, 'bookmarks');
-onValue(allBmRef, (snap) => {
-  allBookmarks = snap.val() || {};
-  // Für jeden Event zählen wer ihn gemerkt hat
-  window._allBookmarks = allBookmarks;
-  if (window._render) window._render();
-});
-
-// Manuelle Events aus Firebase laden (von allen Usern)
-const manualRef = ref(db, 'manualEvents');
-onValue(manualRef, (snap) => {
-  const data = snap.val() || {};
-  window._firebaseManualEvents = Object.values(data).map(e => ({
-    ...e,
-    dateFrom: strToDateSafe(e.dateFrom),
-    dateTo: strToDateSafe(e.dateTo || e.dateFrom),
-    manual: true,
-    fromFirebase: true,
-  })).filter(e => e.dateFrom && !isNaN(e.dateFrom));
-  if (window._render) window._render();
-});
-
-// Manuelles Event in Firebase speichern
+// Manuelles Event speichern
 window._saveManualToFirebase = async (ev) => {
   if (!window._currentUser) return;
   const user = window._currentUser;
-  const { ref: fbRef, set: fbSet } = window._fb;
-  const db = window._fb.db;
-  const evRef = fbRef(db, `manualEvents/${ev.fbId}`);
-  await fbSet(evRef, {
+  const evRef = ref(db, `manualEvents/${ev.fbId}`);
+  await set(evRef, {
     ...ev,
     createdBy: user.displayName || user.email,
+    createdByUid: user.uid,
     createdByPhoto: user.photoURL || null,
     createdAt: new Date().toISOString(),
   });
 };
 
-// Manuelles Event aus Firebase löschen
 window._deleteManualFromFirebase = async (fbId) => {
-  const { ref: fbRef, set: fbSet } = window._fb;
-  const db = window._fb.db;
-  await fbSet(fbRef(db, `manualEvents/${fbId}`), null);
+  await set(ref(db, `manualEvents/${fbId}`), null);
 };
 </script>
 
@@ -377,16 +511,13 @@ let allEvents=[], manualEvents=[], sourcesData=[];
 let filterCat="Alle", view="kalender";
 let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
 let selectedDay=null, deferredPrompt=null;
-// Alle Bookmarks aller User: { eventId: { uid: {name, photoURL} } }
-let allBookmarks = {};
+let activeGroupFilter = null; // null = alle, groupId = nur diese Gruppe
 
 const _n = new Date();
 const today = new Date(_n.getFullYear(), _n.getMonth(), _n.getDate());
 
 function isoLocal(d) {
-  return d.getFullYear() + "-" +
-    String(d.getMonth()+1).padStart(2,"0") + "-" +
-    String(d.getDate()).padStart(2,"0");
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 }
 function isoDate(d) { return isoLocal(d); }
 function fmtDate(d) { return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}); }
@@ -403,6 +534,14 @@ function installPWA() {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
   deferredPrompt.userChoice.then(() => { deferredPrompt=null; document.getElementById('install-banner').style.display='none'; });
+}
+
+function showUserModal() {
+  const u = window._currentUser;
+  if (!u) return;
+  document.getElementById('user-modal-name').textContent = u.displayName || 'Profil';
+  document.getElementById('user-modal-email').textContent = u.email;
+  document.getElementById('user-modal').style.display = 'flex';
 }
 
 function exportICS(event) {
@@ -447,12 +586,6 @@ async function loadEvents() {
     if (genDate) document.getElementById("last-update").textContent =
       "Stand: " + genDate.toLocaleDateString("de-DE") + " " +
       genDate.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"}) + " Uhr";
-    try {
-      const saved = localStorage.getItem("magdeburg_manual_v2");
-      if (saved) manualEvents = JSON.parse(saved).map(e => ({
-        ...e, dateFrom:strToDate(e.dateFrom), dateTo:strToDate(e.dateTo||e.dateFrom), manual:true
-      }));
-    } catch(e) {}
     render();
   } catch(err) {
     document.getElementById("error").style.display = "block";
@@ -463,10 +596,22 @@ window._loadEvents = loadEvents;
 
 function combinedEvents() {
   const fbManual = (window._firebaseManualEvents || []);
-  // Lokale manuelle Events die noch nicht in Firebase sind
-  const localOnly = manualEvents.filter(e => !e.fbId || !fbManual.find(f => f.fbId === e.fbId));
-  return [...allEvents, ...fbManual, ...localOnly];
+  // Gruppenfilter anwenden
+  const filtered = fbManual.filter(e => {
+    if (e.visibility === 'group') {
+      // Nur anzeigen wenn User Mitglied in einer Gruppe des Erstellers ist
+      if (!window._currentUser) return false;
+      const myGroupIds = Object.keys(window._myGroups || {});
+      return myGroupIds.some(gid => {
+        const g = (window._myGroups||{})[gid];
+        return g?.members?.[e.createdByUid];
+      });
+    }
+    return true; // public
+  });
+  return [...allEvents, ...filtered, ...manualEvents];
 }
+
 function filteredEvents() {
   let evs = combinedEvents().filter(e => isoDate(e.dateTo) >= todayStr);
   if (filterCat === "Gemerkt") {
@@ -487,27 +632,41 @@ function eventsForDay(dateStr) {
 }
 
 function render() {
-  const app = document.getElementById("app");
-  if (!app || app.style.display === 'none') return;
-  app.innerHTML = toolbarHTML() + statsHTML() +
-    (view==="kalender" ? calendarHTML() : view==="gemerkt" ? bookmarksHTML() : listHTML());
+  const appEl = document.getElementById("app");
+  if (!appEl || appEl.style.display === 'none') return;
+  appEl.innerHTML = groupSelectorHTML() + toolbarHTML() + statsHTML() +
+    (view==="gruppen" ? groupsHTML() :
+     view==="kalender" ? calendarHTML() :
+     view==="gemerkt" ? bookmarksHTML() : listHTML());
   bindEvents();
 }
 window._render = render;
 
+function groupSelectorHTML() {
+  const groups = window._myGroups || {};
+  const groupList = Object.entries(groups);
+  if (!groupList.length || !window._currentUser) return '';
+  return `<div class="group-selector">
+    <button class="group-pill ${!activeGroupFilter?'active':''}" onclick="setGroupFilter(null)">🌍 Alle</button>
+    ${groupList.map(([gid,g]) => `<button class="group-pill ${activeGroupFilter===gid?'active':''}" onclick="setGroupFilter('${gid}')">${g.name}</button>`).join('')}
+  </div>`;
+}
+
 function toolbarHTML() {
   const cats = ["Alle",...Object.keys(CATEGORY_COLORS),"Gemerkt"];
+  const hasGroups = Object.keys(window._myGroups||{}).length > 0 && window._currentUser;
   return `<div class="toolbar">
     <div class="view-toggle">
-      <button onclick="setView('kalender')" class="${view==='kalender'?'active':''}">📅 Kalender</button>
-      <button onclick="setView('liste')" class="${view==='liste'?'active':''}">☰ Liste</button>
-      <button onclick="setView('gemerkt')" class="${view==='gemerkt'?'active':''}">⭐ Gemerkt</button>
+      <button onclick="setView('kalender')" class="${view==='kalender'?'active':''}">📅</button>
+      <button onclick="setView('liste')" class="${view==='liste'?'active':''}">☰</button>
+      <button onclick="setView('gemerkt')" class="${view==='gemerkt'?'active':''}">⭐</button>
+      ${window._currentUser?`<button onclick="setView('gruppen')" class="${view==='gruppen'?'active':''}">👥</button>`:''}
     </div>
     <div class="cat-filter">
       ${cats.map(c=>{
         const col=c==="Alle"?"#1a1a2e":c==="Gemerkt"?"#e94560":(CATEGORY_COLORS[c]||"#666");
         const act=filterCat===c;
-        return `<button class="cat-btn${act?' active':''}" style="border-color:${col};${act?'background:'+col+';color:#fff;':''}" onclick="setCat('${c}')">${c==="Gemerkt"?'⭐ ':''} ${c}</button>`;
+        return `<button class="cat-btn${act?' active':''}" style="border-color:${col};${act?'background:'+col+';color:#fff;':''}" onclick="setCat('${c}')">${c}</button>`;
       }).join("")}
     </div>
   </div>`;
@@ -515,10 +674,70 @@ function toolbarHTML() {
 
 function statsHTML() {
   const bmCount = Object.keys(window._bookmarks||{}).length;
+  // Pending requests zählen
+  let pendingCount = 0;
+  Object.values(window._myGroups||{}).forEach(g => {
+    if (g.createdBy === window._currentUser?.uid) {
+      pendingCount += Object.keys(g.requests||{}).length;
+    }
+  });
   return `<div class="stats-bar">
-    <span class="stat-chip">${filteredEvents().length} Veranstaltungen</span>
-    ${bmCount > 0 ? `<span class="stat-chip">⭐ ${bmCount} gemerkt</span>` : ''}
-    <button class="sources-btn" onclick="showSources()">📋 ${sourcesData.length||20} Quellen</button>
+    <span class="stat-chip">${filteredEvents().length} Events</span>
+    ${bmCount>0?`<span class="stat-chip">⭐ ${bmCount}</span>`:''}
+    ${pendingCount>0?`<span class="stat-chip" style="background:#fff8e8;border-color:#f6c90e;color:#b45309">🔔 ${pendingCount} Anfrage${pendingCount>1?'n':''}</span>`:''}
+    <button class="sources-btn" style="background:none;border:none;color:#0f3460;font-size:11px;cursor:pointer;text-decoration:underline" onclick="showSources()">📋 Quellen</button>
+  </div>`;
+}
+
+// GRUPPEN ANSICHT
+function groupsHTML() {
+  const user = window._currentUser;
+  if (!user) return `<div class="empty-box">Bitte zuerst anmelden</div>`;
+  const groups = window._myGroups || {};
+  const groupList = Object.entries(groups);
+
+  return `<div class="groups-screen">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div style="font-weight:700;font-size:16px">👥 Meine Gruppen</div>
+      <button class="btn-primary" onclick="showCreateGroupModal()">+ Neue Gruppe</button>
+    </div>
+    ${!groupList.length ? `<div class="empty-box" style="padding:30px">
+      <div style="font-size:40px;margin-bottom:10px">👥</div>
+      <p>Noch keine Gruppen</p>
+      <p style="font-size:12px;margin-top:6px;color:#aaa">Erstelle eine Gruppe und lade Familie oder Freunde ein</p>
+    </div>` : groupList.map(([gid, g]) => {
+      const isAdmin = g.createdBy === user.uid;
+      const members = Object.entries(g.members||{});
+      const requests = Object.entries(g.requests||{});
+      return `<div class="group-card">
+        <div class="group-header">
+          <div class="group-name">${g.name}</div>
+          <div class="group-badge">${isAdmin?'Admin':'Mitglied'} · ${members.length} Person${members.length!==1?'en':''}</div>
+        </div>
+        <div class="group-members">
+          ${members.map(([uid,m]) => `<div class="member-chip">
+            ${m.photo?`<img src="${m.photo}" />`:'👤'}
+            ${m.name.split(' ')[0]}${m.role==='admin'?' 👑':''}
+          </div>`).join('')}
+        </div>
+        ${isAdmin && requests.length > 0 ? `
+          <div style="margin-bottom:10px">
+            <div style="font-size:12px;font-weight:600;color:#b45309;margin-bottom:6px">🔔 Beitrittsanfragen:</div>
+            ${requests.map(([uid,r]) => `<div class="pending-card">
+              <div class="pending-info">${r.photo?`<img src="${r.photo}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;margin-right:6px" />`:''}
+                <strong>${r.name}</strong> möchte beitreten</div>
+              <div class="pending-btns">
+                <button class="btn-accept" onclick="window._acceptMember('${gid}','${uid}')">✓ Bestätigen</button>
+                <button class="btn-reject" onclick="window._rejectMember('${gid}','${uid}')">✗ Ablehnen</button>
+              </div>
+            </div>`).join('')}
+          </div>` : ''}
+        <div class="group-btns">
+          ${isAdmin ? `<button class="btn-group btn-group-primary" onclick="showGroupQR('${gid}','${g.inviteToken}','${g.name}')">📱 QR-Code / Einladen</button>` : ''}
+          <button class="btn-group" onclick="setGroupFilter('${gid}');setView('liste')">Events dieser Gruppe →</button>
+        </div>
+      </div>`;
+    }).join('')}
   </div>`;
 }
 
@@ -592,7 +811,7 @@ function listHTML() {
     let html=`<div><div class="list-date-header"><span class="list-date-label">${label}</span><span class="list-date-count">${total}</span></div>`;
     html+=single.map(e=>eventCardHTML(e)).join("");
     if(multi.length){
-      html+=`<div class="divider"><div class="divider-line"></div><span class="divider-text">Laufende Veranstaltungen</span><div class="divider-line"></div></div>`;
+      html+=`<div class="divider"><div class="divider-line"></div><span class="divider-text">Laufende</span><div class="divider-line"></div></div>`;
       html+=multi.map(e=>eventCardHTML(e)).join("");
     }
     return html+`</div>`;
@@ -602,21 +821,14 @@ function listHTML() {
 function bookmarksHTML() {
   const bm = window._bookmarks || {};
   const bmIds = Object.keys(bm);
-  if (!bmIds.length) return `<div class="bookmarks-empty"><div class="icon">⭐</div><p>Noch keine Events gemerkt</p><p style="font-size:12px;margin-top:6px">Tippe auf ☆ bei einem Event um es zu merken</p></div>`;
-
-  // Gemerkten Events aus allEvents holen + Firebase-Daten
+  if (!bmIds.length) return `<div class="empty-box"><div style="font-size:40px;margin-bottom:10px">⭐</div><p>Noch keine Events gemerkt</p></div>`;
   const bmEvents = bmIds.map(id => {
     const e = combinedEvents().find(e => String(e.id) === String(id));
     if (e) return e;
-    // Aus Firebase-Daten nehmen falls Event nicht mehr in aktueller Liste
     const fbData = bm[id];
-    return { id, ...fbData, dateFrom: strToDate(fbData.dateFrom), dateTo: strToDate(fbData.dateTo||fbData.dateFrom), fromFirebase: true };
+    return { id, ...fbData, dateFrom: strToDate(fbData.dateFrom), dateTo: strToDate(fbData.dateTo||fbData.dateFrom) };
   }).filter(Boolean).sort((a,b) => isoDate(a.dateFrom).localeCompare(isoDate(b.dateFrom)));
-
-  return `<div class="list-section">
-    <div style="font-size:13px;color:#666;margin-bottom:4px">⭐ ${bmEvents.length} gemerkte Veranstaltungen</div>
-    ${bmEvents.map(e=>eventCardHTML(e)).join("")}
-  </div>`;
+  return `<div class="list-section"><div style="font-size:12px;color:#666;margin-bottom:8px">⭐ ${bmEvents.length} gemerkte Events</div>${bmEvents.map(e=>eventCardHTML(e)).join("")}</div>`;
 }
 
 function getBookmarkersForEvent(eventId) {
@@ -624,10 +836,7 @@ function getBookmarkersForEvent(eventId) {
   const bookers = [];
   Object.values(all).forEach(userBms => {
     if (userBms && userBms[eventId]) {
-      bookers.push({
-        name: userBms[eventId].userName || '?',
-        photo: userBms[eventId].userPhoto || null,
-      });
+      bookers.push({ name: userBms[eventId].userName || '?', photo: userBms[eventId].userPhoto });
     }
   });
   return bookers;
@@ -639,46 +848,26 @@ function eventCardHTML(e) {
   const dateStr=fmtDate(e.dateFrom)+(isMulti?" – "+fmtDate(e.dateTo):"");
   const timeStr=e.timeStart?`<span class="event-time">🕐 ${e.timeStart}${e.timeEnd?' – '+e.timeEnd:''} Uhr</span>`:"";
   const sourceStr=e.sources||e.source||"";
-  const isBookmarked = !!(window._bookmarks||{})[e.id];
-
-  // Wer hat es gemerkt?
-  const bookers = getBookmarkersForEvent(e.id);
-  const bookersHtml = bookers.length > 0
-    ? `<div style="display:flex;align-items:center;gap:4px;margin-top:5px;flex-wrap:wrap;">
-        ${bookers.map(b => b.photo
-          ? `<img src="${b.photo}" title="${b.name}" style="width:18px;height:18px;border-radius:50%;border:1px solid #fff" />`
-          : `<span style="font-size:10px;background:#e8f0fe;border-radius:10px;padding:1px 6px;color:#0f3460">${b.name.split(' ')[0]}</span>`
-        ).join('')}
-        <span style="font-size:10px;color:#aaa">merken das</span>
-      </div>`
-    : '';
-
-  // Wer hat es eingetragen?
-  const creatorHtml = e.createdBy
-    ? `<span style="font-size:10px;color:#888;">✏️ ${e.createdBy}</span>`
-    : "";
-
-  const deleteBtn = e.manual
-    ? `<button style="background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:0" data-delete="${e.id}" data-fbid="${e.fbId||''}" onclick="event.stopPropagation()">🗑</button>`
-    : "";
-
+  const isBookmarked=!!(window._bookmarks||{})[e.id];
+  const bookers=getBookmarkersForEvent(e.id);
+  const bookersHtml=bookers.length>0?`<div class="bookers-row">${bookers.map(b=>b.photo?`<img src="${b.photo}" title="${b.name}" style="width:16px;height:16px;border-radius:50%;" />`:`<span class="booker-chip">${b.name.split(' ')[0]}</span>`).join('')}<span style="font-size:10px;color:#aaa">merken das</span></div>`:'';
+  const creatorHtml=e.createdBy?`<span class="creator-tag">✏️ ${e.createdBy}</span>`:'';
+  const visIcon=e.visibility==='group'?'👥 ':e.manual?'📝 ':'';
+  const deleteBtn=e.manual&&e.fromFirebase&&e.createdByUid===window._currentUser?.uid?`<button style="background:none;border:none;color:#ccc;cursor:pointer;font-size:13px;padding:0" data-delete="${e.id}" data-fbid="${e.fbId||''}" onclick="event.stopPropagation()">🗑</button>`:'';
   return `<div class="event-card" style="border-left-color:${col}" data-id="${e.id}">
     <div class="event-top">
       <div class="event-meta">
         <span class="cat-tag" style="background:${col}">${e.category}</span>
-        ${sourceStr?`<span class="source-tag">📌 ${sourceStr}</span>`:""}
-        ${creatorHtml}
-        ${deleteBtn}
+        ${sourceStr?`<span class="source-tag">${visIcon}${sourceStr}</span>`:''}
+        ${creatorHtml}${deleteBtn}
       </div>
       <div class="event-actions">
-        <button class="bookmark-btn ${isBookmarked?'bookmarked':''}" data-bookmark="${e.id}" onclick="event.stopPropagation()" title="${isBookmarked?'Gemerkt':'Merken'}">
-          ${isBookmarked?'⭐':'☆'}
-        </button>
+        <button class="bookmark-btn ${isBookmarked?'bookmarked':''}" data-bookmark="${e.id}" onclick="event.stopPropagation()">${isBookmarked?'⭐':'☆'}</button>
         <button class="cal-export-btn" data-export="${e.id}" onclick="event.stopPropagation()">📅</button>
       </div>
     </div>
     <div class="event-name">${e.name}</div>
-    <div class="event-date-row">📅 ${dateStr} ${timeStr} ${e.location?`<span class="event-location">· 📍 ${e.location}</span>`:""}
+    <div class="event-date-row">📅 ${dateStr} ${timeStr} ${e.location?`<span class="event-location">· 📍 ${e.location}</span>`:''}
     </div>
     ${bookersHtml}
   </div>`;
@@ -697,7 +886,7 @@ function bindEvents() {
       ev.stopPropagation();
       const id=parseInt(btn.dataset.bookmark);
       const e=combinedEvents().find(e=>e.id===id);
-      if(e) window._toggleBookmark(id, {...e, dateFrom:isoDate(e.dateFrom), dateTo:isoDate(e.dateTo)});
+      if(e) window._toggleBookmark(id,{...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)});
     });
   });
   document.querySelectorAll("[data-export]").forEach(btn=>{
@@ -714,9 +903,8 @@ function bindEvents() {
       const id=parseInt(btn.dataset.delete);
       const fbId=btn.dataset.fbid;
       if(confirm("Löschen?")) {
+        if(fbId) window._deleteManualFromFirebase(fbId);
         manualEvents=manualEvents.filter(e=>e.id!==id);
-        if(fbId && window._currentUser) window._deleteManualFromFirebase(fbId);
-        try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
         render();
       }
     });
@@ -724,11 +912,8 @@ function bindEvents() {
 }
 
 function setView(v){view=v;selectedDay=null;render();}
-function setCat(c){
-  filterCat=c;
-  if(c==="Gemerkt") view="gemerkt";
-  render();
-}
+function setCat(c){filterCat=c;if(c==="Gemerkt")view="gemerkt";render();}
+function setGroupFilter(gid){activeGroupFilter=gid;render();}
 function prevMonth(){if(calMonth===0){calMonth=11;calYear--;}else calMonth--;render();}
 function nextMonth(){if(calMonth===11){calMonth=0;calYear++;}else calMonth++;render();}
 function closeModal(id){document.getElementById(id).style.display='none';}
@@ -739,32 +924,59 @@ function showAddModal(){
   document.getElementById("add-modal").style.display="flex";
 }
 
+function showCreateGroupModal(){
+  document.getElementById("g-name").value='';
+  document.getElementById("create-group-modal").style.display="flex";
+}
+
+async function createGroup(){
+  const name=document.getElementById("g-name").value.trim();
+  if(!name){alert("Gruppenname eingeben!");return;}
+  if(!window._currentUser){alert("Bitte anmelden!");return;}
+  const result = await window._createGroup(name);
+  closeModal('create-group-modal');
+  setView('gruppen');
+  // QR direkt anzeigen
+  showGroupQR(result.groupId, result.token, name);
+}
+
+function showGroupQR(groupId, token, groupName){
+  const baseUrl = window.location.href.split('?')[0];
+  const link = `${baseUrl}?join=${groupId}&token=${token}`;
+  window._groupInviteLink = link;
+  document.getElementById('group-qr-img').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(link)}`;
+  document.getElementById('group-qr-url').textContent = link;
+  document.getElementById('group-qr-modal').style.display = 'flex';
+}
+
+function copyGroupLink(){
+  if(window._groupInviteLink){
+    navigator.clipboard.writeText(window._groupInviteLink).then(()=>alert('Link kopiert!'));
+  }
+}
+
 let nextManualId=100000;
 async function saveManualEvent(){
   const name=document.getElementById("m-name").value.trim();
   const from=document.getElementById("m-from").value;
   if(!name||!from){alert("Name und Datum sind Pflichtfelder.");return;}
-  const fbId = `manual_${Date.now()}_${Math.random().toString(36).slice(2,7)}`;
+  const fbId=`manual_${Date.now()}_${Math.random().toString(36).slice(2,7)}`;
+  const visibility=document.getElementById("m-visibility").value;
   const ev={
-    id: nextManualId++,
-    fbId,
-    name,
-    dateFrom: from,
-    dateTo: document.getElementById("m-to").value||from,
-    timeStart: document.getElementById("m-time-start").value||null,
-    timeEnd: document.getElementById("m-time-end").value||null,
-    category: document.getElementById("m-cat").value,
-    location: document.getElementById("m-location").value.trim(),
-    manual: true,
+    id:nextManualId++, fbId, name,
+    dateFrom:from,
+    dateTo:document.getElementById("m-to").value||from,
+    timeStart:document.getElementById("m-time-start").value||null,
+    timeEnd:document.getElementById("m-time-end").value||null,
+    category:document.getElementById("m-cat").value,
+    location:document.getElementById("m-location").value.trim(),
+    visibility, manual:true,
   };
-  // In Firebase speichern (für alle sichtbar)
-  if (window._currentUser) {
+  if(window._currentUser){
     await window._saveManualToFirebase(ev);
   } else {
-    // Ohne Login: nur lokal
-    const localEv = {...ev, dateFrom: strToDate(ev.dateFrom), dateTo: strToDate(ev.dateTo)};
+    const localEv={...ev,dateFrom:strToDate(ev.dateFrom),dateTo:strToDate(ev.dateTo)};
     manualEvents.push(localEv);
-    try{localStorage.setItem("magdeburg_manual_v2",JSON.stringify(manualEvents.map(e=>({...e,dateFrom:isoDate(e.dateFrom),dateTo:isoDate(e.dateTo)}))));}catch(e){}
   }
   closeModal('add-modal');
   render();
@@ -772,7 +984,7 @@ async function saveManualEvent(){
 
 function showSources(){
   const list=document.getElementById("sources-list");
-  list.innerHTML=sourcesData.length?sourcesData.map(s=>`<li><strong>${s}</strong></li>`).join(""):"<li>20 Quellen (siehe sources.json)</li>";
+  list.innerHTML=sourcesData.length?sourcesData.map(s=>`<li><strong>${s}</strong></li>`).join(""):"<li>Quellen werden geladen...</li>";
   document.getElementById("sources-modal").style.display="flex";
 }
 
