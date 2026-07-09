@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-04T11:37:12.389Z",
-  "count": 82,
+  "generated": "2026-07-09T09:25:32.830Z",
+  "count": 60,
   "sources": [
     "DATEs Stadtmagazin",
     "Landeshauptstadt Magdeburg",
@@ -20,747 +20,554 @@
     "MVGM (GETEC Arena, Messe, AMO)",
     "Eventim Magdeburg",
     "Bandsintown Magdeburg",
-    "Kulturpur Theater Magdeburg",
-    "Volksstimme Magdeburg"
+    "Volksstimme Magdeburg",
+    "Factory Magdeburg",
+    "Flohmarkt.de Magdeburg",
+    "Flohmarktkalender Magdeburg",
+    "Flohmarkttermine Magdeburg",
+    "Kleinanzeigen Veranstaltungen Magdeburg",
+    "Magdeburg Familie & Kinder"
   ],
   "events": [
     {
-      "name": "Gigantische DinosaurierWelten Magdeburg – Sonderausstellung",
-      "dateFrom": "2026-04-01",
-      "dateTo": "2026-10-31",
-      "timeStart": "10:00",
-      "category": "Familie",
-      "location": "Elbauenpark & Jahrtausendturm, Tessenowstraße 7, Magdeburg",
-      "id": 2
-    },
-    {
-      "name": "Giganten der Eiszeit – Ausstellung City Carré",
-      "dateFrom": "2026-06-25",
-      "dateTo": "2026-08-08",
-      "timeStart": null,
-      "category": "Kultur",
-      "location": "City Carré Magdeburg",
-      "id": 81
-    },
-    {
-      "name": "Die Bremer Stadtmusikanten – Das Märchenmusical (Premiere)",
-      "dateFrom": "2026-06-28",
-      "dateTo": "2026-07-05",
-      "timeStart": null,
-      "category": "Familie",
-      "location": "Le Frog Basserie am See, Magdeburg",
-      "id": 17
-    },
-    {
-      "name": "WOBAU-Ferienspaß im Elbauenpark",
-      "dateFrom": "2026-06-29",
-      "dateTo": "2026-07-26",
-      "timeStart": "10:00",
-      "category": "Familie",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 1
-    },
-    {
-      "name": "Projekttage »unerhört« 24 – Abschlusspräsentation",
-      "dateFrom": "2026-07-01",
-      "dateTo": "2026-07-01",
-      "timeStart": "16:00",
-      "category": "Theater",
-      "location": "Opernhaus Bühne, Universitätsplatz 9, 39104 Magdeburg",
-      "id": 68
-    },
-    {
-      "name": "DomplatzOpenAir 2026 – Oklahoma! (Musical)",
-      "dateFrom": "2026-07-01",
-      "dateTo": "2026-07-12",
-      "timeStart": "21:00",
-      "category": "Kultur",
-      "location": "Domplatz, Magdeburg",
-      "id": 70
-    },
-    {
-      "name": "Klang der Begegnung – Chorkonzert mit Frauenchor «Wir sind aus der Ukraine» und Vokalor",
-      "dateFrom": "2026-07-02",
-      "dateTo": "2026-07-02",
-      "timeStart": "19:30",
-      "category": "Theater",
-      "location": "Kammer 1, Theater Magdeburg, 39104 Magdeburg",
-      "id": 49
-    },
-    {
-      "name": "Firmenstaffel Sachsen-Anhalt 2026",
-      "dateFrom": "2026-07-02",
-      "dateTo": "2026-07-02",
-      "timeStart": "18:00",
-      "category": "Sport",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 69
-    },
-    {
-      "name": "Emily Davis – Country Folk trifft Gothic Blues (Konzert)",
-      "dateFrom": "2026-07-03",
-      "dateTo": "2026-07-03",
-      "timeStart": "20:00",
-      "category": "Musik",
-      "location": "Volksbad Buckau, Magdeburg",
-      "id": 45
-    },
-    {
-      "name": "Atemlos durch den Park 5.0 – Sommerkomödie",
-      "dateFrom": "2026-07-03",
-      "dateTo": "2026-07-12",
-      "timeStart": null,
-      "category": "Kultur",
-      "location": "Magdeburger Stadtpark, Magdeburg",
-      "id": 80
-    },
-    {
-      "name": "Ferienspaß-Führungen mittwochs im Elbauenpark (Sommerferien Sachsen-Anhalt)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-19",
-      "timeStart": null,
-      "category": "Familie",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 5
-    },
-    {
-      "name": "Dino-Kino in der Dino-Aue (jeden Mittwoch & Freitag)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-28",
-      "timeStart": "18:30",
-      "category": "Familie",
-      "location": "Elbauenpark – Dino-Aue, Tessenowstraße 7, Magdeburg",
-      "id": 9
-    },
-    {
-      "name": "Kinder-Entdeckungstouren im Jahrtausendturm (Sommerferien)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-19",
-      "timeStart": null,
-      "category": "Familie",
-      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
-      "id": 14
-    },
-    {
-      "name": "Ferienprogramm Zoo Magdeburg – Haustierführerschein",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-19",
-      "timeStart": null,
-      "category": "Familie",
-      "location": "Zoo Magdeburg, Zooallee 1, Magdeburg",
-      "id": 15
-    },
-    {
-      "name": "Ferienprogramm Zoo Magdeburg – Blick hinter die Kulissen",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-19",
-      "timeStart": null,
-      "category": "Familie",
-      "location": "Zoo Magdeburg, Zooallee 1, Magdeburg",
-      "id": 16
-    },
-    {
-      "name": "Wochenmarkt Alter Markt Magdeburg (inkl. Bauernmarkt donnerstags)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "09:00",
-      "category": "Flohmarkt",
-      "location": "Alter Markt, 39104 Magdeburg",
-      "id": 22
-    },
-    {
-      "name": "Sommer Open Air Magdeburg – Atemlos durch den Park 5.0 (Musical)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-16",
-      "timeStart": null,
-      "category": "Musik",
-      "location": "Stadtpark Magdeburg, Le Frog Brasserie am See",
-      "id": 43
-    },
-    {
-      "name": "DomplatzOpenAir – Oklahoma! (Rodgers & Hammerstein)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-07",
-      "timeStart": "21:00",
-      "category": "Musik",
-      "location": "Domplatz, Magdeburg",
-      "id": 44
-    },
-    {
-      "name": "Oklahoma! – DomplatzOpenAir (Rodgers & Hammerstein's Oklahoma!)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-12",
-      "timeStart": "21:00",
-      "category": "Theater",
-      "location": "Domplatz, 39104 Magdeburg",
-      "id": 46
-    },
-    {
-      "name": "Wie im Himmel – Musical DomplatzOpenAir",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-11",
-      "timeStart": "20:00",
-      "category": "Theater",
-      "location": "Domplatz, 39104 Magdeburg",
-      "id": 47
-    },
-    {
-      "name": "Offener Domplatz – Bühnenführung DomplatzOpenAir",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-11",
-      "timeStart": "17:00",
-      "category": "Theater",
-      "location": "Domplatz, 39104 Magdeburg",
-      "id": 48
-    },
-    {
-      "name": "Grace Weaver: Prélude – Ausstellung",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "10:00",
-      "category": "Theater",
-      "location": "Kunstmuseum Kloster Unser Lieben Frauen, Regierungsstraße 4-6, 39104 Magdeburg",
-      "id": 50
-    },
-    {
-      "name": "Das geteilte Jetzt / The Shared Now – Ausstellung",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "10:00",
-      "category": "Theater",
-      "location": "Kunstmuseum Kloster Unser Lieben Frauen, Regierungsstraße 4-6, 39104 Magdeburg",
-      "id": 51
-    },
-    {
-      "name": "The Rhinoceros in the Room – Installation von Itamar Gov",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "10:00",
-      "category": "Theater",
-      "location": "Kunstmuseum Kloster Unser Lieben Frauen, Regierungsstraße 4-6, 39104 Magdeburg",
-      "id": 52
-    },
-    {
-      "name": "Im Zeichen von Zirkel und Winkelmaß – Freimaurerei in Magdeburg (Sonderausstellung)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "10:00",
-      "category": "Theater",
-      "location": "Kulturhistorisches Museum Magdeburg, Otto-von-Guericke-Straße 68-73, 39104 Magdeburg",
-      "id": 53
-    },
-    {
-      "name": "Giganten der Eiszeit – Ausstellung im City Carré",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-08-08",
-      "timeStart": "10:00",
-      "category": "Theater",
-      "location": "City Carré Magdeburg, Kantstraße 3, 39104 Magdeburg",
-      "id": 54
-    },
-    {
-      "name": "Gigantische DinosaurierWelten Magdeburg – Sonderausstellung im Elbauenpark",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "null",
-      "category": "Theater",
-      "location": "Elbauenpark / Jahrtausendturm, Am Kaufmannsberg 10, 39116 Magdeburg",
-      "id": 55
-    },
-    {
-      "name": "Artist in Nature | Natur als Gegenüber – Ausstellung im Galerieladen Buckau",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-04",
-      "timeStart": "null",
-      "category": "Theater",
-      "location": "Der Galerieladen, Schönebecker Straße 116 (Engpass), Magdeburg-Buckau",
-      "id": 56
-    },
-    {
-      "name": "HAFEN.ZEIT.REISE – Fotoausstellung am Wissenschaftshafen",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-09-02",
-      "timeStart": "null",
-      "category": "Theater",
-      "location": "Wissenschaftshafen / Historisches Schiffsareal, Magdeburg",
-      "id": 57
-    },
-    {
-      "name": "Max und Moritz in Magdeburg – SommerOpenAirSpektakelKabarettTheater von HengstmannHerfurthHengstmann",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-12",
-      "timeStart": "null",
-      "category": "Theater",
-      "location": "Stadtpark Magdeburg",
-      "id": 58
-    },
-    {
-      "name": "Romy, la mer et la musique – Musikalisch-theatrales Stück von Jakob G��hring",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-12",
-      "timeStart": "null",
-      "category": "Theater",
-      "location": "Magdeburg",
-      "id": 59
-    },
-    {
-      "name": "Bühnenführung DomplatzOpenAir",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-11",
-      "timeStart": "17:30",
-      "category": "Theater",
-      "location": "Domplatz, 39104 Magdeburg",
-      "id": 67
-    },
-    {
-      "name": "Electronic Fortress – Open Air (Magdeburger Kultur Picknick)",
-      "dateFrom": "2026-07-04",
-      "dateTo": "2026-07-04",
-      "timeStart": "14:00",
-      "category": "Kultur",
-      "location": "Festung Mark / Elbauenpark, Magdeburg",
-      "id": 73
-    },
-    {
-      "name": "Magdeburger Sonntags-Flohmarkt",
+      "name": "Frauenklamotte – Fashion Flohmarkt in der Festung Mark",
       "dateFrom": "2026-07-05",
       "dateTo": "2026-07-05",
-      "timeStart": "08:00",
-      "category": "Flohmarkt",
-      "location": "Freifläche am Sarajevo-Ufer, Wissenschaftshafen, Magdeburg",
-      "id": 20
-    },
-    {
-      "name": "FROHMARKT – Der Flohmarkt in der Festung Mark (mit Frauenklamotte Fashion Flohmarkt)",
-      "dateFrom": "2026-07-05",
-      "dateTo": "2026-07-05",
-      "timeStart": "12:00",
-      "category": "Flohmarkt",
-      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
-      "id": 21
-    },
-    {
-      "name": "Zirkus-Feriencamp Magdeburg",
-      "dateFrom": "2026-07-06",
-      "dateTo": "2026-07-10",
       "timeStart": null,
-      "category": "Familie",
-      "location": "Magdeburg",
-      "id": 12
-    },
-    {
-      "name": "Green Kids Camp Möckern (Ferienlager bei Magdeburg)",
-      "dateFrom": "2026-07-06",
-      "dateTo": "2026-07-10",
-      "timeStart": null,
-      "category": "Familie",
-      "location": "Hof bei Möckern, Magdeburg Region",
-      "id": 13
-    },
-    {
-      "name": "16. Jazz Nacht – Open Air",
-      "dateFrom": "2026-07-11",
-      "dateTo": "2026-07-11",
-      "timeStart": "19:00",
-      "category": "Musik",
-      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
-      "id": 26
-    },
-    {
-      "name": "Carmina Burana – Internationale Solisten mit großem Chor & Orchester",
-      "dateFrom": "2026-07-11",
-      "dateTo": "2026-07-11",
-      "timeStart": "20:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 27
-    },
-    {
-      "name": "16. Magdeburger Jazznacht – Open Air",
-      "dateFrom": "2026-07-11",
-      "dateTo": "2026-07-11",
-      "timeStart": "19:00",
-      "category": "Kultur",
-      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
-      "id": 71
-    },
-    {
-      "name": "Gartenträume-Picknicktag mit Livemusik im Elbauenpark",
-      "dateFrom": "2026-07-12",
-      "dateTo": "2026-07-12",
-      "timeStart": "10:00",
-      "category": "Familie",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 3
-    },
-    {
-      "name": "Picknicktag Zoo Magdeburg & Elbauenpark – Familientag",
-      "dateFrom": "2026-07-12",
-      "dateTo": "2026-07-12",
-      "timeStart": "10:00",
-      "category": "Familie",
-      "location": "Zoo Magdeburg & Elbauenpark, Magdeburg",
-      "id": 11
-    },
-    {
-      "name": "Fußball-Feriencamp MDsport Akademie",
-      "dateFrom": "2026-07-13",
-      "dateTo": "2026-07-17",
-      "timeStart": "09:30",
-      "category": "Familie",
-      "location": "Sport- und Freizeitkomplex Bodestraße, Magdeburg",
-      "id": 10
-    },
-    {
-      "name": "Suzi Quatro & Band – Open Air",
-      "dateFrom": "2026-07-17",
-      "dateTo": "2026-07-17",
-      "timeStart": "20:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Festung Mark, Hohepfortewall 1",
       "id": 28
     },
     {
-      "name": "TOGGO Tour 2026 – Sommerspaß mit den TOGGO Serienhelden",
-      "dateFrom": "2026-07-18",
-      "dateTo": "2026-07-19",
-      "timeStart": "10:00",
-      "category": "Familie",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 4
-    },
-    {
-      "name": "Elbauenpark Oldtimertag",
-      "dateFrom": "2026-07-18",
-      "dateTo": "2026-07-18",
-      "timeStart": "10:00",
-      "category": "Kultur",
-      "location": "Elbauenpark, Magdeburg",
-      "id": 72
-    },
-    {
-      "name": "Der Herr der Ringe & Der Hobbit – Das Konzert",
-      "dateFrom": "2026-07-30",
-      "dateTo": "2026-07-30",
-      "timeStart": "16:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
+      "name": "Frohmarkt – Familien-Flohmarkt in der Festung Mark",
+      "dateFrom": "2026-07-05",
+      "dateTo": "2026-07-05",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Festung Mark, Hohepfortewall 1",
       "id": 29
     },
     {
-      "name": "PINK FLOYD'S THE DARK SIDE OF THE MOON – Live in Concert",
-      "dateFrom": "2026-07-30",
-      "dateTo": "2026-07-30",
-      "timeStart": "21:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
+      "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
+      "dateFrom": "2026-07-05",
+      "dateTo": "2026-07-05",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Wissenschaftshafen, Sarajevo-Ufer",
       "id": 30
     },
     {
-      "name": "Der Hobbit – Seebühne Open Air",
-      "dateFrom": "2026-07-30",
-      "dateTo": "2026-07-30",
-      "timeStart": null,
-      "category": "Kultur",
-      "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 79
-    },
-    {
-      "name": "The Magical Music of Harry Potter – Live in Concert",
-      "dateFrom": "2026-07-31",
-      "dateTo": "2026-07-31",
-      "timeStart": "16:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 31
-    },
-    {
-      "name": "The Music of Hans Zimmer & Others – A Celebration of Film Music",
-      "dateFrom": "2026-07-31",
-      "dateTo": "2026-07-31",
-      "timeStart": "20:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 32
-    },
-    {
-      "name": "Riverside@Night 2026 – Die längste Musiknacht des Jahres",
-      "dateFrom": "2026-08-01",
-      "dateTo": "2026-08-01",
-      "timeStart": "18:00",
-      "category": "Kultur",
-      "location": "Diverse Locations entlang der Elbe, Magdeburg",
-      "id": 74
-    },
-    {
-      "name": "Magdeburger Sonntags-Flohmarkt",
-      "dateFrom": "2026-08-02",
-      "dateTo": "2026-08-02",
-      "timeStart": "08:00",
-      "category": "Flohmarkt",
-      "location": "Freifläche am Sarajevo-Ufer, Wissenschaftshafen, Magdeburg",
-      "id": 23
-    },
-    {
-      "name": "Theater Poetenpack – Sommertheater Möllenvogtei",
-      "dateFrom": "2026-08-05",
-      "dateTo": "2026-08-23",
-      "timeStart": "19:00",
-      "category": "Kultur",
-      "location": "Möllenvogtei, Fürstenwall, Magdeburg",
-      "id": 75
-    },
-    {
-      "name": "Mega Malle – Festival der Mallorcastars (auch für Familien)",
-      "dateFrom": "2026-08-08",
-      "dateTo": "2026-08-08",
-      "timeStart": "10:30",
+      "name": "Ferienspaß: Entdeckungstour Wald – Geheimnisse des Waldes (Elbauenpark)",
+      "dateFrom": "2026-07-07",
+      "dateTo": "2026-07-07",
+      "timeStart": "15:00",
       "category": "Familie",
-      "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 18
+      "location": "Elbauenpark Magdeburg, Waldschule (Eingang Breitscheidstraße)",
+      "id": 1
     },
     {
-      "name": "MEGA MALLE 2026 – Deutschlands größtes Mallorca Festival",
-      "dateFrom": "2026-08-08",
-      "dateTo": "2026-08-08",
-      "timeStart": "10:30",
-      "category": "Musik",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 34
-    },
-    {
-      "name": "Michaelsteiner Klosterkonzert I – J.S. Bach: Vita Christi",
-      "dateFrom": "2026-08-08",
-      "dateTo": "2026-08-08",
-      "timeStart": null,
-      "category": "Musik",
-      "location": "Dom St. Mauritius und Katharina zu Magdeburg",
-      "id": 42
-    },
-    {
-      "name": "Maggie Reilly – Sommer Open Air 2026",
-      "dateFrom": "2026-08-14",
-      "dateTo": "2026-08-14",
-      "timeStart": "19:30",
-      "category": "Musik",
-      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
-      "id": 33
-    },
-    {
-      "name": "Pyro Games 2026 – Das Duell der Feuerwerker",
-      "dateFrom": "2026-08-15",
-      "dateTo": "2026-08-15",
-      "timeStart": "18:00",
+      "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
+      "dateFrom": "2026-07-08",
+      "dateTo": "2026-07-08",
+      "timeStart": "15:00",
       "category": "Familie",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 6
+      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
+      "id": 2
     },
     {
-      "name": "Mono Inc. – Open Air 2026 (Special Guests: Sotiria & Alienare)",
-      "dateFrom": "2026-08-15",
-      "dateTo": "2026-08-15",
-      "timeStart": "18:30",
-      "category": "Musik",
-      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
-      "id": 35
-    },
-    {
-      "name": "Zauber der Operette",
-      "dateFrom": "2026-08-16",
-      "dateTo": "2026-08-16",
-      "timeStart": "15:30",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 36
-    },
-    {
-      "name": "Freedom – A Tribute to George Michael",
-      "dateFrom": "2026-08-21",
-      "dateTo": "2026-08-21",
-      "timeStart": "20:00",
-      "category": "Musik",
-      "location": "Seebühne Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 37
-    },
-    {
-      "name": "Magdeburger Taschenlampenkonzert – Das leuchtende Familienkonzert (RUMPELSTIL)",
-      "dateFrom": "2026-08-22",
-      "dateTo": "2026-08-22",
-      "timeStart": "20:00",
+      "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg (Malen, Zeichnen, Gestalten)",
+      "dateFrom": "2026-07-08",
+      "dateTo": "2026-07-08",
+      "timeStart": "15:00",
       "category": "Familie",
-      "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 7
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
+      "id": 3
     },
     {
-      "name": "CSD Magdeburg Stadtfest",
-      "dateFrom": "2026-08-22",
-      "dateTo": "2026-08-22",
-      "timeStart": "12:00",
-      "category": "Flohmarkt",
-      "location": "Alter Markt, 39104 Magdeburg",
+      "name": "Gigantische DinosaurierWelten Magdeburg – Sonderausstellung (familiengeeignet)",
+      "dateFrom": "2026-07-09",
+      "dateTo": "2026-07-09",
+      "timeStart": "10:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg & Jahrtausendturm, Kleiner Cracauer Anger",
       "id": 25
     },
     {
-      "name": "CSD Magdeburg 2026 – Politisches Stadtfest",
-      "dateFrom": "2026-08-22",
-      "dateTo": "2026-08-22",
-      "timeStart": "12:00",
-      "category": "Kultur",
-      "location": "Marktplatz (Alter Markt), Magdeburg",
-      "id": 76
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-07-09",
+      "dateTo": "2026-07-09",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 31
     },
     {
-      "name": "Nino de Angelo – Vivi la Vita Open Air Tour 2026",
-      "dateFrom": "2026-08-28",
-      "dateTo": "2026-08-28",
-      "timeStart": "19:30",
-      "category": "Musik",
-      "location": "MDCC Parkbühne im Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 38
+      "name": "TOGGO Tour 2026 – Sommerspaß mit TOGGO Serienhelden (Elbauenpark)",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-12",
+      "timeStart": "10:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Seebühne / Tessenowstraße 7",
+      "id": 26
     },
     {
-      "name": "27. OMMMA – Ost-Mobil-Meeting Magdeburg (Fahrzeugmarkt & Trödelmarkt)",
-      "dateFrom": "2026-08-29",
-      "dateTo": "2026-08-29",
+      "name": "Scheunenflohmarkt Storbeck",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "timeStart": "06:00",
+      "category": "Flohmarkt",
+      "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
+      "id": 32
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 33
+    },
+    {
+      "name": "Picknicktag mit Livemusik im Elbauenpark (Duo Goosebumps)",
+      "dateFrom": "2026-07-12",
+      "dateTo": "2026-07-12",
+      "timeStart": "11:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Wiese am Staudental",
+      "id": 4
+    },
+    {
+      "name": "Gommeraner Sonntags-Flohmarkt",
+      "dateFrom": "2026-07-12",
+      "dateTo": "2026-07-12",
       "timeStart": "10:00",
       "category": "Flohmarkt",
-      "location": "Elbauenpark Magdeburg, Tessenowstraße, 39114 Magdeburg",
-      "id": 24
+      "location": "Gommern, Martin-Schwantes-Straße 49",
+      "id": 34
     },
     {
-      "name": "SILLY mit Julia Neigel – elektroAKUSTIK Open Air Tour 2026",
-      "dateFrom": "2026-08-29",
-      "dateTo": "2026-08-29",
-      "timeStart": "19:30",
-      "category": "Musik",
-      "location": "MDCC Parkbühne im Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 39
-    },
-    {
-      "name": "27. OMMMA – Ost-Mobil-Meeting-Magdeburg",
-      "dateFrom": "2026-08-29",
-      "dateTo": "2026-08-29",
-      "timeStart": "10:00",
-      "category": "Kultur",
-      "location": "Elbauenpark, Cracauer Anger, Magdeburg",
-      "id": 77
-    },
-    {
-      "name": "Wincent Weiss – Sommertour 2026 Open Air",
-      "dateFrom": "2026-09-04",
-      "dateTo": "2026-09-04",
-      "timeStart": "19:00",
-      "category": "Musik",
-      "location": "MDCC Parkbühne im Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 40
-    },
-    {
-      "name": "Veranstaltung im Schauspielhaus Garten",
-      "dateFrom": "2026-09-04",
-      "dateTo": "2026-09-04",
-      "timeStart": "20:00",
-      "category": "Theater",
-      "location": "Schauspielhaus Garten, Theater Magdeburg, Otto-von-Guericke-Straße 64, 39104 Magdeburg",
-      "id": 66
-    },
-    {
-      "name": "Magdeburg Swing 2026",
-      "dateFrom": "2026-09-04",
-      "dateTo": "2026-09-05",
-      "timeStart": null,
-      "category": "Kultur",
-      "location": "Verschiedene Orte zwischen Dom und Schleinufer, Magdeburg",
-      "id": 78
-    },
-    {
-      "name": "Neverland – Musikalischer Bilderbogen von Julien Chavaz (Theater unterwegs)",
-      "dateFrom": "2026-09-05",
-      "dateTo": "2026-09-05",
-      "timeStart": "19:00",
-      "category": "Theater",
-      "location": "Theater Magdeburg (Gastspiel Genf)",
-      "id": 65
-    },
-    {
-      "name": "EMMAs Kinder Open-Air Vol. 4",
-      "dateFrom": "2026-09-06",
-      "dateTo": "2026-09-06",
+      "name": "Ferienspaß: Entdeckungstour Biber – Einmal Biber sein / Wir bauen eine Flusslandschaft",
+      "dateFrom": "2026-07-14",
+      "dateTo": "2026-07-14",
       "timeStart": "15:00",
       "category": "Familie",
-      "location": "Schellheimerplatz, 39108 Magdeburg",
+      "location": "Elbauenpark Magdeburg, Biberwiese am Jahrtausendturm",
+      "id": 9
+    },
+    {
+      "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
+      "dateFrom": "2026-07-15",
+      "dateTo": "2026-07-15",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
+      "id": 5
+    },
+    {
+      "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg",
+      "dateFrom": "2026-07-15",
+      "dateTo": "2026-07-15",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
+      "id": 6
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-07-16",
+      "dateTo": "2026-07-16",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 35
+    },
+    {
+      "name": "TOGGO Tour 2026 – Sommerspaß mit TOGGO Serienhelden (PAW Patrol, SpongeBob, Peppa Pig)",
+      "dateFrom": "2026-07-18",
+      "dateTo": "2026-07-18",
+      "timeStart": "10:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Tessenowstraße 7",
+      "id": 7
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-07-18",
+      "dateTo": "2026-07-18",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 36
+    },
+    {
+      "name": "TOGGO Tour 2026 – Sommerspaß mit TOGGO Serienhelden (PAW Patrol, SpongeBob, Peppa Pig)",
+      "dateFrom": "2026-07-19",
+      "dateTo": "2026-07-19",
+      "timeStart": "10:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Tessenowstraße 7",
       "id": 8
     },
     {
-      "name": "Metal Embrace Festival 2026",
-      "dateFrom": "2026-09-11",
-      "dateTo": "2026-09-12",
-      "timeStart": "13:00",
-      "category": "Musik",
-      "location": "Iron Cruise MC Wolmirstedt, Barleben, Magdeburg",
+      "name": "Ferienspaß: Entdeckungstour Wald – Geheimnisse des Waldes (Elbauenpark)",
+      "dateFrom": "2026-07-21",
+      "dateTo": "2026-07-21",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Waldschule (Eingang Breitscheidstraße)",
+      "id": 27
+    },
+    {
+      "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg",
+      "dateFrom": "2026-07-22",
+      "dateTo": "2026-07-22",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
+      "id": 10
+    },
+    {
+      "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
+      "dateFrom": "2026-07-22",
+      "dateTo": "2026-07-22",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
+      "id": 11
+    },
+    {
+      "name": "Piratenfest im Familienhaus im Park (Spiele, Schatzsuche, Mitmachaktionen)",
+      "dateFrom": "2026-07-22",
+      "dateTo": "2026-07-22",
+      "timeStart": "14:00",
+      "category": "Familie",
+      "location": "Familienhaus im Park, Hohepfortestr. 14, Magdeburg",
+      "id": 12
+    },
+    {
+      "name": "Ferienspaß: Entdeckungstour Biber – Einmal Biber sein / Wir bauen eine Flusslandschaft",
+      "dateFrom": "2026-07-23",
+      "dateTo": "2026-07-23",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Biberwiese am Jahrtausendturm",
+      "id": 13
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-07-23",
+      "dateTo": "2026-07-23",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 37
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-07-25",
+      "dateTo": "2026-07-25",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 38
+    },
+    {
+      "name": "Gommeraner Sonntags-Flohmarkt",
+      "dateFrom": "2026-07-26",
+      "dateTo": "2026-07-26",
+      "timeStart": "10:00",
+      "category": "Flohmarkt",
+      "location": "Gommern, Martin-Schwantes-Straße 49",
+      "id": 39
+    },
+    {
+      "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg",
+      "dateFrom": "2026-07-29",
+      "dateTo": "2026-07-29",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
+      "id": 14
+    },
+    {
+      "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
+      "dateFrom": "2026-07-29",
+      "dateTo": "2026-07-29",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
+      "id": 15
+    },
+    {
+      "name": "Ferienspaß: Entdeckungstour Wald – Geheimnisse des Waldes",
+      "dateFrom": "2026-07-30",
+      "dateTo": "2026-07-30",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Waldschule",
+      "id": 16
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-07-30",
+      "dateTo": "2026-07-30",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 40
+    },
+    {
+      "name": "Scheunenflohmarkt Storbeck",
+      "dateFrom": "2026-08-01",
+      "dateTo": "2026-08-01",
+      "timeStart": "06:00",
+      "category": "Flohmarkt",
+      "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
       "id": 41
     },
     {
-      "name": "Kanton Plankton – Schauspiel/Performance von Julia Oschatz (Premiere)",
-      "dateFrom": "2026-09-11",
-      "dateTo": "2026-09-11",
-      "timeStart": "19:30",
-      "category": "Theater",
-      "location": "Kammer 2, Schauspielhaus Theater Magdeburg, Otto-von-Guericke-Straße 64, 39104 Magdeburg",
-      "id": 61
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-08-01",
+      "dateTo": "2026-08-01",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 42
     },
     {
-      "name": "Così fan tutt*e – Oper von Wolfgang Amadeus Mozart (Premiere)",
+      "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
+      "dateFrom": "2026-08-02",
+      "dateTo": "2026-08-02",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Wissenschaftshafen, Sarajevo-Ufer",
+      "id": 43
+    },
+    {
+      "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
+      "dateFrom": "2026-08-05",
+      "dateTo": "2026-08-05",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
+      "id": 17
+    },
+    {
+      "name": "Ferienspaß: Entdeckungstour – Spurensuche in Elbe und Angersee",
+      "dateFrom": "2026-08-06",
+      "dateTo": "2026-08-06",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Gartenhaus Kleiner Cracauer Anger",
+      "id": 18
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-08-06",
+      "dateTo": "2026-08-06",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 44
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-08-08",
+      "dateTo": "2026-08-08",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 45
+    },
+    {
+      "name": "Scheunenflohmarkt Storbeck (Wochenende)",
+      "dateFrom": "2026-08-08",
+      "dateTo": "2026-08-09",
+      "timeStart": "06:00",
+      "category": "Flohmarkt",
+      "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
+      "id": 46
+    },
+    {
+      "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
+      "dateFrom": "2026-08-12",
+      "dateTo": "2026-08-12",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Jahrtausendturm, Elbauenpark Magdeburg",
+      "id": 20
+    },
+    {
+      "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg (Kleine Kunstpiraten)",
+      "dateFrom": "2026-08-12",
+      "dateTo": "2026-08-12",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
+      "id": 21
+    },
+    {
+      "name": "Ferienspaß: Entdeckungstour – Wiesensafari",
+      "dateFrom": "2026-08-13",
+      "dateTo": "2026-08-13",
+      "timeStart": "15:00",
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg",
+      "id": 19
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-08-13",
+      "dateTo": "2026-08-13",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 47
+    },
+    {
+      "name": "Pyro Games 2026 – Duell der Feuerwerker (Familienevent mit Show)",
+      "dateFrom": "2026-08-15",
+      "dateTo": "2026-08-15",
+      "timeStart": null,
+      "category": "Familie",
+      "location": "Elbauenpark Magdeburg, Seebühne",
+      "id": 22
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-08-15",
+      "dateTo": "2026-08-15",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 48
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-08-20",
+      "dateTo": "2026-08-20",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 49
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-08-22",
+      "dateTo": "2026-08-22",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 50
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-08-27",
+      "dateTo": "2026-08-27",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 52
+    },
+    {
+      "name": "ANTIK- und FLOHMARKT Bernburger Weinfest (3 Tage)",
+      "dateFrom": "2026-08-28",
+      "dateTo": "2026-08-30",
+      "timeStart": "09:00",
+      "category": "Flohmarkt",
+      "location": "Bernburg (Saale), Breite Straße / Weinfest-Gelände",
+      "id": 51
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-08-29",
+      "dateTo": "2026-08-29",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 53
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
+      "dateFrom": "2026-09-03",
+      "dateTo": "2026-09-03",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 54
+    },
+    {
+      "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
+      "dateFrom": "2026-09-05",
+      "dateTo": "2026-09-05",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
+      "id": 55
+    },
+    {
+      "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
+      "dateFrom": "2026-09-06",
+      "dateTo": "2026-09-06",
+      "timeStart": null,
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Wissenschaftshafen, Sarajevo-Ufer",
+      "id": 56
+    },
+    {
+      "name": "Simone Sommerland – Kinder-Mitmach-Konzert (Singen, Tanzen, Mitmachen)",
       "dateFrom": "2026-09-12",
       "dateTo": "2026-09-12",
-      "timeStart": "19:30",
-      "category": "Theater",
-      "location": "Opernhaus, Universitätsplatz 9, 39104 Magdeburg",
-      "id": 60
+      "timeStart": "16:00",
+      "category": "Familie",
+      "location": "GETEC Arena Magdeburg",
+      "id": 23
     },
     {
-      "name": "Kanton Plankton – Schauspiel/Performance von Julia Oschatz (Folgevorstellungen)",
-      "dateFrom": "2026-09-12",
-      "dateTo": "2026-09-02",
-      "timeStart": "19:30",
-      "category": "Theater",
-      "location": "Kammer 2, Schauspielhaus Theater Magdeburg, Otto-von-Guericke-Straße 64, 39104 Magdeburg",
-      "id": 62
-    },
-    {
-      "name": "Story Karaoke Bar – Eine kollektive Übung im Zuhören und Erzählen",
+      "name": "Nachtflohmarkt Magdeburg / Messehallen",
       "dateFrom": "2026-09-12",
       "dateTo": "2026-09-12",
-      "timeStart": "20:00",
-      "category": "Theater",
-      "location": "Kasino, Theater Magdeburg, 39104 Magdeburg",
-      "id": 63
+      "timeStart": "15:00",
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Messe, Tessenowstraße 9",
+      "id": 57
     },
     {
-      "name": "Theaterfest zur Spielzeiteröffnung 2026/27",
+      "name": "Antik- und Trödelmarkt Bernburg – PEP (Prima Einkaufspark)",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "09:00",
+      "category": "Flohmarkt",
+      "location": "Bernburg, Kalistraße 11 (PEP-Parkplatz)",
+      "id": 58
+    },
+    {
+      "name": "Scheunenflohmarkt Storbeck (Wochenende)",
       "dateFrom": "2026-09-12",
       "dateTo": "2026-09-13",
-      "timeStart": "null",
-      "category": "Theater",
-      "location": "Schauspielhaus & Opernhaus Theater Magdeburg, 39104 Magdeburg",
-      "id": 64
+      "timeStart": "06:00",
+      "category": "Flohmarkt",
+      "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
+      "id": 59
     },
     {
-      "name": "Kannenstieglauf MLV Einheit",
-      "dateFrom": "2026-09-12",
-      "dateTo": "2026-09-12",
-      "timeStart": "10:00",
-      "category": "Sport",
-      "location": "Sportplatz Magdeburg",
-      "id": 82
-    },
-    {
-      "name": "Explore Science – MINT-Erlebnistage im Elbauenpark",
-      "dateFrom": "2026-09-26",
-      "dateTo": "2026-09-26",
+      "name": "31. Landeserntedankfest im Elbauenpark (Bauernmarkt, Tierschau, Kinderprogramm)",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-20",
       "timeStart": "10:00",
       "category": "Familie",
-      "location": "Elbauenpark, Tessenowstraße 7, Magdeburg",
-      "id": 19
+      "location": "Elbauenpark Magdeburg, Tessenowstraße 7",
+      "id": 24
+    },
+    {
+      "name": "Gratis-Flohmarkt Magdeburg (Städtischer Abfallwirtschaftsbetrieb)",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "10:00",
+      "category": "Flohmarkt",
+      "location": "Magdeburg, Betriebshof Liebknechtstraße 84",
+      "id": 60
     }
   ]
 }
