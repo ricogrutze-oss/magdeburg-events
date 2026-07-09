@@ -2,13 +2,14 @@ name: Magdeburg Events aktualisieren
 
 on:
   schedule:
+    # Jeden 1. des Monats um 07:00 Uhr
     - cron: "0 6 1 * *"
-    - cron: "0 6 15 * *"
   workflow_dispatch:
 
 jobs:
   update-events:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     permissions:
       contents: write
 
@@ -21,7 +22,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Veranstaltungen abrufen (5 Kategorien)
+      - name: Veranstaltungen abrufen (pro Quelle)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/generate-events.js
