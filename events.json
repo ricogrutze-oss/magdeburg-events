@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-09T10:02:58.232Z",
-  "count": 224,
+  "generated": "2026-07-09T20:02:05.892Z",
+  "count": 264,
   "sources": [
     "DATEs Stadtmagazin",
     "Landeshauptstadt Magdeburg",
@@ -26,62 +26,90 @@
     "Flohmarktkalender Magdeburg",
     "Flohmarkttermine Magdeburg",
     "Kleinanzeigen Veranstaltungen Magdeburg",
-    "Magdeburg Familie & Kinder"
+    "Magdeburg Familie & Kinder",
+    "Regioactive Elbauenpark",
+    "Seebühne Elbauenpark Termine"
   ],
   "events": [
     {
-      "name": "Zoo Magdeburg Ferienprogramm: Auf den Spuren der Zootierhaltung (Blick hinter die Kulissen)",
-      "dateFrom": "2026-07-03",
-      "dateTo": "2026-07-03",
-      "timeStart": "09:30",
-      "category": "Familie",
-      "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 59
-    },
-    {
-      "name": "Sommerfest auf der Streuobstwiese Sudenburg – Familienfest mit Spielen, Workshops & Musik",
-      "dateFrom": "2026-07-05",
-      "dateTo": "2026-07-05",
+      "name": "Firmenstaffel 2026",
+      "dateFrom": "2026-07-02",
+      "dateTo": "2026-07-02",
       "timeStart": "15:00",
-      "category": "Familie",
-      "location": "Streuobstwiese Sudenburg, Magdeburg-Sudenburg",
-      "id": 57
+      "category": "Sport",
+      "location": "Elbauenpark, Tessenowstraße 7, 39114 Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 219
     },
     {
-      "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
-      "dateFrom": "2026-07-05",
-      "dateTo": "2026-07-05",
-      "timeStart": null,
-      "category": "Flohmarkt",
-      "location": "Magdeburg – Wissenschaftshafen (Sarajevo-Ufer)",
-      "id": 99
+      "name": "Electronic Fortress – Open Air (Magdeburger Kultur Picknick)",
+      "dateFrom": "2026-07-04",
+      "dateTo": "2026-07-04",
+      "timeStart": "15:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 220
     },
     {
-      "name": "FRAUENKLAMOTTE – Fashion Flohmarkt in der Festung Mark",
-      "dateFrom": "2026-07-05",
-      "dateTo": "2026-07-05",
-      "timeStart": "12:00",
-      "category": "Flohmarkt",
-      "location": "Magdeburg – Festung Mark, Hohepfortewall 1",
-      "id": 103
+      "name": "Magdeburg Lacht! – Open Air Comedy Show",
+      "dateFrom": "2026-07-04",
+      "dateTo": "2026-07-04",
+      "timeStart": "20:00",
+      "category": "Kultur",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 221
     },
     {
-      "name": "Ferienprogramm Zoo Magdeburg: Auf den Spuren der Zootierhaltung – Ganztag (Kinder 9–14 J.)",
+      "name": "Electronic Fortress – Open Air (Mauro Picotto & Dr. Motte)",
+      "dateFrom": "2026-07-04",
+      "dateTo": "2026-07-04",
+      "timeStart": "15:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 241
+    },
+    {
+      "name": "Ausstellungseröffnung Galerie Himmelreich",
       "dateFrom": "2026-07-07",
       "dateTo": "2026-07-07",
-      "timeStart": "09:30",
-      "category": "Familie",
-      "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 88
+      "timeStart": "19:00",
+      "category": "Kultur",
+      "location": "Galerie Himmelreich, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 222
     },
     {
-      "name": "Ferienprogramm Kinderatelier Kunstmuseum – Kreatives Gestalten (Kunstpiraten & mehr)",
+      "name": "Kunstausstellung Kloster Unser Lieben Frauen (Christiane Möbus)",
+      "dateFrom": "2026-07-07",
+      "dateTo": "2026-07-07",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 223
+    },
+    {
+      "name": "Vortrag Wasserversorgung & Hochwasserschutz – Wissensstadt Magdeburg",
       "dateFrom": "2026-07-08",
       "dateTo": "2026-07-08",
-      "timeStart": "15:00",
-      "category": "Familie",
-      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
-      "id": 84
+      "timeStart": "13:00",
+      "category": "Sonstiges",
+      "location": "Magdeburg (Wissensstadt Magdeburg)",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 224
+    },
+    {
+      "name": "Kunstausstellung Kloster Unser Lieben Frauen (Grace Weaver)",
+      "dateFrom": "2026-07-08",
+      "dateTo": "2026-07-08",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 225
     },
     {
       "name": "Gigantische DinosaurierWelten Magdeburg – Sonderausstellung (familiengeeignet)",
@@ -108,7 +136,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 55
+      "id": 3
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Auf den Spuren der Zootierhaltung (Blick hinter die Kulissen, Kinder 9–14 Jahre)",
@@ -117,7 +145,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 56
+      "id": 4
     },
     {
       "name": "Lampion- und Lichterführung für Kinder (Nachtwächter-Rundgang durch das Domviertel)",
@@ -126,7 +154,7 @@
       "timeStart": "17:00",
       "category": "Familie",
       "location": "Dommuseum Ottonianum, Domplatz 15, Magdeburg",
-      "id": 67
+      "id": 5
     },
     {
       "name": "Oklahoma! – DomplatzOpenAir (Theater Magdeburg)",
@@ -135,7 +163,7 @@
       "timeStart": "21:00",
       "category": "Theater",
       "location": "Domplatz Magdeburg",
-      "id": 147
+      "id": 6
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -144,7 +172,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 152
+      "id": 7
     },
     {
       "name": "Ferienworkshop Museum für Naturkunde Magdeburg",
@@ -153,7 +181,7 @@
       "timeStart": "14:00",
       "category": "Theater",
       "location": "Museum für Naturkunde Magdeburg",
-      "id": 201
+      "id": 8
     },
     {
       "name": "DomplatzOpenAir: Oklahoma! (Musical)",
@@ -162,7 +190,17 @@
       "timeStart": "21:00",
       "category": "Kultur",
       "location": "Domplatz Magdeburg",
-      "id": 207
+      "id": 9
+    },
+    {
+      "name": "Gesundheitsvortrag Darmgesundheit – Ernas LebensMittelPunkt",
+      "dateFrom": "2026-07-09",
+      "dateTo": "2026-07-09",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Ernas LebensMittelPunkt, Annastr. 40, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 226
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Haustierführerschein (Kinder 6–8 Jahre, 09:30–12:30 Uhr)",
@@ -171,7 +209,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 58
+      "id": 10
     },
     {
       "name": "Oklahoma! – DomplatzOpenAir (Theater Magdeburg)",
@@ -180,7 +218,7 @@
       "timeStart": "21:00",
       "category": "Theater",
       "location": "Domplatz Magdeburg",
-      "id": 148
+      "id": 11
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -189,7 +227,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 153
+      "id": 12
     },
     {
       "name": "DomplatzOpenAir: Oklahoma! (Musical)",
@@ -198,7 +236,17 @@
       "timeStart": "21:00",
       "category": "Kultur",
       "location": "Domplatz Magdeburg",
-      "id": 208
+      "id": 13
+    },
+    {
+      "name": "Twisted Rose - Live Rock Konzert",
+      "dateFrom": "2026-07-10",
+      "dateTo": "2026-07-10",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Magdeburg (genaue Location nicht angegeben)",
+      "sources": "MeineStadt Magdeburg",
+      "id": 256
     },
     {
       "name": "TOGGO Tour 2026 – Sommerspaß mit TOGGO Serienhelden (Elbauenpark)",
@@ -207,7 +255,7 @@
       "timeStart": "10:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Seebühne / Tessenowstraße 7",
-      "id": 3
+      "id": 14
     },
     {
       "name": "Scheunenflohmarkt Storbeck",
@@ -216,7 +264,7 @@
       "timeStart": "06:00",
       "category": "Flohmarkt",
       "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
-      "id": 4
+      "id": 15
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -225,7 +273,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 5
+      "id": 16
     },
     {
       "name": "Stadtteilfest Magdeburger Werder – Trödelmarkt, Spiele & Kinderschminken",
@@ -234,7 +282,7 @@
       "timeStart": "09:00",
       "category": "Familie",
       "location": "Kegelanlage Lingnerstraße / Viktoriapark, Magdeburger Werder",
-      "id": 86
+      "id": 17
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -243,7 +291,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 90
+      "id": 18
     },
     {
       "name": "Carmina Burana – Internationale Solisten mit großem Chor & Orchester",
@@ -252,7 +300,8 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 104
+      "id": 19,
+      "sources": "MeineStadt Magdeburg"
     },
     {
       "name": "16. Jazz Nacht – Open Air",
@@ -261,7 +310,7 @@
       "timeStart": "19:00",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 105
+      "id": 20
     },
     {
       "name": "Oklahoma! – DomplatzOpenAir (Theater Magdeburg)",
@@ -270,7 +319,7 @@
       "timeStart": "21:00",
       "category": "Theater",
       "location": "Domplatz Magdeburg",
-      "id": 149
+      "id": 21
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -279,7 +328,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 154
+      "id": 22
     },
     {
       "name": "DomplatzOpenAir: Oklahoma! (Musical)",
@@ -288,7 +337,7 @@
       "timeStart": "21:00",
       "category": "Kultur",
       "location": "Domplatz Magdeburg",
-      "id": 209
+      "id": 23
     },
     {
       "name": "16. Magdeburger Jazznacht (Open Air, Luises Garten)",
@@ -297,7 +346,7 @@
       "timeStart": "19:00",
       "category": "Kultur",
       "location": "Festung Mark, Magdeburg",
-      "id": 211
+      "id": 24
     },
     {
       "name": "Konzert Seebühne (MVGM)",
@@ -306,7 +355,47 @@
       "timeStart": "20:00",
       "category": "Kultur",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 212
+      "id": 25
+    },
+    {
+      "name": "16. Magdeburger Jazznacht (Barrelhouse Jazzband & Jazzpolizei)",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "timeStart": "19:00",
+      "category": "Musik",
+      "location": "Festung Mark – Luises Garten, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg, Eventfinder Magdeburg",
+      "id": 227
+    },
+    {
+      "name": "Stadtführung Domviertel / Fürstenwall",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "timeStart": "11:00",
+      "category": "Kultur",
+      "location": "Domviertel, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 228
+    },
+    {
+      "name": "Carmina Burana 2026 – Live mit Orchester, Chor & Solisten",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "timeStart": "20:00",
+      "category": "Kultur",
+      "location": "Seebühne Elbauenpark, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 242
+    },
+    {
+      "name": "16. Jazz Nacht Magdeburg - Open Air (Luises Garten)",
+      "dateFrom": "2026-07-11",
+      "dateTo": "2026-07-11",
+      "timeStart": "19:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 255
     },
     {
       "name": "Picknicktag mit Livemusik im Elbauenpark (Duo Goosebumps)",
@@ -315,7 +404,7 @@
       "timeStart": "11:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Wiese am Staudental",
-      "id": 6
+      "id": 26
     },
     {
       "name": "Gommeraner Sonntags-Flohmarkt",
@@ -324,7 +413,7 @@
       "timeStart": "10:00",
       "category": "Flohmarkt",
       "location": "Gommern, Martin-Schwantes-Straße 49",
-      "id": 7
+      "id": 27
     },
     {
       "name": "Picknicktag im Zoo Magdeburg – Musik, Bastel- & Spielecke für Kinder (Gartenträume)",
@@ -333,7 +422,7 @@
       "timeStart": null,
       "category": "Familie",
       "location": "Zoo Magdeburg, Zooallee 1",
-      "id": 87
+      "id": 28
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
@@ -342,7 +431,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Magdeburg – Wissenschaftshafen (Sarajevo-Ufer)",
-      "id": 100
+      "id": 29
     },
     {
       "name": "Oklahoma! – DomplatzOpenAir (Theater Magdeburg)",
@@ -351,7 +440,7 @@
       "timeStart": "21:00",
       "category": "Theater",
       "location": "Domplatz Magdeburg",
-      "id": 150
+      "id": 30
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -360,7 +449,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 155
+      "id": 31
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -369,7 +458,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 171
+      "id": 32
     },
     {
       "name": "DomplatzOpenAir: Oklahoma! (Musical)",
@@ -378,7 +467,7 @@
       "timeStart": "21:00",
       "category": "Kultur",
       "location": "Domplatz Magdeburg",
-      "id": 210
+      "id": 33
     },
     {
       "name": "Open Air Elbauenpark (MVGM)",
@@ -387,7 +476,7 @@
       "timeStart": "11:00",
       "category": "Kultur",
       "location": "Elbauenpark Magdeburg",
-      "id": 213
+      "id": 34
     },
     {
       "name": "Toolbox Sisters – Konzert",
@@ -396,7 +485,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Datsche, Magdeburg-Buckau",
-      "id": 106
+      "id": 35
     },
     {
       "name": "Oklahoma! – DomplatzOpenAir (Theater Magdeburg)",
@@ -405,7 +494,7 @@
       "timeStart": "21:00",
       "category": "Theater",
       "location": "Domplatz Magdeburg",
-      "id": 151
+      "id": 36
     },
     {
       "name": "Ferienspaß: Entdeckungstour Biber – Einmal Biber sein / Wir bauen eine Flusslandschaft",
@@ -414,7 +503,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Biberwiese am Jahrtausendturm",
-      "id": 8
+      "id": 37
     },
     {
       "name": "KreativCafé Ferienprogramm – Meeresabenteuer (Haie, Wellen, Muscheln)",
@@ -423,7 +512,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 73
+      "id": 38
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -432,7 +521,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 156
+      "id": 39
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -441,7 +530,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 172
+      "id": 40
     },
     {
       "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
@@ -450,7 +539,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Jahrtausendturm, Elbauenpark Magdeburg",
-      "id": 9
+      "id": 41
     },
     {
       "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg",
@@ -459,7 +548,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
-      "id": 10
+      "id": 42
     },
     {
       "name": "Lampion- und Lichterführung für Kinder (Nachtwächter-Rundgang durch das Domviertel)",
@@ -468,7 +557,7 @@
       "timeStart": "17:00",
       "category": "Familie",
       "location": "Dommuseum Ottonianum, Domplatz 15, Magdeburg",
-      "id": 68
+      "id": 43
     },
     {
       "name": "KreativCafé Ferienprogramm – Kreativstationen: Ich kann was! (Ausprobieren & Selbermachen)",
@@ -477,7 +566,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 74
+      "id": 44
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -486,7 +575,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 157
+      "id": 45
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -495,7 +584,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 173
+      "id": 46
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -504,7 +593,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 11
+      "id": 47
     },
     {
       "name": "KreativCafé Ferienprogramm – Schlangenlinien & Fantasietiere (Papier, Farbe, Formen)",
@@ -513,7 +602,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 75
+      "id": 48
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -522,7 +611,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 158
+      "id": 49
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -531,7 +620,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 174
+      "id": 50
     },
     {
       "name": "Ferienworkshop Museum für Naturkunde Magdeburg",
@@ -540,7 +629,7 @@
       "timeStart": "10:00",
       "category": "Theater",
       "location": "Museum für Naturkunde Magdeburg",
-      "id": 202
+      "id": 51
     },
     {
       "name": "Suzi Quatro & Band – Live Konzert",
@@ -549,7 +638,7 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 107
+      "id": 52
     },
     {
       "name": "Suzi Quatro – Konzert (AMO Kulturhaus)",
@@ -558,7 +647,7 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "AMO Kulturhaus, Magdeburg",
-      "id": 108
+      "id": 53
     },
     {
       "name": "Yous39 Benito – Konzert",
@@ -567,7 +656,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 109
+      "id": 54
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -576,7 +665,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 159
+      "id": 55
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -585,7 +674,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 175
+      "id": 56
     },
     {
       "name": "Konzert Seebühne (MVGM)",
@@ -594,7 +683,27 @@
       "timeStart": "null",
       "category": "Kultur",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 214
+      "id": 57
+    },
+    {
+      "name": "Suzi Quatro & Band – Live Open Air",
+      "dateFrom": "2026-07-17",
+      "dateTo": "2026-07-17",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Seebühne Elbauenpark, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 243
+    },
+    {
+      "name": "Suzi Quatro & Band",
+      "dateFrom": "2026-07-17",
+      "dateTo": "2026-07-17",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Seebühne Elbauenpark, Tessenowstraße 7, 39114 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 257
     },
     {
       "name": "TOGGO Tour 2026 – Sommerspaß mit TOGGO Serienhelden (PAW Patrol, SpongeBob, Peppa Pig)",
@@ -603,7 +712,7 @@
       "timeStart": "10:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Tessenowstraße 7",
-      "id": 12
+      "id": 58
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -612,7 +721,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 13
+      "id": 59
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -621,7 +730,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 91
+      "id": 60
     },
     {
       "name": "Ebow – Datschenkonzerte",
@@ -630,7 +739,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Datsche, Magdeburg-Buckau",
-      "id": 110
+      "id": 61
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -639,7 +748,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 160
+      "id": 62
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -648,7 +757,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 176
+      "id": 63
     },
     {
       "name": "Führung Museum für Naturkunde Magdeburg",
@@ -657,7 +766,17 @@
       "timeStart": "11:00",
       "category": "Theater",
       "location": "Museum für Naturkunde Magdeburg",
-      "id": 203
+      "id": 64
+    },
+    {
+      "name": "Yous39 Benito - Konzert",
+      "dateFrom": "2026-07-18",
+      "dateTo": "2026-07-18",
+      "timeStart": null,
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 258
     },
     {
       "name": "TOGGO Tour 2026 – Sommerspaß mit TOGGO Serienhelden (PAW Patrol, SpongeBob, Peppa Pig)",
@@ -666,7 +785,7 @@
       "timeStart": "10:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Tessenowstraße 7",
-      "id": 14
+      "id": 65
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -675,7 +794,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 161
+      "id": 66
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -684,7 +803,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 177
+      "id": 67
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -693,7 +812,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 178
+      "id": 68
     },
     {
       "name": "Ferienspaß: Entdeckungstour Wald – Geheimnisse des Waldes (Elbauenpark)",
@@ -702,7 +821,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Waldschule (Eingang Breitscheidstraße)",
-      "id": 15
+      "id": 69
     },
     {
       "name": "KreativCafé Ferienprogramm – Naturwerkstatt (Blätterdruck, Vögel, Tierleporello)",
@@ -711,7 +830,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 76
+      "id": 70
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -720,7 +839,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 162
+      "id": 71
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -729,7 +848,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 179
+      "id": 72
     },
     {
       "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg",
@@ -738,7 +857,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
-      "id": 16
+      "id": 73
     },
     {
       "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
@@ -747,7 +866,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Jahrtausendturm, Elbauenpark Magdeburg",
-      "id": 17
+      "id": 74
     },
     {
       "name": "Piratenfest im Familienhaus im Park (Spiele, Schatzsuche, Mitmachaktionen)",
@@ -756,7 +875,7 @@
       "timeStart": "14:00",
       "category": "Familie",
       "location": "Familienhaus im Park, Hohepfortestr. 14, Magdeburg",
-      "id": 18
+      "id": 75
     },
     {
       "name": "Lampion- und Lichterführung für Kinder (Nachtwächter-Rundgang durch das Domviertel)",
@@ -765,7 +884,7 @@
       "timeStart": "17:00",
       "category": "Familie",
       "location": "Dommuseum Ottonianum, Domplatz 15, Magdeburg",
-      "id": 69
+      "id": 76
     },
     {
       "name": "KreativCafé Ferienprogramm – Naturwerkstatt (Blätterdruck, Vögel, Tierleporello)",
@@ -783,7 +902,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 163
+      "id": 78
     },
     {
       "name": "Hofspektakel: Die Dreigroschenoper – Puppentheater Magdeburg",
@@ -792,7 +911,7 @@
       "timeStart": "20:30",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 180
+      "id": 79
     },
     {
       "name": "KOMPAKT-Salon: Martin Michaelis & Sohn Lucian",
@@ -801,7 +920,8 @@
       "timeStart": null,
       "category": "Theater",
       "location": "KOMPAKT Medienzentrum, Breiter Weg 114A, Magdeburg",
-      "id": 204
+      "id": 80,
+      "sources": "Landeshauptstadt Magdeburg, Eventfinder Magdeburg"
     },
     {
       "name": "Ferienspaß: Entdeckungstour Biber – Einmal Biber sein / Wir bauen eine Flusslandschaft",
@@ -810,7 +930,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Biberwiese am Jahrtausendturm",
-      "id": 19
+      "id": 81
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -819,7 +939,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 20
+      "id": 82
     },
     {
       "name": "KreativCafé Ferienprogramm – Naturwerkstatt (Blätterdruck, Vögel, Tierleporello)",
@@ -828,7 +948,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 78
+      "id": 83
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -837,7 +957,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 164
+      "id": 84
     },
     {
       "name": "Gateway – Live Konzert",
@@ -846,7 +966,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Sudenburger Biergarten, Magdeburg",
-      "id": 111
+      "id": 85
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -855,7 +975,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 165
+      "id": 86
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -864,7 +984,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 21
+      "id": 87
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -873,7 +993,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 92
+      "id": 88
     },
     {
       "name": "Open Air Comedy Show – Magdeburg Lacht!",
@@ -882,7 +1002,8 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 112
+      "id": 89,
+      "sources": "Landeshauptstadt Magdeburg"
     },
     {
       "name": "Andreas – Live Konzert",
@@ -891,7 +1012,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Sudenburger Biergarten, Magdeburg",
-      "id": 113
+      "id": 90
     },
     {
       "name": "BARRÄKAS – Konzert",
@@ -900,7 +1021,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Magdeburg",
-      "id": 114
+      "id": 91
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -909,7 +1030,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 166
+      "id": 92
     },
     {
       "name": "Gommeraner Sonntags-Flohmarkt",
@@ -918,7 +1039,7 @@
       "timeStart": "10:00",
       "category": "Flohmarkt",
       "location": "Gommern, Martin-Schwantes-Straße 49",
-      "id": 22
+      "id": 93
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Haustierführerschein – 09:30–12:30 Uhr",
@@ -927,7 +1048,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 62
+      "id": 94
     },
     {
       "name": "KreativCafé Ferienprogramm – Naturwerkstatt (Blätterdruck, Vögel, Tierleporello)",
@@ -936,7 +1057,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 79
+      "id": 95
     },
     {
       "name": "Ferienspaß: Entdeckungstour Streuobstwiese – Wiesensafari im Elbauenpark",
@@ -945,7 +1066,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Streuobstwiese Kleiner Cracauer Anger",
-      "id": 82
+      "id": 96
     },
     {
       "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg",
@@ -954,7 +1075,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
-      "id": 23
+      "id": 97
     },
     {
       "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
@@ -963,7 +1084,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Jahrtausendturm, Elbauenpark Magdeburg",
-      "id": 24
+      "id": 98
     },
     {
       "name": "Lampion- und Lichterführung für Kinder (Nachtwächter-Rundgang durch das Domviertel)",
@@ -972,7 +1093,7 @@
       "timeStart": "17:00",
       "category": "Familie",
       "location": "Dommuseum Ottonianum, Domplatz 15, Magdeburg",
-      "id": 70
+      "id": 99
     },
     {
       "name": "KreativCafé Ferienprogramm – Naturwerkstatt (Blätterdruck, Vögel, Tierleporello)",
@@ -981,7 +1102,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 80
+      "id": 100
     },
     {
       "name": "Ferienprogramm Kinderatelier Kunstmuseum – Kreatives Gestalten (Kunstpiraten & mehr)",
@@ -990,7 +1111,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
-      "id": 85
+      "id": 101
     },
     {
       "name": "Ferienspaß: Entdeckungstour Wald – Geheimnisse des Waldes",
@@ -999,7 +1120,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Waldschule",
-      "id": 25
+      "id": 102
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -1008,7 +1129,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 26
+      "id": 103
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Haustierführerschein – 09:30–12:30 Uhr",
@@ -1017,7 +1138,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 63
+      "id": 104
     },
     {
       "name": "KreativCafé Ferienprogramm – Naturwerkstatt (Blätterdruck, Vögel, Tierleporello)",
@@ -1026,7 +1147,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Bürgerhaus Alte Schule Salbke, Greifenhagener Straße 7, Magdeburg-Salbke",
-      "id": 81
+      "id": 105
     },
     {
       "name": "Der Herr der Ringe & Der Hobbit – Das Konzert",
@@ -1035,7 +1156,8 @@
       "timeStart": "16:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 115
+      "id": 106,
+      "sources": "Eventfinder Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "Pink Floyd's The Dark Side of the Moon – Live in Concert",
@@ -1044,7 +1166,8 @@
       "timeStart": "21:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 116
+      "id": 107,
+      "sources": "Eventfinder Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "The Magical Music of Harry Potter – Live in Concert",
@@ -1053,7 +1176,8 @@
       "timeStart": "16:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 117
+      "id": 108,
+      "sources": "Eventfinder Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "The Music of Hans Zimmer & Others – A Celebration of Film Music",
@@ -1062,7 +1186,8 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 118
+      "id": 109,
+      "sources": "Eventfinder Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "Gamma – Konzert",
@@ -1071,7 +1196,27 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 119
+      "id": 110
+    },
+    {
+      "name": "Luises Konzert Garten – Weltengang (Headliner) & weitere Bands",
+      "dateFrom": "2026-07-31",
+      "dateTo": "2026-07-31",
+      "timeStart": "18:45",
+      "category": "Musik",
+      "location": "Luises Garten, Festung Mark, Hohepfortewall 1, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 244
+    },
+    {
+      "name": "Luises Konzert Garten - Weltengang (Headliner) Open Air",
+      "dateFrom": "2026-07-31",
+      "dateTo": "2026-07-31",
+      "timeStart": "18:45",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 259
     },
     {
       "name": "Scheunenflohmarkt Storbeck",
@@ -1080,7 +1225,7 @@
       "timeStart": "06:00",
       "category": "Flohmarkt",
       "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
-      "id": 27
+      "id": 111
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -1089,7 +1234,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 28
+      "id": 112
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -1098,16 +1243,17 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 93
+      "id": 113
     },
     {
       "name": "Riverside@Night 2026 – Längste Musiknacht des Jahres",
       "dateFrom": "2026-08-01",
       "dateTo": "2026-08-01",
-      "timeStart": null,
+      "timeStart": "19:00",
       "category": "Musik",
       "location": "Diverse Locations entlang der Elbe, Magdeburg",
-      "id": 120
+      "id": 114,
+      "sources": "Landeshauptstadt Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "1. FC Magdeburg – West Ham United (Testspiel/Saisoneröffnung)",
@@ -1116,7 +1262,7 @@
       "timeStart": "14:30",
       "category": "Sport",
       "location": "Avnet Arena, Magdeburg",
-      "id": 215
+      "id": 115
     },
     {
       "name": "Riverside@Night – Musiknacht entlang der Elbe",
@@ -1125,7 +1271,27 @@
       "timeStart": "18:00",
       "category": "Kultur",
       "location": "Elbufer Magdeburg (Wissenschaftshafen bis Buckau)",
-      "id": 216
+      "id": 116
+    },
+    {
+      "name": "King Kong Kicks + Peinlo Pop Party",
+      "dateFrom": "2026-08-01",
+      "dateTo": "2026-08-01",
+      "timeStart": "23:00",
+      "category": "Musik",
+      "location": "Insel der Jugend, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 229
+    },
+    {
+      "name": "Riverside@Night 2026 – Magdeburgs längste Musiknacht",
+      "dateFrom": "2026-08-01",
+      "dateTo": "2026-08-01",
+      "timeStart": "19:00",
+      "category": "Musik",
+      "location": "Diverse Locations entlang der Elbe, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 249
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
@@ -1134,7 +1300,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Magdeburg, Wissenschaftshafen, Sarajevo-Ufer",
-      "id": 29
+      "id": 117
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Auf den Spuren der Zootierhaltung (Blick hinter die Kulissen)",
@@ -1143,7 +1309,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 60
+      "id": 118
     },
     {
       "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
@@ -1152,7 +1318,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Jahrtausendturm, Elbauenpark Magdeburg",
-      "id": 30
+      "id": 119
     },
     {
       "name": "Lampion- und Lichterführung für Kinder (Nachtwächter-Rundgang durch das Domviertel)",
@@ -1161,7 +1327,7 @@
       "timeStart": "17:00",
       "category": "Familie",
       "location": "Dommuseum Ottonianum, Domplatz 15, Magdeburg",
-      "id": 71
+      "id": 120
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1170,7 +1336,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 181
+      "id": 121
     },
     {
       "name": "Theater Poetenpack (Open Air)",
@@ -1179,7 +1345,7 @@
       "timeStart": "null",
       "category": "Kultur",
       "location": "Möllenvogtei, Magdeburg",
-      "id": 221
+      "id": 122
     },
     {
       "name": "Ferienspaß: Entdeckungstour – Spurensuche in Elbe und Angersee",
@@ -1188,7 +1354,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Gartenhaus Kleiner Cracauer Anger",
-      "id": 31
+      "id": 123
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -1197,7 +1363,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 32
+      "id": 124
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Auf den Spuren der Zootierhaltung (Blick hinter die Kulissen)",
@@ -1206,7 +1372,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 61
+      "id": 125
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1215,7 +1381,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 182
+      "id": 126
     },
     {
       "name": "Florian Künstler – Alles nur geliehen Open Air Tour 2026",
@@ -1224,7 +1390,8 @@
       "timeStart": "19:30",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 121
+      "id": 127,
+      "sources": "MeineStadt Magdeburg"
     },
     {
       "name": "CoSy Festival 2026",
@@ -1233,7 +1400,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Schloss Dornburg an der Elbe, Gommern",
-      "id": 146
+      "id": 128
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1242,7 +1409,17 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 183
+      "id": 129
+    },
+    {
+      "name": "Florian Künstler – Alles nur geliehen Open-Air-Tour 2026",
+      "dateFrom": "2026-08-07",
+      "dateTo": "2026-08-07",
+      "timeStart": "19:30",
+      "category": "Musik",
+      "location": "MDCC Parkbühne im Elbauenpark, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 245
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -1251,7 +1428,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 33
+      "id": 130
     },
     {
       "name": "Scheunenflohmarkt Storbeck (Wochenende)",
@@ -1260,7 +1437,7 @@
       "timeStart": "06:00",
       "category": "Flohmarkt",
       "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
-      "id": 34
+      "id": 131
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -1269,7 +1446,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 94
+      "id": 132
     },
     {
       "name": "MEGA MALLE 2026 – Mallorcaparty Open Air",
@@ -1278,7 +1455,8 @@
       "timeStart": "11:00",
       "category": "Musik",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 122
+      "id": 133,
+      "sources": "Eventfinder Magdeburg"
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1287,7 +1465,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 184
+      "id": 134
     },
     {
       "name": "MEGA MALLE – Mallorca Open Air Festival",
@@ -1296,7 +1474,7 @@
       "timeStart": "10:30",
       "category": "Kultur",
       "location": "Elbauenpark Magdeburg",
-      "id": 217
+      "id": 135
     },
     {
       "name": "1. FC Magdeburg – Eintracht Braunschweig (1. Spieltag, 2. Bundesliga)",
@@ -1305,7 +1483,27 @@
       "timeStart": "13:00",
       "category": "Sport",
       "location": "Avnet Arena, Magdeburg",
-      "id": 218
+      "id": 136
+    },
+    {
+      "name": "MEGA MALLE 2026 – Festival der Mallorca-Stars",
+      "dateFrom": "2026-08-08",
+      "dateTo": "2026-08-08",
+      "timeStart": "11:00",
+      "category": "Musik",
+      "location": "Magdeburg (Open Air)",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 230
+    },
+    {
+      "name": "MEGA MALLE 2026 - Deutschlands größtes Mallorca Festival",
+      "dateFrom": "2026-08-08",
+      "dateTo": "2026-08-08",
+      "timeStart": "10:30",
+      "category": "Musik",
+      "location": "Elbauenpark Magdeburg, Tessenowstraße 7, 39114 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 260
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
@@ -1314,7 +1512,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Magdeburg – Wissenschaftshafen (Sarajevo-Ufer)",
-      "id": 101
+      "id": 137
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1323,7 +1521,7 @@
       "timeStart": "17:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 185
+      "id": 138
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Haustierführerschein – 09:30–12:30 Uhr",
@@ -1332,7 +1530,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 64
+      "id": 139
     },
     {
       "name": "Ferienspaß: Entdeckungstour Biber – Einmal Biber sein / Wir bauen eine Flusslandschaft",
@@ -1341,7 +1539,7 @@
       "timeStart": null,
       "category": "Familie",
       "location": "Elbauenpark Magdeburg",
-      "id": 83
+      "id": 140
     },
     {
       "name": "Ferienspaß Jahrtausendturm – Entdeckungstour Zeitreise in die Vergangenheit",
@@ -1350,7 +1548,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Jahrtausendturm, Elbauenpark Magdeburg",
-      "id": 35
+      "id": 141
     },
     {
       "name": "Kinderatelier Ferienprogramm – Kunstmuseum Magdeburg (Kleine Kunstpiraten)",
@@ -1359,7 +1557,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen, Regierungsstraße 4–6",
-      "id": 36
+      "id": 142
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Haustierführerschein – 09:30–12:30 Uhr",
@@ -1368,7 +1566,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 65
+      "id": 143
     },
     {
       "name": "Lampion- und Lichterführung für Kinder (Nachtwächter-Rundgang durch das Domviertel)",
@@ -1377,7 +1575,7 @@
       "timeStart": "17:00",
       "category": "Familie",
       "location": "Dommuseum Ottonianum, Domplatz 15, Magdeburg",
-      "id": 72
+      "id": 144
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1386,7 +1584,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 186
+      "id": 145
     },
     {
       "name": "Ferienspaß: Entdeckungstour – Wiesensafari",
@@ -1395,7 +1593,7 @@
       "timeStart": "15:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg",
-      "id": 37
+      "id": 146
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -1404,7 +1602,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 38
+      "id": 147
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1413,7 +1611,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 187
+      "id": 148
     },
     {
       "name": "Zoo Magdeburg Ferienprogramm: Haustierführerschein – 09:30–12:30 Uhr",
@@ -1422,7 +1620,7 @@
       "timeStart": "09:30",
       "category": "Familie",
       "location": "Zoo Magdeburg, Zoowelle, Zooallee 1",
-      "id": 66
+      "id": 149
     },
     {
       "name": "Luke Philbrick & the Solid Gone Skiffle Invasion",
@@ -1431,7 +1629,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Volksbad Buckau, Magdeburg",
-      "id": 123
+      "id": 150
     },
     {
       "name": "Maggie Reilly – Sommer Open Air",
@@ -1440,7 +1638,8 @@
       "timeStart": "19:30",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 124
+      "id": 151,
+      "sources": "Landeshauptstadt Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1449,7 +1648,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 188
+      "id": 152
     },
     {
       "name": "Pyro Games 2026 – Duell der Feuerwerker (Familienevent mit Show)",
@@ -1458,7 +1657,8 @@
       "timeStart": "18:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Seebühne",
-      "id": 39
+      "id": 153,
+      "sources": "MeineStadt Magdeburg"
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -1467,7 +1667,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 40
+      "id": 154
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -1476,7 +1676,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 95
+      "id": 155
     },
     {
       "name": "Mono Inc. – Open Air 2026 (Special Guests: Sotiria & Alienare)",
@@ -1485,7 +1685,8 @@
       "timeStart": "18:30",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 125
+      "id": 156,
+      "sources": "Landeshauptstadt Magdeburg, Eventfinder Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1494,7 +1695,27 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 189
+      "id": 157
+    },
+    {
+      "name": "Pyro Games 2026",
+      "dateFrom": "2026-08-15",
+      "dateTo": "2026-08-15",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 231
+    },
+    {
+      "name": "Zauber der Operette",
+      "dateFrom": "2026-08-15",
+      "dateTo": "2026-08-15",
+      "timeStart": "15:30",
+      "category": "Musik",
+      "location": "Seebühne Elbauenpark, Tessenowstraße 7, 39114 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 261
     },
     {
       "name": "Theater Poetenpack – Der Kirschgarten (Tschechow), Open Air",
@@ -1503,7 +1724,7 @@
       "timeStart": "17:30",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 190
+      "id": 158
     },
     {
       "name": "Zauber der Operette (Seebühne)",
@@ -1512,7 +1733,17 @@
       "timeStart": "15:30",
       "category": "Kultur",
       "location": "Seebühne Elbauenpark, Magdeburg",
-      "id": 219
+      "id": 159
+    },
+    {
+      "name": "Operettengala im Elbauenpark",
+      "dateFrom": "2026-08-16",
+      "dateTo": "2026-08-16",
+      "timeStart": null,
+      "category": "Musik",
+      "location": "Elbauenpark, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 232
     },
     {
       "name": "Theater Poetenpack – Eine Mittsommernachts-Sex-Komödie (Woody Allen), Open Air",
@@ -1521,7 +1752,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 191
+      "id": 160
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -1530,7 +1761,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 41
+      "id": 161
     },
     {
       "name": "Miguel Montalban – Konzert",
@@ -1539,7 +1770,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Mach|werk – KOMPAKT Medienzentrum, Magdeburg",
-      "id": 126
+      "id": 162
     },
     {
       "name": "Theater Poetenpack – Eine Mittsommernachts-Sex-Komödie (Woody Allen), Open Air",
@@ -1548,7 +1779,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 192
+      "id": 163
     },
     {
       "name": "Elise Frank – Konzert",
@@ -1557,7 +1788,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Mach|werk – KOMPAKT Medienzentrum, Magdeburg",
-      "id": 127
+      "id": 164
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -1566,7 +1797,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 167
+      "id": 165
     },
     {
       "name": "Theater Poetenpack – Eine Mittsommernachts-Sex-Komödie (Woody Allen), Open Air",
@@ -1575,7 +1806,7 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 193
+      "id": 166
     },
     {
       "name": "Freedom – A Tribute to George Michael (Open Air)",
@@ -1584,7 +1815,8 @@
       "timeStart": "20:00",
       "category": "Kultur",
       "location": "Elbauenpark Magdeburg",
-      "id": 220
+      "id": 167,
+      "sources": "MeineStadt Magdeburg"
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -1593,7 +1825,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 42
+      "id": 168
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -1602,7 +1834,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 96
+      "id": 169
     },
     {
       "name": "Magdeburger Taschenlampenkonzert – Das leuchtende Familienkonzert",
@@ -1611,7 +1843,7 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 128
+      "id": 170
     },
     {
       "name": "Theater Poetenpack – Eine Mittsommernachts-Sex-Komödie (Woody Allen), Open Air",
@@ -1620,7 +1852,17 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 194
+      "id": 171
+    },
+    {
+      "name": "Magdeburger Taschenlampenkonzert – RUMPELSTIL",
+      "dateFrom": "2026-08-22",
+      "dateTo": "2026-08-22",
+      "timeStart": "20:00",
+      "category": "Familie",
+      "location": "Elbauenpark, Magdeburg",
+      "sources": "Eventfinder Magdeburg, MeineStadt Magdeburg",
+      "id": 246
     },
     {
       "name": "Theater Poetenpack – Eine Mittsommernachts-Sex-Komödie (Woody Allen), Open Air",
@@ -1629,7 +1871,17 @@
       "timeStart": "17:30",
       "category": "Theater",
       "location": "Möllenvogtei Magdeburg, Fürstenwall",
-      "id": 195
+      "id": 172
+    },
+    {
+      "name": "Tag der Verbände Sachsen-Anhalt",
+      "dateFrom": "2026-08-25",
+      "dateTo": "2026-08-25",
+      "timeStart": "09:30",
+      "category": "Sonstiges",
+      "location": "Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 234
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -1638,7 +1890,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 43
+      "id": 173
     },
     {
       "name": "Open Air Comedy Show – Magdeburg Lacht!",
@@ -1647,7 +1899,37 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 129
+      "id": 174
+    },
+    {
+      "name": "Helge Schneider – Konzert",
+      "dateFrom": "2026-08-27",
+      "dateTo": "2026-08-27",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 233
+    },
+    {
+      "name": "Helge Schneider – Ellebogen vom Tich Tournee 2026",
+      "dateFrom": "2026-08-27",
+      "dateTo": "2026-08-27",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 247
+    },
+    {
+      "name": "Festung Mark Open Air - Konzertabend (27.08.)",
+      "dateFrom": "2026-08-27",
+      "dateTo": "2026-08-27",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, 39104 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 262
     },
     {
       "name": "ANTIK- und FLOHMARKT Bernburger Weinfest (3 Tage)",
@@ -1656,7 +1938,7 @@
       "timeStart": "09:00",
       "category": "Flohmarkt",
       "location": "Bernburg (Saale), Breite Straße / Weinfest-Gelände",
-      "id": 44
+      "id": 175
     },
     {
       "name": "Nino de Angelo – Vivi la Vita Open Air 2026",
@@ -1665,7 +1947,8 @@
       "timeStart": "19:30",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 130
+      "id": 176,
+      "sources": "Eventfinder Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "Stick To Your Guns – Konzert",
@@ -1674,7 +1957,8 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Magdeburg",
-      "id": 144
+      "id": 177,
+      "sources": "MeineStadt Magdeburg"
     },
     {
       "name": "Chris Norman – Lifelines Tour (Smokie)",
@@ -1683,7 +1967,8 @@
       "timeStart": "19:30",
       "category": "Musik",
       "location": "Magdeburg",
-      "id": 145
+      "id": 178,
+      "sources": "MeineStadt Magdeburg"
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -1692,7 +1977,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 45
+      "id": 179
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -1701,7 +1986,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 97
+      "id": 180
     },
     {
       "name": "Open Air Comedy Show – Magdeburg Lacht!",
@@ -1710,7 +1995,7 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 131
+      "id": 181
     },
     {
       "name": "SILLY mit Julia Neigel – elektroAKUSTIK Open Air Tour 2026",
@@ -1719,7 +2004,8 @@
       "timeStart": "19:30",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 132
+      "id": 182,
+      "sources": "Landeshauptstadt Magdeburg, MeineStadt Magdeburg"
     },
     {
       "name": "SILLY Open Air 2026 – elektroAkustik",
@@ -1728,7 +2014,8 @@
       "timeStart": "19:30",
       "category": "Kultur",
       "location": "Elbauenpark Magdeburg",
-      "id": 222
+      "id": 183,
+      "sources": "Eventfinder Magdeburg"
     },
     {
       "name": "27. OMMMA – Ost-Mobil-Meeting-Magdeburg",
@@ -1737,16 +2024,58 @@
       "timeStart": "10:00",
       "category": "Kultur",
       "location": "Elbauenpark Magdeburg",
-      "id": 223
+      "id": 184,
+      "sources": "Landeshauptstadt Magdeburg"
+    },
+    {
+      "name": "Schauinsland Muddy Angel Run Magdeburg",
+      "dateFrom": "2026-08-29",
+      "dateTo": "2026-08-29",
+      "timeStart": "08:30",
+      "category": "Sport",
+      "location": "Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 235
+    },
+    {
+      "name": "OMMMA – Ost-Mobil-Meeting Magdeburg 27. Ausgabe",
+      "dateFrom": "2026-08-29",
+      "dateTo": "2026-08-29",
+      "timeStart": "10:00",
+      "category": "Sonstiges",
+      "location": "Elbauenpark, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 248
+    },
+    {
+      "name": "Faun - Konzert in der Factory Magdeburg",
+      "dateFrom": "2026-08-29",
+      "dateTo": "2026-08-29",
+      "timeStart": null,
+      "category": "Musik",
+      "location": "Factory Magdeburg, Sandbreite 2, 39114 Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 264
     },
     {
       "name": "Olaf Schubert und seine Freunde – Jetzt oder now! (Open Air)",
       "dateFrom": "2026-08-30",
       "dateTo": "2026-08-30",
-      "timeStart": null,
+      "timeStart": "19:30",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 133
+      "id": 185,
+      "sources": "Eventfinder Magdeburg"
+    },
+    {
+      "name": "XLETIX Kids Magdeburg",
+      "dateFrom": "2026-08-30",
+      "dateTo": "2026-08-30",
+      "timeStart": "08:30",
+      "category": "Sport",
+      "location": "Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 236
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Donnerstag)",
@@ -1755,7 +2084,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 46
+      "id": 186
     },
     {
       "name": "OMMMA – Ost-Mobil-Meeting Magdeburg (Familienveranstaltung mit Oldtimern)",
@@ -1764,7 +2093,7 @@
       "timeStart": null,
       "category": "Familie",
       "location": "Verschiedene Orte zwischen Dom und Schleinufer, Magdeburg",
-      "id": 89
+      "id": 187
     },
     {
       "name": "Wincent Weiss – Sommertour 2026",
@@ -1773,7 +2102,8 @@
       "timeStart": "19:00",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 134
+      "id": 188,
+      "sources": "Landeshauptstadt Magdeburg, Eventfinder Magdeburg"
     },
     {
       "name": "Magdeburg Swing 2026 – Swingfestival Innenstadt",
@@ -1782,7 +2112,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Verschiedene Orte zwischen Dom und Schleinufer, Magdeburg",
-      "id": 138
+      "id": 189
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -1791,7 +2121,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 168
+      "id": 190
     },
     {
       "name": "Theaterfest zur Spielzeiteröffnung – Schauspielhaus Garten",
@@ -1800,7 +2130,7 @@
       "timeStart": "20:00",
       "category": "Theater",
       "location": "Schauspielhaus Magdeburg, Garten",
-      "id": 205
+      "id": 191
     },
     {
       "name": "Magdeburg Swing 2026",
@@ -1809,7 +2139,28 @@
       "timeStart": "null",
       "category": "Kultur",
       "location": "Verschiedene Orte zwischen Dom und Schleinufer, Magdeburg",
-      "id": 224
+      "id": 192,
+      "sources": "Landeshauptstadt Magdeburg, MeineStadt Magdeburg"
+    },
+    {
+      "name": "OMMMA – Ost-Mobil-Meeting Magdeburg (Innenstadt)",
+      "dateFrom": "2026-09-04",
+      "dateTo": "2026-09-05",
+      "timeStart": null,
+      "category": "Sonstiges",
+      "location": "Verschiedene Orte zwischen Dom und Schleinufer, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 253
+    },
+    {
+      "name": "Wincent Weiss - Open Air Tour 2026",
+      "dateFrom": "2026-09-04",
+      "dateTo": "2026-09-04",
+      "timeStart": "19:00",
+      "category": "Musik",
+      "location": "Viadukt Open Air / MDCC Parkbühne im Elbauenpark, Magdeburg",
+      "sources": "MeineStadt Magdeburg",
+      "id": 263
     },
     {
       "name": "Hausflohmarkt Wanzleben-Bottmersdorf (Samstag) – Termin u. Vorbehalt",
@@ -1818,7 +2169,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Wanzleben-Börde OT Bottmersdorf, Friederich-Ebert-Straße 4",
-      "id": 47
+      "id": 193
     },
     {
       "name": "Flohmarkt Flohmaxx am Florapark Einkaufszentrum",
@@ -1827,7 +2178,7 @@
       "timeStart": "08:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Florapark (Am Florapark, vor der Spargelhalle)",
-      "id": 98
+      "id": 194
     },
     {
       "name": "AnnenMayKantereit – Konzert",
@@ -1836,7 +2187,7 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "GETEC Arena, Magdeburg",
-      "id": 135
+      "id": 195
     },
     {
       "name": "NENA – Live 2026 Open Air",
@@ -1845,7 +2196,8 @@
       "timeStart": "20:00",
       "category": "Musik",
       "location": "MDCC-Parkbühne im Elbauenpark, Magdeburg",
-      "id": 136
+      "id": 196,
+      "sources": "Eventfinder Magdeburg"
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -1854,7 +2206,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 169
+      "id": 197
     },
     {
       "name": "Neverland – Uraufführung (Theater Magdeburg, Theater unterwegs)",
@@ -1863,7 +2215,37 @@
       "timeStart": "19:00",
       "category": "Theater",
       "location": "Genf (Theater Magdeburg on tour)",
-      "id": 206
+      "id": 198
+    },
+    {
+      "name": "Ausstellung Kloster Unser Lieben Frauen (Christiane Möbus)",
+      "dateFrom": "2026-09-05",
+      "dateTo": "2026-09-05",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 237
+    },
+    {
+      "name": "Abendfahrt Petriförder – Kulinarik & Elbe",
+      "dateFrom": "2026-09-05",
+      "dateTo": "2026-09-05",
+      "timeStart": "19:00",
+      "category": "Sonstiges",
+      "location": "Petriförder, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 238
+    },
+    {
+      "name": "AnnenMayKantereit – Live 2026",
+      "dateFrom": "2026-09-05",
+      "dateTo": "2026-09-05",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "GETEC-Arena, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 250
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt (Wissenschaftshafen)",
@@ -1872,7 +2254,7 @@
       "timeStart": null,
       "category": "Flohmarkt",
       "location": "Magdeburg, Wissenschaftshafen, Sarajevo-Ufer",
-      "id": 48
+      "id": 199
     },
     {
       "name": "Frohmarkt – Familien-Flohmarkt in der Festung Mark",
@@ -1881,16 +2263,47 @@
       "timeStart": "12:00",
       "category": "Flohmarkt",
       "location": "Magdeburg – Festung Mark, Hohepfortewall 1",
-      "id": 102
+      "id": 200
     },
     {
       "name": "Scala & Kolacny Brothers – Konzert",
       "dateFrom": "2026-09-06",
       "dateTo": "2026-09-06",
-      "timeStart": null,
+      "timeStart": "20:00",
       "category": "Musik",
       "location": "Johanniskirche, Magdeburg",
-      "id": 137
+      "id": 201,
+      "sources": "MeineStadt Magdeburg"
+    },
+    {
+      "name": "Ausstellung Kloster Unser Lieben Frauen (Christiane Möbus)",
+      "dateFrom": "2026-09-06",
+      "dateTo": "2026-09-06",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Kunstmuseum Magdeburg, Kloster Unser Lieben Frauen",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 239
+    },
+    {
+      "name": "Domkonzert – Carl Maria von Weber, Camille Saint-Saëns u.a.",
+      "dateFrom": "2026-09-06",
+      "dateTo": "2026-09-06",
+      "timeStart": "16:00",
+      "category": "Musik",
+      "location": "Dom St. Mauritius und Katharina, Magdeburg",
+      "sources": "Landeshauptstadt Magdeburg",
+      "id": 240
+    },
+    {
+      "name": "FANCY – One Last Time Clubtour",
+      "dateFrom": "2026-09-06",
+      "dateTo": "2026-09-06",
+      "timeStart": "18:00",
+      "category": "Musik",
+      "location": "Factory Magdeburg / Dominion Club, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 251
     },
     {
       "name": "Max und Moritz in Magdeburg – Sommerkabarett (Hengstmanns)",
@@ -1899,7 +2312,7 @@
       "timeStart": null,
       "category": "Theater",
       "location": "Technikmuseum Magdeburg",
-      "id": 170
+      "id": 202
     },
     {
       "name": "Metal Embrace Festival 2026",
@@ -1908,7 +2321,7 @@
       "timeStart": "16:00",
       "category": "Musik",
       "location": "Motorranch / Iron Cruise MC, Barleben",
-      "id": 139
+      "id": 203
     },
     {
       "name": "Olaf der Flipper – Wir sagen Dankeschön! 80 Jahre Geburtstagstournee",
@@ -1917,7 +2330,7 @@
       "timeStart": "19:30",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 140
+      "id": 204
     },
     {
       "name": "Kanton Plankton – Premiere (Schauspiel, Theater Magdeburg)",
@@ -1926,7 +2339,17 @@
       "timeStart": "19:30",
       "category": "Theater",
       "location": "Schauspielhaus Magdeburg, Kammer 2",
-      "id": 198
+      "id": 205
+    },
+    {
+      "name": "Olaf der Flipper – 80 Jahre Jubiläumstour",
+      "dateFrom": "2026-09-11",
+      "dateTo": "2026-09-11",
+      "timeStart": null,
+      "category": "Musik",
+      "location": "GETEC-Arena, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 254
     },
     {
       "name": "Simone Sommerland – Kinder-Mitmach-Konzert (Singen, Tanzen, Mitmachen)",
@@ -1935,7 +2358,7 @@
       "timeStart": "16:00",
       "category": "Familie",
       "location": "GETEC Arena Magdeburg",
-      "id": 49
+      "id": 206
     },
     {
       "name": "Nachtflohmarkt Magdeburg / Messehallen",
@@ -1944,7 +2367,7 @@
       "timeStart": "15:00",
       "category": "Flohmarkt",
       "location": "Magdeburg, Messe, Tessenowstraße 9",
-      "id": 50
+      "id": 207
     },
     {
       "name": "Antik- und Trödelmarkt Bernburg – PEP (Prima Einkaufspark)",
@@ -1953,7 +2376,7 @@
       "timeStart": "09:00",
       "category": "Flohmarkt",
       "location": "Bernburg, Kalistraße 11 (PEP-Parkplatz)",
-      "id": 51
+      "id": 208
     },
     {
       "name": "Scheunenflohmarkt Storbeck (Wochenende)",
@@ -1962,7 +2385,7 @@
       "timeStart": "06:00",
       "category": "Flohmarkt",
       "location": "Storbeck (bei Osterburg/Altmark), Landstraße L13",
-      "id": 52
+      "id": 209
     },
     {
       "name": "Simone Sommerland – Kinder-Mitmach-Konzert",
@@ -1971,7 +2394,8 @@
       "timeStart": "16:00",
       "category": "Musik",
       "location": "GETEC Arena, Magdeburg",
-      "id": 141
+      "id": 210,
+      "sources": "Eventfinder Magdeburg"
     },
     {
       "name": "Wolfgang Flür, Gareth Jones, Zalvox live – Die Legenden",
@@ -1980,7 +2404,7 @@
       "timeStart": null,
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 142
+      "id": 211
     },
     {
       "name": "Così fan tutt*e – Premiere (Oper, Theater Magdeburg)",
@@ -1989,7 +2413,7 @@
       "timeStart": "19:30",
       "category": "Theater",
       "location": "Opernhaus Magdeburg, Universitätsplatz",
-      "id": 197
+      "id": 212
     },
     {
       "name": "Kanton Plankton (Schauspiel, Theater Magdeburg)",
@@ -1998,7 +2422,17 @@
       "timeStart": "19:30",
       "category": "Theater",
       "location": "Schauspielhaus Magdeburg, Kammer 2",
-      "id": 199
+      "id": 213
+    },
+    {
+      "name": "30 Jahre Great Depeche Mode Jubiläumsparty – DJ Mr. Devotee",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "22:00",
+      "category": "Musik",
+      "location": "Festung Mark, Hohepfortewall 1, Magdeburg",
+      "sources": "Eventfinder Magdeburg",
+      "id": 252
     },
     {
       "name": "Theaterfest zur Spielzeiteröffnung (Theater Magdeburg)",
@@ -2007,7 +2441,7 @@
       "timeStart": "11:00",
       "category": "Theater",
       "location": "Opernhaus Magdeburg, Universitätsplatz",
-      "id": 196
+      "id": 214
     },
     {
       "name": "Spielzeiteröffnung Puppentheater Magdeburg",
@@ -2016,7 +2450,7 @@
       "timeStart": "11:00",
       "category": "Theater",
       "location": "Puppentheater Magdeburg, Warschauer Straße 25",
-      "id": 200
+      "id": 215
     },
     {
       "name": "31. Landeserntedankfest im Elbauenpark (Bauernmarkt, Tierschau, Kinderprogramm)",
@@ -2025,7 +2459,7 @@
       "timeStart": "10:00",
       "category": "Familie",
       "location": "Elbauenpark Magdeburg, Tessenowstraße 7",
-      "id": 53
+      "id": 216
     },
     {
       "name": "Gratis-Flohmarkt Magdeburg (Städtischer Abfallwirtschaftsbetrieb)",
@@ -2034,16 +2468,17 @@
       "timeStart": "10:00",
       "category": "Flohmarkt",
       "location": "Magdeburg, Betriebshof Liebknechtstraße 84",
-      "id": 54
+      "id": 217
     },
     {
       "name": "Electro Reloaded Vol. 2 – DJ F. Meinecke",
       "dateFrom": "2026-09-19",
       "dateTo": "2026-09-19",
-      "timeStart": null,
+      "timeStart": "22:00",
       "category": "Musik",
       "location": "Festung Mark, Magdeburg",
-      "id": 143
+      "id": 218,
+      "sources": "Eventfinder Magdeburg"
     }
   ]
 }
