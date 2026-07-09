@@ -1,4 +1,5 @@
 // generate-events.js — Magdeburg Events v6
+// 5 Aufrufe pro Kategorie — nur konkrete Einzeltermine, keine Dauerveranstaltungen
 const https = require("https");
 const fs    = require("fs");
 const path  = require("path");
@@ -14,17 +15,51 @@ const today = new Date().toISOString().split("T")[0];
 const until = new Date(); until.setDate(until.getDate() + 60);
 const untilStr = until.toISOString().split("T")[0];
 
-// Familie & Kinder zuerst, dann Rest
+// Flohmarkt-Quellen extra hervorheben
+const flohmarktSources = sources
+  .filter(s => s.name.toLowerCase().includes('flohmarkt') || s.name.toLowerCase().includes('kleinanzeigen'))
+  .map(s => `- ${s.url} (${s.name})`).join("\n");
+
+const allSourceList = sources.map(s => `- ${s.url} (${s.name})`).join("\n");
+
 const CATEGORIES = [
-  { name: "Familie & Kinder",     cat: "Familie",   keywords: "Familie Kinder Jugend Schule Spielplatz Kinderfest Familientag" },
-  { name: "Flohmärkte & Märkte",  cat: "Flohmarkt", keywords: "Flohmarkt Trödelmarkt Markt Straßenfest Bauernmarkt" },
+  { name: "Familie & Kinder",     cat: "Familie",   keywords: "Familie Kinder Jugend Kinderfest Familientag Spielplatz" },
+  {
+    name: "Flohmärkte & Märkte",
+    cat: "Flohmarkt",
+    keywords: "Flohmarkt Trödelmarkt Markt Straßenfest Bauernmarkt",
+    extraSources: flohmarktSources,
+    umkreis: true
+  },
   { name: "Musik & Konzerte",     cat: "Musik",     keywords: "Konzert Musik Band Live Open-Air Musikfestival" },
   { name: "Theater & Kultur",     cat: "Theater",   keywords: "Theater Oper Ballett Schauspiel Ausstellung Museum Lesung" },
   { name: "Festivals & Sport",    cat: "Kultur",    keywords: "Festival Stadtfest Volksfest Sport Fußball Laufen" },
 ];
 
 function buildPrompt(category) {
-  return `Suche im Web nach "${category.keywords}" Veranstaltungen in Magdeburg Sachsen-Anhalt vom ${today} bis ${untilStr}. Finde echte aktuelle Events. Antworte NUR mit einem JSON-Array. Direkt mit [ beginnen, mit ] enden. Kein Text davor oder danach. Format: [{"id":1,"name":"Eventname","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","timeStart":"HH:MM oder null","category":"${category.cat}","location":"Veranstaltungsort Magdeburg"}] Finde so viele echte Veranstaltungen wie möglich.`;
+  const sources = category.extraSources
+    ? `Durchsuche BESONDERS diese spezialisierten Quellen:\n${category.extraSources}\n\nUnd auch:\n${allSourceList}`
+    : `Durchsuche:\n${allSourceList}`;
+
+  const gebiet = category.umkreis
+    ? `Magdeburg UND Umkreis 30km (Schönebeck, Staßfurt, Bernburg, Haldensleben, Wolmirstedt, Zerbst, Burg, Barleben, Gommern, Oschersleben, Egeln, Calbe)`
+    : `Magdeburg Sachsen-Anhalt`;
+
+  return `Suche im Web nach "${category.keywords}" Veranstaltungen in ${gebiet} vom ${today} bis ${untilStr}.
+
+${sources}
+
+WICHTIGE REGELN:
+- Nur KONKRETE EINZELTERMINE mit genauen Daten
+- KEINE Dauerveranstaltungen wie "jeden Mittwoch" oder "täglich"
+- Wenn ein Wochenmarkt jeden Mittwoch stattfindet: jeden einzelnen Mittwoch als SEPARATEN Termin eintragen (z.B. 09.07., 16.07., 23.07., 30.07.)
+- Wenn ein Event "vom 1. bis 31." läuft aber nur bestimmte Tage: nur die konkreten Tage eintragen
+- dateFrom und dateTo dürfen maximal 3 Tage auseinanderliegen (außer bei Festivals die wirklich mehrere Tage durchgehend laufen)
+- Im Feld "location" immer den genauen Ort angeben (z.B. "Schönebeck" oder "Zerbst", nicht nur "Magdeburg")
+
+Antworte NUR mit einem JSON-Array. Direkt mit [ beginnen.
+Format: [{"id":1,"name":"Eventname","dateFrom":"YYYY-MM-DD","dateTo":"YYYY-MM-DD","timeStart":"HH:MM oder null","category":"${category.cat}","location":"Genauer Ort"}]
+Finde so viele echte Einzeltermine wie möglich.`;
 }
 
 function fixJson(text) {
@@ -73,7 +108,7 @@ function callClaude(prompt) {
     const body = JSON.stringify({
       model: "claude-sonnet-4-6",
       max_tokens: 8000,
-      system: "Du bist ein Datenassistent. Antworte AUSSCHLIESSLICH mit einem JSON-Array. Beginne direkt mit [ und ende mit ]. Kein Text davor oder danach. Keine Erklärungen.",
+      system: "Du bist ein Datenassistent. Antworte AUSSCHLIESSLICH mit einem JSON-Array. Beginne direkt mit [ und ende mit ]. Kein Text davor oder danach.",
       tools: [{ type: "web_search_20250305", name: "web_search" }],
       messages: [{ role: "user", content: prompt }],
     });
@@ -93,13 +128,10 @@ function callClaude(prompt) {
       res.on("data", chunk => data += chunk);
       res.on("end", () => {
         try { resolve(JSON.parse(data)); }
-        catch(e) { reject(new Error("Parse error: " + data.slice(0,100))); }
+        catch(e) { reject(new Error("Parse error: " + data.slice(0,200))); }
       });
     });
-    req.on("error", err => {
-      console.error("  ⚠️ Netzwerkfehler:", err.message);
-      resolve({ content: [] }); // Nie abbrechen
-    });
+    req.on("error", err => { console.error("  ⚠️ Netzwerkfehler:", err.message); resolve({ content: [] }); });
     req.write(body);
     req.end();
   });
@@ -109,46 +141,30 @@ async function fetchCategory(category) {
   console.log(`\n🔍 Suche: ${category.name}...`);
   try {
     const response = await callClaude(buildPrompt(category));
-
-    // API Fehler abfangen aber weitermachen
-    if (response.error) {
-      console.log(`  ⚠️ API Fehler: ${response.error.message} — überspringe`);
-      return [];
-    }
-
-    const fullText = (response.content || [])
-      .map(b => b.type === "text" ? b.text : "")
-      .join("\n");
-
-    if (!fullText.trim()) {
-      console.log(`  ⚠️ Leere Antwort — überspringe`);
-      return [];
-    }
-
+    if (response.error) { console.log(`  ⚠️ API Fehler: ${response.error.message}`); return []; }
+    const fullText = (response.content || []).map(b => b.type === "text" ? b.text : "").join("\n");
+    if (!fullText.trim()) { console.log(`  ⚠️ Leere Antwort`); return []; }
     const fixed = fixJson(fullText);
-    if (!fixed) {
-      console.log(`  ⚠️ Kein JSON gefunden — überspringe`);
-      return [];
-    }
-
+    if (!fixed) { console.log(`  ⚠️ Kein JSON`); return []; }
     let events;
-    try {
-      events = JSON.parse(fixed);
-    } catch(e) {
-      console.log(`  ⚠️ JSON ungültig — überspringe`);
-      return [];
-    }
+    try { events = JSON.parse(fixed); } catch(e) { console.log(`  ⚠️ JSON ungültig`); return []; }
+    if (!Array.isArray(events)) { console.log(`  ⚠️ Kein Array`); return []; }
 
-    if (!Array.isArray(events)) {
-      console.log(`  ⚠️ Kein Array — überspringe`);
-      return [];
-    }
+    // Dauerveranstaltungen filtern: dateFrom und dateTo max 3 Tage auseinander
+    // AUSNAHME: Festivals die wirklich mehrere Tage laufen (name enthält "festival", "messe", etc.)
+    const filtered = events.filter(e => {
+      if (!e.dateFrom || !e.dateTo) return true;
+      const diff = (new Date(e.dateTo) - new Date(e.dateFrom)) / (1000*60*60*24);
+      const isFestival = /festival|messe|woche|openair|open.air/i.test(e.name||"");
+      return diff <= 3 || isFestival;
+    });
 
-    console.log(`  ✅ ${events.length} Events gefunden`);
-    return events;
-
+    const removed = events.length - filtered.length;
+    if (removed > 0) console.log(`  🗑 ${removed} Dauerveranstaltungen gefiltert`);
+    console.log(`  ✅ ${filtered.length} Events`);
+    return filtered;
   } catch(e) {
-    console.log(`  ⚠️ Unbekannter Fehler: ${e.message} — überspringe`);
+    console.log(`  ⚠️ Fehler: ${e.message}`);
     return [];
   }
 }
@@ -158,7 +174,7 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 async function main() {
   console.log("🏰 Magdeburg Events — Starte Suche");
   console.log("📅", new Date().toISOString());
-  console.log(`📆 Zeitraum: ${today} bis ${untilStr}`);
+  console.log(`📆 ${today} bis ${untilStr}`);
 
   const validCats = ["Musik","Theater","Sport","Kultur","Familie","Flohmarkt","Sonstiges"];
   let allEvents = [];
@@ -166,9 +182,8 @@ async function main() {
   for (let i = 0; i < CATEGORIES.length; i++) {
     const category = CATEGORIES[i];
     const raw = await fetchCategory(category);
-
     raw.forEach(e => {
-      if (!e.name || !e.dateFrom) return; // Ungültige Events überspringen
+      if (!e.name || !e.dateFrom) return;
       allEvents.push({
         name:      String(e.name).slice(0, 200),
         dateFrom:  e.dateFrom,
@@ -178,23 +193,16 @@ async function main() {
         location:  e.location || "Magdeburg",
       });
     });
-
     if (i < CATEGORIES.length - 1) {
       console.log("  ⏳ 3 Sekunden warten...");
       await sleep(3000);
     }
   }
 
-  console.log(`\n📊 Gesamt gesammelt: ${allEvents.length} Events`);
-
-  if (allEvents.length === 0) {
-    console.log("⚠️ Keine Events gefunden — schreibe leere Liste");
-  }
-
+  console.log(`\n📊 Gesamt: ${allEvents.length} Events`);
   const deduped = dedup(allEvents);
   deduped.forEach((e, i) => e.id = i + 1);
   deduped.sort((a, b) => a.dateFrom.localeCompare(b.dateFrom));
-
   console.log(`✅ Nach Deduplizierung: ${deduped.length} Events`);
 
   const output = {
@@ -211,11 +219,5 @@ async function main() {
 
 main().catch(err => {
   console.error("❌ Kritischer Fehler:", err.message);
-  // Trotzdem leere events.json schreiben damit die App nicht abstürzt
-  const outPath = path.join(__dirname, "..", "events.json");
-  const existing = fs.existsSync(outPath) ? fs.readFileSync(outPath, "utf8") : null;
-  if (!existing) {
-    fs.writeFileSync(outPath, JSON.stringify({ generated: new Date().toISOString(), count: 0, events: [] }, null, 2));
-  }
   process.exit(1);
 });
