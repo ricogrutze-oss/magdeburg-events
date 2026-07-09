@@ -32,7 +32,7 @@
   {
     "url": "regioactive.de/events/20538/magdeburg/veranstaltungen-party-konzerte",
     "name": "Regioactive Magdeburg",
-    "beschreibung": "Konzerte, Clubs, Kleinkunst"
+    "beschreibung": "Konzerte, Clubs, Kleinkunst in Magdeburg"
   },
   {
     "url": "rausgegangen.de/magdeburg",
@@ -50,19 +50,19 @@
     "beschreibung": "Alle Locations und deren Programme"
   },
   {
-    "url": "magdeburgticket.de",
+    "url": "magdeburgticket.de/veranstaltungen",
     "name": "Magdeburg Ticket",
-    "beschreibung": "Ticketverkauf, alle großen Venues"
+    "beschreibung": "Alle Veranstaltungen mit Ticket in Magdeburg"
   },
   {
     "url": "theater-magdeburg.de/spielplan/spielplan",
     "name": "Theater Magdeburg",
-    "beschreibung": "Oper, Schauspiel, Ballett, DomplatzOpenAir"
+    "beschreibung": "Spielplan Theater Magdeburg — Oper, Schauspiel, Ballett, DomplatzOpenAir"
   },
   {
-    "url": "moritzhof-magdeburg.de",
+    "url": "moritzhof-magdeburg.de/programm",
     "name": "Kulturzentrum Moritzhof",
-    "beschreibung": "Kino, Konzerte, Lesungen, Kleinkunst"
+    "beschreibung": "Programm Moritzhof Magdeburg — Kino, Konzerte, Lesungen, Kleinkunst"
   },
   {
     "url": "stadthalle-magdeburg.de",
@@ -72,12 +72,12 @@
   {
     "url": "elbauenpark.de/de/events",
     "name": "Elbauenpark & Seebühne",
-    "beschreibung": "Open-Air Events, Seebühne, Familienevents"
+    "beschreibung": "Alle Veranstaltungen im Elbauenpark Magdeburg — Seebühne, Parkbühne, Open-Air"
   },
   {
-    "url": "mvgm.de/de/events",
+    "url": "mvgm.de/de/locations/mdcc-parkbuehne/eventbesucher",
     "name": "MVGM (GETEC Arena, Messe, AMO)",
-    "beschreibung": "GETEC Arena, Messe Magdeburg, AMO Kulturhaus"
+    "beschreibung": "MDCC-Parkbühne im Elbauenpark, GETEC Arena, Messe Magdeburg"
   },
   {
     "url": "eventim.de/cityd/magdeburg-21",
@@ -123,5 +123,15 @@
     "url": "magdeburg.de/familie-kinder-jugend",
     "name": "Magdeburg Familie & Kinder",
     "beschreibung": "Familienveranstaltungen der Stadt Magdeburg"
+  },
+  {
+    "url": "regioactive.de/location/magdeburg/elbauenpark-NNkzLhvxTk",
+    "name": "Regioactive Elbauenpark",
+    "beschreibung": "Alle Veranstaltungen im Elbauenpark auf Regioactive"
+  },
+  {
+    "url": "musik-dresden.de/magdeburg/seebuehne-elbauenpark-magdeburg",
+    "name": "Seebühne Elbauenpark Termine",
+    "beschreibung": "Konzerte und Events auf der Seebühne Elbauenpark 2026"
   }
 ]
