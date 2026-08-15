@@ -1,15 +1,15 @@
-name: Magdeburg Events aktualisieren
+name: Magdeburg Events aktualisieren (kostenlos)
 
 on:
   schedule:
-    # Jeden 1. des Monats um 07:00 Uhr
-    - cron: "0 6 1 * *"
+    # Jeden Tag um 07:00 Uhr — kostenlos, kein API-Limit!
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
   update-events:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 15
     permissions:
       contents: write
 
@@ -22,9 +22,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Veranstaltungen abrufen (pro Quelle)
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Veranstaltungen abrufen (kostenlos)
         run: node scripts/generate-events.js
 
       - name: events.json committen und pushen
@@ -32,5 +30,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add events.json
-          git diff --staged --quiet || git commit -m "Events aktualisiert: $(date '+%d.%m.%Y %H:%M')"
+          git diff --staged --quiet || git commit -m "Events aktualisiert: $(date '+%d.%m.%Y %H:%M') (kostenlos)"
           git push
