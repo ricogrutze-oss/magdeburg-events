@@ -43,7 +43,7 @@ function parseICS(text, sourceName, catOverride) {
   const blocks = text.split("BEGIN:VEVENT");
   for (let i = 1; i < blocks.length; i++) {
     const b = blocks[i];
-    const get = k => { const m = b.match(new RegExp(k+"[^:]*:([^\\r\\n]+")); return m?m[1].trim():null; };
+    const get = k => { const m = b.match(new RegExp(k+"[^:]*:([^\\r\\n]+)")); return m?m[1].trim():null; };
     const summary = get("SUMMARY"); if (!summary) continue;
     const dtstart = get("DTSTART"); if (!dtstart || dtstart.length < 8) continue;
     const y=dtstart.slice(0,4), mo=dtstart.slice(4,6), d=dtstart.slice(6,8);
@@ -138,9 +138,18 @@ async function fetchMagdeburgRSS() {
         return m?(m[1]||m[2]||"").trim():null;
       };
       const title = getTag("title"); if (!title || title.length < 3) continue;
-      const pubDate = getTag("pubDate"); if (!pubDate) continue;
-      const d = new Date(pubDate); if (isNaN(d)) continue;
-      const dateFrom = isoLocal(d);
+      const description = getTag("description") || "";
+      // Eventdatum steht meist in der Beschreibung (dd.mm.yyyy), NICHT im pubDate
+      // (pubDate = Veröffentlichungsdatum des Artikels, nicht das Veranstaltungsdatum)
+      const dateM = description.match(/(\d{1,2})\.(\d{1,2})\.(\d{4})/);
+      let dateFrom;
+      if (dateM) {
+        dateFrom = `${dateM[3]}-${dateM[2].padStart(2,"0")}-${dateM[1].padStart(2,"0")}`;
+      } else {
+        const pubDate = getTag("pubDate"); if (!pubDate) continue;
+        const d = new Date(pubDate); if (isNaN(d)) continue;
+        dateFrom = isoLocal(d);
+      }
       if (dateFrom < todayStr || dateFrom > untilStr) continue;
       events.push({ name:title.slice(0,200), dateFrom, dateTo:dateFrom, timeStart:null, category:"Sonstiges", location:"Magdeburg", sources:"Landeshauptstadt Magdeburg" });
     }
@@ -177,34 +186,22 @@ async function fetchSonntagsFlohmarkt() {
 async function fetchMeineFM() {
   console.log("\n🔍 Meine Flohmarkt-Termine (HTML)...");
   try {
-    const data = await fetchUrl("https://www.meine-flohmarkt-termine.de/flohmaerkte/sachsen-anhalt/magdeburg/");
+    // Seite wurde 2025/26 relauncht — neue URL-Struktur ohne "www", mit Bundesland+Kategorie-Pfad
+    const data = await fetchUrl("https://meine-flohmarkt-termine.de/de/bundesland/sachsen-anhalt/veranstaltungsart/floh-troedelmarkt");
     const events = [];
-    // Datum-Pattern: dd.mm.yyyy
-    const re = /(\d{2})\.(\d{2})\.(\d{4})[^<]{0,200}?<[^>]+class="[^"]*name[^"]*"[^>]*>([^<]{3,100})/gi;
+    // Pro Eintrag: Link auf .../details mit Titel als Linktext, davor irgendwo "dd.mm.yyyy" und Ort/PLZ
+    const re = /(\d{2})\.(\d{2})\.(\d{4})[\s\S]{0,300}?<a[^>]+href="(https:\/\/meine-flohmarkt-termine\.de\/[^"]+\/details)"[^>]*>([^<]{5,120})<\/a>[\s\S]{0,300}?(\d{5})\s+([^,<]{2,60}),/gi;
     let m;
-    while ((m = re.exec(data)) !== null && events.length < 30) {
+    while ((m = re.exec(data)) !== null && events.length < 40) {
       const dateFrom = `${m[3]}-${m[2]}-${m[1]}`;
       if (dateFrom < todayStr || dateFrom > untilStr) continue;
+      const ort = m[7].trim();
+      if (!/magdeburg/i.test(ort)) continue; // nur Magdeburg selbst, Umland kommt über DATEs Umland
       events.push({
-        name: m[4].trim().slice(0,200), dateFrom, dateTo:dateFrom,
+        name: m[5].trim().slice(0,200), dateFrom, dateTo:dateFrom,
         timeStart: null, category:"Flohmarkt",
-        location:"Magdeburg", sources:"Meine Flohmarkt Termine"
+        location: `${ort}, ${m[6]}`, sources:"Meine Flohmarkt Termine"
       });
-    }
-    // Fallback: einfacher
-    if (events.length === 0) {
-      const dateRe = /(\d{2})\.(\d{2})\.(\d{4})/g;
-      const titleRe = /<h[23][^>]*>([^<]{5,100})<\/h[23]>/gi;
-      const dates = []; let dm;
-      while ((dm = dateRe.exec(data)) !== null) {
-        const df = `${dm[3]}-${dm[2]}-${dm[1]}`;
-        if (df >= todayStr && df <= untilStr) dates.push(df);
-      }
-      const titles = []; let tm;
-      while ((tm = titleRe.exec(data)) !== null) titles.push(tm[1].trim());
-      for (let i = 0; i < Math.min(dates.length, titles.length, 20); i++) {
-        events.push({ name:titles[i].slice(0,200), dateFrom:dates[i], dateTo:dates[i], timeStart:null, category:"Flohmarkt", location:"Magdeburg Umkreis", sources:"Meine Flohmarkt Termine" });
-      }
     }
     console.log(`  ✅ ${events.length} Flohmärkte`);
     return events;
@@ -229,24 +226,40 @@ async function fetchFlohmarktDE() {
   } catch(e) { console.log(`  ⚠️ ${e.message}`); return []; }
 }
 
+const MONTHS_DE = {"januar":1,"februar":2,"märz":3,"maerz":3,"april":4,"mai":5,"juni":6,"juli":7,"august":8,"september":9,"oktober":10,"november":11,"dezember":12};
+function parseGermanShortDate(day, monthName, timeStr) {
+  // Datum ohne Jahr ("16. August" / "16. August, 10:00 Uhr") -> nächstes passendes Jahr ermitteln
+  const mo = MONTHS_DE[monthName.toLowerCase()];
+  if (!mo) return null;
+  let year = today.getFullYear();
+  let d = new Date(year, mo-1, parseInt(day));
+  if (d < today) d = new Date(year+1, mo-1, parseInt(day));
+  return { dateFrom: isoLocal(d), timeStart: timeStr || null };
+}
+
 async function fetchMagdeburgTourist() {
   console.log("\n🔍 Magdeburg Tourist (HTML)...");
   try {
-    const data = await fetchUrl("https://www.magdeburg-tourist.de/Tourismus-Freizeit/Veranstaltungen/Veranstaltungs-kalender/index.php?ModID=11&object=tx%7C557.6.1&La=1&NavID=115.20");
+    // Altes CMS (index.php) ist tot/veraltet — echtes Kalendersystem läuft über diese Subdomain (RCE-Event)
+    const data = await fetchUrl("https://veranstaltungen.magdeburg-tourist.de/magdeburg/");
     const events = [];
-    // Format: "DD.MM.YYYY" in Links
-    const blocks = data.split(/<div[^>]+class="[^"]*event[^"]*"/i);
-    for (let i = 1; i < blocks.length && events.length < 30; i++) {
-      const block = blocks[i].slice(0, 600);
-      const dateM = block.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-      if (!dateM) continue;
-      const dateFrom = `${dateM[3]}-${dateM[2]}-${dateM[1]}`;
+    // Pro Eintrag: Titel-Link, dann "DD. Monat[, HH:MM Uhr] | Ort | Stadt"-Zeile mit gleichem Link
+    const re = /<a[^>]+href="(https?:\/\/veranstaltungen\.magdeburg-tourist\.de\/magdeburg\/[^"]+\.html)"[^>]*>([^<]{5,150})<\/a>[\s\S]{0,200}?(\d{1,2})\.\s*([A-Za-zäöüÄÖÜß]+)(?:,\s*(\d{1,2}:\d{2})\s*Uhr)?\s*\|\s*([^|<]{2,80})\s*\|\s*([^<]{2,40})/g;
+    let m;
+    const seen = new Set();
+    while ((m = re.exec(data)) !== null && events.length < 40) {
+      const url = m[1];
+      if (seen.has(url)) continue; // Titel-Link + Zeilen-Link zeigen aufs selbe Event
+      seen.add(url);
+      const name = m[2].trim();
+      const parsed = parseGermanShortDate(m[3], m[4], m[5]);
+      if (!parsed) continue;
+      const { dateFrom, timeStart } = parsed;
       if (dateFrom < todayStr || dateFrom > untilStr) continue;
-      const titleM = block.match(/<a[^>]*>([^<]{5,100})<\/a>/i) || block.match(/<strong>([^<]{5,100})<\/strong>/i);
-      if (!titleM) continue;
-      const name = titleM[1].replace(/&amp;/g,"&").replace(/&#\d+;/g," ").trim();
-      if (name.length < 3) continue;
-      events.push({ name:name.slice(0,200), dateFrom, dateTo:dateFrom, timeStart:null, category:"Kultur", location:"Magdeburg", sources:"Magdeburg Tourist" });
+      events.push({
+        name: name.slice(0,200), dateFrom, dateTo:dateFrom, timeStart,
+        category:"Kultur", location: `${m[6].trim()}, ${m[7].trim()}`, sources:"Magdeburg Tourist"
+      });
     }
     console.log(`  ✅ ${events.length} Events`);
     return events;
