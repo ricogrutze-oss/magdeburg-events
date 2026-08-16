@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-16T09:37:37.360Z",
-  "count": 3,
+  "generated": "2026-08-16T13:33:31.742Z",
+  "count": 19,
   "method": "kostenlos (ICS + RSS + HTML)",
   "sources": [
     "DATEs Stadtmagazin",
@@ -15,6 +15,166 @@
   ],
   "events": [
     {
+      "name": "Orgelpunkt",
+      "dateFrom": "2026-08-16",
+      "dateTo": "2026-08-16",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 1
+    },
+    {
+      "name": "AMO Pride Party",
+      "dateFrom": "2026-08-16",
+      "dateTo": "2026-08-16",
+      "timeStart": "15:00",
+      "category": "Musik",
+      "location": "Café Mosaik",
+      "sources": "DATEs Stadtmagazin",
+      "id": 2
+    },
+    {
+      "name": "Rainbow Run",
+      "dateFrom": "2026-08-16",
+      "dateTo": "2026-08-16",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Zeitzähler",
+      "sources": "DATEs Stadtmagazin",
+      "id": 3
+    },
+    {
+      "name": "Finding Connection",
+      "dateFrom": "2026-08-16",
+      "dateTo": "2026-08-16",
+      "timeStart": "16:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 4
+    },
+    {
+      "name": "Petra C. Schulz - Elbinseltheater",
+      "dateFrom": "2026-08-17",
+      "dateTo": "2026-08-17",
+      "timeStart": "14:00",
+      "category": "Theater",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 5
+    },
+    {
+      "name": "Workshop - Wohnen ist politisch, Textilkunst auch!",
+      "dateFrom": "2026-08-17",
+      "dateTo": "2026-08-17",
+      "timeStart": "14:00",
+      "category": "Kultur",
+      "location": "Uncrowd",
+      "sources": "DATEs Stadtmagazin",
+      "id": 6
+    },
+    {
+      "name": "Schreibworkshop – Finde deine Worte",
+      "dateFrom": "2026-08-17",
+      "dateTo": "2026-08-17",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Bunt",
+      "sources": "DATEs Stadtmagazin",
+      "id": 7
+    },
+    {
+      "name": "Jules Romeo - Queere Stories. Sexy Bücher",
+      "dateFrom": "2026-08-17",
+      "dateTo": "2026-08-17",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 8
+    },
+    {
+      "name": "Elisabeth Voss - Zieht doch nach Magdeburg!",
+      "dateFrom": "2026-08-17",
+      "dateTo": "2026-08-17",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Uncrowd",
+      "sources": "DATEs Stadtmagazin",
+      "id": 9
+    },
+    {
+      "name": "Die gelenkte Frei-Zeit. DDR-Lebenswelten in der Ära Honecker",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Bibliothek der Hochschule",
+      "sources": "DATEs Stadtmagazin",
+      "id": 10
+    },
+    {
+      "name": "Kreativabend",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "13:00",
+      "category": "Sonstiges",
+      "location": "IKEA Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 11
+    },
+    {
+      "name": "Elisabeth Voss - Selbstverwaltung! Aber wie?",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Uncrowd",
+      "sources": "DATEs Stadtmagazin",
+      "id": 12
+    },
+    {
+      "name": "Stadtteilspaziergang „Stadtfeld gemeinsam gestalten – Wie blei",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "15:30",
+      "category": "Sonstiges",
+      "location": "Olvenstedter Platz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 13
+    },
+    {
+      "name": "SommerTanzTage",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Tanzstudio Sitara",
+      "sources": "DATEs Stadtmagazin",
+      "id": 14
+    },
+    {
+      "name": "Soli-Barabend",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uncrowd",
+      "sources": "DATEs Stadtmagazin",
+      "id": 15
+    },
+    {
+      "name": "Französisch für Anfänger",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "07:30",
+      "category": "Sonstiges",
+      "location": "Evangelische Erwachsenenbildung Sachsen-Anhalt",
+      "sources": "DATEs Stadtmagazin",
+      "id": 16
+    },
+    {
       "name": "Magdeburger Sonntags-Flohmarkt",
       "dateFrom": "2026-09-06",
       "dateTo": "2026-09-06",
@@ -22,7 +182,7 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 1
+      "id": 17
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -32,7 +192,7 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 2
+      "id": 18
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -42,7 +202,7 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 3
+      "id": 19
     }
   ]
 }
