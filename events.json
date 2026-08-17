@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-16T13:33:31.742Z",
-  "count": 19,
+  "generated": "2026-08-17T07:07:26.310Z",
+  "count": 22,
   "method": "kostenlos (ICS + RSS + HTML)",
   "sources": [
     "DATEs Stadtmagazin",
@@ -15,44 +15,14 @@
   ],
   "events": [
     {
-      "name": "Orgelpunkt",
-      "dateFrom": "2026-08-16",
-      "dateTo": "2026-08-16",
+      "name": "Workshop - Wohnen ist politisch, Textilkunst auch!",
+      "dateFrom": "2026-08-17",
+      "dateTo": "2026-08-17",
       "timeStart": "14:00",
-      "category": "Sonstiges",
-      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "category": "Kultur",
+      "location": "Uncrowd",
       "sources": "DATEs Stadtmagazin",
       "id": 1
-    },
-    {
-      "name": "AMO Pride Party",
-      "dateFrom": "2026-08-16",
-      "dateTo": "2026-08-16",
-      "timeStart": "15:00",
-      "category": "Musik",
-      "location": "Café Mosaik",
-      "sources": "DATEs Stadtmagazin",
-      "id": 2
-    },
-    {
-      "name": "Rainbow Run",
-      "dateFrom": "2026-08-16",
-      "dateTo": "2026-08-16",
-      "timeStart": "16:00",
-      "category": "Sonstiges",
-      "location": "Zeitzähler",
-      "sources": "DATEs Stadtmagazin",
-      "id": 3
-    },
-    {
-      "name": "Finding Connection",
-      "dateFrom": "2026-08-16",
-      "dateTo": "2026-08-16",
-      "timeStart": "16:30",
-      "category": "Sonstiges",
-      "location": "Kulturzentrum Moritzhof",
-      "sources": "DATEs Stadtmagazin",
-      "id": 4
     },
     {
       "name": "Petra C. Schulz - Elbinseltheater",
@@ -62,17 +32,7 @@
       "category": "Theater",
       "location": "Stadtbibliothek Magdeburg",
       "sources": "DATEs Stadtmagazin",
-      "id": 5
-    },
-    {
-      "name": "Workshop - Wohnen ist politisch, Textilkunst auch!",
-      "dateFrom": "2026-08-17",
-      "dateTo": "2026-08-17",
-      "timeStart": "14:00",
-      "category": "Kultur",
-      "location": "Uncrowd",
-      "sources": "DATEs Stadtmagazin",
-      "id": 6
+      "id": 2
     },
     {
       "name": "Schreibworkshop – Finde deine Worte",
@@ -82,7 +42,7 @@
       "category": "Sonstiges",
       "location": "Bunt",
       "sources": "DATEs Stadtmagazin",
-      "id": 7
+      "id": 3
     },
     {
       "name": "Jules Romeo - Queere Stories. Sexy Bücher",
@@ -92,7 +52,7 @@
       "category": "Sonstiges",
       "location": "Stadtbibliothek Magdeburg",
       "sources": "DATEs Stadtmagazin",
-      "id": 8
+      "id": 4
     },
     {
       "name": "Elisabeth Voss - Zieht doch nach Magdeburg!",
@@ -102,7 +62,7 @@
       "category": "Sonstiges",
       "location": "Uncrowd",
       "sources": "DATEs Stadtmagazin",
-      "id": 9
+      "id": 5
     },
     {
       "name": "Die gelenkte Frei-Zeit. DDR-Lebenswelten in der Ära Honecker",
@@ -112,7 +72,7 @@
       "category": "Sonstiges",
       "location": "Bibliothek der Hochschule",
       "sources": "DATEs Stadtmagazin",
-      "id": 10
+      "id": 6
     },
     {
       "name": "Kreativabend",
@@ -122,7 +82,7 @@
       "category": "Sonstiges",
       "location": "IKEA Magdeburg",
       "sources": "DATEs Stadtmagazin",
-      "id": 11
+      "id": 7
     },
     {
       "name": "Elisabeth Voss - Selbstverwaltung! Aber wie?",
@@ -132,7 +92,7 @@
       "category": "Sonstiges",
       "location": "Uncrowd",
       "sources": "DATEs Stadtmagazin",
-      "id": 12
+      "id": 8
     },
     {
       "name": "Stadtteilspaziergang „Stadtfeld gemeinsam gestalten – Wie blei",
@@ -142,17 +102,7 @@
       "category": "Sonstiges",
       "location": "Olvenstedter Platz",
       "sources": "DATEs Stadtmagazin",
-      "id": 13
-    },
-    {
-      "name": "SommerTanzTage",
-      "dateFrom": "2026-08-18",
-      "dateTo": "2026-08-18",
-      "timeStart": "16:00",
-      "category": "Sonstiges",
-      "location": "Tanzstudio Sitara",
-      "sources": "DATEs Stadtmagazin",
-      "id": 14
+      "id": 9
     },
     {
       "name": "Soli-Barabend",
@@ -162,7 +112,17 @@
       "category": "Sonstiges",
       "location": "Uncrowd",
       "sources": "DATEs Stadtmagazin",
-      "id": 15
+      "id": 10
+    },
+    {
+      "name": "SommerTanzTage",
+      "dateFrom": "2026-08-18",
+      "dateTo": "2026-08-18",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Tanzstudio Sitara",
+      "sources": "DATEs Stadtmagazin",
+      "id": 11
     },
     {
       "name": "Französisch für Anfänger",
@@ -172,7 +132,77 @@
       "category": "Sonstiges",
       "location": "Evangelische Erwachsenenbildung Sachsen-Anhalt",
       "sources": "DATEs Stadtmagazin",
+      "id": 12
+    },
+    {
+      "name": "Mittwochsmusik",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "15:00",
+      "category": "Musik",
+      "location": "Ambrosiuskirche",
+      "sources": "DATEs Stadtmagazin",
+      "id": 13
+    },
+    {
+      "name": "SommerTanzTage",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Tanzstudio Sitara",
+      "sources": "DATEs Stadtmagazin",
+      "id": 14
+    },
+    {
+      "name": "Zukunftswerkstatt - einen Ort der Begegnung schaffen",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Gröninger Bad",
+      "sources": "DATEs Stadtmagazin",
+      "id": 15
+    },
+    {
+      "name": "BARadox",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Geheimclub Magdeburg",
+      "sources": "DATEs Stadtmagazin",
       "id": 16
+    },
+    {
+      "name": "Hutkonzert",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "17:00",
+      "category": "Musik",
+      "location": "Café Treibgut",
+      "sources": "DATEs Stadtmagazin",
+      "id": 17
+    },
+    {
+      "name": "Eine Mittsommernachts-Sex-Komödie",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Garten der Möllenvogtei",
+      "sources": "DATEs Stadtmagazin",
+      "id": 18
+    },
+    {
+      "name": "Selbstverteidigungskurs",
+      "dateFrom": "2026-08-19",
+      "dateTo": "2026-08-19",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Einladen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 19
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -182,7 +212,7 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 17
+      "id": 20
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -192,7 +222,7 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 18
+      "id": 21
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -202,7 +232,7 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 19
+      "id": 22
     }
   ]
 }
