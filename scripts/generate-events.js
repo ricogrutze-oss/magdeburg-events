@@ -38,29 +38,104 @@ function fetchUrl(url, maxSize=800000) {
 }
 
 // ── ICS Parser ────────────────────────────────────────────────────────────────
+function unfoldICS(text) {
+  // RFC5545: Zeilenumbrüche gefolgt von Leerzeichen/Tab sind reine Zeilenfaltung, kein echtes Zeilenende
+  return text.replace(/\r\n[ \t]/g, "").replace(/\n[ \t]/g, "");
+}
+
+function parseICSDate(raw) {
+  if (!raw) return null;
+  raw = raw.trim();
+  const y = raw.slice(0,4), mo = raw.slice(4,6), d = raw.slice(6,8);
+  if (!/^\d{8}/.test(raw)) return null;
+  return { dateStr: `${y}-${mo}-${d}`, hasTime: raw.includes("T"), timeStart: raw.includes("T") ? `${raw.slice(9,11)}:${raw.slice(11,13)}` : null };
+}
+
+function addDays(dateStr, days) {
+  const [y,m,d] = dateStr.split("-").map(Number);
+  const dt = new Date(y, m-1, d);
+  dt.setDate(dt.getDate()+days);
+  return isoLocal(dt);
+}
+
+const DAY_MAP = {SU:0,MO:1,TU:2,WE:3,TH:4,FR:5,SA:6};
+
+function daysBetween(fromStr, toStr) {
+  const [fy,fm,fd] = fromStr.split("-").map(Number);
+  const [ty,tm,td] = toStr.split("-").map(Number);
+  return Math.round((new Date(ty,tm-1,td) - new Date(fy,fm-1,fd)) / 86400000);
+}
+
+function expandRRule(startDateStr, rruleStr, capUntil, windowStart) {
+  const parts = {};
+  rruleStr.split(";").forEach(p => { const [k,v] = p.split("="); if(k) parts[k]=v; });
+  const freq = parts.FREQ;
+  const interval = parseInt(parts.INTERVAL || "1") || 1;
+  const untilParsed = parts.UNTIL ? parseICSDate(parts.UNTIL) : null;
+  let until = untilParsed ? untilParsed.dateStr : capUntil;
+  if (until > capUntil) until = capUntil;
+  const count = parts.COUNT ? parseInt(parts.COUNT) : null;
+  const byday = parts.BYDAY ? parts.BYDAY.split(",") : null;
+  const dates = [];
+  const maxIter = 400;
+
+  if (freq === "DAILY" || (freq === "WEEKLY" && !(byday && byday.length))) {
+    const stepDays = freq === "DAILY" ? interval : 7*interval;
+    let cur = startDateStr, n = 0;
+    // Läuft die Wiederholung schon lange (z.B. seit 2016) und hat kein COUNT-Limit,
+    // rechnerisch direkt ins Zeitfenster vorspulen statt jede einzelne Wiederholung durchzuzählen
+    if (!count && cur < windowStart) {
+      const diffDays = daysBetween(cur, windowStart);
+      const steps = Math.floor(diffDays / stepDays);
+      if (steps > 0) cur = addDays(cur, steps*stepDays);
+    }
+    let iter = 0;
+    while (iter++ < maxIter && cur <= until) {
+      if (count && n >= count) break;
+      if (cur >= windowStart) dates.push(cur);
+      n++;
+      cur = addDays(cur, stepDays);
+    }
+  } else if (freq === "WEEKLY" && byday && byday.length) {
+    // Bei BYDAY nur ohne COUNT vorspulen (COUNT-Zählung bräuchte den echten Startpunkt)
+    let cur = (!count && startDateStr < windowStart) ? windowStart : startDateStr;
+    let iter = 0, n = 0;
+    while (iter++ < maxIter && cur <= until) {
+      if (count && n >= count) break;
+      const [y,m,d] = cur.split("-").map(Number);
+      const dow = new Date(y,m-1,d).getDay();
+      const dowKey = Object.keys(DAY_MAP).find(k => DAY_MAP[k]===dow);
+      if (byday.includes(dowKey)) { if (cur >= windowStart) dates.push(cur); n++; }
+      cur = addDays(cur, 1);
+    }
+  } else {
+    dates.push(startDateStr); // MONTHLY/YEARLY etc. nicht unterstützt — nur Starttermin
+  }
+  return dates;
+}
+
 function parseICS(text, sourceName, catOverride) {
   const events = [];
-  const blocks = text.split("BEGIN:VEVENT");
+  const unfolded = unfoldICS(text);
+  const blocks = unfolded.split("BEGIN:VEVENT");
   for (let i = 1; i < blocks.length; i++) {
-    const b = blocks[i];
-    const get = k => { const m = b.match(new RegExp(k+"[^:]*:([^\\r\\n]+)")); return m?m[1].trim():null; };
+    const b = blocks[i].split("END:VEVENT")[0];
+    const get = k => { const m = b.match(new RegExp(k+"[^:\\n]*:([^\\r\\n]+)")); return m?m[1].trim():null; };
     const summary = get("SUMMARY"); if (!summary) continue;
-    const dtstart = get("DTSTART"); if (!dtstart || dtstart.length < 8) continue;
-    const y=dtstart.slice(0,4), mo=dtstart.slice(4,6), d=dtstart.slice(6,8);
-    const dateFrom = `${y}-${mo}-${d}`;
-    if (dateFrom < todayStr || dateFrom > untilStr) continue;
-    let timeStart = null;
-    if (dtstart.includes("T") && dtstart.length >= 15) timeStart = `${dtstart.slice(9,11)}:${dtstart.slice(11,13)}`;
-    const dtend = get("DTEND");
-    let dateTo = dateFrom;
-    if (dtend && dtend.length >= 8) {
-      const ey=dtend.slice(0,4),em=dtend.slice(4,6),ed=dtend.slice(6,8);
-      if (!dtstart.includes("T")) {
-        const end = new Date(parseInt(ey),parseInt(em)-1,parseInt(ed));
-        end.setDate(end.getDate()-1);
-        dateTo = isoLocal(end);
-      } else dateTo = `${ey}-${em}-${ed}`;
-    }
+    const dtstartRaw = get("DTSTART"); if (!dtstartRaw || dtstartRaw.length < 8) continue;
+    const start = parseICSDate(dtstartRaw); if (!start) continue;
+    const dtendRaw = get("DTEND");
+    const rruleRaw = get("RRULE");
+    const rdateRaw = get("RDATE");
+    const exdateRaw = get("EXDATE");
+
+    // Alle Kandidaten-Termine sammeln: Starttermin + RDATE-Liste + RRULE-Expansion
+    let candidateDates = new Set([start.dateStr]);
+    if (rdateRaw) rdateRaw.split(",").forEach(v => { const p = parseICSDate(v); if (p) candidateDates.add(p.dateStr); });
+    if (rruleRaw) expandRRule(start.dateStr, rruleRaw, untilStr, todayStr).forEach(d => candidateDates.add(d));
+    if (exdateRaw) exdateRaw.split(",").forEach(v => { const p = parseICSDate(v); if (p) candidateDates.delete(p.dateStr); });
+
+    const isRecurring = !!(rdateRaw || rruleRaw);
     const location = (get("LOCATION")||"Magdeburg").replace(/\\,/g,",").replace(/\\n/g," ").slice(0,100);
     const cleanName = summary.replace(/\\,/g,",").replace(/\\n/g," ").trim().slice(0,200);
     let cat = catOverride || "Sonstiges";
@@ -73,7 +148,22 @@ function parseICS(text, sourceName, catOverride) {
       else if (/kinder|familie|jugend|dino/.test(t)) cat="Familie";
       else if (/festival|fest|ausstellung|kunst|museum|messe/.test(t)) cat="Kultur";
     }
-    events.push({ name:cleanName, dateFrom, dateTo, timeStart, category:cat, location, sources:sourceName });
+
+    for (const dateFrom of candidateDates) {
+      if (dateFrom < todayStr || dateFrom > untilStr) continue;
+      let dateTo = dateFrom;
+      if (!isRecurring && dtendRaw && dtendRaw.length >= 8 && !start.hasTime) {
+        // Mehrtägiger Einzeltermin ohne Wiederholung (z.B. Ausstellung über X Tage)
+        const end = parseICSDate(dtendRaw);
+        if (end) {
+          const [ey,em,ed] = end.dateStr.split("-").map(Number);
+          const endD = new Date(ey, em-1, ed);
+          endD.setDate(endD.getDate()-1);
+          dateTo = isoLocal(endD);
+        }
+      }
+      events.push({ name:cleanName, dateFrom, dateTo, timeStart: start.hasTime?start.timeStart:null, category:cat, location, sources:sourceName });
+    }
   }
   return events;
 }
@@ -108,18 +198,6 @@ async function fetchSCM() {
     // Nur Heimspiele
     const home = raw.filter(e => e.name.includes("SC Magdeburg :") || e.name.startsWith("SC Magdeburg"));
     const events = home.map(e => ({...e, location:"GETEC Arena, Magdeburg"}));
-    console.log(`  ✅ ${events.length} Heimspiele`);
-    return events;
-  } catch(e) { console.log(`  ⚠️ ${e.message}`); return []; }
-}
-
-async function fetchFCM() {
-  console.log("\n🔍 1. FC Magdeburg (ICS)...");
-  try {
-    const data = await fetchUrl("https://calovo.de/f/fcmagdeburg/spielplan.ics");
-    const raw = parseICS(data, "1. FC Magdeburg", "Sport");
-    const home = raw.filter(e => e.name.includes("1. FC Magdeburg :") || e.name.startsWith("1. FC Magdeburg"));
-    const events = home.map(e => ({...e, location:"MDCC-Arena, Magdeburg"}));
     console.log(`  ✅ ${events.length} Heimspiele`);
     return events;
   } catch(e) { console.log(`  ⚠️ ${e.message}`); return []; }
@@ -305,7 +383,6 @@ async function main() {
     fetchDates(),
     fetchDatesUmland(),
     fetchSCM(),
-    fetchFCM(),
     fetchMagdeburgRSS(),
     fetchSonntagsFlohmarkt(),
     fetchMeineFM(),
@@ -343,7 +420,7 @@ async function main() {
     generated: new Date().toISOString(),
     count: deduped.length,
     method: "kostenlos (ICS + RSS + HTML)",
-    sources: ["DATEs Stadtmagazin","DATEs Umland","SC Magdeburg","1. FC Magdeburg","Landeshauptstadt Magdeburg","Sonntags-Flohmarkt","Meine Flohmarkt Termine","Flohmarkt.de","Magdeburg Tourist"],
+    sources: ["DATEs Stadtmagazin","DATEs Umland","SC Magdeburg","Landeshauptstadt Magdeburg","Sonntags-Flohmarkt","Meine Flohmarkt Termine","Flohmarkt.de","Magdeburg Tourist"],
     events: deduped,
   }, null, 2), "utf8");
   console.log(`🎉 Fertig! ${deduped.length} Events — KOSTENLOS!`);
