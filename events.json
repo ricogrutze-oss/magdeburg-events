@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-11T11:01:33.678Z",
-  "count": 3,
+  "generated": "2026-09-12T06:46:13.317Z",
+  "count": 508,
   "method": "kostenlos (ICS + RSS + HTML)",
   "sources": [
     "DATEs Stadtmagazin",
@@ -14,6 +14,2796 @@
   ],
   "events": [
     {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 1
+    },
+    {
+      "name": "Stadtfelder Trödelmarkt „KlimBim“",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "07:00",
+      "category": "Flohmarkt",
+      "location": "Olvenstedter Platz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 2
+    },
+    {
+      "name": "Tag der offenen Tür",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Freie Waldorfschule",
+      "sources": "DATEs Stadtmagazin",
+      "id": 3
+    },
+    {
+      "name": "Menschen. Farbe. Ausdruck. – Kunst, die von innen kommt: Echt. Unperfekt. Persönlich.",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Medizinische Zentralbibliothek",
+      "sources": "DATEs Stadtmagazin",
+      "id": 4
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 5
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 6
+    },
+    {
+      "name": "Heimische Pflanzen im Hochbeet  - Vielfalt für Natur und Gaumen",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Interkultureller Garten des KanTe e.V.",
+      "sources": "DATEs Stadtmagazin",
+      "id": 7
+    },
+    {
+      "name": "Brunnenfest",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Breiter Weg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 8
+    },
+    {
+      "name": "Großes Erntedankfest",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Schubert Motors GmbH/MINI Zentrum",
+      "sources": "DATEs Stadtmagazin",
+      "id": 9
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 10
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 11
+    },
+    {
+      "name": "Pippi Langstrumpf",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Oli-Kino Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 12
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 13
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 14
+    },
+    {
+      "name": "Landesmeisterschaften SUP Wildwasser",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kanuclub \"Falke\" Magdeburg e. V.",
+      "sources": "DATEs Stadtmagazin",
+      "id": 15
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 16
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 17
+    },
+    {
+      "name": "Gabriele Kaminski liest \"Ronny Regenwurm\"",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "09:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 18
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 19
+    },
+    {
+      "name": "Magdeburger Bierfest",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Schweizer Milchkuranstalt",
+      "sources": "DATEs Stadtmagazin",
+      "id": 20
+    },
+    {
+      "name": "W 11 Festival",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Wagenhalle 11",
+      "sources": "DATEs Stadtmagazin",
+      "id": 21
+    },
+    {
+      "name": "Zumba-Salsation-Reparto",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Elbefitness",
+      "sources": "DATEs Stadtmagazin",
+      "id": 22
+    },
+    {
+      "name": "Ikebana-Workshop",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Gruson-Gewächshäuser",
+      "sources": "DATEs Stadtmagazin",
+      "id": 23
+    },
+    {
+      "name": "1. FC Magdeburg - 1. FC Kaiserslautern",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "19:30",
+      "category": "Sonstiges",
+      "location": "Avnet Arena",
+      "sources": "DATEs Stadtmagazin",
+      "id": 24
+    },
+    {
+      "name": "Lesesommerabschlussfest",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "12:00",
+      "category": "Kultur",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 25
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 26
+    },
+    {
+      "name": "Nachtflohmarkt",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "14:00",
+      "category": "Flohmarkt",
+      "location": "Messe Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 27
+    },
+    {
+      "name": "Inka Friese - Das ist doch unfair",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "13:00",
+      "category": "Sonstiges",
+      "location": "Literaturhaus",
+      "sources": "DATEs Stadtmagazin",
+      "id": 28
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 29
+    },
+    {
+      "name": "Lotte & Totte",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "13:15",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 30
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 31
+    },
+    {
+      "name": "Magdeburger Motette",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Wallonerkirche",
+      "sources": "DATEs Stadtmagazin",
+      "id": 32
+    },
+    {
+      "name": "Sommer, Sonne, Subkultur",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kinder- und Jugendfreizeiteinrichtung Heizhaus",
+      "sources": "DATEs Stadtmagazin",
+      "id": 33
+    },
+    {
+      "name": "Simone Sommerland - Kinder-Mitmach-Konzert",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "14:00",
+      "category": "Musik",
+      "location": "AMO",
+      "sources": "DATEs Stadtmagazin",
+      "id": 34
+    },
+    {
+      "name": "Lebensansichten eines Huhns",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:45",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 35
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 36
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 37
+    },
+    {
+      "name": "Pink Party",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "15:00",
+      "category": "Musik",
+      "location": "Café Mosaik",
+      "sources": "DATEs Stadtmagazin",
+      "id": 38
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 39
+    },
+    {
+      "name": "Eröffnung",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "heARTattack – creative Space",
+      "sources": "DATEs Stadtmagazin",
+      "id": 40
+    },
+    {
+      "name": "Das OLi wird 90!",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Oli-Kino Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 41
+    },
+    {
+      "name": "Weinlounge-Abend beim Nashorn",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Zoo Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 42
+    },
+    {
+      "name": "Wolfgang Flür",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Festung Mark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 43
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 44
+    },
+    {
+      "name": "Rockladen MD",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:00",
+      "category": "Musik",
+      "location": "Flowerpower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 45
+    },
+    {
+      "name": "Stephan Michme -  Man kann Pointen nur vergessen, wenn man viele hat",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "18:30",
+      "category": "Sonstiges",
+      "location": "Kabarett „... nach Hengstmanns“",
+      "sources": "DATEs Stadtmagazin",
+      "id": 46
+    },
+    {
+      "name": "Everytime",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 47
+    },
+    {
+      "name": "Kammermusik - Poesie in Klang",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:30",
+      "category": "Musik",
+      "location": "Gesellschaftshaus Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 48
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 49
+    },
+    {
+      "name": "Così fan tutt*e",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Opernhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 50
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 51
+    },
+    {
+      "name": "Scott Weis Band",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "18:00",
+      "category": "Musik",
+      "location": "Machwerk",
+      "sources": "DATEs Stadtmagazin",
+      "id": 52
+    },
+    {
+      "name": "Am roten Faden 8 - Gewählt ist gewählt, und jetzt, liebes Orakel?",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Puppentheater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 53
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 54
+    },
+    {
+      "name": "Story Karaoke Bar",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "20:00",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 55
+    },
+    {
+      "name": "Der Abschiedsbrief",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Insel Theater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 56
+    },
+    {
+      "name": "Thunder Road - Ein Bruce Springsteen-Abend - Teil 2",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Theater Grüne Zitadelle",
+      "sources": "DATEs Stadtmagazin",
+      "id": 57
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 58
+    },
+    {
+      "name": "Great Depeche Mode Party",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "20:00",
+      "category": "Musik",
+      "location": "Festung Mark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 59
+    },
+    {
+      "name": "Tanzrausch",
+      "dateFrom": "2026-09-12",
+      "dateTo": "2026-09-12",
+      "timeStart": "21:00",
+      "category": "Sonstiges",
+      "location": "Boys‘n‘Beats",
+      "sources": "DATEs Stadtmagazin",
+      "id": 60
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 61
+    },
+    {
+      "name": "Menschen. Farbe. Ausdruck. – Kunst, die von innen kommt: Echt. Unperfekt. Persönlich.",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Medizinische Zentralbibliothek",
+      "sources": "DATEs Stadtmagazin",
+      "id": 62
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 63
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 64
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 65
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 66
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 67
+    },
+    {
+      "name": "Magdeburger Bierfest",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "10:00",
+      "category": "Kultur",
+      "location": "Schweizer Milchkuranstalt",
+      "sources": "DATEs Stadtmagazin",
+      "id": 68
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 69
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 70
+    },
+    {
+      "name": "Lotte & Totte",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "13:15",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 71
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 72
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 73
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 74
+    },
+    {
+      "name": "Der Abschiedsbrief",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Insel Theater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 75
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 76
+    },
+    {
+      "name": "Line Dance Frühshoppen",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Theater Grüne Zitadelle",
+      "sources": "DATEs Stadtmagazin",
+      "id": 77
+    },
+    {
+      "name": "Flohmarkt für Baby- & Kindersachen",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Flohmarkt",
+      "location": "Messe Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 78
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 79
+    },
+    {
+      "name": "Tag des offenen Denkmals",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Technikmuseum",
+      "sources": "DATEs Stadtmagazin",
+      "id": 80
+    },
+    {
+      "name": "Theaterfest zur Spielzeiteröffnung",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "09:00",
+      "category": "Theater",
+      "location": "Opernhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 81
+    },
+    {
+      "name": "Tag der Szenografie",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "09:00",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 82
+    },
+    {
+      "name": "Haus- und Hofflohmarkt",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "09:00",
+      "category": "Flohmarkt",
+      "location": "Biederitz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 83
+    },
+    {
+      "name": "Präsentation des 9. Bandes der Schriftenreihe des Zentrums für Mittelalterausstellungen e.V.",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "09:00",
+      "category": "Musik",
+      "location": "Kulturhistorisches Museum",
+      "sources": "DATEs Stadtmagazin",
+      "id": 84
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 85
+    },
+    {
+      "name": "Terrassenkonzert - Pan",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "12:00",
+      "category": "Musik",
+      "location": "Flair",
+      "sources": "DATEs Stadtmagazin",
+      "id": 86
+    },
+    {
+      "name": "Hofflohmarkt",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "12:00",
+      "category": "Flohmarkt",
+      "location": "Volksbad Buckau c/o Frauenzentrum Courage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 87
+    },
+    {
+      "name": "SC Magdeburg - HSG Wetzlar",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "14:30",
+      "category": "Sonstiges",
+      "location": "GETEC-Arena",
+      "sources": "DATEs Stadtmagazin",
+      "id": 88
+    },
+    {
+      "name": "Romanik trifft Gegenwart",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "13:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 89
+    },
+    {
+      "name": "Özim Treff",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "13:00",
+      "category": "Sonstiges",
+      "location": "Özim - Öko-Zentrum und -Institut Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 90
+    },
+    {
+      "name": "Regenbogenfamilienfest",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "12:00",
+      "category": "Familie",
+      "location": "Familienhaus im Park",
+      "sources": "DATEs Stadtmagazin",
+      "id": 91
+    },
+    {
+      "name": "Wer weiß schon, was ein Leben ist?",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 92
+    },
+    {
+      "name": "Sukini - Da haben wir den Salat",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 93
+    },
+    {
+      "name": "Orgelpunkt XIX",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 94
+    },
+    {
+      "name": "Let’s Rock Again! - Ü60-Party",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "16:00",
+      "category": "Musik",
+      "location": "Flowerpower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 95
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 96
+    },
+    {
+      "name": "Kosmos #4 - Architekturen des Augenblicks",
+      "dateFrom": "2026-09-13",
+      "dateTo": "2026-09-13",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 97
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-14",
+      "dateTo": "2026-09-14",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 98
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-14",
+      "dateTo": "2026-09-14",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 99
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-14",
+      "dateTo": "2026-09-14",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 100
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-14",
+      "dateTo": "2026-09-14",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 101
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-14",
+      "dateTo": "2026-09-14",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 102
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 103
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 104
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 105
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 106
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 107
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 108
+    },
+    {
+      "name": "Everytime",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 109
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 110
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 111
+    },
+    {
+      "name": "Wer weiß schon, was ein Leben ist?",
+      "dateFrom": "2026-09-15",
+      "dateTo": "2026-09-15",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 112
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 113
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 114
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 115
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 116
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 117
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 118
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 119
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 120
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 121
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-16",
+      "dateTo": "2026-09-16",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 122
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 123
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 124
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 125
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 126
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 127
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 128
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 129
+    },
+    {
+      "name": "Der Abschiedsbrief",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Insel Theater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 130
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-17",
+      "dateTo": "2026-09-17",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 131
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 132
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 133
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 134
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 135
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 136
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 137
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 138
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 139
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 140
+    },
+    {
+      "name": "Der Abschiedsbrief",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Insel Theater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 141
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-18",
+      "dateTo": "2026-09-18",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 142
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 143
+    },
+    {
+      "name": "Menschen. Farbe. Ausdruck. – Kunst, die von innen kommt: Echt. Unperfekt. Persönlich.",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Medizinische Zentralbibliothek",
+      "sources": "DATEs Stadtmagazin",
+      "id": 144
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 145
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 146
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 147
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 148
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 149
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 150
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 151
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 152
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 153
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 154
+    },
+    {
+      "name": "Lotte & Totte",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "13:15",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 155
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 156
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 157
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 158
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 159
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 160
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 161
+    },
+    {
+      "name": "Der Abschiedsbrief",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Insel Theater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 162
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-19",
+      "dateTo": "2026-09-19",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 163
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 164
+    },
+    {
+      "name": "Menschen. Farbe. Ausdruck. – Kunst, die von innen kommt: Echt. Unperfekt. Persönlich.",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Medizinische Zentralbibliothek",
+      "sources": "DATEs Stadtmagazin",
+      "id": 165
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 166
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 167
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 168
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 169
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 170
+    },
+    {
+      "name": "Syrian Perspectives",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "12:00",
+      "category": "Sonstiges",
+      "location": "Forum Gestaltung",
+      "sources": "DATEs Stadtmagazin",
+      "id": 171
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 172
+    },
+    {
+      "name": "Der Abschiedsbrief",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Insel Theater",
+      "sources": "DATEs Stadtmagazin",
+      "id": 173
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 174
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 175
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-09-20",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 176
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-21",
+      "dateTo": "2026-09-21",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 177
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-21",
+      "dateTo": "2026-09-21",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 178
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-21",
+      "dateTo": "2026-09-21",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 179
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 180
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 181
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 182
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 183
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 184
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 185
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 186
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-22",
+      "dateTo": "2026-09-22",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 187
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 188
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 189
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 190
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 191
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 192
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 193
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 194
+    },
+    {
+      "name": "Wer weiß schon, was ein Leben ist?",
+      "dateFrom": "2026-09-23",
+      "dateTo": "2026-09-23",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 195
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 196
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 197
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 198
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 199
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 200
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 201
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 202
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-24",
+      "dateTo": "2026-09-24",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 203
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-25",
+      "dateTo": "2026-09-25",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 204
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-25",
+      "dateTo": "2026-09-25",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 205
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-25",
+      "dateTo": "2026-09-25",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 206
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-25",
+      "dateTo": "2026-09-25",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 207
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-25",
+      "dateTo": "2026-09-25",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 208
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-25",
+      "dateTo": "2026-09-25",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 209
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 210
+    },
+    {
+      "name": "Menschen. Farbe. Ausdruck. – Kunst, die von innen kommt: Echt. Unperfekt. Persönlich.",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Medizinische Zentralbibliothek",
+      "sources": "DATEs Stadtmagazin",
+      "id": 211
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 212
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 213
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 214
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 215
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 216
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 217
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 218
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 219
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 220
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 221
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 222
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 223
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 224
+    },
+    {
+      "name": "Rockladen MD",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "17:00",
+      "category": "Musik",
+      "location": "Flowerpower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 225
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 226
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-26",
+      "dateTo": "2026-09-26",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 227
+    },
+    {
+      "name": "Karin Walter & Barbara Hoeft - Alles Farbe",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "07:00",
+      "category": "Sonstiges",
+      "location": "Café Domschatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 228
+    },
+    {
+      "name": "Menschen. Farbe. Ausdruck. – Kunst, die von innen kommt: Echt. Unperfekt. Persönlich.",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:00",
+      "category": "Kultur",
+      "location": "Medizinische Zentralbibliothek",
+      "sources": "DATEs Stadtmagazin",
+      "id": 229
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 230
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 231
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 232
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 233
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 234
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 235
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 236
+    },
+    {
+      "name": "Così fan tutt*e",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Opernhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 237
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 238
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 239
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 240
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 241
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-09-27",
+      "dateTo": "2026-09-27",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 242
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-28",
+      "dateTo": "2026-09-28",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 243
+    },
+    {
+      "name": "Hirten",
+      "dateFrom": "2026-09-28",
+      "dateTo": "2026-09-28",
+      "timeStart": "17:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 244
+    },
+    {
+      "name": "Bad Apples",
+      "dateFrom": "2026-09-28",
+      "dateTo": "2026-09-28",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 245
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-29",
+      "dateTo": "2026-09-29",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 246
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-29",
+      "dateTo": "2026-09-29",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 247
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-29",
+      "dateTo": "2026-09-29",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 248
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-29",
+      "dateTo": "2026-09-29",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 249
+    },
+    {
+      "name": "Wer weiß schon, was ein Leben ist?",
+      "dateFrom": "2026-09-29",
+      "dateTo": "2026-09-29",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 250
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-09-30",
+      "dateTo": "2026-09-30",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 251
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-09-30",
+      "dateTo": "2026-09-30",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 252
+    },
+    {
+      "name": "Spaziergang nach Syrakus",
+      "dateFrom": "2026-09-30",
+      "dateTo": "2026-09-30",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 253
+    },
+    {
+      "name": "Vaterland",
+      "dateFrom": "2026-09-30",
+      "dateTo": "2026-09-30",
+      "timeStart": "14:00",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 254
+    },
+    {
+      "name": "Kosmos #5 - Kanton Plankton",
+      "dateFrom": "2026-09-30",
+      "dateTo": "2026-09-30",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Schauspielhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 255
+    },
+    {
+      "name": "Frühstück bei Audrey",
+      "dateFrom": "2026-09-30",
+      "dateTo": "2026-09-30",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Kulturzentrum Moritzhof",
+      "sources": "DATEs Stadtmagazin",
+      "id": 256
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-01",
+      "dateTo": "2026-10-01",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 257
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-01",
+      "dateTo": "2026-10-01",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 258
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-10-01",
+      "dateTo": "2026-10-01",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 259
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-01",
+      "dateTo": "2026-10-01",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 260
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-02",
+      "dateTo": "2026-10-02",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 261
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-02",
+      "dateTo": "2026-10-02",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 262
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 263
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 264
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 265
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 266
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 267
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 268
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 269
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 270
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-10-03",
+      "dateTo": "2026-10-03",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 271
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 272
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 273
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 274
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 275
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 276
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 277
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 278
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-10-04",
+      "dateTo": "2026-10-04",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 279
+    },
+    {
       "name": "Magdeburger Sonntags-Flohmarkt",
       "dateFrom": "2026-10-04",
       "dateTo": "2026-10-04",
@@ -21,7 +2811,1177 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 1
+      "id": 280
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-06",
+      "dateTo": "2026-10-06",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 281
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-06",
+      "dateTo": "2026-10-06",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 282
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-07",
+      "dateTo": "2026-10-07",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 283
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-07",
+      "dateTo": "2026-10-07",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 284
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-08",
+      "dateTo": "2026-10-08",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 285
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-08",
+      "dateTo": "2026-10-08",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 286
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-10-08",
+      "dateTo": "2026-10-08",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 287
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-09",
+      "dateTo": "2026-10-09",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 288
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-09",
+      "dateTo": "2026-10-09",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 289
+    },
+    {
+      "name": "Così fan tutt*e",
+      "dateFrom": "2026-10-09",
+      "dateTo": "2026-10-09",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Opernhaus/Theater Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 290
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 291
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 292
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 293
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 294
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 295
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 296
+    },
+    {
+      "name": "Mit's Rad nach Stadt und mal kurz über die Elbe ...",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "08:30",
+      "category": "Sonstiges",
+      "location": "Domplatz",
+      "sources": "DATEs Stadtmagazin",
+      "id": 297
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 298
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 299
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 300
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 301
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 302
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-10",
+      "dateTo": "2026-10-10",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 303
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 304
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 305
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 306
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 307
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 308
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 309
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 310
+    },
+    {
+      "name": "Let’s Rock Again! - Ü60-Party",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "16:00",
+      "category": "Musik",
+      "location": "Flowerpower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 311
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-10-11",
+      "dateTo": "2026-10-11",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 312
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-13",
+      "dateTo": "2026-10-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 313
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-13",
+      "dateTo": "2026-10-13",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 314
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-14",
+      "dateTo": "2026-10-14",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 315
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-14",
+      "dateTo": "2026-10-14",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 316
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-15",
+      "dateTo": "2026-10-15",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 317
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-15",
+      "dateTo": "2026-10-15",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 318
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-16",
+      "dateTo": "2026-10-16",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 319
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-16",
+      "dateTo": "2026-10-16",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 320
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-16",
+      "dateTo": "2026-10-16",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 321
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 322
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 323
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 324
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 325
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 326
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 327
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 328
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 329
+    },
+    {
+      "name": "Nachtflohmarkt",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "14:00",
+      "category": "Flohmarkt",
+      "location": "Messe Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 330
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 331
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 332
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 333
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-17",
+      "dateTo": "2026-10-17",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 334
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 335
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 336
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 337
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 338
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 339
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 340
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 341
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-10-18",
+      "dateTo": "2026-10-18",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 342
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-20",
+      "dateTo": "2026-10-20",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 343
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-20",
+      "dateTo": "2026-10-20",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 344
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-21",
+      "dateTo": "2026-10-21",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 345
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-21",
+      "dateTo": "2026-10-21",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 346
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-22",
+      "dateTo": "2026-10-22",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 347
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-22",
+      "dateTo": "2026-10-22",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 348
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-23",
+      "dateTo": "2026-10-23",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 349
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-23",
+      "dateTo": "2026-10-23",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 350
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-23",
+      "dateTo": "2026-10-23",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 351
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 352
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 353
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 354
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 355
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 356
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 357
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 358
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 359
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 360
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 361
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 362
+    },
+    {
+      "name": "Rockladen MD",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "17:00",
+      "category": "Musik",
+      "location": "Flowerpower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 363
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-24",
+      "dateTo": "2026-10-24",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 364
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 365
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 366
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 367
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 368
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 369
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 370
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 371
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-10-25",
+      "dateTo": "2026-10-25",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 372
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-27",
+      "dateTo": "2026-10-27",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 373
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-27",
+      "dateTo": "2026-10-27",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 374
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-28",
+      "dateTo": "2026-10-28",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 375
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-28",
+      "dateTo": "2026-10-28",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 376
+    },
+    {
+      "name": "Hans-Günther Pölitz & Thomas Müller – Alles. Außer Kontrolle.",
+      "dateFrom": "2026-10-28",
+      "dateTo": "2026-10-28",
+      "timeStart": "17:30",
+      "category": "Sonstiges",
+      "location": "Kabarett \"Magdeburger Zwickmühle\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 377
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-29",
+      "dateTo": "2026-10-29",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 378
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-29",
+      "dateTo": "2026-10-29",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 379
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-30",
+      "dateTo": "2026-10-30",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 380
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-30",
+      "dateTo": "2026-10-30",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 381
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 382
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 383
+    },
+    {
+      "name": "Gigantische DinosaurierWelten",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "08:00",
+      "category": "Familie",
+      "location": "Elbauenpark",
+      "sources": "DATEs Stadtmagazin",
+      "id": 384
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 385
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 386
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 387
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 388
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 389
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-10-31",
+      "dateTo": "2026-10-31",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 390
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 391
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 392
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 393
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 394
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 395
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 396
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-11-01",
+      "dateTo": "2026-11-01",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 397
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -31,7 +3991,1057 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 2
+      "id": 398
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-03",
+      "dateTo": "2026-11-03",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 399
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-04",
+      "dateTo": "2026-11-04",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 400
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-05",
+      "dateTo": "2026-11-05",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 401
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-06",
+      "dateTo": "2026-11-06",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 402
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 403
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 404
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 405
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 406
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 407
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 408
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 409
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 410
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 411
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-11-07",
+      "dateTo": "2026-11-07",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 412
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 413
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 414
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 415
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 416
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 417
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 418
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-11-08",
+      "dateTo": "2026-11-08",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 419
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-10",
+      "dateTo": "2026-11-10",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 420
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-11",
+      "dateTo": "2026-11-11",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 421
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-12",
+      "dateTo": "2026-11-12",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 422
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-13",
+      "dateTo": "2026-11-13",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 423
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 424
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 425
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 426
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 427
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 428
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 429
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 430
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 431
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 432
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-11-14",
+      "dateTo": "2026-11-14",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 433
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 434
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 435
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 436
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 437
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 438
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 439
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-11-15",
+      "dateTo": "2026-11-15",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 440
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-17",
+      "dateTo": "2026-11-17",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 441
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-18",
+      "dateTo": "2026-11-18",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 442
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-19",
+      "dateTo": "2026-11-19",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 443
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-20",
+      "dateTo": "2026-11-20",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 444
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 445
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 446
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 447
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 448
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 449
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 450
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 451
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 452
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 453
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-11-21",
+      "dateTo": "2026-11-21",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 454
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 455
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 456
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 457
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 458
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 459
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 460
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-11-22",
+      "dateTo": "2026-11-22",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 461
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-24",
+      "dateTo": "2026-11-24",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 462
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-25",
+      "dateTo": "2026-11-25",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 463
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-26",
+      "dateTo": "2026-11-26",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 464
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-27",
+      "dateTo": "2026-11-27",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 465
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 466
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 467
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 468
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 469
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 470
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 471
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 472
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 473
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 474
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-11-28",
+      "dateTo": "2026-11-28",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 475
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 476
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 477
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 478
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 479
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 480
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 481
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-11-29",
+      "dateTo": "2026-11-29",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 482
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-01",
+      "dateTo": "2026-12-01",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 483
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-02",
+      "dateTo": "2026-12-02",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 484
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-03",
+      "dateTo": "2026-12-03",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 485
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-04",
+      "dateTo": "2026-12-04",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 486
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 487
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 488
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 489
+    },
+    {
+      "name": "Tatort Bibliothek",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Stadtbibliothek Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 490
+    },
+    {
+      "name": "KinderGesundheitssport",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "08:00",
+      "category": "Sport",
+      "location": "Kneipp Verein",
+      "sources": "DATEs Stadtmagazin",
+      "id": 491
+    },
+    {
+      "name": "Kulinarische Stadtführung",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "11:00",
+      "category": "Sonstiges",
+      "location": "Domviertel",
+      "sources": "DATEs Stadtmagazin",
+      "id": 492
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 493
+    },
+    {
+      "name": "Sky-Sport Programm",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "15:00",
+      "category": "Sport",
+      "location": "The Hyde",
+      "sources": "DATEs Stadtmagazin",
+      "id": 494
+    },
+    {
+      "name": "Pitcherabend",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "16:00",
+      "category": "Sonstiges",
+      "location": "Uni-Theke im Campus Tower",
+      "sources": "DATEs Stadtmagazin",
+      "id": 495
+    },
+    {
+      "name": "Cluboffener Abend",
+      "dateFrom": "2026-12-05",
+      "dateTo": "2026-12-05",
+      "timeStart": "18:00",
+      "category": "Sonstiges",
+      "location": "Damned Souls - Heavy Metal Club",
+      "sources": "DATEs Stadtmagazin",
+      "id": 496
+    },
+    {
+      "name": "Das geheimnisvolle Portal",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Dom zu Magdeburg \"St. Mauritius und Katharina\"",
+      "sources": "DATEs Stadtmagazin",
+      "id": 497
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 498
+    },
+    {
+      "name": "Bis ans Ende der Welt - Patagonien und Feuerland",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Museum für Naturkunde Magdeburg",
+      "sources": "DATEs Stadtmagazin",
+      "id": 499
+    },
+    {
+      "name": "Weekend Lunch",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "10:30",
+      "category": "Sonstiges",
+      "location": "Das Elb",
+      "sources": "DATEs Stadtmagazin",
+      "id": 500
+    },
+    {
+      "name": "Sonntagsbrunch",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Magado",
+      "sources": "DATEs Stadtmagazin",
+      "id": 501
+    },
+    {
+      "name": "Familienbuffet",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "09:30",
+      "category": "Familie",
+      "location": "Hotel Ratswaage",
+      "sources": "DATEs Stadtmagazin",
+      "id": 502
+    },
+    {
+      "name": "Cocktail Specials by Stelios",
+      "dateFrom": "2026-12-06",
+      "dateTo": "2026-12-06",
+      "timeStart": "15:00",
+      "category": "Sonstiges",
+      "location": "Barsol",
+      "sources": "DATEs Stadtmagazin",
+      "id": 503
     },
     {
       "name": "Magdeburger Sonntags-Flohmarkt",
@@ -41,7 +5051,47 @@
       "category": "Flohmarkt",
       "location": "Wissenschaftshafen, Sarajevo-Ufer, Magdeburg",
       "sources": "Familienhaus Magdeburg",
-      "id": 3
+      "id": 504
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-08",
+      "dateTo": "2026-12-08",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 505
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-09",
+      "dateTo": "2026-12-09",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 506
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-10",
+      "dateTo": "2026-12-10",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 507
+    },
+    {
+      "name": "Farbe und Gebiet. Joachim Brohm",
+      "dateFrom": "2026-12-11",
+      "dateTo": "2026-12-11",
+      "timeStart": "08:00",
+      "category": "Sonstiges",
+      "location": "Kunstmuseum Kloster Unser Lieben Frauen",
+      "sources": "DATEs Stadtmagazin",
+      "id": 508
     }
   ]
 }
